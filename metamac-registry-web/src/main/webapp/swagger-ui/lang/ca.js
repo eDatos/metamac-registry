@@ -2,7 +2,7 @@
 
 /* jshint quotmark: double */
 window.SwaggerTranslator.learn({
-    "Warning: Deprecated":"Advert\u00E8ncia: Obsolet",
+    "Warning: Deprecated":"Av\u00eds: Obsolet",
     "Implementation Notes":"Notes d'implementaci\u00F3",
     "Response Class":"Classe de la Resposta",
     "Status":"Status",
@@ -13,7 +13,7 @@ window.SwaggerTranslator.learn({
     "Parameter Type":"Tipus de par\u00E0metre",
     "Data Type":"Tipus de dada",
     "Response Messages":"Missatges de Resposta",
-    "HTTP Status Code":"Codi de Status HTTP",
+    "HTTP Status Code":"Codi d'estat HTTP",
     "Reason":"Ra\u00F3",
     "Response Model":"Model de Resposta",
     "Request URL":"URL de la Sol\u00B7licitud",
