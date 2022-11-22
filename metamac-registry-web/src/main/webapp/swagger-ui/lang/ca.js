@@ -10,7 +10,7 @@ window.SwaggerTranslator.learn({
     "Parameter":"Par\u00E0metre",
     "Value":"Valor",
     "Description":"Descripci\u00F3",
-    "Parameter Type":"Tipus de Par\u00E0metre",
+    "Parameter Type":"Tipus de par\u00E0metre",
     "Data Type":"Tipus de la Dada",
     "Response Messages":"Missatges de Resposta",
     "HTTP Status Code":"Codi de Status HTTP",
