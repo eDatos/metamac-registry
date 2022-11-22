@@ -39,7 +39,7 @@ window.SwaggerTranslator.learn({
     "api version":"versi\u00F3 de l'api",
     "Response Content Type":"Tipus de Contingut (Content Type) de la Resposta",
     "fetching resource":"s'est\u00e0 obtenint el recurs",
-    "fetching resource list":"cercant llista de recursos",
+    "fetching resource list":"s'est\u00e0 obtenint la llista de recursos",
     "Explore":"Explorar",
     "Show Swagger Petstore Example Apis":"Mostrar Api d'Exemple de Swagger Petstore",
     "Can't read from server.  It may not have the appropriate access-control-origin settings.":"No es pot llegir des del servidor. Potser no tingueu la configuraci\u00F3 de control d'accés d'origen (access-control-origin) apropiat.",
