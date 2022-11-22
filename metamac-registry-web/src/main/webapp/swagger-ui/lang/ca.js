@@ -15,7 +15,7 @@ window.SwaggerTranslator.learn({
     "Response Messages":"Missatges de Resposta",
     "HTTP Status Code":"Codi de Status HTTP",
     "Reason":"Ra\u00F3",
-    "Response Model":"Model de la Resposta",
+    "Response Model":"Model de Resposta",
     "Request URL":"URL de la Sol\u00B7licitud",
     "Response Body":"Cos de la Resposta",
     "Response Code":"Codi de la Resposta",
