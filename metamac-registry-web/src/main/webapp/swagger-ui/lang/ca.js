@@ -21,7 +21,7 @@ window.SwaggerTranslator.learn({
     "Response Code":"Codi de la Resposta",
     "Response Headers":"Cap\u00E7aleres de la Resposta",
     "Hide Response":"Amagar Resposta",
-    "Try it out!":"Prova\u00AFho!",
+    "Try it out!":"Prova-ho!",
     "Show/Hide":"Mostrar/Amagar",
     "List Operations":"Llistar Operacions",
     "Expand Operations":"Expandir Operacions",
