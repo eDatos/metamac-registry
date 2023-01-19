@@ -43,20 +43,20 @@
     </c:if>
     
     <div class="version-list">
-       <h1>APIs de Registro SDMX</h1>
-       <h2>Versiones</h2>
+       <h1><fmt:message key="api.doc.title" bundle="${i18n}"/></h1>
+       <h2><fmt:message key="api.doc.versiones" bundle="${i18n}"/></h2>
        <ul>
            <li>
-               <h3 class="version-title"><a href="${apiBaseURL}/latest" alt="Última versión de la API">/latest</a></h3>
+               <h3 class="version-title"><a href="${apiBaseURL}/latest">/latest</a></h3>
                <div class="version-description">
-                   <p><strong>latest</strong> es la palabra clave reservada con la que se puede acceder a la última versión de la API</p>                      
+                   <p><strong>latest</strong> <fmt:message key="api.doc.latest" bundle="${i18n}"/></p>                      
                </div>
            </li>
            
            <li>
-               <h3 class="version-title"><a href="${apiBaseURL}/v2.1" alt="Versión 2.1">/v2.1</a></h3>
+               <h3 class="version-title"><a href="${apiBaseURL}/v2.1">/v2.1</a></h3>
                <div class="version-description">
-                    <p>Versión 2.1 de la API</p>    
+                    <p><fmt:message key="api.doc.version.2_1" bundle="${i18n}"/></p>    
                </div>
            </li>
        </ul>
