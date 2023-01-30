@@ -1,10 +1,23 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!doctype html>
+<%@ page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<!DOCTYPE html>
+<%@ taglib prefix="fmt"  uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ page import="org.siemac.metamac.core.common.util.InternationalizationUtils" %>
+<%@ page import="org.apache.commons.lang.LocaleUtils" %>
+<%@ page import="static java.util.ResourceBundle.Control.getNoFallbackControl" %>
+<%@ page import="java.util.ResourceBundle" %>
+<%
+    String internationalizationCookie = InternationalizationUtils.getInstance().getInternationalizationCookieId();
+    String locale = InternationalizationUtils.getInstance().getCurrentLocale(request);
+    String appName = ResourceBundle.getBundle("i18n.common.messages" , LocaleUtils.toLocale(locale), getNoFallbackControl(ResourceBundle.Control.FORMAT_DEFAULT)).getString("apps.api_catalog.name");
+%>
+<fmt:setLocale value="<%= locale %>"/>
+<fmt:setBundle basename="i18n.common.messages" var="i18n"/>
+<fmt:bundle basename="application" />
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>API de Registro SDMX</title>
+  <title><fmt:message key="app.name" bundle="${i18n}"/></title>
   <link href="<%=org.siemac.metamac.core.common.util.swagger.SwaggerUtils.getResourceBaseURL(request)%>/swagger-ui/css/typography.css" media='screen' rel='stylesheet' type='text/css'/>
   <link href="<%=org.siemac.metamac.core.common.util.swagger.SwaggerUtils.getResourceBaseURL(request)%>/swagger-ui/css/reset.css" media='screen' rel='stylesheet' type='text/css'/>
   <link href="<%=org.siemac.metamac.core.common.util.swagger.SwaggerUtils.getResourceBaseURL(request)%>/swagger-ui/css/screen.css" media='screen' rel='stylesheet' type='text/css'/>
@@ -26,8 +39,7 @@
 
   <!-- Some basic translations -->
   <script src="<%=org.siemac.metamac.core.common.util.swagger.SwaggerUtils.getResourceBaseURL(request)%>/swagger-ui/lang/translator.js" type='text/javascript'></script>
-  <script src="<%=org.siemac.metamac.core.common.util.swagger.SwaggerUtils.getResourceBaseURL(request)%>/swagger-ui/lang/ca.js" type='text/javascript'></script> 
-  <script src="<%=org.siemac.metamac.core.common.util.swagger.SwaggerUtils.getResourceBaseURL(request)%>/swagger-ui/lang/es.js" type='text/javascript'></script>   
+  <script src="<%=org.siemac.metamac.core.common.util.swagger.SwaggerUtils.getResourceBaseURL(request)%>/swagger-ui/lang/<%=locale%>.js" type="text/javascript"></script>
   
   <c:set var="apiStyleCssUrl" value="<%=org.siemac.metamac.core.common.util.WebUtils.getApiStyleCssUrl()%>" />
 
@@ -105,18 +117,24 @@
 <body>
 	<c:set var="apiStyleHeaderUrl" value="<%=org.siemac.metamac.core.common.util.WebUtils.getApiStyleHeaderUrl()%>" />
 	<c:set var="apiStyleFooterUrl" value="<%=org.siemac.metamac.core.common.util.WebUtils.getApiStyleFooterUrl()%>" />
-	
-	<c:if test="${!empty apiStyleHeaderUrl}">
-	   <c:import charEncoding="UTF-8" url="${apiStyleHeaderUrl}" />
-	</c:if>
+
+    <c:if test="${!empty apiStyleHeaderUrl}">
+        <c:import charEncoding="UTF-8" url="${apiStyleHeaderUrl}" >
+            <c:param name="appName" value="<%= appName %>" />
+            <c:param name="<%= internationalizationCookie %>" value="<%= locale %>" />
+        </c:import>
+    </c:if>
 	
 	<div class="swagger-section">
 		<div id="message-bar" class="swagger-ui-wrap" data-sw-translate>&nbsp;</div>
 		<div id="swagger-ui-container" class="swagger-ui-wrap"></div>
 	</div>
-	
-	<c:if test="${!empty apiStyleFooterUrl}">
-	   <c:import charEncoding="UTF-8" url="${apiStyleFooterUrl}" />
-	</c:if>
+
+    <c:if test="${!empty apiStyleFooterUrl}">
+        <c:import charEncoding="UTF-8" url="${apiStyleFooterUrl}" >
+            <c:param name="appName" value="<%= appName %>" />
+            <c:param name="<%= internationalizationCookie %>" value="<%= locale %>" />
+        </c:import>
+    </c:if>
 </body>
 </html>
