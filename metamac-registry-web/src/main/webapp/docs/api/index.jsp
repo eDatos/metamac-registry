@@ -2,13 +2,13 @@
 <%@ page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt"  uri="http://java.sun.com/jsp/jstl/fmt" %>
-<%@ page import="org.siemac.metamac.srm.registry.utils.InternationalizationUtils" %>
+<%@ page import="org.siemac.metamac.core.common.util.InternationalizationUtils" %>
 <%@ page import="org.apache.commons.lang.LocaleUtils" %>
 <%@ page import="static java.util.ResourceBundle.Control.getNoFallbackControl" %>
 <%@ page import="java.util.ResourceBundle" %>
 <%
-    String internationalizationCookie = (String) getServletContext().getAttribute(InternationalizationUtils.INTERNATIONALIZATION_COOKIE);
-    String locale = InternationalizationUtils.getCurrentLocale(request);
+    String internationalizationCookie = InternationalizationUtils.getInstance().getInternationalizationCookieId();
+    String locale = InternationalizationUtils.getInstance().getCurrentLocale(request);
     String appName = ResourceBundle.getBundle("i18n.common.messages" , LocaleUtils.toLocale(locale), getNoFallbackControl(ResourceBundle.Control.FORMAT_DEFAULT)).getString("apps.api_catalog.name");
 %>
 <fmt:setLocale value="<%= locale %>"/>

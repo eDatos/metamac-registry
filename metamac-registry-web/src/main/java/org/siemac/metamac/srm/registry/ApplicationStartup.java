@@ -7,7 +7,6 @@ import org.siemac.metamac.core.common.exception.MetamacException;
 import org.siemac.metamac.core.common.listener.ApplicationStartupListener;
 import org.siemac.metamac.core.common.util.WebUtils;
 import org.siemac.metamac.sdmx.data.rest.external.conf.DataConfigurationConstants;
-import org.siemac.metamac.srm.registry.utils.InternationalizationUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -33,9 +32,6 @@ public class ApplicationStartup extends ApplicationStartupListener {
             WebUtils.setApiStyleHeaderUrl(configurationService.retrieveApiStyleHeaderUrl());
             WebUtils.setApiStyleCssUrl(configurationService.retrieveApiStyleCssUrl());
             WebUtils.setApiStyleFooterUrl(configurationService.retrieveApiStyleFooterUrl());
-            sce.getServletContext().setAttribute(InternationalizationUtils.INTERNATIONALIZATION_LANGUAGES, configurationService.retrieveInternationalizationLanguages());
-            sce.getServletContext().setAttribute(InternationalizationUtils.INTERNATIONALIZATION_ENABLED, configurationService.retrieveInternationalizationEnabled());
-            sce.getServletContext().setAttribute(InternationalizationUtils.INTERNATIONALIZATION_COOKIE, configurationService.retrieveInternationalizationCookieId());
 
         } catch (MetamacException e) {
             log.error("Error retrieving the organisation from the configuration", e);
