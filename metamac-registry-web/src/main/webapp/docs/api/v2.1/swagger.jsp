@@ -6,8 +6,8 @@
    String locale = InternationalizationUtils.getInstance().getCurrentLocale(request);
 %>
 <fmt:setLocale value="<%= locale %>"/>
-<fmt:setBundle basename="i18n.common.messages" var="i18n"/>
-<fmt:bundle basename="application" />
+<fmt:setBundle basename="i18n.messages" var="i18n"/>
+<fmt:bundle basename="application"/>
 {
    "swagger":"2.0",
    "info":{
