@@ -1,7 +1,7 @@
 <!doctype html>
 <%@ page import="org.siemac.metamac.core.common.util.WebUtils"%>
 <%@ page contentType="text/html" pageEncoding="UTF-8"%>
-<%@ taglib prefix="fmt"  uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page import="org.siemac.metamac.core.common.util.InternationalizationUtils" %>
 <%@ page import="org.apache.commons.lang.LocaleUtils" %>
@@ -10,11 +10,11 @@
 <%
     String internationalizationCookie = InternationalizationUtils.getInstance().getInternationalizationCookieId();
     String locale = InternationalizationUtils.getInstance().getCurrentLocale(request);
-    String appName = ResourceBundle.getBundle("i18n.common.messages" , LocaleUtils.toLocale(locale), getNoFallbackControl(ResourceBundle.Control.FORMAT_DEFAULT)).getString("apps.api_catalog.name");
+    String appName = ResourceBundle.getBundle("i18n.messages", LocaleUtils.toLocale(locale), getNoFallbackControl(ResourceBundle.Control.FORMAT_DEFAULT)).getString("apps.api_catalog.name");
 %>
 <fmt:setLocale value="<%= locale %>"/>
-<fmt:setBundle basename="i18n.common.messages" var="i18n"/>
-<fmt:bundle basename="application" />
+<fmt:setBundle basename="i18n.messages" var="i18n"/>
+<fmt:bundle basename="application"/>
 <html>
 <head>
   <meta charset="UTF-8">
@@ -36,7 +36,7 @@
     <c:set var="apiBaseURL" value="<%=WebUtils.getApiBaseURL()%>" />
     
     <c:if test="${!empty apiStyleHeaderUrl}">
-        <c:import charEncoding="UTF-8" url="${apiStyleHeaderUrl}" >
+        <c:import charEncoding="UTF-8" url="${apiStyleHeaderUrl}">
             <c:param name="appName" value="<%= appName %>" />
             <c:param name="<%= internationalizationCookie %>" value="<%= locale %>" />
         </c:import>
