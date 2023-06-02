@@ -50,19 +50,16 @@ public class ApplicationStartup extends ApplicationStartupListener {
         checkRequiredProperty(SdmxSrmConfigurationConstants.DB_URL);
         checkRequiredProperty(SdmxSrmConfigurationConstants.DB_USERNAME);
         checkRequiredProperty(SdmxSrmConfigurationConstants.DB_PASSWORD);
-        checkRequiredProperty(SdmxSrmConfigurationConstants.DB_DIALECT);
 
         // Datasource
         checkRequiredProperty(DataConfigurationConstants.DB_URL);
         checkRequiredProperty(DataConfigurationConstants.DB_USERNAME);
         checkRequiredProperty(DataConfigurationConstants.DB_PASSWORD);
-        checkRequiredProperty(DataConfigurationConstants.DB_DIALECT);
         checkRequiredProperty(DataConfigurationConstants.DB_DRIVER_NAME);
 
         checkRequiredProperty(DataConfigurationConstants.DB_REPOSITORY_URL);
         checkRequiredProperty(DataConfigurationConstants.DB_REPOSITORY_USERNAME);
         checkRequiredProperty(DataConfigurationConstants.DB_REPOSITORY_PASSWORD);
-        checkRequiredProperty(DataConfigurationConstants.DB_REPOSITORY_DIALECT);
         checkRequiredProperty(DataConfigurationConstants.DB_REPOSITORY_DRIVER_NAME);
 
         // Api
