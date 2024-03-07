@@ -9,14 +9,14 @@
 
     <groupId>org.siemac.metamac.metamac-registry</groupId>
     <artifactId>metamac-registry-parent</artifactId>
-    <version>3.2.2-SNAPSHOT</version>
+    <version>3.2.3-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>SIEMAC :: METAMAC :: REGISTRY :: PARENT</name>
     <description>SIEMAC :: METAMAC :: REGISTRY :: PARENT</description>
 
     <properties>
-        <statistic-sdmx-srm-rest-external.version>3.5.1-SNAPSHOT</statistic-sdmx-srm-rest-external.version>
-        <metamac-sdmx-data-rest-external.version>8.3.2-SNAPSHOT</metamac-sdmx-data-rest-external.version>
+        <statistic-sdmx-srm-rest-external.version>3.6.0</statistic-sdmx-srm-rest-external.version>
+        <metamac-sdmx-data-rest-external.version>8.4.0</metamac-sdmx-data-rest-external.version>
 
         <jstl.version>1.2</jstl.version>
     </properties>
