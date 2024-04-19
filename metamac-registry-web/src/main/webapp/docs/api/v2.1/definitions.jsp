@@ -1277,20 +1277,20 @@
                     "properties": {
                         "Contact": {
                             "$ref": "#/definitions/xml_ns3_ContactType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.ns3.partytype.contact" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message"
                             }
                         },
                         "Name": {
                             "$ref": "#/definitions/xml_ns4_TextType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.ns3.partytype.name" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common"
                             }
                         },
                         "id": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.ns3.partytype.id" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "attribute": true,
@@ -1403,7 +1403,7 @@
                 {
                     "properties": {
                         "Timezone": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.ns3.sendertype.timezone" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message"
