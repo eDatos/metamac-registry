@@ -385,34 +385,34 @@
                     "properties": {
                         "DataProvider": {
                             "$ref": "#/definitions/xml_ns4_DataProviderReferenceType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.baseheadertype.dataprovider" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message"
                             }
                         },
                         "DataSetAction": {
                             "$ref": "#/definitions/xml_ns4_ActionType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.baseheadertype.datasetaction" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message"
                             }
                         },
                         "DataSetID": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.baseheadertype.datasetid" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message"
                             }
                         },
                         "EmbargoDate": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.baseheadertype.embargodate" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message"
                             }
                         },
                         "Extracted": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.baseheadertype.extracted" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message"
@@ -433,7 +433,7 @@
                             }
                         },
                         "Prepared": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.baseheadertype.prepared" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message"
@@ -441,13 +441,13 @@
                         },
                         "Receiver": {
                             "$ref": "#/definitions/xml_ns3_PartyType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.baseheadertype.receiver" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message"
                             }
                         },
                         "ReportingBegin": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.baseheadertype.reportingbegin" bundle="${i18n}"/>",
                             "items": {
                                 "type": "string"
                             },
@@ -457,7 +457,7 @@
                             }
                         },
                         "ReportingEnd": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.baseheadertype.reportingend" bundle="${i18n}"/>",
                             "items": {
                                 "type": "string"
                             },
@@ -468,7 +468,7 @@
                         },
                         "Sender": {
                             "$ref": "#/definitions/xml_ns3_SenderType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.baseheadertype.sender" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message"
                             }
@@ -482,13 +482,13 @@
                         },
                         "Structure": {
                             "$ref": "#/definitions/xml_ns4_PayloadStructureType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.baseheadertype.structure" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message"
                             }
                         },
                         "Test": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.baseheadertype.test" bundle="${i18n}"/>",
                             "type": "boolean",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message"

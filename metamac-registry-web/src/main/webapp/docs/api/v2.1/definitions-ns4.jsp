@@ -1,4 +1,13 @@
 <%@page pageEncoding="UTF-8"%>
+<%@page import="org.siemac.metamac.core.common.util.swagger.SwaggerUtils"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ page import="org.siemac.metamac.core.common.util.InternationalizationUtils" %>
+<%
+   String locale = InternationalizationUtils.getInstance().getCurrentLocale(request);
+%>
+<fmt:setLocale value="<%= locale %>"/>
+<fmt:setBundle basename="i18n.messages" var="i18n"/>
+<fmt:bundle basename="application"/>
 	"xml_ns4_ActionType": {
             "description": "<p>Java class for ActionType.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n<p>\r\n<pre>\r\n &lt;simpleType name=\"ActionType\">\r\n   &lt;restriction base=\"{http://www.w3.org/2001/XMLSchema}NMTOKEN\">\r\n     &lt;enumeration value=\"Append\"/>\r\n     &lt;enumeration value=\"Replace\"/>\r\n     &lt;enumeration value=\"Delete\"/>\r\n     &lt;enumeration value=\"Information\"/>\r\n   &lt;/restriction>\r\n &lt;/simpleType>\r\n </pre>",
             "enum": [
@@ -2753,13 +2762,13 @@
                     "properties": {
                         "Ref": {
                             "$ref": "#/definitions/xml_ns4_RefBaseType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.ns4.referencetype.ref" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": ""
                             }
                         },
                         "URN": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.ns4.referencetype.urn" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "namespace": ""
@@ -3132,14 +3141,14 @@
                 {
                     "properties": {
                         "(value)": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.ns4.texttype.value" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common"
                             }
                         },
                         "lang": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.ns4.texttype.lang" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "attribute": true,
