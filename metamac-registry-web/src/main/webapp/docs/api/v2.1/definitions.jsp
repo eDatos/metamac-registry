@@ -409,7 +409,7 @@
                             }
                         },
                         "ID": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.baseheadertype.id" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message"
@@ -417,7 +417,7 @@
                         },
                         "Name": {
                             "$ref": "#/definitions/xml_ns4_TextType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.baseheadertype.name" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common"
                             }
@@ -465,7 +465,7 @@
                         },
                         "Source": {
                             "$ref": "#/definitions/xml_ns4_TextType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.baseheadertype.source" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message"
                             }
