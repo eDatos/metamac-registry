@@ -3141,14 +3141,14 @@
                 {
                     "properties": {
                         "(value)": {
-                            "description": "<fmt:message key="api.doc.swagger.definitions.ns4.texttype.value" bundle="${i18n}"/>",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_TextType.properties.value.description" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common"
                             }
                         },
                         "lang": {
-                            "description": "<fmt:message key="api.doc.swagger.definitions.ns4.texttype.lang" bundle="${i18n}"/>",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_TextType.properties.lang.description" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "attribute": true,
@@ -3158,7 +3158,7 @@
                     }
                 }
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_TextType.properties.lang.description" bundle="${i18n}"/>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_TextType.description" bundle="${i18n}"/>",
             "required": [
                 "(value)"
             ],
