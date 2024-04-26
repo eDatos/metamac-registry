@@ -78,7 +78,7 @@
                   "name":"agencyID",
                   "in":"path",
                   "type":"string",
-                  "description":"<fmt:message key="api.doc.swagger.paths.v2_1.datastructure.agencyID.get.parameters.0.description" bundle="${i18n}"/>"
+                  "description":"<fmt:message key="api.doc.swagger.paths.parameters.agencyID.description" bundle="${i18n}"/>"
                }
             ],
             "responses":{
@@ -120,13 +120,13 @@
                   "name":"agencyID",
                   "in":"path",
                   "type":"string",
-                  "description":"<fmt:message key="api.doc.swagger.paths.v2_1.datastructure.agencyID.resourceID.get.parameters.0.description" bundle="${i18n}"/>"
+                  "description":"<fmt:message key="api.doc.swagger.paths.parameters.agencyID.description" bundle="${i18n}"/>"
                },
                {
                   "name":"resourceID",
                   "in":"path",
                   "type":"string",
-                  "description":"<fmt:message key="api.doc.swagger.paths.v2_1.datastructure.agencyID.resourceID.get.parameters.1.description" bundle="${i18n}"/>"
+                  "description":"<fmt:message key="api.doc.swagger.paths.parameters.resourceID.description" bundle="${i18n}"/>"
                }
             ],
             "responses":{
@@ -168,19 +168,19 @@
                   "name":"agencyID",
                   "in":"path",
                   "type":"string",
-                  "description":"<fmt:message key="api.doc.swagger.paths.v2_1.datastructure.agencyID.resourceID.version.get.parameters.0.description" bundle="${i18n}"/>"
+                  "description":"<fmt:message key="api.doc.swagger.paths.parameters.agencyID.description" bundle="${i18n}"/>"
                },
                {
                   "name":"resourceID",
                   "in":"path",
                   "type":"string",
-                  "description":"<fmt:message key="api.doc.swagger.paths.v2_1.datastructure.agencyID.resourceID.version.get.parameters.1.description" bundle="${i18n}"/>"
+                  "description":"<fmt:message key="api.doc.swagger.paths.parameters.resourceID.description" bundle="${i18n}"/>"
                },
                {
                   "name":"version",
                   "in":"path",
                   "type":"string",
-                  "description":"<fmt:message key="api.doc.swagger.paths.v2_1.datastructure.agencyID.resourceID.version.get.parameters.2.description" bundle="${i18n}"/>"
+                  "description":"<fmt:message key="api.doc.swagger.paths.parameters.version.description" bundle="${i18n}"/>"
                }
             ],
             "responses":{
@@ -256,7 +256,7 @@
                   "name":"agencyID",
                   "in":"path",
                   "type":"string",
-                  "description":"<fmt:message key="api.doc.swagger.paths.v2_1.categoryscheme.agencyID.get.parameters.0.description" bundle="${i18n}"/>"
+                  "description":"<fmt:message key="api.doc.swagger.paths.parameters.agencyID.description" bundle="${i18n}"/>"
                }
             ],
             "responses":{
@@ -298,13 +298,13 @@
                   "name":"agencyID",
                   "in":"path",
                   "type":"string",
-                  "description":"<fmt:message key="api.doc.swagger.paths.v2_1.categoryscheme.agencyID.resourceID.get.parameters.0.description" bundle="${i18n}"/>"
+                  "description":"<fmt:message key="api.doc.swagger.paths.parameters.agencyID.description" bundle="${i18n}"/>"
                },
                {
                   "name":"resourceID",
                   "in":"path",
                   "type":"string",
-                  "description":"<fmt:message key="api.doc.swagger.paths.v2_1.categoryscheme.agencyID.resourceID.get.parameters.1.description" bundle="${i18n}"/>"
+                  "description":"<fmt:message key="api.doc.swagger.paths.parameters.resourceID.description" bundle="${i18n}"/>"
                }
             ],
             "responses":{
@@ -346,19 +346,19 @@
                   "name":"agencyID",
                   "in":"path",
                   "type":"string",
-                  "description":"<fmt:message key="api.doc.swagger.paths.v2_1.categoryscheme.agencyID.resourceID.version.get.parameters.0.description" bundle="${i18n}"/>"
+                  "description":"<fmt:message key="api.doc.swagger.paths.parameters.agencyID.description" bundle="${i18n}"/>"
                },
                {
                   "name":"resourceID",
                   "in":"path",
                   "type":"string",
-                  "description":"<fmt:message key="api.doc.swagger.paths.v2_1.categoryscheme.agencyID.resourceID.version.get.parameters.1.description" bundle="${i18n}"/>"
+                  "description":"<fmt:message key="api.doc.swagger.paths.parameters.resourceID.description" bundle="${i18n}"/>"
                },
                {
                   "name":"version",
                   "in":"path",
                   "type":"string",
-                  "description":"<fmt:message key="api.doc.swagger.paths.v2_1.categoryscheme.agencyID.resourceID.version.get.parameters.2.description" bundle="${i18n}"/>"
+                  "description":"<fmt:message key="api.doc.swagger.paths.parameters.version.description" bundle="${i18n}"/>"
                }
             ],
             "responses":{
@@ -434,7 +434,7 @@
                   "name":"agencyID",
                   "in":"path",
                   "type":"string",
-                  "description":"<fmt:message key="api.doc.swagger.paths.v2_1.conceptscheme.agencyID.get.parameters.0.description" bundle="${i18n}"/>"
+                  "description":"<fmt:message key="api.doc.swagger.paths.parameters.agencyID.description" bundle="${i18n}"/>"
                }
             ],
             "responses":{
@@ -476,13 +476,13 @@
                   "name":"agencyID",
                   "in":"path",
                   "type":"string",
-                  "description":"<fmt:message key="api.doc.swagger.paths.v2_1.conceptscheme.agencyID.resourceID.get.parameters.0.description" bundle="${i18n}"/>"
+                  "description":"<fmt:message key="api.doc.swagger.paths.parameters.agencyID.description" bundle="${i18n}"/>"
                },
                {
                   "name":"resourceID",
                   "in":"path",
                   "type":"string",
-                  "description":"<fmt:message key="api.doc.swagger.paths.v2_1.conceptscheme.agencyID.resourceID.get.parameters.1.description" bundle="${i18n}"/>"
+                  "description":"<fmt:message key="api.doc.swagger.paths.parameters.resourceID.description" bundle="${i18n}"/>"
                }
             ],
             "responses":{
@@ -524,19 +524,19 @@
                   "name":"agencyID",
                   "in":"path",
                   "type":"string",
-                  "description":"<fmt:message key="api.doc.swagger.paths.v2_1.conceptscheme.agencyID.resourceID.version.get.parameters.0.description" bundle="${i18n}"/>"
+                  "description":"<fmt:message key="api.doc.swagger.paths.parameters.agencyID.description" bundle="${i18n}"/>"
                },
                {
                   "name":"resourceID",
                   "in":"path",
                   "type":"string",
-                  "description":"<fmt:message key="api.doc.swagger.paths.v2_1.conceptscheme.agencyID.resourceID.version.get.parameters.1.description" bundle="${i18n}"/>"
+                  "description":"<fmt:message key="api.doc.swagger.paths.parameters.resourceID.description" bundle="${i18n}"/>"
                },
                {
                   "name":"version",
                   "in":"path",
                   "type":"string",
-                  "description":"<fmt:message key="api.doc.swagger.paths.v2_1.conceptscheme.agencyID.resourceID.version.get.parameters.2.description" bundle="${i18n}"/>"
+                  "description":"<fmt:message key="api.doc.swagger.paths.parameters.version.description" bundle="${i18n}"/>"
                }
             ],
             "responses":{
@@ -612,7 +612,7 @@
                   "name":"agencyID",
                   "in":"path",
                   "type":"string",
-                  "description":"<fmt:message key="api.doc.swagger.paths.v2_1.codelist.agencyID.get.parameters.0.description" bundle="${i18n}"/>"
+                  "description":"<fmt:message key="api.doc.swagger.paths.parameters.agencyID.description" bundle="${i18n}"/>"
                }
             ],
             "responses":{
@@ -654,13 +654,13 @@
                   "name":"agencyID",
                   "in":"path",
                   "type":"string",
-                  "description":"<fmt:message key="api.doc.swagger.paths.v2_1.codelist.agencyID.resourceID.get.parameters.0.description" bundle="${i18n}"/>"
+                  "description":"<fmt:message key="api.doc.swagger.paths.parameters.agencyID.description" bundle="${i18n}"/>"
                },
                {
                   "name":"resourceID",
                   "in":"path",
                   "type":"string",
-                  "description":"<fmt:message key="api.doc.swagger.paths.v2_1.codelist.agencyID.resourceID.get.parameters.1.description" bundle="${i18n}"/>"
+                  "description":"<fmt:message key="api.doc.swagger.paths.parameters.resourceID.description" bundle="${i18n}"/>"
                }
             ],
             "responses":{
@@ -702,19 +702,19 @@
                   "name":"agencyID",
                   "in":"path",
                   "type":"string",
-                  "description":"<fmt:message key="api.doc.swagger.paths.v2_1.codelist.agencyID.resourceID.version.get.parameters.0.description" bundle="${i18n}"/>"
+                  "description":"<fmt:message key="api.doc.swagger.paths.parameters.agencyID.description" bundle="${i18n}"/>"
                },
                {
                   "name":"resourceID",
                   "in":"path",
                   "type":"string",
-                  "description":"<fmt:message key="api.doc.swagger.paths.v2_1.codelist.agencyID.resourceID.version.get.parameters.1.description" bundle="${i18n}"/>"
+                  "description":"<fmt:message key="api.doc.swagger.paths.parameters.resourceID.description" bundle="${i18n}"/>"
                },
                {
                   "name":"version",
                   "in":"path",
                   "type":"string",
-                  "description":"<fmt:message key="api.doc.swagger.paths.v2_1.codelist.agencyID.resourceID.version.get.parameters.2.description" bundle="${i18n}"/>"
+                  "description":"<fmt:message key="api.doc.swagger.paths.parameters.version.description" bundle="${i18n}"/>"
                }
             ],
             "responses":{
@@ -790,7 +790,7 @@
                   "name":"agencyID",
                   "in":"path",
                   "type":"string",
-                  "description":"<fmt:message key="api.doc.swagger.paths.v2_1.organisationscheme.agencyID.get.parameters.0.description" bundle="${i18n}"/>"
+                  "description":"<fmt:message key="api.doc.swagger.paths.parameters.agencyID.description" bundle="${i18n}"/>"
                }
             ],
             "responses":{
@@ -832,13 +832,13 @@
                   "name":"agencyID",
                   "in":"path",
                   "type":"string",
-                  "description":"<fmt:message key="api.doc.swagger.paths.v2_1.organisationscheme.agencyID.resourceID.get.parameters.0.description" bundle="${i18n}"/>"
+                  "description":"<fmt:message key="api.doc.swagger.paths.parameters.agencyID.description" bundle="${i18n}"/>"
                },
                {
                   "name":"resourceID",
                   "in":"path",
                   "type":"string",
-                  "description":"<fmt:message key="api.doc.swagger.paths.v2_1.organisationscheme.agencyID.resourceID.get.parameters.1.description" bundle="${i18n}"/>"
+                  "description":"<fmt:message key="api.doc.swagger.paths.parameters.resourceID.description" bundle="${i18n}"/>"
                }
             ],
             "responses":{
@@ -880,19 +880,19 @@
                   "name":"agencyID",
                   "in":"path",
                   "type":"string",
-                  "description":"<fmt:message key="api.doc.swagger.paths.v2_1.organisationscheme.agencyID.resourceID.version.get.parameters.0.description" bundle="${i18n}"/>"
+                  "description":"<fmt:message key="api.doc.swagger.paths.parameters.agencyID.description" bundle="${i18n}"/>"
                },
                {
                   "name":"resourceID",
                   "in":"path",
                   "type":"string",
-                  "description":"<fmt:message key="api.doc.swagger.paths.v2_1.organisationscheme.agencyID.resourceID.version.get.parameters.1.description" bundle="${i18n}"/>"
+                  "description":"<fmt:message key="api.doc.swagger.paths.parameters.resourceID.description" bundle="${i18n}"/>"
                },
                {
                   "name":"version",
                   "in":"path",
                   "type":"string",
-                  "description":"<fmt:message key="api.doc.swagger.paths.v2_1.organisationscheme.agencyID.resourceID.version.get.parameters.2.description" bundle="${i18n}"/>"
+                  "description":"<fmt:message key="api.doc.swagger.paths.parameters.version.description" bundle="${i18n}"/>"
                }
             ],
             "responses":{
@@ -968,7 +968,7 @@
                   "name":"agencyID",
                   "in":"path",
                   "type":"string",
-                  "description":"<fmt:message key="api.doc.swagger.paths.v2_1.agencyscheme.agencyID.get.parameters.0.description" bundle="${i18n}"/>"
+                  "description":"<fmt:message key="api.doc.swagger.paths.parameters.agencyID.description" bundle="${i18n}"/>"
                }
             ],
             "responses":{
@@ -1010,13 +1010,13 @@
                   "name":"agencyID",
                   "in":"path",
                   "type":"string",
-                  "description":"<fmt:message key="api.doc.swagger.paths.v2_1.agencyscheme.agencyID.resourceID.get.parameters.0.description" bundle="${i18n}"/>"
+                  "description":"<fmt:message key="api.doc.swagger.paths.parameters.agencyID.description" bundle="${i18n}"/>"
                },
                {
                   "name":"resourceID",
                   "in":"path",
                   "type":"string",
-                  "description":"<fmt:message key="api.doc.swagger.paths.v2_1.agencyscheme.agencyID.resourceID.get.parameters.1.description" bundle="${i18n}"/>"
+                  "description":"<fmt:message key="api.doc.swagger.paths.parameters.resourceID.description" bundle="${i18n}"/>"
                }
             ],
             "responses":{
@@ -1058,19 +1058,19 @@
                   "name":"agencyID",
                   "in":"path",
                   "type":"string",
-                  "description":"<fmt:message key="api.doc.swagger.paths.v2_1.agencyscheme.agencyID.resourceID.version.get.parameters.0.description" bundle="${i18n}"/>"
+                  "description":"<fmt:message key="api.doc.swagger.paths.parameters.agencyID.description" bundle="${i18n}"/>"
                },
                {
                   "name":"resourceID",
                   "in":"path",
                   "type":"string",
-                  "description":"<fmt:message key="api.doc.swagger.paths.v2_1.agencyscheme.agencyID.resourceID.version.get.parameters.1.description" bundle="${i18n}"/>"
+                  "description":"<fmt:message key="api.doc.swagger.paths.parameters.resourceID.description" bundle="${i18n}"/>"
                },
                {
                   "name":"version",
                   "in":"path",
                   "type":"string",
-                  "description":"<fmt:message key="api.doc.swagger.paths.v2_1.agencyscheme.agencyID.resourceID.version.get.parameters.2.description" bundle="${i18n}"/>"
+                  "description":"<fmt:message key="api.doc.swagger.paths.parameters.version.description" bundle="${i18n}"/>"
                }
             ],
             "responses":{
@@ -1146,7 +1146,7 @@
                   "name":"agencyID",
                   "in":"path",
                   "type":"string",
-                  "description":"<fmt:message key="api.doc.swagger.paths.v2_1.dataproviderscheme.agencyID.get.parameters.0.description" bundle="${i18n}"/>"
+                  "description":"<fmt:message key="api.doc.swagger.paths.parameters.agencyID.description" bundle="${i18n}"/>"
                }
             ],
             "responses":{
@@ -1188,13 +1188,13 @@
                   "name":"agencyID",
                   "in":"path",
                   "type":"string",
-                  "description":"<fmt:message key="api.doc.swagger.paths.v2_1.dataproviderscheme.agencyID.resourceID.get.parameters.0.description" bundle="${i18n}"/>"
+                  "description":"<fmt:message key="api.doc.swagger.paths.parameters.agencyID.description" bundle="${i18n}"/>"
                },
                {
                   "name":"resourceID",
                   "in":"path",
                   "type":"string",
-                  "description":"<fmt:message key="api.doc.swagger.paths.v2_1.dataproviderscheme.agencyID.resourceID.get.parameters.1.description" bundle="${i18n}"/>"
+                  "description":"<fmt:message key="api.doc.swagger.paths.parameters.resourceID.description" bundle="${i18n}"/>"
                }
             ],
             "responses":{
@@ -1236,19 +1236,19 @@
                   "name":"agencyID",
                   "in":"path",
                   "type":"string",
-                  "description":"<fmt:message key="api.doc.swagger.paths.v2_1.dataproviderscheme.agencyID.resourceID.version.get.parameters.0.description" bundle="${i18n}"/>"
+                  "description":"<fmt:message key="api.doc.swagger.paths.parameters.agencyID.description" bundle="${i18n}"/>"
                },
                {
                   "name":"resourceID",
                   "in":"path",
                   "type":"string",
-                  "description":"<fmt:message key="api.doc.swagger.paths.v2_1.dataproviderscheme.agencyID.resourceID.version.get.parameters.1.description" bundle="${i18n}"/>"
+                  "description":"<fmt:message key="api.doc.swagger.paths.parameters.resourceID.description" bundle="${i18n}"/>"
                },
                {
                   "name":"version",
                   "in":"path",
                   "type":"string",
-                  "description":"<fmt:message key="api.doc.swagger.paths.v2_1.dataproviderscheme.agencyID.resourceID.version.get.parameters.2.description" bundle="${i18n}"/>"
+                  "description":"<fmt:message key="api.doc.swagger.paths.parameters.version.description" bundle="${i18n}"/>"
                }
             ],
             "responses":{
@@ -1324,7 +1324,7 @@
                   "name":"agencyID",
                   "in":"path",
                   "type":"string",
-                  "description":"<fmt:message key="api.doc.swagger.paths.v2_1.dataconsumerscheme.agencyID.get.parameters.0.description" bundle="${i18n}"/>"
+                  "description":"<fmt:message key="api.doc.swagger.paths.parameters.agencyID.description" bundle="${i18n}"/>"
                }
             ],
             "responses":{
@@ -1366,7 +1366,7 @@
                   "name":"agencyID",
                   "in":"path",
                   "type":"string",
-                  "description":"<fmt:message key="api.doc.swagger.paths.v2_1.dataconsumerscheme.agencyID.resourceID.get.parameters.0.description" bundle="${i18n}"/>"
+                  "description":"<fmt:message key="api.doc.swagger.paths.parameters.agencyID.description" bundle="${i18n}"/>"
                }
             ],
             "responses":{
@@ -1408,19 +1408,19 @@
                   "name":"agencyID",
                   "in":"path",
                   "type":"string",
-                  "description":"<fmt:message key="api.doc.swagger.paths.v2_1.dataconsumerscheme.agencyID.resourceID.version.get.parameters.0.description" bundle="${i18n}"/>"
+                  "description":"<fmt:message key="api.doc.swagger.paths.parameters.agencyID.description" bundle="${i18n}"/>"
                },
                {
                   "name":"resourceID",
                   "in":"path",
                   "type":"string",
-                  "description":"<fmt:message key="api.doc.swagger.paths.v2_1.dataconsumerscheme.agencyID.resourceID.version.get.parameters.1.description" bundle="${i18n}"/>"
+                  "description":"<fmt:message key="api.doc.swagger.paths.parameters.resourceID.description" bundle="${i18n}"/>"
                },
                {
                   "name":"version",
                   "in":"path",
                   "type":"string",
-                  "description":"<fmt:message key="api.doc.swagger.paths.v2_1.dataconsumerscheme.agencyID.resourceID.version.get.parameters.2.description" bundle="${i18n}"/>"
+                  "description":"<fmt:message key="api.doc.swagger.paths.parameters.version.description" bundle="${i18n}"/>"
                }
             ],
             "responses":{
@@ -1496,7 +1496,7 @@
                   "name":"agencyID",
                   "in":"path",
                   "type":"string",
-                  "description":"<fmt:message key="api.doc.swagger.paths.v2_1.organisationunitscheme.agencyID.get.parameters.0.description" bundle="${i18n}"/>"
+                  "description":"<fmt:message key="api.doc.swagger.paths.parameters.agencyID.description" bundle="${i18n}"/>"
                }
             ],
             "responses":{
@@ -1538,13 +1538,13 @@
                   "name":"agencyID",
                   "in":"path",
                   "type":"string",
-                  "description":"<fmt:message key="api.doc.swagger.paths.v2_1.organisationunitscheme.agencyID.resourceID.get.parameters.0.description" bundle="${i18n}"/>"
+                  "description":"<fmt:message key="api.doc.swagger.paths.parameters.agencyID.description" bundle="${i18n}"/>"
                },
                {
                   "name":"resourceID",
                   "in":"path",
                   "type":"string",
-                  "description":"<fmt:message key="api.doc.swagger.paths.v2_1.organisationunitscheme.agencyID.resourceID.get.parameters.1.description" bundle="${i18n}"/>"
+                  "description":"<fmt:message key="api.doc.swagger.paths.parameters.resourceID.description" bundle="${i18n}"/>"
                }
             ],
             "responses":{
@@ -1586,19 +1586,19 @@
                   "name":"agencyID",
                   "in":"path",
                   "type":"string",
-                  "description":"<fmt:message key="api.doc.swagger.paths.v2_1.organisationunitscheme.agencyID.resourceID.version.get.parameters.0.description" bundle="${i18n}"/>"
+                  "description":"<fmt:message key="api.doc.swagger.paths.parameters.agencyID.description" bundle="${i18n}"/>"
                },
                {
                   "name":"resourceID",
                   "in":"path",
                   "type":"string",
-                  "description":"<fmt:message key="api.doc.swagger.paths.v2_1.organisationunitscheme.agencyID.resourceID.version.get.parameters.1.description" bundle="${i18n}"/>"
+                  "description":"<fmt:message key="api.doc.swagger.paths.parameters.resourceID.description" bundle="${i18n}"/>"
                },
                {
                   "name":"version",
                   "in":"path",
                   "type":"string",
-                  "description":"<fmt:message key="api.doc.swagger.paths.v2_1.organisationunitscheme.agencyID.resourceID.version.get.parameters.2.description" bundle="${i18n}"/>"
+                  "description":"<fmt:message key="api.doc.swagger.paths.parameters.version.description" bundle="${i18n}"/>"
                }
             ],
             "responses":{
@@ -1674,7 +1674,7 @@
                   "name":"agencyID",
                   "in":"path",
                   "type":"string",
-                  "description":"<fmt:message key="api.doc.swagger.paths.v2_1.dataflow.agencyID.get.parameters.0.description" bundle="${i18n}"/>"
+                  "description":"<fmt:message key="api.doc.swagger.paths.parameters.agencyID.description" bundle="${i18n}"/>"
                }
             ],
             "responses":{
@@ -1716,13 +1716,13 @@
                   "name":"agencyID",
                   "in":"path",
                   "type":"string",
-                  "description":"<fmt:message key="api.doc.swagger.paths.v2_1.dataflow.agencyID.resourceID.get.parameters.0.description" bundle="${i18n}"/>"
+                  "description":"<fmt:message key="api.doc.swagger.paths.parameters.agencyID.description" bundle="${i18n}"/>"
                },
                {
                   "name":"resourceID",
                   "in":"path",
                   "type":"string",
-                  "description":"<fmt:message key="api.doc.swagger.paths.v2_1.dataflow.agencyID.resourceID.get.parameters.1.description" bundle="${i18n}"/>"
+                  "description":"<fmt:message key="api.doc.swagger.paths.parameters.resourceID.description" bundle="${i18n}"/>"
                }
             ],
             "responses":{
@@ -1764,19 +1764,19 @@
                   "name":"agencyID",
                   "in":"path",
                   "type":"string",
-                  "description":"<fmt:message key="api.doc.swagger.paths.v2_1.dataflow.agencyID.resourceID.version.get.parameters.0.description" bundle="${i18n}"/>"
+                  "description":"<fmt:message key="api.doc.swagger.paths.parameters.agencyID.description" bundle="${i18n}"/>"
                },
                {
                   "name":"resourceID",
                   "in":"path",
                   "type":"string",
-                  "description":"<fmt:message key="api.doc.swagger.paths.v2_1.dataflow.agencyID.resourceID.version.get.parameters.1.description" bundle="${i18n}"/>"
+                  "description":"<fmt:message key="api.doc.swagger.paths.parameters.resourceID.description" bundle="${i18n}"/>"
                },
                {
                   "name":"version",
                   "in":"path",
                   "type":"string",
-                  "description":"<fmt:message key="api.doc.swagger.paths.v2_1.dataflow.agencyID.resourceID.version.get.parameters.2.description" bundle="${i18n}"/>"
+                  "description":"<fmt:message key="api.doc.swagger.paths.parameters.version.description" bundle="${i18n}"/>"
                }
             ],
             "responses":{
@@ -1852,7 +1852,7 @@
                   "name":"agencyID",
                   "in":"path",
                   "type":"string",
-                  "description":"<fmt:message key="api.doc.swagger.paths.v2_1.categorisation.agencyID.get.parameters.0.description" bundle="${i18n}"/>"
+                  "description":"<fmt:message key="api.doc.swagger.paths.parameters.agencyID.description" bundle="${i18n}"/>"
                }
             ],
             "responses":{
@@ -1894,13 +1894,13 @@
                   "name":"agencyID",
                   "in":"path",
                   "type":"string",
-                  "description":"<fmt:message key="api.doc.swagger.paths.v2_1.categorisation.agencyID.resourceID.get.parameters.0.description" bundle="${i18n}"/>"
+                  "description":"<fmt:message key="api.doc.swagger.paths.parameters.agencyID.description" bundle="${i18n}"/>"
                },
                {
                   "name":"resourceID",
                   "in":"path",
                   "type":"string",
-                  "description":"<fmt:message key="api.doc.swagger.paths.v2_1.categorisation.agencyID.resourceID.get.parameters.1.description" bundle="${i18n}"/>"
+                  "description":"<fmt:message key="api.doc.swagger.paths.parameters.resourceID.description" bundle="${i18n}"/>"
                }
             ],
             "responses":{
@@ -1942,19 +1942,19 @@
                   "name":"agencyID",
                   "in":"path",
                   "type":"string",
-                  "description":"<fmt:message key="api.doc.swagger.paths.v2_1.categorisation.agencyID.resourceID.version.get.parameters.0.description" bundle="${i18n}"/>"
+                  "description":"<fmt:message key="api.doc.swagger.paths.parameters.agencyID.description" bundle="${i18n}"/>"
                },
                {
                   "name":"resourceID",
                   "in":"path",
                   "type":"string",
-                  "description":"<fmt:message key="api.doc.swagger.paths.v2_1.categorisation.agencyID.resourceID.version.get.parameters.1.description" bundle="${i18n}"/>"
+                  "description":"<fmt:message key="api.doc.swagger.paths.parameters.resourceID.description" bundle="${i18n}"/>"
                },
                {
                   "name":"version",
                   "in":"path",
                   "type":"string",
-                  "description":"<fmt:message key="api.doc.swagger.paths.v2_1.categorisation.agencyID.resourceID.version.get.parameters.2.description" bundle="${i18n}"/>"
+                  "description":"<fmt:message key="api.doc.swagger.paths.parameters.version.description" bundle="${i18n}"/>"
                }
             ],
             "responses":{
@@ -2030,7 +2030,7 @@
                   "name":"agencyID",
                   "in":"path",
                   "type":"string",
-                  "description":"<fmt:message key="api.doc.swagger.paths.v2_1.contentconstraint.agencyID.get.parameters.0.description" bundle="${i18n}"/>"
+                  "description":"<fmt:message key="api.doc.swagger.paths.parameters.agencyID.description" bundle="${i18n}"/>"
                }
             ],
             "responses":{
@@ -2072,13 +2072,13 @@
                   "name":"agencyID",
                   "in":"path",
                   "type":"string",
-                  "description":"<fmt:message key="api.doc.swagger.paths.v2_1.contentconstraint.agencyID.resourceID.get.parameters.0.description" bundle="${i18n}"/>"
+                  "description":"<fmt:message key="api.doc.swagger.paths.parameters.agencyID.description" bundle="${i18n}"/>"
                },
                {
                   "name":"resourceID",
                   "in":"path",
                   "type":"string",
-                  "description":"<fmt:message key="api.doc.swagger.paths.v2_1.contentconstraint.agencyID.resourceID.get.parameters.1.description" bundle="${i18n}"/>"
+                  "description":"<fmt:message key="api.doc.swagger.paths.parameters.resourceID.description" bundle="${i18n}"/>"
                }
             ],
             "responses":{
@@ -2120,19 +2120,19 @@
                   "name":"agencyID",
                   "in":"path",
                   "type":"string",
-                  "description":"<fmt:message key="api.doc.swagger.paths.v2_1.contentconstraint.agencyID.resourceID.version.get.parameters.0.description" bundle="${i18n}"/>"
+                  "description":"<fmt:message key="api.doc.swagger.paths.parameters.agencyID.description" bundle="${i18n}"/>"
                },
                {
                   "name":"resourceID",
                   "in":"path",
                   "type":"string",
-                  "description":"<fmt:message key="api.doc.swagger.paths.v2_1.contentconstraint.agencyID.resourceID.version.get.parameters.1.description" bundle="${i18n}"/>"
+                  "description":"<fmt:message key="api.doc.swagger.paths.parameters.resourceID.description" bundle="${i18n}"/>"
                },
                {
                   "name":"version",
                   "in":"path",
                   "type":"string",
-                  "description":"<fmt:message key="api.doc.swagger.paths.v2_1.contentconstraint.agencyID.resourceID.version.get.parameters.2.description" bundle="${i18n}"/>"
+                  "description":"<fmt:message key="api.doc.swagger.paths.parameters.version.description" bundle="${i18n}"/>"
                }
             ],
             "responses":{
@@ -2174,7 +2174,7 @@
                   "name":"flowRef",
                   "in":"path",
                   "type":"string",
-                  "description":"<fmt:message key="api.doc.swagger.paths.v2_1.data.flowRef.get.parameters.0.description" bundle="${i18n}"/>"
+                  "description":"<fmt:message key="api.doc.swagger.paths.parameters.flowRef.description" bundle="${i18n}"/>"
                }
             ],
             "responses":{
@@ -2216,13 +2216,13 @@
                   "name":"flowRef",
                   "in":"path",
                   "type":"string",
-                  "description":"<fmt:message key="api.doc.swagger.paths.v2_1.data.flowRef.key.get.parameters.0.description" bundle="${i18n}"/>"
+                  "description":"<fmt:message key="api.doc.swagger.paths.parameters.flowRef.description" bundle="${i18n}"/>"
                },
                {
                   "name":"key",
                   "in":"path",
                   "type":"string",
-                  "description":"<fmt:message key="api.doc.swagger.paths.v2_1.data.flowRef.key.get.parameters.1.description" bundle="${i18n}"/>"
+                  "description":"<fmt:message key="api.doc.swagger.paths.parameters.key.description" bundle="${i18n}"/>"
                }
             ],
             "responses":{
@@ -2264,19 +2264,19 @@
                   "name":"flowRef",
                   "in":"path",
                   "type":"string",
-                  "description":"<fmt:message key="api.doc.swagger.paths.v2_1.data.flowRef.key.providerRef.get.parameters.0.description" bundle="${i18n}"/>"
+                  "description":"<fmt:message key="api.doc.swagger.paths.parameters.flowRef.description" bundle="${i18n}"/>"
                },
                {
                   "name":"key",
                   "in":"path",
                   "type":"string",
-                  "description":"<fmt:message key="api.doc.swagger.paths.v2_1.data.flowRef.key.providerRef.get.parameters.1.description" bundle="${i18n}"/>"
+                  "description":"<fmt:message key="api.doc.swagger.paths.parameters.key.description" bundle="${i18n}"/>"
                },
                {
                   "name":"providerRef",
                   "in":"path",
                   "type":"string",
-                  "description":"<fmt:message key="api.doc.swagger.paths.v2_1.data.flowRef.key.providerRef.get.parameters.2.description" bundle="${i18n}"/>"
+                  "description":"<fmt:message key="api.doc.swagger.paths.parameters.providerRef.description" bundle="${i18n}"/>"
                }
             ],
             "responses":{
