@@ -1,3 +1,13 @@
+<%@page import="org.siemac.metamac.core.common.util.swagger.SwaggerUtils"%>
+<%@page pageEncoding="UTF-8"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ page import="org.siemac.metamac.core.common.util.InternationalizationUtils" %>
+<%
+   String locale = InternationalizationUtils.getInstance().getCurrentLocale(request);
+%>
+<fmt:setLocale value="<%= locale %>"/>
+<fmt:setBundle basename="i18n.messages" var="i18n"/>
+<fmt:bundle basename="application"/>
 {
       "xml_ns1_FooterMessageType": {
             "allOf": [
@@ -8,7 +18,7 @@
                     "properties": {
                         "severity": {
                             "$ref": "#/definitions/xml_ns1_SeverityCodeType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns1_FooterMessageType.properties.severity.description" bundle="${i18n}"/>",
                             "xml": {
                                 "attribute": true,
                                 "namespace": ""
@@ -17,7 +27,7 @@
                     }
                 }
             ],
-            "description": "FooterMessageType defines the structure of a message that is contained in the footer of a message. It is a status message that have a severity code of Error, Information, or Warning added to it.\r\n\r\n<p>Java class for FooterMessageType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"FooterMessageType\">\r\n   &lt;complexContent>\r\n     &lt;extension base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}CodedStatusMessageType\">\r\n       &lt;attribute name=\"severity\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message/footer}SeverityCodeType\" />\r\n     &lt;/extension>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns1_FooterMessageType.description" bundle="${i18n}"/>",
             "title": "FooterMessageType",
             "type": "object"
         },
@@ -27,7 +37,7 @@
                     "properties": {
                         "Message": {
                             "$ref": "#/definitions/xml_ns1_FooterMessageType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns1_FooterType.properties.Message.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message/footer"
                             }
@@ -35,7 +45,7 @@
                     }
                 }
             ],
-            "description": "FooterType describes the structure of a message footer. The footer is used to convey any error, information, or warning messages. This is to be used when the message has payload, but also needs to communicate additional information. If an error occurs and no payload is generated, an Error message should be returned.\r\n\r\n<p>Java class for FooterType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"FooterType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.w3.org/2001/XMLSchema}anyType\">\r\n       &lt;sequence>\r\n         &lt;element name=\"Message\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message/footer}FooterMessageType\" maxOccurs=\"unbounded\"/>\r\n       &lt;/sequence>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns1_FooterType.description" bundle="${i18n}"/>",
             "required": [
                 "Message"
             ],
@@ -43,7 +53,7 @@
             "type": "object"
         },
         "xml_ns1_SeverityCodeType": {
-            "description": "<p>Java class for SeverityCodeType.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n<p>\r\n<pre>\r\n &lt;simpleType name=\"SeverityCodeType\">\r\n   &lt;restriction base=\"{http://www.w3.org/2001/XMLSchema}string\">\r\n     &lt;enumeration value=\"Error\"/>\r\n     &lt;enumeration value=\"Warning\"/>\r\n     &lt;enumeration value=\"Information\"/>\r\n   &lt;/restriction>\r\n &lt;/simpleType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns1_SeverityCodeType.description" bundle="${i18n}"/>",
             "enum": [
                 "Error",
                 "Warning",
@@ -58,7 +68,7 @@
                     "properties": {
                         "ReportedAttribute": {
                             "$ref": "#/definitions/xml_ns10_ReportedAttributeType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns10_AttributeSetType.properties.ReportedAttribute.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/metadata/generic"
                             }
@@ -66,7 +76,7 @@
                     }
                 }
             ],
-            "description": "AttributeSetType defines the structure for a collection of reported metadata attributes.\r\n\r\n<p>Java class for AttributeSetType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"AttributeSetType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.w3.org/2001/XMLSchema}anyType\">\r\n       &lt;sequence>\r\n         &lt;element name=\"ReportedAttribute\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/metadata/generic}ReportedAttributeType\" maxOccurs=\"unbounded\"/>\r\n       &lt;/sequence>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns10_AttributeSetType.description" bundle="${i18n}"/>",
             "required": [
                 "ReportedAttribute"
             ],
@@ -82,35 +92,35 @@
                     "properties": {
                         "DataProvider": {
                             "$ref": "#/definitions/xml_ns4_DataProviderReferenceType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns10_MetadataSetType.properties.DataProvider.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/metadata/generic"
                             }
                         },
                         "Name": {
                             "$ref": "#/definitions/xml_ns4_TextType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns10_MetadataSetType.properties.Name.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common"
                             }
                         },
                         "Report": {
                             "$ref": "#/definitions/xml_ns10_ReportType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns10_MetadataSetType.properties.Report.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/metadata/generic"
                             }
                         },
                         "action": {
                             "$ref": "#/definitions/xml_ns4_ActionType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns10_MetadataSetType.properties.action.description" bundle="${i18n}"/>",
                             "xml": {
                                 "attribute": true,
                                 "namespace": ""
                             }
                         },
                         "publicationPeriod": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns10_MetadataSetType.properties.publicationPeriod.description" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "attribute": true,
@@ -118,7 +128,7 @@
                             }
                         },
                         "publicationYear": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns10_MetadataSetType.properties.publicationYear.description" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "attribute": true,
@@ -126,7 +136,7 @@
                             }
                         },
                         "reportingBeginDate": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns10_MetadataSetType.properties.reportingBeginDate.description" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "attribute": true,
@@ -134,7 +144,7 @@
                             }
                         },
                         "reportingEndDate": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns10_MetadataSetType.properties.reportingEndDate.description" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "attribute": true,
@@ -142,7 +152,7 @@
                             }
                         },
                         "setID": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns10_MetadataSetType.properties.setID.description" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "attribute": true,
@@ -150,7 +160,7 @@
                             }
                         },
                         "structureRef": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns10_MetadataSetType.properties.structureRef.description" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "attribute": true,
@@ -158,7 +168,7 @@
                             }
                         },
                         "validFromDate": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns10_MetadataSetType.properties.validFromDate.description" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "attribute": true,
@@ -166,7 +176,7 @@
                             }
                         },
                         "validToDate": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns10_MetadataSetType.properties.validToDate.description" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "attribute": true,
@@ -176,7 +186,7 @@
                     }
                 }
             ],
-            "description": "MetadataSetType describes the structure for a metadata set, which contains a collection of reported metadata against a set of values for a given full or partial target identifier, as described in a metadata structure definition. The metadata set may contain reported metadata for multiple report structures defined in a metadata structure definition.\r\n\r\n<p>Java class for MetadataSetType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"MetadataSetType\">\r\n   &lt;complexContent>\r\n     &lt;extension base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}AnnotableType\">\r\n       &lt;sequence>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Name\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n         &lt;element name=\"DataProvider\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}DataProviderReferenceType\" minOccurs=\"0\"/>\r\n         &lt;element name=\"Report\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/metadata/generic}ReportType\" maxOccurs=\"unbounded\"/>\r\n       &lt;/sequence>\r\n       &lt;attGroup ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}SetAttributeGroup\"/>\r\n     &lt;/extension>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns10_MetadataSetType.description" bundle="${i18n}"/>",
             "required": [
                 "structureRef",
                 "Report"
@@ -190,34 +200,34 @@
                     "properties": {
                         "ConstraintContentReference": {
                             "$ref": "#/definitions/xml_ns4_AttachmentConstraintReferenceType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns10_ReferenceValueType.properties.ConstraintContentReference.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/metadata/generic"
                             }
                         },
                         "DataKey": {
                             "$ref": "#/definitions/xml_ns4_DataKeyType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns10_ReferenceValueType.properties.DataKey.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/metadata/generic"
                             }
                         },
                         "DataSetReference": {
                             "$ref": "#/definitions/xml_ns4_SetReferenceType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns10_ReferenceValueType.properties.DataSetReference.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/metadata/generic"
                             }
                         },
                         "ObjectReference": {
                             "$ref": "#/definitions/xml_ns4_ObjectReferenceType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns10_ReferenceValueType.properties.ObjectReference.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/metadata/generic"
                             }
                         },
                         "ReportPeriod": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns10_ReferenceValueType.properties.ReportPeriod.description" bundle="${i18n}"/>",
                             "items": {
                                 "type": "string"
                             },
@@ -227,7 +237,7 @@
                             }
                         },
                         "id": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns10_ReferenceValueType.properties.id.description" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "attribute": true,
@@ -237,7 +247,7 @@
                     }
                 }
             ],
-            "description": "ReferenceValueType defines the structure of a target object reference value. A target reference value will either be a reference to an identifiable object, a data key, a reference to a data set, or a report period.\r\n\r\n<p>Java class for ReferenceValueType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"ReferenceValueType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.w3.org/2001/XMLSchema}anyType\">\r\n       &lt;choice>\r\n         &lt;element name=\"ObjectReference\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}ObjectReferenceType\"/>\r\n         &lt;element name=\"DataKey\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}DataKeyType\"/>\r\n         &lt;element name=\"DataSetReference\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}SetReferenceType\"/>\r\n         &lt;element name=\"ConstraintContentReference\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}AttachmentConstraintReferenceType\"/>\r\n         &lt;element name=\"ReportPeriod\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}ObservationalTimePeriodType\"/>\r\n       &lt;/choice>\r\n       &lt;attribute name=\"id\" use=\"required\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}IDType\" />\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns10_ReferenceValueType.description" bundle="${i18n}"/>",
             "required": [
                 "id"
             ],
@@ -253,20 +263,20 @@
                     "properties": {
                         "AttributeSet": {
                             "$ref": "#/definitions/xml_ns10_AttributeSetType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns10_ReportType.properties.AttributeSet.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/metadata/generic"
                             }
                         },
                         "Target": {
                             "$ref": "#/definitions/xml_ns10_TargetType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns10_ReportType.properties.Target.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/metadata/generic"
                             }
                         },
                         "id": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns10_ReportType.properties.id.description" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "attribute": true,
@@ -276,7 +286,7 @@
                     }
                 }
             ],
-            "description": "ReportType contains a set of report attributes and identifies a target objects] to which they apply.\r\n\r\n<p>Java class for ReportType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"ReportType\">\r\n   &lt;complexContent>\r\n     &lt;extension base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}AnnotableType\">\r\n       &lt;sequence>\r\n         &lt;element name=\"Target\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/metadata/generic}TargetType\"/>\r\n         &lt;element name=\"AttributeSet\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/metadata/generic}AttributeSetType\"/>\r\n       &lt;/sequence>\r\n       &lt;attribute name=\"id\" use=\"required\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}IDType\" />\r\n     &lt;/extension>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns10_ReportType.description" bundle="${i18n}"/>",
             "required": [
                 "id",
                 "Target",
@@ -294,27 +304,27 @@
                     "properties": {
                         "AttributeSet": {
                             "$ref": "#/definitions/xml_ns10_AttributeSetType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns10_ReportedAttributeType.properties.AttributeSet.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/metadata/generic"
                             }
                         },
                         "StructuredText": {
                             "$ref": "#/definitions/xml_ns4_XHTMLType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns10_ReportedAttributeType.properties.StructuredText.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common"
                             }
                         },
                         "Text": {
                             "$ref": "#/definitions/xml_ns4_TextType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns10_ReportedAttributeType.properties.Text.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common"
                             }
                         },
                         "id": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns10_ReportedAttributeType.properties.id.description" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "attribute": true,
@@ -322,7 +332,7 @@
                             }
                         },
                         "value": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns10_ReportedAttributeType.properties.value.description" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "attribute": true,
@@ -332,7 +342,7 @@
                     }
                 }
             ],
-            "description": "ReportedAttributeType defines the structure for a reported metadata attribute. A value for the attribute can be supplied as either a single value, or multi-lingual text values (either structured or unstructured). An optional set of child metadata attributes is also available if the metadata attribute definition defines nested metadata attributes.\r\n\r\n<p>Java class for ReportedAttributeType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"ReportedAttributeType\">\r\n   &lt;complexContent>\r\n     &lt;extension base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}AnnotableType\">\r\n       &lt;sequence>\r\n         &lt;choice minOccurs=\"0\">\r\n           &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Text\" maxOccurs=\"unbounded\"/>\r\n           &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}StructuredText\" maxOccurs=\"unbounded\"/>\r\n         &lt;/choice>\r\n         &lt;element name=\"AttributeSet\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/metadata/generic}AttributeSetType\" minOccurs=\"0\"/>\r\n       &lt;/sequence>\r\n       &lt;attribute name=\"id\" use=\"required\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}IDType\" />\r\n       &lt;attribute name=\"value\" type=\"{http://www.w3.org/2001/XMLSchema}string\" />\r\n     &lt;/extension>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns10_ReportedAttributeType.description" bundle="${i18n}"/>",
             "required": [
                 "id"
             ],
@@ -345,13 +355,13 @@
                     "properties": {
                         "ReferenceValue": {
                             "$ref": "#/definitions/xml_ns10_ReferenceValueType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns10_TargetType.properties.ReferenceValue.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/metadata/generic"
                             }
                         },
                         "id": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns10_TargetType.properties.id.description" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "attribute": true,
@@ -361,7 +371,7 @@
                     }
                 }
             ],
-            "description": "TargetType defines the structure of a target. It contains a set of target reference values which when taken together, identify the object or objects to which the reported metadata apply.\r\n\r\n<p>Java class for TargetType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"TargetType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.w3.org/2001/XMLSchema}anyType\">\r\n       &lt;sequence>\r\n         &lt;element name=\"ReferenceValue\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/metadata/generic}ReferenceValueType\" maxOccurs=\"unbounded\"/>\r\n       &lt;/sequence>\r\n       &lt;attribute name=\"id\" use=\"required\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}IDType\" />\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns10_TargetType.description" bundle="${i18n}"/>",
             "required": [
                 "id",
                 "ReferenceValue"
@@ -375,41 +385,41 @@
                     "properties": {
                         "DataProvider": {
                             "$ref": "#/definitions/xml_ns4_DataProviderReferenceType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_BaseHeaderType.properties.DataProvider.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message"
                             }
                         },
                         "DataSetAction": {
                             "$ref": "#/definitions/xml_ns4_ActionType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_BaseHeaderType.properties.DataSetAction.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message"
                             }
                         },
                         "DataSetID": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_BaseHeaderType.properties.DataSetID.description" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message"
                             }
                         },
                         "EmbargoDate": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_BaseHeaderType.properties.EmbargoDate.description" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message"
                             }
                         },
                         "Extracted": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_BaseHeaderType.properties.Extracted.description" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message"
                             }
                         },
                         "ID": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_BaseHeaderType.properties.ID.description" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message"
@@ -417,13 +427,13 @@
                         },
                         "Name": {
                             "$ref": "#/definitions/xml_ns4_TextType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_BaseHeaderType.properties.Name.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common"
                             }
                         },
                         "Prepared": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_BaseHeaderType.properties.Prepared.description" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message"
@@ -431,13 +441,13 @@
                         },
                         "Receiver": {
                             "$ref": "#/definitions/xml_ns3_PartyType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_BaseHeaderType.properties.Receiver.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message"
                             }
                         },
                         "ReportingBegin": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_BaseHeaderType.properties.ReportingBegin.description" bundle="${i18n}"/>",
                             "items": {
                                 "type": "string"
                             },
@@ -447,7 +457,7 @@
                             }
                         },
                         "ReportingEnd": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_BaseHeaderType.properties.ReportingEnd.description" bundle="${i18n}"/>",
                             "items": {
                                 "type": "string"
                             },
@@ -458,27 +468,27 @@
                         },
                         "Sender": {
                             "$ref": "#/definitions/xml_ns3_SenderType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_BaseHeaderType.properties.Sender.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message"
                             }
                         },
                         "Source": {
                             "$ref": "#/definitions/xml_ns4_TextType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_BaseHeaderType.properties.Source.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message"
                             }
                         },
                         "Structure": {
                             "$ref": "#/definitions/xml_ns4_PayloadStructureType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_BaseHeaderType.properties.Structure.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message"
                             }
                         },
                         "Test": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_BaseHeaderType.properties.Test.description" bundle="${i18n}"/>",
                             "type": "boolean",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message"
@@ -487,7 +497,7 @@
                     }
                 }
             ],
-            "description": "BaseHeaderType in an abstract base type that defines the basis for all message headers. Specific message formats will refine this\r\n\r\n<p>Java class for BaseHeaderType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"BaseHeaderType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.w3.org/2001/XMLSchema}anyType\">\r\n       &lt;sequence>\r\n         &lt;element name=\"ID\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}IDType\"/>\r\n         &lt;element name=\"Test\" type=\"{http://www.w3.org/2001/XMLSchema}boolean\"/>\r\n         &lt;element name=\"Prepared\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}HeaderTimeType\"/>\r\n         &lt;element name=\"Sender\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}SenderType\"/>\r\n         &lt;element name=\"Receiver\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}PartyType\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Name\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n         &lt;element name=\"Structure\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}PayloadStructureType\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n         &lt;element name=\"DataProvider\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}DataProviderReferenceType\" minOccurs=\"0\"/>\r\n         &lt;element name=\"DataSetAction\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}ActionType\" minOccurs=\"0\"/>\r\n         &lt;element name=\"DataSetID\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}IDType\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n         &lt;element name=\"Extracted\" type=\"{http://www.w3.org/2001/XMLSchema}dateTime\" minOccurs=\"0\"/>\r\n         &lt;element name=\"ReportingBegin\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}ObservationalTimePeriodType\" minOccurs=\"0\"/>\r\n         &lt;element name=\"ReportingEnd\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}ObservationalTimePeriodType\" minOccurs=\"0\"/>\r\n         &lt;element name=\"EmbargoDate\" type=\"{http://www.w3.org/2001/XMLSchema}dateTime\" minOccurs=\"0\"/>\r\n         &lt;element name=\"Source\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}TextType\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n       &lt;/sequence>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_BaseHeaderType.description" bundle="${i18n}"/>",
             "required": [
                 "ID",
                 "Prepared",
@@ -503,7 +513,7 @@
                 },
                 {}
             ],
-            "description": "BasicHeaderType defines the most basic header information used in simple message exchanges.\r\n\r\n<p>Java class for BasicHeaderType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"BasicHeaderType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}BaseHeaderType\">\r\n       &lt;sequence>\r\n         &lt;element name=\"ID\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}IDType\"/>\r\n         &lt;element name=\"Test\" type=\"{http://www.w3.org/2001/XMLSchema}boolean\"/>\r\n         &lt;element name=\"Prepared\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}HeaderTimeType\"/>\r\n         &lt;element name=\"Sender\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}SenderType\"/>\r\n         &lt;element name=\"Receiver\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}PartyType\"/>\r\n       &lt;/sequence>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_BasicHeaderType.description" bundle="${i18n}"/>",
             "title": "BasicHeaderType",
             "type": "object"
         },
@@ -512,7 +522,7 @@
                 {
                     "properties": {
                         "id": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_BaseValueType.properties.id.description" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "attribute": true,
@@ -520,7 +530,7 @@
                             }
                         },
                         "value": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_BaseValueType.properties.value.description" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "attribute": true,
@@ -530,7 +540,7 @@
                     }
                 }
             ],
-            "description": "BaseValueType is a general structure which contains a reference to a data structure definition component and a value for that component. In this structure the reference to the component is optional to allow for usages where the actual reference might be provided in another context.\r\n\r\n<p>Java class for BaseValueType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"BaseValueType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.w3.org/2001/XMLSchema}anyType\">\r\n       &lt;attribute name=\"id\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}NCNameIDType\" />\r\n       &lt;attribute name=\"value\" use=\"required\" type=\"{http://www.w3.org/2001/XMLSchema}anySimpleType\" />\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_BaseValueType.description" bundle="${i18n}"/>",
             "required": [
                 "value"
             ],
@@ -544,7 +554,7 @@
                 },
                 {}
             ],
-            "description": "ComponentValueType is a derivation of the BaseValueType which requires that the component reference be provided. This is used when the identification of the component cannot be inferred from another context.\r\n\r\n<p>Java class for ComponentValueType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"ComponentValueType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/data/generic}BaseValueType\">\r\n       &lt;attribute name=\"id\" use=\"required\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}NCNameIDType\" />\r\n       &lt;attribute name=\"value\" use=\"required\" type=\"{http://www.w3.org/2001/XMLSchema}string\" />\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_ComponentValueType.description" bundle="${i18n}"/>",
             "title": "ComponentValueType",
             "type": "object"
         },
@@ -557,49 +567,49 @@
                     "properties": {
                         "Attributes": {
                             "$ref": "#/definitions/xml_ns3_ValuesType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_DataSetType.properties.Attributes.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/data/generic"
                             }
                         },
                         "DataProvider": {
                             "$ref": "#/definitions/xml_ns4_DataProviderReferenceType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_DataSetType.properties.DataProvider.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/data/generic"
                             }
                         },
                         "Group": {
                             "$ref": "#/definitions/xml_ns3_GroupType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_DataSetType.properties.Group.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/data/generic"
                             }
                         },
                         "Obs": {
                             "$ref": "#/definitions/xml_ns3_ObsOnlyType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_DataSetType.properties.Obs.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/data/generic"
                             }
                         },
                         "Series": {
                             "$ref": "#/definitions/xml_ns3_SeriesType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_DataSetType.properties.Series.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/data/generic"
                             }
                         },
                         "action": {
                             "$ref": "#/definitions/xml_ns4_ActionType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_DataSetType.properties.action.description" bundle="${i18n}"/>",
                             "xml": {
                                 "attribute": true,
                                 "namespace": ""
                             }
                         },
                         "publicationPeriod": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_DataSetType.properties.publicationPeriod.description" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "attribute": true,
@@ -607,7 +617,7 @@
                             }
                         },
                         "publicationYear": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_DataSetType.properties.publicationYear.description" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "attribute": true,
@@ -615,7 +625,7 @@
                             }
                         },
                         "reportingBeginDate": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_DataSetType.properties.reportingBeginDate.description" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "attribute": true,
@@ -623,7 +633,7 @@
                             }
                         },
                         "reportingEndDate": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_DataSetType.properties.reportingEndDate.description" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "attribute": true,
@@ -631,7 +641,7 @@
                             }
                         },
                         "setID": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_DataSetType.properties.setID.description" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "attribute": true,
@@ -639,7 +649,7 @@
                             }
                         },
                         "structureRef": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_DataSetType.properties.structureRef.description" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "attribute": true,
@@ -647,7 +657,7 @@
                             }
                         },
                         "validFromDate": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_DataSetType.properties.validFromDate.description" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "attribute": true,
@@ -655,7 +665,7 @@
                             }
                         },
                         "validToDate": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_DataSetType.properties.validToDate.description" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "attribute": true,
@@ -665,7 +675,7 @@
                     }
                 }
             ],
-            "description": "DataSetType defines the structure of the generic data set. Data is organised into either a collection of series (grouped observations) or a collection of un-grouped observations. The organisation used is dependent on the structure specification in the header of the data message (which is referenced via the structureRef attribute). The structure specification states which data occurs at the observation level. If this dimension is \"AllDimensions\" then the data set must consist of a collection of un-grouped observations; otherwise the data set will contain a collection of series with the observations in the series disambiguated by the specified dimension at the observation level. This data set is capable of containing data (observed values) and/or documentation (attribute values). It is assumed that each series or un-grouped observation will be distinct in its purpose. For example, if series contains both data and documentation, it assumed that each series will have a unique key. If the series contains only data or only documentation, then it is possible that another series with the same key might exist, but with not with the same purpose (i.e. to provide data or documentation) as the first series.\r\n\r\n<p>Java class for DataSetType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"DataSetType\">\r\n   &lt;complexContent>\r\n     &lt;extension base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}AnnotableType\">\r\n       &lt;sequence>\r\n         &lt;element name=\"DataProvider\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}DataProviderReferenceType\" minOccurs=\"0\"/>\r\n         &lt;element name=\"Attributes\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/data/generic}ValuesType\" minOccurs=\"0\"/>\r\n         &lt;element name=\"Group\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/data/generic}GroupType\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n         &lt;choice minOccurs=\"0\">\r\n           &lt;element name=\"Series\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/data/generic}SeriesType\" maxOccurs=\"unbounded\"/>\r\n           &lt;element name=\"Obs\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/data/generic}ObsOnlyType\" maxOccurs=\"unbounded\"/>\r\n         &lt;/choice>\r\n       &lt;/sequence>\r\n       &lt;attGroup ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}SetAttributeGroup\"/>\r\n     &lt;/extension>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_DataSetType.description" bundle="${i18n}"/>",
             "required": [
                 "structureRef"
             ],
@@ -681,20 +691,20 @@
                     "properties": {
                         "Attributes": {
                             "$ref": "#/definitions/xml_ns3_ValuesType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_GroupType.properties.Attributes.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/data/generic"
                             }
                         },
                         "GroupKey": {
                             "$ref": "#/definitions/xml_ns3_ValuesType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_GroupType.properties.GroupKey.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/data/generic"
                             }
                         },
                         "type": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_GroupType.properties.type.description" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "attribute": true,
@@ -704,7 +714,7 @@
                     }
                 }
             ],
-            "description": "GroupType defines a structure which is used to communicate attribute values for a group defined in a data structure definition. The group can consist of either a subset of the dimensions defined by the data structure definition, or an association to an attachment constraint, which in turn defines key sets to which attributes can be attached. In the case that the group is based on an attachment constraint, only the identification of group is provided. It is expected that a system which is processing this will relate that identifier to the key sets defined in the constraint and apply the values provided for the attributes appropriately.\r\n\r\n<p>Java class for GroupType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"GroupType\">\r\n   &lt;complexContent>\r\n     &lt;extension base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}AnnotableType\">\r\n       &lt;sequence>\r\n         &lt;element name=\"GroupKey\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/data/generic}ValuesType\" minOccurs=\"0\"/>\r\n         &lt;element name=\"Attributes\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/data/generic}ValuesType\"/>\r\n       &lt;/sequence>\r\n       &lt;attribute name=\"type\" use=\"required\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}IDType\" />\r\n     &lt;/extension>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_GroupType.description" bundle="${i18n}"/>",
             "required": [
                 "type",
                 "Attributes"
@@ -721,21 +731,21 @@
                     "properties": {
                         "Attributes": {
                             "$ref": "#/definitions/xml_ns3_ValuesType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_ObsOnlyType.properties.Attributes.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/data/generic"
                             }
                         },
                         "ObsKey": {
                             "$ref": "#/definitions/xml_ns3_ValuesType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_ObsOnlyType.properties.ObsKey.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/data/generic"
                             }
                         },
                         "ObsValue": {
                             "$ref": "#/definitions/xml_ns3_ObsValueType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_ObsOnlyType.properties.ObsValue.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/data/generic"
                             }
@@ -743,7 +753,7 @@
                     }
                 }
             ],
-            "description": "ObsOnlyType defines the structure for an un-grouped observation. Unlike a group observation, an un-grouped must provided a full set of values for every dimension declared in the data structure definition. The observation can contain an observed value and/or a collection of attribute values.\r\n\r\n<p>Java class for ObsOnlyType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"ObsOnlyType\">\r\n   &lt;complexContent>\r\n     &lt;extension base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}AnnotableType\">\r\n       &lt;sequence>\r\n         &lt;element name=\"ObsKey\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/data/generic}ValuesType\"/>\r\n         &lt;element name=\"ObsValue\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/data/generic}ObsValueType\" minOccurs=\"0\"/>\r\n         &lt;element name=\"Attributes\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/data/generic}ValuesType\" minOccurs=\"0\"/>\r\n       &lt;/sequence>\r\n     &lt;/extension>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_ObsOnlyType.description" bundle="${i18n}"/>",
             "required": [
                 "ObsKey"
             ],
@@ -759,21 +769,21 @@
                     "properties": {
                         "Attributes": {
                             "$ref": "#/definitions/xml_ns3_ValuesType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_ObsType.properties.Attributes.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/data/generic"
                             }
                         },
                         "ObsDimension": {
                             "$ref": "#/definitions/xml_ns3_BaseValueType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_ObsType.properties.ObsDimension.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/data/generic"
                             }
                         },
                         "ObsValue": {
                             "$ref": "#/definitions/xml_ns3_ObsValueType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_ObsType.properties.ObsValue.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/data/generic"
                             }
@@ -781,7 +791,7 @@
                     }
                 }
             ],
-            "description": "ObsType defines the structure of a grouped observation. The observation must be provided a value for the dimension which is declared to be at the observation level for this data set. This dimension value should disambiguate the observation within the series in which it is defined (i.e. there should not be another observation with the same dimension value). The observation can contain an observed value and/or attribute values.\r\n\r\n<p>Java class for ObsType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"ObsType\">\r\n   &lt;complexContent>\r\n     &lt;extension base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}AnnotableType\">\r\n       &lt;sequence>\r\n         &lt;element name=\"ObsDimension\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/data/generic}BaseValueType\"/>\r\n         &lt;element name=\"ObsValue\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/data/generic}ObsValueType\" minOccurs=\"0\"/>\r\n         &lt;element name=\"Attributes\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/data/generic}ValuesType\" minOccurs=\"0\"/>\r\n       &lt;/sequence>\r\n     &lt;/extension>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_ObsType.description" bundle="${i18n}"/>",
             "required": [
                 "ObsDimension"
             ],
@@ -795,7 +805,7 @@
                 },
                 {}
             ],
-            "description": "ObsValueType is a derivation of the BaseValueType which is used to provide an observation value. Since an observation value is always associated with the data structure definition primary measure, and the identifier for the primary measure is fixed, the component reference for this structure is fixed. Note that this means that it is not necessary to provide a value in an instance as the fixed value will be provided in the post validation information set.\r\n\r\n<p>Java class for ObsValueType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"ObsValueType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/data/generic}BaseValueType\">\r\n       &lt;attribute name=\"id\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}NCNameIDType\" fixed=\"OBS_VALUE\" />\r\n       &lt;attribute name=\"value\" use=\"required\" type=\"{http://www.w3.org/2001/XMLSchema}string\" />\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_ObsValueType.description" bundle="${i18n}"/>",
             "title": "ObsValueType",
             "type": "object"
         },
@@ -808,21 +818,21 @@
                     "properties": {
                         "Attributes": {
                             "$ref": "#/definitions/xml_ns3_ValuesType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_SeriesType.properties.Attributes.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/data/generic"
                             }
                         },
                         "Obs": {
                             "$ref": "#/definitions/xml_ns3_ObsType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_SeriesType.properties.Obs.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/data/generic"
                             }
                         },
                         "SeriesKey": {
                             "$ref": "#/definitions/xml_ns3_ValuesType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_SeriesType.properties.SeriesKey.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/data/generic"
                             }
@@ -830,7 +840,7 @@
                     }
                 }
             ],
-            "description": "SeriesType defines a structure which is used to group a collection of observations which have a key in common. The key for a series is every dimension defined in the data structure definition, save the dimension declared to be at the observation level for this data set. In addition to observations, values can be provided for attributes which are associated with the dimensions which make up this series key (so long as the attributes do not specify a group attachment or also have an relationship with the observation dimension). It is possible for the series to contain only observations or only attribute values, or both.\r\n\r\n<p>Java class for SeriesType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"SeriesType\">\r\n   &lt;complexContent>\r\n     &lt;extension base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}AnnotableType\">\r\n       &lt;sequence>\r\n         &lt;element name=\"SeriesKey\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/data/generic}ValuesType\"/>\r\n         &lt;element name=\"Attributes\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/data/generic}ValuesType\" minOccurs=\"0\"/>\r\n         &lt;element name=\"Obs\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/data/generic}ObsType\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n       &lt;/sequence>\r\n     &lt;/extension>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_SeriesType.description" bundle="${i18n}"/>",
             "required": [
                 "SeriesKey"
             ],
@@ -844,7 +854,7 @@
                 },
                 {}
             ],
-            "description": "TimeSeriesDataSetType is a derivation of the base DataSetType of the generic format the restricts the data set to only allow for grouped observations where the dimension at the observation level is the time dimension of the data structure definition. This means that unlike the base data set structure, there can be no un-grouped observations. Because this derivation is achieved using restriction, data sets conforming to this type will inherently conform to the base data set structure as well. In fact, data structured here will be identical to data in the base data set when the time dimension is the observation dimension. This means that the data contained in this structure can be processed in exactly the same manner as the base structure.\r\n\r\n<p>Java class for TimeSeriesDataSetType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"TimeSeriesDataSetType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/data/generic}DataSetType\">\r\n       &lt;sequence>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Annotations\" minOccurs=\"0\"/>\r\n         &lt;element name=\"DataProvider\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}DataProviderReferenceType\" minOccurs=\"0\"/>\r\n         &lt;element name=\"Attributes\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/data/generic}ValuesType\" minOccurs=\"0\"/>\r\n         &lt;element name=\"Group\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/data/generic}GroupType\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n         &lt;choice minOccurs=\"0\">\r\n           &lt;element name=\"Series\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/data/generic}TimeSeriesType\" maxOccurs=\"unbounded\"/>\r\n         &lt;/choice>\r\n       &lt;/sequence>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_TimeSeriesDataSetType.description" bundle="${i18n}"/>",
             "title": "TimeSeriesDataSetType",
             "type": "object"
         },
@@ -855,7 +865,7 @@
                 },
                 {}
             ],
-            "description": "TimeSeriesObsType defines the structure of a time series observation. The observation must be provided a value for the time dimension. This time value should disambiguate the observation within the series in which it is defined (i.e. there should not be another observation with the same time value). The observation can contain an observed value and/or attribute values.\r\n\r\n<p>Java class for TimeSeriesObsType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"TimeSeriesObsType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/data/generic}ObsType\">\r\n       &lt;sequence>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Annotations\" minOccurs=\"0\"/>\r\n         &lt;element name=\"ObsDimension\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/data/generic}TimeValueType\"/>\r\n         &lt;element name=\"ObsValue\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/data/generic}ObsValueType\" minOccurs=\"0\"/>\r\n         &lt;element name=\"Attributes\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/data/generic}ValuesType\" minOccurs=\"0\"/>\r\n       &lt;/sequence>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_TimeSeriesObsType.description" bundle="${i18n}"/>",
             "title": "TimeSeriesObsType",
             "type": "object"
         },
@@ -866,7 +876,7 @@
                 },
                 {}
             ],
-            "description": "TimeSeriesType defines a structure which is used to group a collection of observations which have a key in common, organised by time. The key for a series is every dimension defined in the data structure definition, save the time dimension. In addition to observations, values can be provided for attributes which are associated with the dimensions which make up this series key (so long as the attributes do not specify a group attachment or also have an relationship with the time dimension). It is possible for the series to contain only observations or only attribute values, or both.\r\n\r\n<p>Java class for TimeSeriesType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"TimeSeriesType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/data/generic}SeriesType\">\r\n       &lt;sequence>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Annotations\" minOccurs=\"0\"/>\r\n         &lt;element name=\"SeriesKey\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/data/generic}ValuesType\"/>\r\n         &lt;element name=\"Attributes\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/data/generic}ValuesType\" minOccurs=\"0\"/>\r\n         &lt;element name=\"Obs\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/data/generic}TimeSeriesObsType\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n       &lt;/sequence>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_TimeSeriesType.description" bundle="${i18n}"/>",
             "title": "TimeSeriesType",
             "type": "object"
         },
@@ -877,7 +887,7 @@
                 },
                 {}
             ],
-            "description": "TimeValueType is a derivation of the BaseValueType which is used to provide a value for the time dimension. Since the identifier for the time dimension is fixed, the component reference for this structure is fixed. Note that this means that it is not necessary to provide a value in an instance as the fixed value will be provided in the post validation information set.\r\n\r\n<p>Java class for TimeValueType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"TimeValueType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/data/generic}BaseValueType\">\r\n       &lt;attribute name=\"id\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}NCNameIDType\" fixed=\"TIME_PERIOD\" />\r\n       &lt;attribute name=\"value\" use=\"required\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}ObservationalTimePeriodType\" />\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_TimeValueType.description" bundle="${i18n}"/>",
             "title": "TimeValueType",
             "type": "object"
         },
@@ -887,7 +897,7 @@
                     "properties": {
                         "Value": {
                             "$ref": "#/definitions/xml_ns3_ComponentValueType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_ValuesType.properties.Value.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/data/generic"
                             }
@@ -895,7 +905,7 @@
                     }
                 }
             ],
-            "description": "ValuesType is a general structure which contains a collection of data structure definition component values. This type is used to provide both key and attribute collection values.\r\n\r\n<p>Java class for ValuesType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"ValuesType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.w3.org/2001/XMLSchema}anyType\">\r\n       &lt;sequence>\r\n         &lt;element name=\"Value\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/data/generic}ComponentValueType\" maxOccurs=\"unbounded\"/>\r\n       &lt;/sequence>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_ValuesType.description" bundle="${i18n}"/>",
             "required": [
                 "Value"
             ],
@@ -909,7 +919,7 @@
                 },
                 {}
             ],
-            "description": "CategorisationQueryType defines the structure of a categorisation query message.\r\n\r\n<p>Java class for CategorisationQueryType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"CategorisationQueryType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}MessageType\">\r\n       &lt;sequence>\r\n         &lt;element name=\"Header\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}BasicHeaderType\"/>\r\n         &lt;element name=\"Query\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/query}CategorisationQueryType\"/>\r\n       &lt;/sequence>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_CategorisationQueryType.description" bundle="${i18n}"/>",
             "title": "CategorisationQueryType",
             "type": "object"
         },
@@ -920,7 +930,7 @@
                 },
                 {}
             ],
-            "description": "CategorySchemeQueryType defines the structure of a category scheme query message.\r\n\r\n<p>Java class for CategorySchemeQueryType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"CategorySchemeQueryType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}MessageType\">\r\n       &lt;sequence>\r\n         &lt;element name=\"Header\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}BasicHeaderType\"/>\r\n         &lt;element name=\"Query\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/query}CategorySchemeQueryType\"/>\r\n       &lt;/sequence>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_CategorySchemeQueryType.description" bundle="${i18n}"/>",
             "title": "CategorySchemeQueryType",
             "type": "object"
         },
@@ -931,7 +941,7 @@
                 },
                 {}
             ],
-            "description": "CodelistQueryType defines the structure of a codelist query message.\r\n\r\n<p>Java class for CodelistQueryType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"CodelistQueryType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}MessageType\">\r\n       &lt;sequence>\r\n         &lt;element name=\"Header\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}BasicHeaderType\"/>\r\n         &lt;element name=\"Query\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/query}CodelistQueryType\"/>\r\n       &lt;/sequence>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_CodelistQueryType.description" bundle="${i18n}"/>",
             "title": "CodelistQueryType",
             "type": "object"
         },
@@ -942,7 +952,7 @@
                 },
                 {}
             ],
-            "description": "ConceptSchemeQueryType defines the structure of a concept scheme query message.\r\n\r\n<p>Java class for ConceptSchemeQueryType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"ConceptSchemeQueryType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}MessageType\">\r\n       &lt;sequence>\r\n         &lt;element name=\"Header\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}BasicHeaderType\"/>\r\n         &lt;element name=\"Query\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/query}ConceptSchemeQueryType\"/>\r\n       &lt;/sequence>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_ConceptSchemeQueryType.description" bundle="${i18n}"/>",
             "title": "ConceptSchemeQueryType",
             "type": "object"
         },
@@ -953,7 +963,7 @@
                 },
                 {}
             ],
-            "description": "ConstraintQueryType defines the structure of a constraint query message.\r\n\r\n<p>Java class for ConstraintQueryType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"ConstraintQueryType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}MessageType\">\r\n       &lt;sequence>\r\n         &lt;element name=\"Header\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}BasicHeaderType\"/>\r\n         &lt;element name=\"Query\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/query}ConstraintQueryType\"/>\r\n       &lt;/sequence>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_ConstraintQueryType.description" bundle="${i18n}"/>",
             "title": "ConstraintQueryType",
             "type": "object"
         },
@@ -963,20 +973,20 @@
                     "properties": {
                         "Department": {
                             "$ref": "#/definitions/xml_ns4_TextType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_ContactType.properties.Department.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message"
                             }
                         },
                         "Email": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_ContactType.properties.Email.description" bundle="${i18n}"/>",
                             "type": "object",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message"
                             }
                         },
                         "Fax": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_ContactType.properties.Fax.description" bundle="${i18n}"/>",
                             "type": "object",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message"
@@ -984,34 +994,34 @@
                         },
                         "Name": {
                             "$ref": "#/definitions/xml_ns4_TextType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_ContactType.properties.Name.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common"
                             }
                         },
                         "Role": {
                             "$ref": "#/definitions/xml_ns4_TextType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_ContactType.properties.Role.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message"
                             }
                         },
                         "Telephone": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_ContactType.properties.Telephone.description" bundle="${i18n}"/>",
                             "type": "object",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message"
                             }
                         },
                         "URI": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_ContactType.properties.URI.description" bundle="${i18n}"/>",
                             "type": "object",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message"
                             }
                         },
                         "X400": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_ContactType.properties.X400.description" bundle="${i18n}"/>",
                             "type": "object",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message"
@@ -1020,7 +1030,7 @@
                     }
                 }
             ],
-            "description": "ContactType provides defines the contact information about a party.\r\n\r\n<p>Java class for ContactType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"ContactType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.w3.org/2001/XMLSchema}anyType\">\r\n       &lt;sequence>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Name\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n         &lt;element name=\"Department\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}TextType\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n         &lt;element name=\"Role\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}TextType\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n         &lt;choice maxOccurs=\"unbounded\" minOccurs=\"0\">\r\n           &lt;element name=\"Telephone\" type=\"{http://www.w3.org/2001/XMLSchema}string\"/>\r\n           &lt;element name=\"Fax\" type=\"{http://www.w3.org/2001/XMLSchema}string\"/>\r\n           &lt;element name=\"X400\" type=\"{http://www.w3.org/2001/XMLSchema}string\"/>\r\n           &lt;element name=\"URI\" type=\"{http://www.w3.org/2001/XMLSchema}anyURI\"/>\r\n           &lt;element name=\"Email\" type=\"{http://www.w3.org/2001/XMLSchema}string\"/>\r\n         &lt;/choice>\r\n       &lt;/sequence>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_ContactType.description" bundle="${i18n}"/>",
             "title": "ContactType",
             "type": "object"
         },
@@ -1031,7 +1041,7 @@
                 },
                 {}
             ],
-            "description": "DataQueryType defines the structure of a data query message.\r\n\r\n<p>Java class for DataQueryType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"DataQueryType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}MessageType\">\r\n       &lt;sequence>\r\n         &lt;element name=\"Header\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}BasicHeaderType\"/>\r\n         &lt;element name=\"Query\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/query}DataQueryType\"/>\r\n       &lt;/sequence>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_DataQueryType.description" bundle="${i18n}"/>",
             "title": "DataQueryType",
             "type": "object"
         },
@@ -1042,7 +1052,7 @@
                 },
                 {}
             ],
-            "description": "DataSchemaQueryType defines the structure of a data schema query message.\r\n\r\n<p>Java class for DataSchemaQueryType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"DataSchemaQueryType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}MessageType\">\r\n       &lt;sequence>\r\n         &lt;element name=\"Header\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}BasicHeaderType\"/>\r\n         &lt;element name=\"Query\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/query}DataSchemaQueryType\"/>\r\n       &lt;/sequence>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_DataSchemaQueryType.description" bundle="${i18n}"/>",
             "title": "DataSchemaQueryType",
             "type": "object"
         },
@@ -1053,7 +1063,7 @@
                 },
                 {}
             ],
-            "description": "KeyFamilyQueryType defines the structure of a data structure query message.\r\n\r\n<p>Java class for DataStructureQueryType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"DataStructureQueryType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}MessageType\">\r\n       &lt;sequence>\r\n         &lt;element name=\"Header\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}BasicHeaderType\"/>\r\n         &lt;element name=\"Query\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/query}DataStructureQueryType\"/>\r\n       &lt;/sequence>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_DataStructureQueryType.description" bundle="${i18n}"/>",
             "title": "DataStructureQueryType",
             "type": "object"
         },
@@ -1064,7 +1074,7 @@
                 },
                 {}
             ],
-            "description": "DataflowQueryType defines the structure of a dataflow query message.\r\n\r\n<p>Java class for DataflowQueryType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"DataflowQueryType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}MessageType\">\r\n       &lt;sequence>\r\n         &lt;element name=\"Header\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}BasicHeaderType\"/>\r\n         &lt;element name=\"Query\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/query}DataflowQueryType\"/>\r\n       &lt;/sequence>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_DataflowQueryType.description" bundle="${i18n}"/>",
             "title": "DataflowQueryType",
             "type": "object"
         },
@@ -1075,7 +1085,7 @@
                 },
                 {}
             ],
-            "description": "GenericDataHeaderType defines the header structure for a generic data message.\r\n\r\n<p>Java class for GenericDataHeaderType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"GenericDataHeaderType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}BaseHeaderType\">\r\n       &lt;sequence>\r\n         &lt;element name=\"ID\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}IDType\"/>\r\n         &lt;element name=\"Test\" type=\"{http://www.w3.org/2001/XMLSchema}boolean\"/>\r\n         &lt;element name=\"Prepared\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}HeaderTimeType\"/>\r\n         &lt;element name=\"Sender\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}SenderType\"/>\r\n         &lt;element name=\"Receiver\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}PartyType\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Name\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n         &lt;element name=\"Structure\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}GenericDataStructureType\" maxOccurs=\"unbounded\"/>\r\n         &lt;element name=\"DataProvider\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}DataProviderReferenceType\" minOccurs=\"0\"/>\r\n         &lt;element name=\"DataSetAction\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}ActionType\" minOccurs=\"0\"/>\r\n         &lt;element name=\"DataSetID\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}IDType\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n         &lt;element name=\"Extracted\" type=\"{http://www.w3.org/2001/XMLSchema}dateTime\" minOccurs=\"0\"/>\r\n         &lt;element name=\"ReportingBegin\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}ObservationalTimePeriodType\" minOccurs=\"0\"/>\r\n         &lt;element name=\"ReportingEnd\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}ObservationalTimePeriodType\" minOccurs=\"0\"/>\r\n         &lt;element name=\"EmbargoDate\" type=\"{http://www.w3.org/2001/XMLSchema}dateTime\" minOccurs=\"0\"/>\r\n         &lt;element name=\"Source\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}TextType\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n       &lt;/sequence>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_GenericDataHeaderType.description" bundle="${i18n}"/>",
             "title": "GenericDataHeaderType",
             "type": "object"
         },
@@ -1086,7 +1096,7 @@
                 },
                 {}
             ],
-            "description": "DataQueryType defines the structure of a generic data query message.\r\n\r\n<p>Java class for GenericDataQueryType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"GenericDataQueryType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}DataQueryType\">\r\n       &lt;sequence>\r\n         &lt;element name=\"Header\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}BasicHeaderType\"/>\r\n         &lt;element name=\"Query\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/query}GenericDataQueryType\"/>\r\n       &lt;/sequence>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_GenericDataQueryType.description" bundle="${i18n}"/>",
             "title": "GenericDataQueryType",
             "type": "object"
         },
@@ -1097,7 +1107,7 @@
                 },
                 {}
             ],
-            "description": "GenericDataType defines the contents of a generic data message.\r\n\r\n<p>Java class for GenericDataType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"GenericDataType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}MessageType\">\r\n       &lt;sequence>\r\n         &lt;element name=\"Header\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}GenericDataHeaderType\"/>\r\n         &lt;element name=\"DataSet\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/data/generic}DataSetType\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message/footer}Footer\" minOccurs=\"0\"/>\r\n       &lt;/sequence>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_GenericDataType.description" bundle="${i18n}"/>",
             "title": "GenericDataType",
             "type": "object"
         },
@@ -1119,7 +1129,7 @@
                 },
                 {}
             ],
-            "description": "GenericMetadataType defines the contents of a generic metadata message.\r\n\r\n<p>Java class for GenericMetadataType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"GenericMetadataType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}MessageType\">\r\n       &lt;sequence>\r\n         &lt;element name=\"Header\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}GenericMetadataHeaderType\"/>\r\n         &lt;element name=\"MetadataSet\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/metadata/generic}MetadataSetType\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message/footer}Footer\" minOccurs=\"0\"/>\r\n       &lt;/sequence>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_GenericMetadataHeaderType.description" bundle="${i18n}"/>",
             "title": "GenericMetadataType",
             "type": "object"
         },
@@ -1130,7 +1140,7 @@
                 },
                 {}
             ],
-            "description": "GenericTimeSeriesDataHeaderType defines the header structure for a time series only generic data message.\r\n\r\n<p>Java class for GenericTimeSeriesDataHeaderType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"GenericTimeSeriesDataHeaderType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}GenericDataHeaderType\">\r\n       &lt;sequence>\r\n         &lt;element name=\"ID\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}IDType\"/>\r\n         &lt;element name=\"Test\" type=\"{http://www.w3.org/2001/XMLSchema}boolean\"/>\r\n         &lt;element name=\"Prepared\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}HeaderTimeType\"/>\r\n         &lt;element name=\"Sender\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}SenderType\"/>\r\n         &lt;element name=\"Receiver\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}PartyType\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Name\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n         &lt;element name=\"Structure\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}GenericTimeSeriesDataStructureType\"/>\r\n         &lt;element name=\"DataProvider\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}DataProviderReferenceType\" minOccurs=\"0\"/>\r\n         &lt;element name=\"DataSetAction\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}ActionType\" minOccurs=\"0\"/>\r\n         &lt;element name=\"DataSetID\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}IDType\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n         &lt;element name=\"Extracted\" type=\"{http://www.w3.org/2001/XMLSchema}dateTime\" minOccurs=\"0\"/>\r\n         &lt;element name=\"ReportingBegin\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}ObservationalTimePeriodType\" minOccurs=\"0\"/>\r\n         &lt;element name=\"ReportingEnd\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}ObservationalTimePeriodType\" minOccurs=\"0\"/>\r\n         &lt;element name=\"EmbargoDate\" type=\"{http://www.w3.org/2001/XMLSchema}dateTime\" minOccurs=\"0\"/>\r\n         &lt;element name=\"Source\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}TextType\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n       &lt;/sequence>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_GenericTimeSeriesDataHeaderType.description" bundle="${i18n}"/>",
             "title": "GenericTimeSeriesDataHeaderType",
             "type": "object"
         },
@@ -1141,7 +1151,7 @@
                 },
                 {}
             ],
-            "description": "GenericTimeSeriesDataQueryType defines the structure of a time series generic data query message.\r\n\r\n<p>Java class for GenericTimeSeriesDataQueryType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"GenericTimeSeriesDataQueryType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}GenericDataQueryType\">\r\n       &lt;sequence>\r\n         &lt;element name=\"Header\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}BasicHeaderType\"/>\r\n         &lt;element name=\"Query\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/query}GenericTimeSeriesDataQueryType\"/>\r\n       &lt;/sequence>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_GenericTimeSeriesDataQueryType.description" bundle="${i18n}"/>",
             "title": "GenericTimeSeriesDataQueryType",
             "type": "object"
         },
@@ -1152,7 +1162,7 @@
                 },
                 {}
             ],
-            "description": "GenericTimeSeriesDataType defines the structure of the generic time series data message.\r\n\r\n<p>Java class for GenericTimeSeriesDataType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"GenericTimeSeriesDataType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}GenericDataType\">\r\n       &lt;sequence>\r\n         &lt;element name=\"Header\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}GenericTimeSeriesDataHeaderType\"/>\r\n         &lt;element name=\"DataSet\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/data/generic}TimeSeriesDataSetType\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message/footer}Footer\" minOccurs=\"0\"/>\r\n       &lt;/sequence>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_GenericTimeSeriesDataType.description" bundle="${i18n}"/>",
             "title": "GenericTimeSeriesDataType",
             "type": "object"
         },
@@ -1163,7 +1173,7 @@
                 },
                 {}
             ],
-            "description": "HierarchicalCodelistQueryType defines the structure of a hierarchical codelist query message.\r\n\r\n<p>Java class for HierarchicalCodelistQueryType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"HierarchicalCodelistQueryType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}MessageType\">\r\n       &lt;sequence>\r\n         &lt;element name=\"Header\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}BasicHeaderType\"/>\r\n         &lt;element name=\"Query\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/query}HierarchicalCodelistQueryType\"/>\r\n       &lt;/sequence>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_HierarchicalCodelistQueryType.description" bundle="${i18n}"/>",
             "title": "HierarchicalCodelistQueryType",
             "type": "object"
         },
@@ -1173,14 +1183,14 @@
                     "properties": {
                         "Footer": {
                             "$ref": "#/definitions/xml_ns7_FooterType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_MessageType.properties.Footer.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message/footer"
                             }
                         },
                         "Header": {
                             "$ref": "#/definitions/xml_ns3_BaseHeaderType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_MessageType.properties.Header.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message"
                             }
@@ -1188,7 +1198,7 @@
                     }
                 }
             ],
-            "description": "MessageType is an abstract type which is used by all of the messages, to allow inheritance of common features. Every message consists of a mandatory header, followed by optional payload (which may occur multiple times), and finally an optional footer section for conveying error, warning, and informational messages.\r\n\r\n<p>Java class for MessageType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"MessageType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.w3.org/2001/XMLSchema}anyType\">\r\n       &lt;sequence>\r\n         &lt;element name=\"Header\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}BaseHeaderType\"/>\r\n         &lt;any namespace='http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message' maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message/footer}Footer\" minOccurs=\"0\"/>\r\n       &lt;/sequence>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_MessageType.description" bundle="${i18n}"/>",
             "required": [
                 "Header"
             ],
@@ -1202,7 +1212,7 @@
                 },
                 {}
             ],
-            "description": "MetadataQueryType defines the structure of a reference metadata query message.\r\n\r\n<p>Java class for MetadataQueryType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"MetadataQueryType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}MessageType\">\r\n       &lt;sequence>\r\n         &lt;element name=\"Header\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}BasicHeaderType\"/>\r\n         &lt;element name=\"Query\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/query}MetadataQueryType\"/>\r\n       &lt;/sequence>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_MetadataQueryType.description" bundle="${i18n}"/>",
             "title": "MetadataQueryType",
             "type": "object"
         },
@@ -1213,7 +1223,7 @@
                 },
                 {}
             ],
-            "description": "MetadataSchemaQueryType defines the structure of a metadata schema query message.\r\n\r\n<p>Java class for MetadataSchemaQueryType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"MetadataSchemaQueryType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}MessageType\">\r\n       &lt;sequence>\r\n         &lt;element name=\"Header\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}BasicHeaderType\"/>\r\n         &lt;element name=\"Query\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/query}MetadataSchemaQueryType\"/>\r\n       &lt;/sequence>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_MetadataSchemaQueryType.description" bundle="${i18n}"/>",
             "title": "MetadataSchemaQueryType",
             "type": "object"
         },
@@ -1224,7 +1234,7 @@
                 },
                 {}
             ],
-            "description": "MetadataStructureQueryType defines the structure of a metadata structure query message.\r\n\r\n<p>Java class for MetadataStructureQueryType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"MetadataStructureQueryType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}MessageType\">\r\n       &lt;sequence>\r\n         &lt;element name=\"Header\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}BasicHeaderType\"/>\r\n         &lt;element name=\"Query\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/query}MetadataStructureQueryType\"/>\r\n       &lt;/sequence>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_MetadataStructureQueryType.description" bundle="${i18n}"/>",
             "title": "MetadataStructureQueryType",
             "type": "object"
         },
@@ -1235,7 +1245,7 @@
                 },
                 {}
             ],
-            "description": "MetadataflowQueryType defines the structure of a metadata flow query message.\r\n\r\n<p>Java class for MetadataflowQueryType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"MetadataflowQueryType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}MessageType\">\r\n       &lt;sequence>\r\n         &lt;element name=\"Header\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}BasicHeaderType\"/>\r\n         &lt;element name=\"Query\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/query}MetadataflowQueryType\"/>\r\n       &lt;/sequence>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_MetadataflowQueryType.description" bundle="${i18n}"/>",
             "title": "MetadataflowQueryType",
             "type": "object"
         },
@@ -1246,7 +1256,7 @@
                 },
                 {}
             ],
-            "description": "NotifyRegistryEventType defines the structure of a registry notification document.\r\n\r\n<p>Java class for NotifyRegistryEventType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"NotifyRegistryEventType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}RegistryInterfaceType\">\r\n       &lt;sequence>\r\n         &lt;element name=\"Header\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}BasicHeaderType\"/>\r\n         &lt;element name=\"NotifyRegistryEvent\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/registry}NotifyRegistryEventType\"/>\r\n       &lt;/sequence>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_NotifyRegistryEventType.description" bundle="${i18n}"/>",
             "title": "NotifyRegistryEventType",
             "type": "object"
         },
@@ -1257,7 +1267,7 @@
                 },
                 {}
             ],
-            "description": "OrganisationSchemeQueryType defines the structure of an organisation scheme query message.\r\n\r\n<p>Java class for OrganisationSchemeQueryType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"OrganisationSchemeQueryType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}MessageType\">\r\n       &lt;sequence>\r\n         &lt;element name=\"Header\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}BasicHeaderType\"/>\r\n         &lt;element name=\"Query\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/query}OrganisationSchemeQueryType\"/>\r\n       &lt;/sequence>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_OrganisationSchemeQueryType.description" bundle="${i18n}"/>",
             "title": "OrganisationSchemeQueryType",
             "type": "object"
         },
@@ -1267,20 +1277,20 @@
                     "properties": {
                         "Contact": {
                             "$ref": "#/definitions/xml_ns3_ContactType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_PartyType.properties.Contact.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message"
                             }
                         },
                         "Name": {
                             "$ref": "#/definitions/xml_ns4_TextType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_PartyType.properties.Name.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common"
                             }
                         },
                         "id": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_PartyType.properties.id.description" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "attribute": true,
@@ -1290,7 +1300,7 @@
                     }
                 }
             ],
-            "description": "PartyType defines the information which is sent about various parties such as senders and receivers of messages.\r\n\r\n<p>Java class for PartyType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"PartyType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.w3.org/2001/XMLSchema}anyType\">\r\n       &lt;sequence>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Name\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n         &lt;element name=\"Contact\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}ContactType\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n       &lt;/sequence>\r\n       &lt;attribute name=\"id\" use=\"required\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}IDType\" />\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_PartyType.description" bundle="${i18n}"/>",
             "required": [
                 "id"
             ],
@@ -1304,7 +1314,7 @@
                 },
                 {}
             ],
-            "description": "CategorizationQueryType defines the structure of a categorization query message.\r\n\r\n<p>Java class for ProcessQueryType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"ProcessQueryType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}MessageType\">\r\n       &lt;sequence>\r\n         &lt;element name=\"Header\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}BasicHeaderType\"/>\r\n         &lt;element name=\"Query\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/query}ProcessQueryType\"/>\r\n       &lt;/sequence>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_ProcessQueryType.description" bundle="${i18n}"/>",
             "title": "ProcessQueryType",
             "type": "object"
         },
@@ -1315,7 +1325,7 @@
                 },
                 {}
             ],
-            "description": "ProvisionAgreementQueryType defines the structure of a provision agreement query message.\r\n\r\n<p>Java class for ProvisionAgreementQueryType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"ProvisionAgreementQueryType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}MessageType\">\r\n       &lt;sequence>\r\n         &lt;element name=\"Header\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}BasicHeaderType\"/>\r\n         &lt;element name=\"Query\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/query}ProvisionAgreementQueryType\"/>\r\n       &lt;/sequence>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_ProvisionAgreementQueryType.description" bundle="${i18n}"/>",
             "title": "ProvisionAgreementQueryType",
             "type": "object"
         },
@@ -1326,7 +1336,7 @@
                 },
                 {}
             ],
-            "description": "QueryRegistrationRequestType defines the structure of a registry query registration request document.\r\n\r\n<p>Java class for QueryRegistrationRequestType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"QueryRegistrationRequestType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}RegistryInterfaceType\">\r\n       &lt;sequence>\r\n         &lt;element name=\"Header\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}BasicHeaderType\"/>\r\n         &lt;element name=\"QueryRegistrationRequest\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/registry}QueryRegistrationRequestType\"/>\r\n       &lt;/sequence>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_QueryRegistrationRequestType.description" bundle="${i18n}"/>",
             "title": "QueryRegistrationRequestType",
             "type": "object"
         },
@@ -1337,7 +1347,7 @@
                 },
                 {}
             ],
-            "description": "SubmitRegistrationRequestType defines the structure of a registry submit registration response document.\r\n\r\n<p>Java class for QueryRegistrationResponseType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"QueryRegistrationResponseType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}RegistryInterfaceType\">\r\n       &lt;sequence>\r\n         &lt;element name=\"Header\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}BasicHeaderType\"/>\r\n         &lt;element name=\"QueryRegistrationResponse\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/registry}QueryRegistrationResponseType\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message/footer}Footer\" minOccurs=\"0\"/>\r\n       &lt;/sequence>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_QueryRegistrationResponseType.description" bundle="${i18n}"/>",
             "title": "QueryRegistrationResponseType",
             "type": "object"
         },
@@ -1348,7 +1358,7 @@
                 },
                 {}
             ],
-            "description": "QuerySubscriptionRequestType defines the structure of a registry query subscription request document.\r\n\r\n<p>Java class for QuerySubscriptionRequestType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"QuerySubscriptionRequestType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}RegistryInterfaceType\">\r\n       &lt;sequence>\r\n         &lt;element name=\"Header\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}BasicHeaderType\"/>\r\n         &lt;element name=\"QuerySubscriptionRequest\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/registry}QuerySubscriptionRequestType\"/>\r\n       &lt;/sequence>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_QuerySubscriptionRequestType.description" bundle="${i18n}"/>",
             "title": "QuerySubscriptionRequestType",
             "type": "object"
         },
@@ -1359,7 +1369,7 @@
                 },
                 {}
             ],
-            "description": "QuerySubscriptionResponseType defines the structure of a registry query subscription response document.\r\n\r\n<p>Java class for QuerySubscriptionResponseType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"QuerySubscriptionResponseType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}RegistryInterfaceType\">\r\n       &lt;sequence>\r\n         &lt;element name=\"Header\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}BasicHeaderType\"/>\r\n         &lt;element name=\"QuerySubscriptionResponse\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/registry}QuerySubscriptionResponseType\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message/footer}Footer\" minOccurs=\"0\"/>\r\n       &lt;/sequence>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_QuerySubscriptionResponseType.description" bundle="${i18n}"/>",
             "title": "QuerySubscriptionResponseType",
             "type": "object"
         },
@@ -1370,7 +1380,7 @@
                 },
                 {}
             ],
-            "description": "This is a type which describes a structure for holding all of the various dedicated registry interface message types.\r\n\r\n<p>Java class for RegistryInterfaceType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"RegistryInterfaceType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}MessageType\">\r\n       &lt;sequence>\r\n         &lt;element name=\"Header\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}BasicHeaderType\"/>\r\n         &lt;choice minOccurs=\"0\">\r\n           &lt;element name=\"SubmitRegistrationsRequest\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/registry}SubmitRegistrationsRequestType\"/>\r\n           &lt;element name=\"SubmitRegistrationsResponse\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/registry}SubmitRegistrationsResponseType\"/>\r\n           &lt;element name=\"QueryRegistrationRequest\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/registry}QueryRegistrationRequestType\"/>\r\n           &lt;element name=\"QueryRegistrationResponse\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/registry}QueryRegistrationResponseType\"/>\r\n           &lt;element name=\"SubmitStructureRequest\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/registry}SubmitStructureRequestType\"/>\r\n           &lt;element name=\"SubmitStructureResponse\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/registry}SubmitStructureResponseType\"/>\r\n           &lt;element name=\"SubmitSubscriptionsRequest\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/registry}SubmitSubscriptionsRequestType\"/>\r\n           &lt;element name=\"SubmitSubscriptionsResponse\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/registry}SubmitSubscriptionsResponseType\"/>\r\n           &lt;element name=\"QuerySubscriptionRequest\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/registry}QuerySubscriptionRequestType\"/>\r\n           &lt;element name=\"QuerySubscriptionResponse\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/registry}QuerySubscriptionResponseType\"/>\r\n           &lt;element name=\"NotifyRegistryEvent\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/registry}NotifyRegistryEventType\"/>\r\n         &lt;/choice>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message/footer}Footer\" minOccurs=\"0\"/>\r\n       &lt;/sequence>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_RegistryInterfaceType.description" bundle="${i18n}"/>",
             "title": "RegistryInterfaceType",
             "type": "object"
         },
@@ -1381,7 +1391,7 @@
                 },
                 {}
             ],
-            "description": "ReportingTaxonomyQueryType defines the structure of a reporting taxonomy query message.\r\n\r\n<p>Java class for ReportingTaxonomyQueryType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"ReportingTaxonomyQueryType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}MessageType\">\r\n       &lt;sequence>\r\n         &lt;element name=\"Header\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}BasicHeaderType\"/>\r\n         &lt;element name=\"Query\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/query}ReportingTaxonomyQueryType\"/>\r\n       &lt;/sequence>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_ReportingTaxonomyQueryType.description" bundle="${i18n}"/>",
             "title": "ReportingTaxonomyQueryType",
             "type": "object"
         },
@@ -1393,7 +1403,7 @@
                 {
                     "properties": {
                         "Timezone": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_SenderType.properties.Timezone.description" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message"
@@ -1402,7 +1412,7 @@
                     }
                 }
             ],
-            "description": "SenderType extends the basic party structure to add an optional time zone declaration.\r\n\r\n<p>Java class for SenderType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"SenderType\">\r\n   &lt;complexContent>\r\n     &lt;extension base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}PartyType\">\r\n       &lt;sequence>\r\n         &lt;element name=\"Timezone\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}TimezoneType\" minOccurs=\"0\"/>\r\n       &lt;/sequence>\r\n     &lt;/extension>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_SenderType.description" bundle="${i18n}"/>",
             "title": "SenderType",
             "type": "object"
         },
@@ -1413,7 +1423,7 @@
                 },
                 {}
             ],
-            "description": "StructureHeaderType defines the structure for structural metadata messages.\r\n\r\n<p>Java class for StructureHeaderType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"StructureHeaderType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}BaseHeaderType\">\r\n       &lt;sequence>\r\n         &lt;element name=\"ID\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}IDType\"/>\r\n         &lt;element name=\"Test\" type=\"{http://www.w3.org/2001/XMLSchema}boolean\"/>\r\n         &lt;element name=\"Prepared\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}HeaderTimeType\"/>\r\n         &lt;element name=\"Sender\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}SenderType\"/>\r\n         &lt;element name=\"Receiver\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}PartyType\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Name\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n         &lt;element name=\"Source\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}TextType\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n       &lt;/sequence>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_StructureHeaderType.description" bundle="${i18n}"/>",
             "title": "StructureHeaderType",
             "type": "object"
         },
@@ -1424,7 +1434,7 @@
                 },
                 {}
             ],
-            "description": "StructureSetQueryType defines the structure of a structure set query message.\r\n\r\n<p>Java class for StructureSetQueryType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"StructureSetQueryType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}MessageType\">\r\n       &lt;sequence>\r\n         &lt;element name=\"Header\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}BasicHeaderType\"/>\r\n         &lt;element name=\"Query\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/query}StructureSetQueryType\"/>\r\n       &lt;/sequence>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_StructureSetQueryType.description" bundle="${i18n}"/>",
             "title": "StructureSetQueryType",
             "type": "object"
         },
@@ -1435,7 +1445,7 @@
                 },
                 {}
             ],
-            "description": "StructureSpecificDataHeaderType defines the header structure for a structure specific data message.\r\n\r\n<p>Java class for StructureSpecificDataHeaderType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"StructureSpecificDataHeaderType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}BaseHeaderType\">\r\n       &lt;sequence>\r\n         &lt;element name=\"ID\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}IDType\"/>\r\n         &lt;element name=\"Test\" type=\"{http://www.w3.org/2001/XMLSchema}boolean\"/>\r\n         &lt;element name=\"Prepared\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}HeaderTimeType\"/>\r\n         &lt;element name=\"Sender\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}SenderType\"/>\r\n         &lt;element name=\"Receiver\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}PartyType\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Name\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n         &lt;element name=\"Structure\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}StructureSpecificDataStructureType\" maxOccurs=\"unbounded\"/>\r\n         &lt;element name=\"DataProvider\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}DataProviderReferenceType\" minOccurs=\"0\"/>\r\n         &lt;element name=\"DataSetAction\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}ActionType\" minOccurs=\"0\"/>\r\n         &lt;element name=\"DataSetID\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}IDType\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n         &lt;element name=\"Extracted\" type=\"{http://www.w3.org/2001/XMLSchema}dateTime\" minOccurs=\"0\"/>\r\n         &lt;element name=\"ReportingBegin\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}ObservationalTimePeriodType\" minOccurs=\"0\"/>\r\n         &lt;element name=\"ReportingEnd\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}ObservationalTimePeriodType\" minOccurs=\"0\"/>\r\n         &lt;element name=\"EmbargoDate\" type=\"{http://www.w3.org/2001/XMLSchema}dateTime\" minOccurs=\"0\"/>\r\n         &lt;element name=\"Source\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}TextType\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n       &lt;/sequence>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_StructureSpecificDataHeaderType.description" bundle="${i18n}"/>",
             "title": "StructureSpecificDataHeaderType",
             "type": "object"
         },
@@ -1446,7 +1456,7 @@
                 },
                 {}
             ],
-            "description": "StructureSpecificDataType defines the structure of the structure specific data message. Note that the data set payload type is abstract, and therefore it will have to be assigned a type in an instance. This type must be derived from the base type referenced. This base type defines a general structure which can be followed to allow for generic processing of the data even if the exact details of the data structure specific format are not known.\r\n\r\n<p>Java class for StructureSpecificDataType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"StructureSpecificDataType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}MessageType\">\r\n       &lt;sequence>\r\n         &lt;element name=\"Header\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}StructureSpecificDataHeaderType\"/>\r\n         &lt;element name=\"DataSet\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/data/structurespecific}DataSetType\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message/footer}Footer\" minOccurs=\"0\"/>\r\n       &lt;/sequence>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_StructureSpecificDataType.description" bundle="${i18n}"/>",
             "title": "StructureSpecificDataType",
             "type": "object"
         },
@@ -1457,7 +1467,7 @@
                 },
                 {}
             ],
-            "description": "StructureSpecificMetadataHeaderType defines the header format for metadata structure definition specific reference metadata messages.\r\n\r\n<p>Java class for StructureSpecificMetadataHeaderType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"StructureSpecificMetadataHeaderType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}BaseHeaderType\">\r\n       &lt;sequence>\r\n         &lt;element name=\"ID\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}IDType\"/>\r\n         &lt;element name=\"Test\" type=\"{http://www.w3.org/2001/XMLSchema}boolean\"/>\r\n         &lt;element name=\"Prepared\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}HeaderTimeType\"/>\r\n         &lt;element name=\"Sender\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}SenderType\"/>\r\n         &lt;element name=\"Receiver\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}PartyType\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Name\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n         &lt;element name=\"Structure\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}StructureSpecificMetadataStructureType\" maxOccurs=\"unbounded\"/>\r\n         &lt;element name=\"DataProvider\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}DataProviderReferenceType\" minOccurs=\"0\"/>\r\n         &lt;element name=\"DataSetAction\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}ActionType\" minOccurs=\"0\"/>\r\n         &lt;element name=\"DataSetID\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}IDType\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n         &lt;element name=\"Extracted\" type=\"{http://www.w3.org/2001/XMLSchema}dateTime\" minOccurs=\"0\"/>\r\n         &lt;element name=\"Source\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}TextType\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n       &lt;/sequence>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_StructureSpecificMetadataHeaderType.description" bundle="${i18n}"/>",
             "title": "StructureSpecificMetadataHeaderType",
             "type": "object"
         },
@@ -1468,7 +1478,7 @@
                 },
                 {}
             ],
-            "description": "StructureSpecificMetadataType defines the structure of a structure specific metadata message. Note that the metadata set payload type is abstract, and therefore it will have to be assigned a type in an instance. This type must be derived from the base type referenced. This base type defines a general structure which can be followed to allow for generic processing of the data even if the exact details of the data structure specific format are not known.\r\n\r\n<p>Java class for StructureSpecificMetadataType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"StructureSpecificMetadataType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}MessageType\">\r\n       &lt;sequence>\r\n         &lt;element name=\"Header\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}StructureSpecificMetadataHeaderType\"/>\r\n         &lt;element name=\"MetadataSet\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/metadata/structurespecific}MetadataSetType\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message/footer}Footer\" minOccurs=\"0\"/>\r\n       &lt;/sequence>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_StructureSpecificMetadataType.description" bundle="${i18n}"/>",
             "title": "StructureSpecificMetadataType",
             "type": "object"
         },
@@ -1479,7 +1489,7 @@
                 },
                 {}
             ],
-            "description": "StructureSpecificTimeSeriesDataHeaderType defines the header structure for a time series only structure specific data message.\r\n\r\n<p>Java class for StructureSpecificTimeSeriesDataHeaderType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"StructureSpecificTimeSeriesDataHeaderType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}StructureSpecificDataHeaderType\">\r\n       &lt;sequence>\r\n         &lt;element name=\"ID\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}IDType\"/>\r\n         &lt;element name=\"Test\" type=\"{http://www.w3.org/2001/XMLSchema}boolean\"/>\r\n         &lt;element name=\"Prepared\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}HeaderTimeType\"/>\r\n         &lt;element name=\"Sender\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}SenderType\"/>\r\n         &lt;element name=\"Receiver\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}PartyType\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Name\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n         &lt;element name=\"Structure\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}StructureSpecificDataTimeSeriesStructureType\" maxOccurs=\"unbounded\"/>\r\n         &lt;element name=\"DataProvider\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}DataProviderReferenceType\" minOccurs=\"0\"/>\r\n         &lt;element name=\"DataSetAction\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}ActionType\" minOccurs=\"0\"/>\r\n         &lt;element name=\"DataSetID\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}IDType\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n         &lt;element name=\"Extracted\" type=\"{http://www.w3.org/2001/XMLSchema}dateTime\" minOccurs=\"0\"/>\r\n         &lt;element name=\"ReportingBegin\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}ObservationalTimePeriodType\" minOccurs=\"0\"/>\r\n         &lt;element name=\"ReportingEnd\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}ObservationalTimePeriodType\" minOccurs=\"0\"/>\r\n         &lt;element name=\"EmbargoDate\" type=\"{http://www.w3.org/2001/XMLSchema}dateTime\" minOccurs=\"0\"/>\r\n         &lt;element name=\"Source\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}TextType\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n       &lt;/sequence>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_StructureSpecificTimeSeriesDataHeaderType.description" bundle="${i18n}"/>",
             "title": "StructureSpecificTimeSeriesDataHeaderType",
             "type": "object"
         },
@@ -1490,7 +1500,7 @@
                 },
                 {}
             ],
-            "description": "StructureSpecificTimeSeriesDataQueryType defines the structure of a time series generic data query message.\r\n\r\n<p>Java class for StructureSpecificTimeSeriesDataQueryType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"StructureSpecificTimeSeriesDataQueryType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}DataQueryType\">\r\n       &lt;sequence>\r\n         &lt;element name=\"Header\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}BasicHeaderType\"/>\r\n         &lt;element name=\"Query\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/query}TimeSeriesDataQueryType\"/>\r\n       &lt;/sequence>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_StructureSpecificTimeSeriesDataQueryType.description" bundle="${i18n}"/>",
             "title": "StructureSpecificTimeSeriesDataQueryType",
             "type": "object"
         },
@@ -1501,7 +1511,7 @@
                 },
                 {}
             ],
-            "description": "StructureSpecificTimeSeriesDataType defines the structure of the structure specific time series data message.\r\n\r\n<p>Java class for StructureSpecificTimeSeriesDataType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"StructureSpecificTimeSeriesDataType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}StructureSpecificDataType\">\r\n       &lt;sequence>\r\n         &lt;element name=\"Header\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}StructureSpecificTimeSeriesDataHeaderType\"/>\r\n         &lt;element name=\"DataSet\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/data/structurespecific}TimeSeriesDataSetType\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message/footer}Footer\" minOccurs=\"0\"/>\r\n       &lt;/sequence>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_StructureSpecificTimeSeriesDataType.description" bundle="${i18n}"/>",
             "title": "StructureSpecificTimeSeriesDataType",
             "type": "object"
         },
@@ -1512,7 +1522,7 @@
                 },
                 {}
             ],
-            "description": "StructureType defines the contents of a structure message. The payload is optional since this message may be returned from a web service with only information in the footer.\r\n\r\n<p>Java class for StructureType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"StructureType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}MessageType\">\r\n       &lt;sequence>\r\n         &lt;element name=\"Header\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}StructureHeaderType\"/>\r\n         &lt;element name=\"Structures\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}StructuresType\" minOccurs=\"0\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message/footer}Footer\" minOccurs=\"0\"/>\r\n       &lt;/sequence>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_StructureType.description" bundle="${i18n}"/>",
             "title": "StructureType",
             "type": "object"
         },
@@ -1523,7 +1533,7 @@
                 },
                 {}
             ],
-            "description": "StructuresQueryType defines the structure of a structures query message.\r\n\r\n<p>Java class for StructuresQueryType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"StructuresQueryType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}MessageType\">\r\n       &lt;sequence>\r\n         &lt;element name=\"Header\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}BasicHeaderType\"/>\r\n         &lt;element name=\"Query\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/query}StructuresQueryType\"/>\r\n       &lt;/sequence>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_StructuresQueryType.description" bundle="${i18n}"/>",
             "title": "StructuresQueryType",
             "type": "object"
         },
@@ -1534,7 +1544,7 @@
                 },
                 {}
             ],
-            "description": "SubmitRegistrationsRequestType defines the structure of a registry submit registration requests document.\r\n\r\n<p>Java class for SubmitRegistrationsRequestType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"SubmitRegistrationsRequestType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}RegistryInterfaceType\">\r\n       &lt;sequence>\r\n         &lt;element name=\"Header\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}BasicHeaderType\"/>\r\n         &lt;element name=\"SubmitRegistrationsRequest\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/registry}SubmitRegistrationsRequestType\"/>\r\n       &lt;/sequence>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_SubmitRegistrationsRequestType.description" bundle="${i18n}"/>",
             "title": "SubmitRegistrationsRequestType",
             "type": "object"
         },
@@ -1545,7 +1555,7 @@
                 },
                 {}
             ],
-            "description": "SubmitRegistrationsResponseType defines the structure of a registry submit registration response document.\r\n\r\n<p>Java class for SubmitRegistrationsResponseType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"SubmitRegistrationsResponseType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}RegistryInterfaceType\">\r\n       &lt;sequence>\r\n         &lt;element name=\"Header\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}BasicHeaderType\"/>\r\n         &lt;element name=\"SubmitRegistrationsResponse\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/registry}SubmitRegistrationsResponseType\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message/footer}Footer\" minOccurs=\"0\"/>\r\n       &lt;/sequence>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_SubmitRegistrationsResponseType.description" bundle="${i18n}"/>",
             "title": "SubmitRegistrationsResponseType",
             "type": "object"
         },
@@ -1556,7 +1566,7 @@
                 },
                 {}
             ],
-            "description": "SubmitStructureRequestType defines the structure of a registry submit structure request document.\r\n\r\n<p>Java class for SubmitStructureRequestType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"SubmitStructureRequestType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}RegistryInterfaceType\">\r\n       &lt;sequence>\r\n         &lt;element name=\"Header\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}BasicHeaderType\"/>\r\n         &lt;element name=\"SubmitStructureRequest\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/registry}SubmitStructureRequestType\"/>\r\n       &lt;/sequence>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_SubmitStructureRequestType.description" bundle="${i18n}"/>",
             "title": "SubmitStructureRequestType",
             "type": "object"
         },
@@ -1567,7 +1577,7 @@
                 },
                 {}
             ],
-            "description": "SubmitStructureResponseType defines the structure of a registry submit registration response document.\r\n\r\n<p>Java class for SubmitStructureResponseType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"SubmitStructureResponseType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}RegistryInterfaceType\">\r\n       &lt;sequence>\r\n         &lt;element name=\"Header\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}BasicHeaderType\"/>\r\n         &lt;element name=\"SubmitStructureResponse\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/registry}SubmitStructureResponseType\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message/footer}Footer\" minOccurs=\"0\"/>\r\n       &lt;/sequence>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_SubmitStructureResponseType.description" bundle="${i18n}"/>",
             "title": "SubmitStructureResponseType",
             "type": "object"
         },
@@ -1578,7 +1588,7 @@
                 },
                 {}
             ],
-            "description": "SubmitSubscriptionsRequestType defines the structure of a registry submit subscription request document.\r\n\r\n<p>Java class for SubmitSubscriptionsRequestType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"SubmitSubscriptionsRequestType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}RegistryInterfaceType\">\r\n       &lt;sequence>\r\n         &lt;element name=\"Header\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}BasicHeaderType\"/>\r\n         &lt;element name=\"SubmitSubscriptionsRequest\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/registry}SubmitSubscriptionsRequestType\"/>\r\n       &lt;/sequence>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_SubmitSubscriptionsRequestType.description" bundle="${i18n}"/>",
             "title": "SubmitSubscriptionsRequestType",
             "type": "object"
         },
@@ -1589,7 +1599,7 @@
                 },
                 {}
             ],
-            "description": "SubmitSubscriptionsResponseType defines the structure of a registry submit subscription response document.\r\n\r\n<p>Java class for SubmitSubscriptionsResponseType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"SubmitSubscriptionsResponseType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}RegistryInterfaceType\">\r\n       &lt;sequence>\r\n         &lt;element name=\"Header\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message}BasicHeaderType\"/>\r\n         &lt;element name=\"SubmitSubscriptionsResponse\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/registry}SubmitSubscriptionsResponseType\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message/footer}Footer\" minOccurs=\"0\"/>\r\n       &lt;/sequence>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns3_SubmitSubscriptionsResponseType.description" bundle="${i18n}"/>",
             "title": "SubmitSubscriptionsResponseType",
             "type": "object"
         },
@@ -1601,7 +1611,7 @@
                 },
                 {}
             ],
-            "description": "AgencySchemeType defines a specific type of organisation scheme which contains only maintenance agencies. The agency scheme maintained by a particular maintenance agency is always provided a fixed identifier and version, and is never final. Therefore, agencies can be added or removed without have to version the scheme. Agencies schemes have no hierarchy, meaning that no agency may define a relationship with another agency in the scheme. In fact, the actual parent agency for an agency in a scheme is the agency which defines the scheme.\r\n\r\n<p>Java class for AgencySchemeType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"AgencySchemeType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}OrganisationSchemeType\">\r\n       &lt;sequence>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Annotations\" minOccurs=\"0\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Name\" maxOccurs=\"unbounded\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Description\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n         &lt;sequence maxOccurs=\"unbounded\" minOccurs=\"0\">\r\n           &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}Agency\"/>\r\n         &lt;/sequence>\r\n       &lt;/sequence>\r\n       &lt;attribute name=\"id\" use=\"required\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}IDType\" fixed=\"AGENCIES\" />\r\n       &lt;attribute name=\"version\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}VersionType\" fixed=\"1.0\" />\r\n       &lt;attribute name=\"isFinal\" type=\"{http://www.w3.org/2001/XMLSchema}boolean\" fixed=\"false\" />\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_AgencySchemeType.description" bundle="${i18n}"/>",
             "title": "AgencySchemeType",
             "type": "object"
         },
@@ -1612,7 +1622,7 @@
                 },
                 {}
             ],
-            "description": "AgencyType defines the structure of an agency description. The contacts defined for the organisation are specific to the agency role the organisation is serving.\r\n\r\n<p>Java class for AgencyType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"AgencyType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}OrganisationType\">\r\n       &lt;sequence>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Annotations\" minOccurs=\"0\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Name\" maxOccurs=\"unbounded\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Description\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n         &lt;element name=\"Contact\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}ContactType\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n       &lt;/sequence>\r\n       &lt;attribute name=\"id\" use=\"required\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}NCNameIDType\" />\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_AgencyType.description" bundle="${i18n}"/>",
             "title": "AgencyType",
             "type": "object"
         },
@@ -1623,7 +1633,7 @@
                 },
                 {}
             ],
-            "description": "AttachmentConstraintAttachmentType defines the structure for specifying the object to which an attachment constraints applies.\r\n\r\n<p>Java class for AttachmentConstraintAttachmentType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"AttachmentConstraintAttachmentType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}ConstraintAttachmentType\">\r\n       &lt;choice>\r\n         &lt;element name=\"DataSet\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}SetReferenceType\" maxOccurs=\"unbounded\"/>\r\n         &lt;element name=\"MetadataSet\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}SetReferenceType\" maxOccurs=\"unbounded\"/>\r\n         &lt;element name=\"SimpleDataSource\" type=\"{http://www.w3.org/2001/XMLSchema}anyURI\" maxOccurs=\"unbounded\"/>\r\n         &lt;choice>\r\n           &lt;element name=\"DataStructure\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}DataStructureReferenceType\" maxOccurs=\"unbounded\"/>\r\n           &lt;element name=\"MetadataStructure\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}MetadataStructureReferenceType\" maxOccurs=\"unbounded\"/>\r\n           &lt;element name=\"Dataflow\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}DataflowReferenceType\" maxOccurs=\"unbounded\"/>\r\n           &lt;element name=\"Metadataflow\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}MetadataflowReferenceType\" maxOccurs=\"unbounded\"/>\r\n           &lt;element name=\"ProvisionAgreement\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}ProvisionAgreementReferenceType\" maxOccurs=\"unbounded\"/>\r\n         &lt;/choice>\r\n       &lt;/choice>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_AttachmentConstraintAttachmentType.description" bundle="${i18n}"/>",
             "title": "AttachmentConstraintAttachmentType",
             "type": "object"
         },
@@ -1634,7 +1644,7 @@
                 },
                 {}
             ],
-            "description": "AttachmentConstraintType describes the details of an attachment constraint by defining the data or metadata key sets or component regions that attributes or reference metadata may be attached in the constraint attachment objects.\r\n\r\n<p>Java class for AttachmentConstraintType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"AttachmentConstraintType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}ConstraintType\">\r\n       &lt;sequence>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Annotations\" minOccurs=\"0\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Name\" maxOccurs=\"unbounded\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Description\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n         &lt;element name=\"ConstraintAttachment\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}AttachmentConstraintAttachmentType\" minOccurs=\"0\"/>\r\n         &lt;choice maxOccurs=\"unbounded\" minOccurs=\"0\">\r\n           &lt;element name=\"DataKeySet\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}DataKeySetType\"/>\r\n           &lt;element name=\"MetadataKeySet\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}MetadataKeySetType\"/>\r\n         &lt;/choice>\r\n       &lt;/sequence>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_AttachmentConstraintType.description" bundle="${i18n}"/>",
             "title": "AttachmentConstraintType",
             "type": "object"
         },
@@ -1645,7 +1655,7 @@
                 },
                 {}
             ],
-            "description": "AttributeBaseType is an abstract base type that serves as the basis for the AttributeType. It restricts the text format base to a text format valid  for data components (that does not allow for XHTML representation). The local representation is restricted to the values defined in codelist. The concept role is restricted to the values valid for a data attribute.\r\n\r\n<p>Java class for AttributeBaseType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"AttributeBaseType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}ComponentType\">\r\n       &lt;sequence>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Annotations\" minOccurs=\"0\"/>\r\n         &lt;element name=\"ConceptIdentity\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}ConceptReferenceType\"/>\r\n         &lt;element name=\"LocalRepresentation\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}SimpleDataStructureRepresentationType\" minOccurs=\"0\"/>\r\n       &lt;/sequence>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_AttributeBaseType.description" bundle="${i18n}"/>",
             "title": "AttributeBaseType",
             "type": "object"
         },
@@ -1656,7 +1666,7 @@
                 },
                 {}
             ],
-            "description": "AttributeListBaseType is an abstract base type used as the basis for the AttributeListType.\r\n\r\n<p>Java class for AttributeListBaseType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"AttributeListBaseType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}ComponentListType\">\r\n       &lt;sequence>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Annotations\" minOccurs=\"0\"/>\r\n       &lt;/sequence>\r\n       &lt;attribute name=\"id\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}IDType\" fixed=\"AttributeDescriptor\" />\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_AttributeListBaseType.description" bundle="${i18n}"/>",
             "title": "AttributeListBaseType",
             "type": "object"
         },
@@ -1669,7 +1679,7 @@
                     "properties": {
                         "ReportingYearStartDay": {
                             "$ref": "#/definitions/xml_ns5_ReportingYearStartDayType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_AttributeListType.properties.ReportingYearStartDay.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
@@ -1677,7 +1687,7 @@
                     }
                 }
             ],
-            "description": "AttributeListType describes the attribute descriptor for the data structure definition.\r\n\r\n<p>Java class for AttributeListType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"AttributeListType\">\r\n   &lt;complexContent>\r\n     &lt;extension base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}AttributeListBaseType\">\r\n       &lt;choice maxOccurs=\"unbounded\">\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}Attribute\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}ReportingYearStartDay\"/>\r\n       &lt;/choice>\r\n     &lt;/extension>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_AttributeListType.description" bundle="${i18n}"/>",
             "title": "AttributeListType",
             "type": "object"
         },
@@ -1687,35 +1697,35 @@
                     "properties": {
                         "AttachmentGroup": {
                             "$ref": "#/definitions/xml_ns4_LocalGroupKeyDescriptorReferenceType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_AttributeRelationshipType.properties.AttachmentGroup.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
                         },
                         "Dimension": {
                             "$ref": "#/definitions/xml_ns4_LocalDimensionReferenceType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_AttributeRelationshipType.properties.Dimension.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
                         },
                         "Group": {
                             "$ref": "#/definitions/xml_ns4_LocalGroupKeyDescriptorReferenceType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_AttributeRelationshipType.properties.Group.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
                         },
                         "None": {
                             "$ref": "#/definitions/xml_ns4_EmptyType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_AttributeRelationshipType.properties.None.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
                         },
                         "PrimaryMeasure": {
                             "$ref": "#/definitions/xml_ns4_LocalPrimaryMeasureReferenceType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_AttributeRelationshipType.properties.PrimaryMeasure.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
@@ -1723,7 +1733,7 @@
                     }
                 }
             ],
-            "description": "AttributeRelationshipType defines the structure for stating the relationship between an attribute and other data structure definition components.\r\n\r\n<p>Java class for AttributeRelationshipType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"AttributeRelationshipType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.w3.org/2001/XMLSchema}anyType\">\r\n       &lt;choice>\r\n         &lt;element name=\"None\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}EmptyType\"/>\r\n         &lt;sequence>\r\n           &lt;element name=\"Dimension\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}LocalDimensionReferenceType\" maxOccurs=\"unbounded\"/>\r\n           &lt;element name=\"AttachmentGroup\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}LocalGroupKeyDescriptorReferenceType\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n         &lt;/sequence>\r\n         &lt;element name=\"Group\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}LocalGroupKeyDescriptorReferenceType\"/>\r\n         &lt;element name=\"PrimaryMeasure\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}LocalPrimaryMeasureReferenceType\"/>\r\n       &lt;/choice>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_AttributeRelationshipType.description" bundle="${i18n}"/>",
             "title": "AttributeRelationshipType",
             "type": "object"
         },
@@ -1736,21 +1746,21 @@
                     "properties": {
                         "AttributeRelationship": {
                             "$ref": "#/definitions/xml_ns5_AttributeRelationshipType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_AttributeType.properties.AttributeRelationship.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
                         },
                         "ConceptRole": {
                             "$ref": "#/definitions/xml_ns4_ConceptReferenceType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_AttributeType.properties.ConceptRole.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
                         },
                         "assignmentStatus": {
                             "$ref": "#/definitions/xml_ns5_UsageStatusType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_AttributeType.properties.assignmentStatus.description" bundle="${i18n}"/>",
                             "xml": {
                                 "attribute": true,
                                 "namespace": ""
@@ -1759,7 +1769,7 @@
                     }
                 }
             ],
-            "description": "AttributeType describes the structure of a data attribute, which is defined as a characteristic of an object or entity. The attribute takes its semantic, and in some cases it representation, from its concept identity. An attribute can be coded by referencing a code list from its coded local representation. It can also specify its text format, which is used as the representation of the attribute if a coded representation is not defined. Neither the coded or uncoded representation are necessary, since the attribute may take these from the referenced concept. An attribute specifies its relationship with other data structure components and is given an assignment status. These two properties dictate where in a data message the attribute will be attached, and whether or not the attribute will be required to be given a value. A set of roles defined in concept scheme can be assigned to the attribute.\r\n\r\n<p>Java class for AttributeType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"AttributeType\">\r\n   &lt;complexContent>\r\n     &lt;extension base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}AttributeBaseType\">\r\n       &lt;sequence>\r\n         &lt;element name=\"ConceptRole\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}ConceptReferenceType\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n         &lt;element name=\"AttributeRelationship\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}AttributeRelationshipType\"/>\r\n       &lt;/sequence>\r\n       &lt;attribute name=\"assignmentStatus\" use=\"required\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}UsageStatusType\" />\r\n     &lt;/extension>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_AttributeType.description" bundle="${i18n}"/>",
             "required": [
                 "assignmentStatus",
                 "AttributeRelationship"
@@ -1774,7 +1784,7 @@
                 },
                 {}
             ],
-            "description": "BaseDimensionBaseType is an abstract base type that serves as the basis for any dimension. It restricts the text format base to a text format valid  for data components (that does not allow for XHTML representation).\r\n\r\n<p>Java class for BaseDimensionBaseType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"BaseDimensionBaseType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}ComponentType\">\r\n       &lt;sequence>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Annotations\" minOccurs=\"0\"/>\r\n         &lt;element name=\"ConceptIdentity\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}ConceptReferenceType\"/>\r\n         &lt;element name=\"LocalRepresentation\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}DataStructureRepresentationType\" minOccurs=\"0\"/>\r\n       &lt;/sequence>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_BaseDimensionBaseType.description" bundle="${i18n}"/>",
             "title": "BaseDimensionBaseType",
             "type": "object"
         },
@@ -1787,13 +1797,13 @@
                     "properties": {
                         "ConceptRole": {
                             "$ref": "#/definitions/xml_ns4_ConceptReferenceType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_BaseDimensionType.properties.ConceptRole.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
                         },
                         "position": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_BaseDimensionType.properties.position.description" bundle="${i18n}"/>",
                             "type": "number",
                             "xml": {
                                 "attribute": true,
@@ -1802,7 +1812,7 @@
                         },
                         "type": {
                             "$ref": "#/definitions/xml_ns4_DimensionTypeType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_BaseDimensionType.properties.type.description" bundle="${i18n}"/>",
                             "xml": {
                                 "attribute": true,
                                 "namespace": ""
@@ -1811,7 +1821,7 @@
                     }
                 }
             ],
-            "description": "BaseDimensionType is an abstract base type which defines the basic structure of all dimensions.\r\n\r\n<p>Java class for BaseDimensionType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"BaseDimensionType\">\r\n   &lt;complexContent>\r\n     &lt;extension base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}BaseDimensionBaseType\">\r\n       &lt;sequence>\r\n         &lt;element name=\"ConceptRole\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}ConceptReferenceType\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n       &lt;/sequence>\r\n       &lt;attribute name=\"position\" type=\"{http://www.w3.org/2001/XMLSchema}int\" />\r\n       &lt;attribute name=\"type\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}DimensionTypeType\" />\r\n     &lt;/extension>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_BaseDimensionType.description" bundle="${i18n}"/>",
             "title": "BaseDimensionType",
             "type": "object"
         },
@@ -1822,7 +1832,7 @@
                 },
                 {}
             ],
-            "description": "BaseOrganisationType is an abstract base type the forms the basis for the OrganisationType.\r\n\r\n<p>Java class for BaseOrganisationType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"BaseOrganisationType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}ItemType\">\r\n       &lt;sequence>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Annotations\" minOccurs=\"0\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Name\" maxOccurs=\"unbounded\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Description\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n         &lt;choice minOccurs=\"0\">\r\n           &lt;element name=\"Parent\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}LocalOrganisationReferenceBaseType\"/>\r\n         &lt;/choice>\r\n       &lt;/sequence>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_BaseOrganisationType.description" bundle="${i18n}"/>",
             "title": "BaseOrganisationType",
             "type": "object"
         },
@@ -1833,7 +1843,7 @@
                 },
                 {}
             ],
-            "description": "BasicComponentTextFormatType is a restricted version of the TextFormatType that restricts the text type to the representations allowed for all components except for target objects.\r\n\r\n<p>Java class for BasicComponentTextFormatType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"BasicComponentTextFormatType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}TextFormatType\">\r\n       &lt;attribute name=\"textType\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}BasicComponentDataType\" default=\"String\" />\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_BasicComponentTextFormatType.description" bundle="${i18n}"/>",
             "title": "BasicComponentTextFormatType",
             "type": "object"
         },
@@ -1846,14 +1856,14 @@
                     "properties": {
                         "Source": {
                             "$ref": "#/definitions/xml_ns4_ObjectReferenceType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_CategorisationType.properties.Source.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
                         },
                         "Target": {
                             "$ref": "#/definitions/xml_ns4_CategoryReferenceType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_CategorisationType.properties.Target.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
@@ -1861,7 +1871,7 @@
                     }
                 }
             ],
-            "description": "CategorisationType is defines the structure for a categorisation. A source object is referenced via an object reference and the target category is referenced via the target category.\r\n\r\n<p>Java class for CategorisationType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"CategorisationType\">\r\n   &lt;complexContent>\r\n     &lt;extension base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}MaintainableType\">\r\n       &lt;sequence minOccurs=\"0\">\r\n         &lt;element name=\"Source\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}ObjectReferenceType\"/>\r\n         &lt;element name=\"Target\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}CategoryReferenceType\"/>\r\n       &lt;/sequence>\r\n     &lt;/extension>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_CategorisationType.description" bundle="${i18n}"/>",
             "title": "CategorisationType",
             "type": "object"
         },
@@ -1872,7 +1882,7 @@
                 },
                 {}
             ],
-            "description": "CategoryMapType defines the structure for mapping two categories. A local reference is provided both the source and target category.\r\n\r\n<p>Java class for CategoryMapType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"CategoryMapType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}ItemAssociationType\">\r\n       &lt;sequence>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Annotations\" minOccurs=\"0\"/>\r\n         &lt;element name=\"Source\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}LocalCategoryReferenceType\"/>\r\n         &lt;element name=\"Target\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}LocalCategoryReferenceType\"/>\r\n       &lt;/sequence>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_CategoryMapType.description" bundle="${i18n}"/>",
             "title": "CategoryMapType",
             "type": "object"
         },
@@ -1883,7 +1893,7 @@
                 },
                 {}
             ],
-            "description": "CategorySchemeMapType defines the structure of a map which identifies relationships between categories in different category schemes.\r\n\r\n<p>Java class for CategorySchemeMapType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"CategorySchemeMapType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}ItemSchemeMapType\">\r\n       &lt;sequence>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Annotations\" minOccurs=\"0\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Name\" maxOccurs=\"unbounded\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Description\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n         &lt;element name=\"Source\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}CategorySchemeReferenceType\"/>\r\n         &lt;element name=\"Target\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}CategorySchemeReferenceType\"/>\r\n         &lt;sequence maxOccurs=\"unbounded\">\r\n           &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}CategoryMap\"/>\r\n         &lt;/sequence>\r\n       &lt;/sequence>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_CategorySchemeMapType.description" bundle="${i18n}"/>",
             "title": "CategorySchemeMapType",
             "type": "object"
         },
@@ -1894,7 +1904,7 @@
                 },
                 {}
             ],
-            "description": "CategorySchemeType describes the structure of a category scheme. A category scheme is the descriptive information for an arrangement or division of categories into groups based on characteristics, which the objects have in common. This provides for a simple, leveled hierarchy or categories.\r\n\r\n<p>Java class for CategorySchemeType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"CategorySchemeType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}ItemSchemeType\">\r\n       &lt;sequence>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Annotations\" minOccurs=\"0\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Name\" maxOccurs=\"unbounded\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Description\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n         &lt;sequence maxOccurs=\"unbounded\" minOccurs=\"0\">\r\n           &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}Category\"/>\r\n         &lt;/sequence>\r\n       &lt;/sequence>\r\n       &lt;attribute name=\"id\" use=\"required\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}NCNameIDType\" />\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_CategorySchemeType.description" bundle="${i18n}"/>",
             "title": "CategorySchemeType",
             "type": "object"
         },
@@ -1905,7 +1915,7 @@
                 },
                 {}
             ],
-            "description": "CategoryType describes the details of a category. A category is defined as an item at any level in a classification. The Category element represents a set of nested categories which are child categories.\r\n\r\n<p>Java class for CategoryType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"CategoryType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}ItemType\">\r\n       &lt;sequence>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Annotations\" minOccurs=\"0\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Name\" maxOccurs=\"unbounded\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Description\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n         &lt;choice minOccurs=\"0\">\r\n           &lt;sequence maxOccurs=\"unbounded\">\r\n             &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}Category\"/>\r\n           &lt;/sequence>\r\n         &lt;/choice>\r\n       &lt;/sequence>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_CategoryType.description" bundle="${i18n}"/>",
             "title": "CategoryType",
             "type": "object"
         },
@@ -1916,7 +1926,7 @@
                 },
                 {}
             ],
-            "description": "CodeMapType defines the structure for mapping two codes. A local reference is provided both the source and target code.\r\n\r\n<p>Java class for CodeMapType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"CodeMapType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}ItemAssociationType\">\r\n       &lt;sequence>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Annotations\" minOccurs=\"0\"/>\r\n         &lt;element name=\"Source\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}LocalCodeReferenceType\"/>\r\n         &lt;element name=\"Target\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}LocalCodeReferenceType\"/>\r\n       &lt;/sequence>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_CodeMapType.description" bundle="${i18n}"/>",
             "title": "CodeMapType",
             "type": "object"
         },
@@ -1927,7 +1937,7 @@
                 },
                 {}
             ],
-            "description": "CodeType describes the structure of a code. A code is defined as a language independent set of letters, numbers or symbols that represent a concept whose meaning is described in a natural language. Presentational information not present may be added through the use of annotations.\r\n\r\n<p>Java class for CodeType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"CodeType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}ItemType\">\r\n       &lt;sequence>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Annotations\" minOccurs=\"0\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Name\" maxOccurs=\"unbounded\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Description\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n         &lt;choice minOccurs=\"0\">\r\n           &lt;element name=\"Parent\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}LocalCodeReferenceType\"/>\r\n         &lt;/choice>\r\n       &lt;/sequence>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_CodeType.description" bundle="${i18n}"/>",
             "title": "CodeType",
             "type": "object"
         },
@@ -1938,7 +1948,7 @@
                 },
                 {}
             ],
-            "description": "CodededTextFormatType is a restricted version of the SimpleComponentTextFormatType that only allows factets and text types applicable to codes. Although the time facets permit any value, an actual code identifier does not support the necessary characters for time. Therefore these facets should not contain time in their values.\r\n\r\n<p>Java class for CodededTextFormatType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"CodededTextFormatType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}SimpleComponentTextFormatType\">\r\n       &lt;attribute name=\"textType\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}CodeDataType\" />\r\n       &lt;attribute name=\"isSequence\" type=\"{http://www.w3.org/2001/XMLSchema}boolean\" />\r\n       &lt;attribute name=\"interval\" type=\"{http://www.w3.org/2001/XMLSchema}integer\" />\r\n       &lt;attribute name=\"startValue\" type=\"{http://www.w3.org/2001/XMLSchema}integer\" />\r\n       &lt;attribute name=\"endValue\" type=\"{http://www.w3.org/2001/XMLSchema}integer\" />\r\n       &lt;attribute name=\"timeInterval\" type=\"{http://www.w3.org/2001/XMLSchema}duration\" />\r\n       &lt;attribute name=\"startTime\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}StandardTimePeriodType\" />\r\n       &lt;attribute name=\"endTime\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}StandardTimePeriodType\" />\r\n       &lt;attribute name=\"minLength\" type=\"{http://www.w3.org/2001/XMLSchema}positiveInteger\" />\r\n       &lt;attribute name=\"maxLength\" type=\"{http://www.w3.org/2001/XMLSchema}positiveInteger\" />\r\n       &lt;attribute name=\"minValue\" type=\"{http://www.w3.org/2001/XMLSchema}integer\" />\r\n       &lt;attribute name=\"maxValue\" type=\"{http://www.w3.org/2001/XMLSchema}integer\" />\r\n       &lt;attribute name=\"pattern\" type=\"{http://www.w3.org/2001/XMLSchema}string\" />\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_CodededTextFormatType.description" bundle="${i18n}"/>",
             "title": "CodededTextFormatType",
             "type": "object"
         },
@@ -1949,7 +1959,7 @@
                 },
                 {}
             ],
-            "description": "CodelistMapType defines the structure of a map which identifies relationships between codes in different codelists.\r\n\r\n<p>Java class for CodelistMapType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"CodelistMapType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}ItemSchemeMapType\">\r\n       &lt;sequence>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Annotations\" minOccurs=\"0\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Name\" maxOccurs=\"unbounded\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Description\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n         &lt;element name=\"Source\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}CodelistReferenceType\"/>\r\n         &lt;element name=\"Target\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}CodelistReferenceType\"/>\r\n         &lt;sequence maxOccurs=\"unbounded\">\r\n           &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}CodeMap\"/>\r\n         &lt;/sequence>\r\n       &lt;/sequence>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_CodelistMapType.description" bundle="${i18n}"/>",
             "title": "CodelistMapType",
             "type": "object"
         },
@@ -1960,7 +1970,7 @@
                 },
                 {}
             ],
-            "description": "CodelistType defines the structure of a codelist. A codelist is defined as a list from which some statistical concepts (coded concepts) take their values.\r\n\r\n<p>Java class for CodelistType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"CodelistType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}ItemSchemeType\">\r\n       &lt;sequence>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Annotations\" minOccurs=\"0\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Name\" maxOccurs=\"unbounded\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Description\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n         &lt;sequence maxOccurs=\"unbounded\" minOccurs=\"0\">\r\n           &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}Code\"/>\r\n         &lt;/sequence>\r\n       &lt;/sequence>\r\n       &lt;attribute name=\"id\" use=\"required\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}NCNameIDType\" />\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_CodelistType.description" bundle="${i18n}"/>",
             "title": "CodelistType",
             "type": "object"
         },
@@ -1971,7 +1981,7 @@
                 },
                 {}
             ],
-            "description": "<p>Java class for CodingTextFormatType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"CodingTextFormatType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}SimpleComponentTextFormatType\">\r\n       &lt;attribute name=\"textType\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}SimpleCodeDataType\" />\r\n       &lt;attribute name=\"isSequence\" type=\"{http://www.w3.org/2001/XMLSchema}boolean\" />\r\n       &lt;attribute name=\"interval\" type=\"{http://www.w3.org/2001/XMLSchema}integer\" />\r\n       &lt;attribute name=\"startValue\" type=\"{http://www.w3.org/2001/XMLSchema}positiveInteger\" />\r\n       &lt;attribute name=\"endValue\" type=\"{http://www.w3.org/2001/XMLSchema}positiveInteger\" />\r\n       &lt;attribute name=\"minLength\" type=\"{http://www.w3.org/2001/XMLSchema}positiveInteger\" />\r\n       &lt;attribute name=\"maxLength\" type=\"{http://www.w3.org/2001/XMLSchema}positiveInteger\" />\r\n       &lt;attribute name=\"minValue\" type=\"{http://www.w3.org/2001/XMLSchema}positiveInteger\" />\r\n       &lt;attribute name=\"maxValue\" type=\"{http://www.w3.org/2001/XMLSchema}positiveInteger\" />\r\n       &lt;attribute name=\"pattern\" type=\"{http://www.w3.org/2001/XMLSchema}string\" />\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_CodingTextFormatType.description" bundle="${i18n}"/>",
             "title": "CodingTextFormatType",
             "type": "object"
         },
@@ -1982,7 +1992,7 @@
                 },
                 {}
             ],
-            "description": "ComponentBaseType is an abstract type that only serves the purpose of forming the base for the actual ComponentType. It only restricts the format of the id attribute to the NCNameIDType.\r\n\r\n<p>Java class for ComponentBaseType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"ComponentBaseType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}IdentifiableType\">\r\n       &lt;sequence>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Annotations\" minOccurs=\"0\"/>\r\n       &lt;/sequence>\r\n       &lt;attribute name=\"id\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}NCNameIDType\" />\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ComponentBaseType.description" bundle="${i18n}"/>",
             "title": "ComponentBaseType",
             "type": "object"
         },
@@ -1994,7 +2004,7 @@
                 {
                     "properties": {
                         "Component": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ComponentListType.properties.Component.description" bundle="${i18n}"/>",
                             "type": "object",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
@@ -2003,7 +2013,7 @@
                     }
                 }
             ],
-            "description": "ComponentListType is an abstract base type for all component lists. It contains a collection of components. Concrete types should restrict this to specific concrete components.\r\n\r\n<p>Java class for ComponentListType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"ComponentListType\">\r\n   &lt;complexContent>\r\n     &lt;extension base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}IdentifiableType\">\r\n       &lt;sequence>\r\n         &lt;sequence maxOccurs=\"unbounded\" minOccurs=\"0\">\r\n           &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}Component\"/>\r\n         &lt;/sequence>\r\n       &lt;/sequence>\r\n     &lt;/extension>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ComponentListType.description" bundle="${i18n}"/>",
             "title": "ComponentListType",
             "type": "object"
         },
@@ -2016,21 +2026,21 @@
                     "properties": {
                         "RepresentationMapping": {
                             "$ref": "#/definitions/xml_ns5_RepresentationMapType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ComponentMapType.properties.RepresentationMapping.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
                         },
                         "Source": {
                             "$ref": "#/definitions/xml_ns4_LocalComponentListComponentReferenceType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ComponentMapType.properties.Source.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
                         },
                         "Target": {
                             "$ref": "#/definitions/xml_ns4_LocalComponentListComponentReferenceType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ComponentMapType.properties.Target.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
@@ -2038,7 +2048,7 @@
                     }
                 }
             ],
-            "description": "ComponentMapType defines the structure for relating a component in a source structure to a component in a target structure.\r\n\r\n<p>Java class for ComponentMapType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"ComponentMapType\">\r\n   &lt;complexContent>\r\n     &lt;extension base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}AnnotableType\">\r\n       &lt;sequence>\r\n         &lt;element name=\"Source\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}LocalComponentListComponentReferenceType\"/>\r\n         &lt;element name=\"Target\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}LocalComponentListComponentReferenceType\"/>\r\n         &lt;element name=\"RepresentationMapping\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}RepresentationMapType\" minOccurs=\"0\"/>\r\n       &lt;/sequence>\r\n     &lt;/extension>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ComponentMapType.description" bundle="${i18n}"/>",
             "required": [
                 "Source",
                 "Target"
@@ -2055,14 +2065,14 @@
                     "properties": {
                         "ConceptIdentity": {
                             "$ref": "#/definitions/xml_ns4_ConceptReferenceType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ComponentType.properties.ConceptIdentity.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
                         },
                         "LocalRepresentation": {
                             "$ref": "#/definitions/xml_ns5_RepresentationType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ComponentType.properties.LocalRepresentation.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
@@ -2070,7 +2080,7 @@
                     }
                 }
             ],
-            "description": "ComponentType is an abstract base type for all components. It contains information pertaining to a component, including an optional reference to a concept, an optional role played by the concept, an optional text format description, and an optional local representation.\r\n\r\n<p>Java class for ComponentType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"ComponentType\">\r\n   &lt;complexContent>\r\n     &lt;extension base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}ComponentBaseType\">\r\n       &lt;sequence>\r\n         &lt;element name=\"ConceptIdentity\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}ConceptReferenceType\" minOccurs=\"0\"/>\r\n         &lt;element name=\"LocalRepresentation\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}RepresentationType\" minOccurs=\"0\"/>\r\n       &lt;/sequence>\r\n     &lt;/extension>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ComponentType.description" bundle="${i18n}"/>",
             "title": "ComponentType",
             "type": "object"
         },
@@ -2083,13 +2093,13 @@
                     "properties": {
                         "Description": {
                             "$ref": "#/definitions/xml_ns4_TextType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ComputationType.properties.Description.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common"
                             }
                         },
                         "localID": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ComputationType.properties.localID.description" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "attribute": true,
@@ -2097,7 +2107,7 @@
                             }
                         },
                         "softwareLanguage": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ComputationType.properties.softwareLanguage.description" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "attribute": true,
@@ -2105,7 +2115,7 @@
                             }
                         },
                         "softwarePackage": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ComputationType.properties.softwarePackage.description" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "attribute": true,
@@ -2113,7 +2123,7 @@
                             }
                         },
                         "softwareVersion": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ComputationType.properties.softwareVersion.description" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "attribute": true,
@@ -2123,7 +2133,7 @@
                     }
                 }
             ],
-            "description": "ComputationType describes a computation in a process.\r\n\r\n<p>Java class for ComputationType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"ComputationType\">\r\n   &lt;complexContent>\r\n     &lt;extension base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}AnnotableType\">\r\n       &lt;sequence>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Description\" maxOccurs=\"unbounded\"/>\r\n       &lt;/sequence>\r\n       &lt;attribute name=\"localID\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}IDType\" />\r\n       &lt;attribute name=\"softwarePackage\" type=\"{http://www.w3.org/2001/XMLSchema}string\" />\r\n       &lt;attribute name=\"softwareLanguage\" type=\"{http://www.w3.org/2001/XMLSchema}string\" />\r\n       &lt;attribute name=\"softwareVersion\" type=\"{http://www.w3.org/2001/XMLSchema}string\" />\r\n     &lt;/extension>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ComputationType.description" bundle="${i18n}"/>",
             "required": [
                 "Description"
             ],
@@ -2137,7 +2147,7 @@
                 },
                 {}
             ],
-            "description": "ConceptBaseType is an abstract base type the forms the basis of the ConceptType by requiring a name and id, and restricting the content of the id.\r\n\r\n<p>Java class for ConceptBaseType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"ConceptBaseType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}ItemType\">\r\n       &lt;sequence>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Annotations\" minOccurs=\"0\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Name\" maxOccurs=\"unbounded\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Description\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n         &lt;choice minOccurs=\"0\">\r\n           &lt;element name=\"Parent\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}LocalConceptReferenceType\"/>\r\n         &lt;/choice>\r\n       &lt;/sequence>\r\n       &lt;attribute name=\"id\" use=\"required\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}NCNameIDType\" />\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ConceptBaseType.description" bundle="${i18n}"/>",
             "title": "ConceptBaseType",
             "type": "object"
         },
@@ -2148,7 +2158,7 @@
                 },
                 {}
             ],
-            "description": "ConceptMapType defines the structure for mapping two concepts. A local reference is provided both the source and target concept.\r\n\r\n<p>Java class for ConceptMapType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"ConceptMapType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}ItemAssociationType\">\r\n       &lt;sequence>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Annotations\" minOccurs=\"0\"/>\r\n         &lt;element name=\"Source\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}LocalConceptReferenceType\"/>\r\n         &lt;element name=\"Target\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}LocalConceptReferenceType\"/>\r\n       &lt;/sequence>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ConceptMapType.description" bundle="${i18n}"/>",
             "title": "ConceptMapType",
             "type": "object"
         },
@@ -2159,7 +2169,7 @@
                 },
                 {}
             ],
-            "description": "ConceptRepresentation defines the core representation that are allowed for a concept. The text format allowed for a concept is that which is allowed for any non-target object component.\r\n\r\n<p>Java class for ConceptRepresentation complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"ConceptRepresentation\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}RepresentationType\">\r\n       &lt;choice>\r\n         &lt;element name=\"TextFormat\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}BasicComponentTextFormatType\"/>\r\n         &lt;sequence>\r\n           &lt;element name=\"Enumeration\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}CodelistReferenceType\"/>\r\n           &lt;element name=\"EnumerationFormat\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}CodededTextFormatType\" minOccurs=\"0\"/>\r\n         &lt;/sequence>\r\n       &lt;/choice>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ConceptRepresentation.description" bundle="${i18n}"/>",
             "title": "ConceptRepresentation",
             "type": "object"
         },
@@ -2170,7 +2180,7 @@
                 },
                 {}
             ],
-            "description": "ConceptSchemeMapType defines the structure of a map which identifies relationships between concepts in different concept schemes.\r\n\r\n<p>Java class for ConceptSchemeMapType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"ConceptSchemeMapType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}ItemSchemeMapType\">\r\n       &lt;sequence>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Annotations\" minOccurs=\"0\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Name\" maxOccurs=\"unbounded\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Description\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n         &lt;element name=\"Source\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}ConceptSchemeReferenceType\"/>\r\n         &lt;element name=\"Target\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}ConceptSchemeReferenceType\"/>\r\n         &lt;sequence maxOccurs=\"unbounded\">\r\n           &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}ConceptMap\"/>\r\n         &lt;/sequence>\r\n       &lt;/sequence>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ConceptSchemeMapType.description" bundle="${i18n}"/>",
             "title": "ConceptSchemeMapType",
             "type": "object"
         },
@@ -2181,7 +2191,7 @@
                 },
                 {}
             ],
-            "description": "onceptSchemeType describes the structure of a concept scheme. A concept scheme is the descriptive information for an arrangement or division of concepts into groups based on characteristics, which the objects have in common. It contains a collection of concept definitions, that may be arranged in simple hierarchies.\r\n\r\n<p>Java class for ConceptSchemeType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"ConceptSchemeType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}ItemSchemeType\">\r\n       &lt;sequence>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Annotations\" minOccurs=\"0\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Name\" maxOccurs=\"unbounded\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Description\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n         &lt;sequence maxOccurs=\"unbounded\" minOccurs=\"0\">\r\n           &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}Concept\"/>\r\n         &lt;/sequence>\r\n       &lt;/sequence>\r\n       &lt;attribute name=\"id\" use=\"required\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}NCNameIDType\" />\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ConceptSchemeType.description" bundle="${i18n}"/>",
             "title": "ConceptSchemeType",
             "type": "object"
         },
@@ -2194,14 +2204,14 @@
                     "properties": {
                         "CoreRepresentation": {
                             "$ref": "#/definitions/xml_ns5_ConceptRepresentation",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ConceptType.properties.CoreRepresentation.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
                         },
                         "ISOConceptReference": {
                             "$ref": "#/definitions/xml_ns5_ISOConceptReferenceType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ConceptType.properties.ISOConceptReference.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
@@ -2209,7 +2219,7 @@
                     }
                 }
             ],
-            "description": "ConceptType describes the details of a concept. A concept is defined as a unit of knowledge created by a unique combination of characteristics. If a concept does not specify a TextFormat or a core representation, then the representation of the concept is assumed to be represented by any set of valid characters (corresponding to the xs:string datatype of W3C XML Schema).\r\n\r\n<p>Java class for ConceptType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"ConceptType\">\r\n   &lt;complexContent>\r\n     &lt;extension base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}ConceptBaseType\">\r\n       &lt;sequence>\r\n         &lt;element name=\"CoreRepresentation\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}ConceptRepresentation\" minOccurs=\"0\"/>\r\n         &lt;element name=\"ISOConceptReference\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}ISOConceptReferenceType\" minOccurs=\"0\"/>\r\n       &lt;/sequence>\r\n     &lt;/extension>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ConceptType.description" bundle="${i18n}"/>",
             "title": "ConceptType",
             "type": "object"
         },
@@ -2219,69 +2229,69 @@
                     "properties": {
                         "DataProvider": {
                             "$ref": "#/definitions/xml_ns4_DataProviderReferenceType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ConstraintAttachmentType.properties.DataProvider.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
                         },
                         "DataSet": {
                             "$ref": "#/definitions/xml_ns4_SetReferenceType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ConstraintAttachmentType.properties.DataSet.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
                         },
                         "DataStructure": {
                             "$ref": "#/definitions/xml_ns4_DataStructureReferenceType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ConstraintAttachmentType.properties.DataStructure.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
                         },
                         "Dataflow": {
                             "$ref": "#/definitions/xml_ns4_DataflowReferenceType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ConstraintAttachmentType.properties.Dataflow.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
                         },
                         "MetadataSet": {
                             "$ref": "#/definitions/xml_ns4_SetReferenceType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ConstraintAttachmentType.properties.MetadataSet.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
                         },
                         "MetadataStructure": {
                             "$ref": "#/definitions/xml_ns4_MetadataStructureReferenceType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ConstraintAttachmentType.properties.MetadataStructure.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
                         },
                         "Metadataflow": {
                             "$ref": "#/definitions/xml_ns4_MetadataflowReferenceType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ConstraintAttachmentType.properties.Metadataflow.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
                         },
                         "ProvisionAgreement": {
                             "$ref": "#/definitions/xml_ns4_ProvisionAgreementReferenceType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ConstraintAttachmentType.properties.ProvisionAgreement.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
                         },
                         "QueryableDataSource": {
                             "$ref": "#/definitions/xml_ns4_QueryableDataSourceType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ConstraintAttachmentType.properties.QueryableDataSource.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
                         },
                         "SimpleDataSource": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ConstraintAttachmentType.properties.SimpleDataSource.description" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
@@ -2290,7 +2300,7 @@
                     }
                 }
             ],
-            "description": "ConstraintAttachmentType describes a collection of references to constrainable artefacts.\r\n\r\n<p>Java class for ConstraintAttachmentType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"ConstraintAttachmentType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.w3.org/2001/XMLSchema}anyType\">\r\n       &lt;choice>\r\n         &lt;element name=\"DataProvider\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}DataProviderReferenceType\"/>\r\n         &lt;element name=\"DataSet\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}SetReferenceType\" maxOccurs=\"unbounded\"/>\r\n         &lt;element name=\"MetadataSet\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}SetReferenceType\" maxOccurs=\"unbounded\"/>\r\n         &lt;element name=\"SimpleDataSource\" type=\"{http://www.w3.org/2001/XMLSchema}anyURI\" maxOccurs=\"unbounded\"/>\r\n         &lt;choice>\r\n           &lt;sequence>\r\n             &lt;element name=\"DataStructure\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}DataStructureReferenceType\" maxOccurs=\"unbounded\"/>\r\n             &lt;element name=\"QueryableDataSource\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}QueryableDataSourceType\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n           &lt;/sequence>\r\n           &lt;sequence>\r\n             &lt;element name=\"MetadataStructure\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}MetadataStructureReferenceType\" maxOccurs=\"unbounded\"/>\r\n             &lt;element name=\"QueryableDataSource\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}QueryableDataSourceType\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n           &lt;/sequence>\r\n           &lt;sequence>\r\n             &lt;element name=\"Dataflow\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}DataflowReferenceType\" maxOccurs=\"unbounded\"/>\r\n             &lt;element name=\"QueryableDataSource\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}QueryableDataSourceType\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n           &lt;/sequence>\r\n           &lt;sequence>\r\n             &lt;element name=\"Metadataflow\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}MetadataflowReferenceType\" maxOccurs=\"unbounded\"/>\r\n             &lt;element name=\"QueryableDataSource\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}QueryableDataSourceType\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n           &lt;/sequence>\r\n           &lt;sequence>\r\n             &lt;element name=\"ProvisionAgreement\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}ProvisionAgreementReferenceType\" maxOccurs=\"unbounded\"/>\r\n             &lt;element name=\"QueryableDataSource\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}QueryableDataSourceType\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n           &lt;/sequence>\r\n         &lt;/choice>\r\n       &lt;/choice>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ConstraintAttachmentType.description" bundle="${i18n}"/>",
             "title": "ConstraintAttachmentType",
             "type": "object"
         },
@@ -2301,7 +2311,7 @@
                 },
                 {}
             ],
-            "description": "ConstraintBaseType is an abstract base type that forms the basis of the main abstract ConstraintType. It requires that a name be provided.\r\n\r\n<p>Java class for ConstraintBaseType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"ConstraintBaseType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}MaintainableType\">\r\n       &lt;sequence>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Annotations\" minOccurs=\"0\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Name\" maxOccurs=\"unbounded\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Description\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n       &lt;/sequence>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ConstraintBaseType.description" bundle="${i18n}"/>",
             "title": "ConstraintBaseType",
             "type": "object"
         },
@@ -2312,7 +2322,7 @@
                 },
                 {}
             ],
-            "description": "ConstraintTargetType defines the structure of a constraint target object. The constraint target object has a fixed representation and identifier.\r\n\r\n<p>Java class for ConstraintContentTargetType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"ConstraintContentTargetType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}TargetObject\">\r\n       &lt;sequence>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Annotations\" minOccurs=\"0\"/>\r\n         &lt;element name=\"LocalRepresentation\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}ConstraintRepresentationType\"/>\r\n       &lt;/sequence>\r\n       &lt;attribute name=\"id\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}NCNameIDType\" fixed=\"CONSTRAINT_CONTENT_TARGET\" />\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ConstraintContentTargetType.description" bundle="${i18n}"/>",
             "title": "ConstraintContentTargetType",
             "type": "object"
         },
@@ -2323,7 +2333,7 @@
                 },
                 {}
             ],
-            "description": "ConstraintRepresentationType defines the possible local representations of a constraint reference target object. The representation is fixed to always be an attachment constraint reference.\r\n\r\n<p>Java class for ConstraintRepresentationType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"ConstraintRepresentationType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}RepresentationType\">\r\n       &lt;sequence>\r\n         &lt;element name=\"TextFormat\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}ConstraintTextFormatType\"/>\r\n       &lt;/sequence>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ConstraintRepresentationType.description" bundle="${i18n}"/>",
             "title": "ConstraintRepresentationType",
             "type": "object"
         },
@@ -2334,7 +2344,7 @@
                 },
                 {}
             ],
-            "description": "ConstraintTextFormatType is a restricted version of the NonFacetedTextFormatType that specifies a fixed AttachmentConstraintReference representation.\r\n\r\n<p>Java class for ConstraintTextFormatType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"ConstraintTextFormatType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}TargetObjectTextFormatType\">\r\n       &lt;attribute name=\"textType\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}TargetObjectDataType\" fixed=\"AttachmentConstraintReference\" />\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ConstraintTextFormatType.description" bundle="${i18n}"/>",
             "title": "ConstraintTextFormatType",
             "type": "object"
         },
@@ -2347,35 +2357,35 @@
                     "properties": {
                         "ConstraintAttachment": {
                             "$ref": "#/definitions/xml_ns5_ConstraintAttachmentType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ConstraintType.properties.ConstraintAttachment.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
                         },
                         "CubeRegion": {
                             "$ref": "#/definitions/xml_ns4_CubeRegionType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ConstraintType.properties.CubeRegion.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
                         },
                         "DataKeySet": {
                             "$ref": "#/definitions/xml_ns5_DataKeySetType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ConstraintType.properties.DataKeySet.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
                         },
                         "MetadataKeySet": {
                             "$ref": "#/definitions/xml_ns5_MetadataKeySetType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ConstraintType.properties.MetadataKeySet.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
                         },
                         "MetadataTargetRegion": {
                             "$ref": "#/definitions/xml_ns4_MetadataTargetRegionType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ConstraintType.properties.MetadataTargetRegion.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
@@ -2383,7 +2393,7 @@
                     }
                 }
             ],
-            "description": "ConstraintType is an abstract base type that specific types of constraints (content and attachment) restrict and extend to describe their details. The inclusion of a key or region in a constraint is determined by first processing the included key sets, and then removing those keys defined in the excluded key sets. If no included key sets are defined, then it is assumed the all possible keys or regions are included, and any excluded key or regions are removed from this complete set.\r\n\r\n<p>Java class for ConstraintType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"ConstraintType\">\r\n   &lt;complexContent>\r\n     &lt;extension base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}ConstraintBaseType\">\r\n       &lt;sequence>\r\n         &lt;element name=\"ConstraintAttachment\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}ConstraintAttachmentType\" minOccurs=\"0\"/>\r\n         &lt;choice maxOccurs=\"unbounded\" minOccurs=\"0\">\r\n           &lt;element name=\"DataKeySet\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}DataKeySetType\"/>\r\n           &lt;element name=\"MetadataKeySet\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}MetadataKeySetType\"/>\r\n           &lt;element name=\"CubeRegion\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}CubeRegionType\"/>\r\n           &lt;element name=\"MetadataTargetRegion\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}MetadataTargetRegionType\"/>\r\n         &lt;/choice>\r\n       &lt;/sequence>\r\n     &lt;/extension>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ConstraintType.description" bundle="${i18n}"/>",
             "title": "ConstraintType",
             "type": "object"
         },
@@ -2393,20 +2403,20 @@
                     "properties": {
                         "Department": {
                             "$ref": "#/definitions/xml_ns4_TextType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ContactType.properties.Department.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
                         },
                         "Email": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ContactType.properties.Email.description" bundle="${i18n}"/>",
                             "type": "object",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
                         },
                         "Fax": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ContactType.properties.Fax.description" bundle="${i18n}"/>",
                             "type": "object",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
@@ -2414,41 +2424,41 @@
                         },
                         "Name": {
                             "$ref": "#/definitions/xml_ns4_TextType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ContactType.properties.Name.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common"
                             }
                         },
                         "Role": {
                             "$ref": "#/definitions/xml_ns4_TextType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ContactType.properties.Role.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
                         },
                         "Telephone": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ContactType.properties.Telephone.description" bundle="${i18n}"/>",
                             "type": "object",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
                         },
                         "URI": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ContactType.properties.URI.description" bundle="${i18n}"/>",
                             "type": "object",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
                         },
                         "X400": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ContactType.properties.X400.description" bundle="${i18n}"/>",
                             "type": "object",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
                         },
                         "id": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ContactType.properties.id.description" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "attribute": true,
@@ -2458,7 +2468,7 @@
                     }
                 }
             ],
-            "description": "ContactType describes the structure of a contact's details.\r\n\r\n<p>Java class for ContactType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"ContactType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.w3.org/2001/XMLSchema}anyType\">\r\n       &lt;sequence>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Name\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n         &lt;element name=\"Department\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}TextType\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n         &lt;element name=\"Role\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}TextType\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n         &lt;choice maxOccurs=\"unbounded\" minOccurs=\"0\">\r\n           &lt;element name=\"Telephone\" type=\"{http://www.w3.org/2001/XMLSchema}string\"/>\r\n           &lt;element name=\"Fax\" type=\"{http://www.w3.org/2001/XMLSchema}string\"/>\r\n           &lt;element name=\"X400\" type=\"{http://www.w3.org/2001/XMLSchema}string\"/>\r\n           &lt;element name=\"URI\" type=\"{http://www.w3.org/2001/XMLSchema}anyURI\"/>\r\n           &lt;element name=\"Email\" type=\"{http://www.w3.org/2001/XMLSchema}string\"/>\r\n         &lt;/choice>\r\n       &lt;/sequence>\r\n       &lt;attribute name=\"id\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}IDType\" />\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ContactType.description" bundle="${i18n}"/>",
             "title": "ContactType",
             "type": "object"
         },
@@ -2469,7 +2479,7 @@
                 },
                 {}
             ],
-            "description": "ContentConstraintAttachmentType defines the structure for specifying the target object(s) of a content constraint.\r\n\r\n<p>Java class for ContentConstraintAttachmentType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"ContentConstraintAttachmentType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}ConstraintAttachmentType\">\r\n       &lt;choice>\r\n         &lt;element name=\"DataProvider\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}DataProviderReferenceType\"/>\r\n         &lt;element name=\"DataSet\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}SetReferenceType\"/>\r\n         &lt;element name=\"MetadataSet\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}SetReferenceType\"/>\r\n         &lt;element name=\"SimpleDataSource\" type=\"{http://www.w3.org/2001/XMLSchema}anyURI\"/>\r\n         &lt;choice>\r\n           &lt;sequence>\r\n             &lt;element name=\"DataStructure\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}DataStructureReferenceType\" maxOccurs=\"unbounded\"/>\r\n             &lt;element name=\"QueryableDataSource\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}QueryableDataSourceType\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n           &lt;/sequence>\r\n           &lt;sequence>\r\n             &lt;element name=\"MetadataStructure\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}MetadataStructureReferenceType\" maxOccurs=\"unbounded\"/>\r\n             &lt;element name=\"QueryableDataSource\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}QueryableDataSourceType\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n           &lt;/sequence>\r\n           &lt;sequence>\r\n             &lt;element name=\"Dataflow\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}DataflowReferenceType\" maxOccurs=\"unbounded\"/>\r\n             &lt;element name=\"QueryableDataSource\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}QueryableDataSourceType\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n           &lt;/sequence>\r\n           &lt;sequence>\r\n             &lt;element name=\"Metadataflow\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}MetadataflowReferenceType\" maxOccurs=\"unbounded\"/>\r\n             &lt;element name=\"QueryableDataSource\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}QueryableDataSourceType\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n           &lt;/sequence>\r\n           &lt;sequence>\r\n             &lt;element name=\"ProvisionAgreement\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}ProvisionAgreementReferenceType\" maxOccurs=\"unbounded\"/>\r\n             &lt;element name=\"QueryableDataSource\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}QueryableDataSourceType\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n           &lt;/sequence>\r\n         &lt;/choice>\r\n       &lt;/choice>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ContentConstraintAttachmentType.description" bundle="${i18n}"/>",
             "title": "ContentConstraintAttachmentType",
             "type": "object"
         },
@@ -2480,7 +2490,7 @@
                 },
                 {}
             ],
-            "description": "ContentConstraintBaseType is an abstract base type that forms the basis for the ContentConstraintType.\r\n\r\n<p>Java class for ContentConstraintBaseType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"ContentConstraintBaseType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}ConstraintType\">\r\n       &lt;sequence>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Annotations\" minOccurs=\"0\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Name\" maxOccurs=\"unbounded\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Description\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n         &lt;element name=\"ConstraintAttachment\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}ContentConstraintAttachmentType\" minOccurs=\"0\"/>\r\n         &lt;choice maxOccurs=\"unbounded\" minOccurs=\"0\">\r\n           &lt;element name=\"DataKeySet\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}DataKeySetType\"/>\r\n           &lt;element name=\"MetadataKeySet\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}MetadataKeySetType\"/>\r\n           &lt;element name=\"CubeRegion\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}CubeRegionType\"/>\r\n           &lt;element name=\"MetadataTargetRegion\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}MetadataTargetRegionType\"/>\r\n         &lt;/choice>\r\n       &lt;/sequence>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ContentConstraintBaseType.description" bundle="${i18n}"/>",
             "title": "ContentConstraintBaseType",
             "type": "object"
         },
@@ -2493,21 +2503,21 @@
                     "properties": {
                         "ReferencePeriod": {
                             "$ref": "#/definitions/xml_ns4_ReferencePeriodType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ContentConstraintType.properties.ReferencePeriod.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
                         },
                         "ReleaseCalendar": {
                             "$ref": "#/definitions/xml_ns5_ReleaseCalendarType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ContentConstraintType.properties.ReleaseCalendar.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
                         },
                         "type": {
                             "$ref": "#/definitions/xml_ns4_ContentConstraintTypeCodeType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ContentConstraintType.properties.type.description" bundle="${i18n}"/>",
                             "xml": {
                                 "attribute": true,
                                 "namespace": ""
@@ -2516,7 +2526,7 @@
                     }
                 }
             ],
-            "description": "ContentConstraintType describes the details of a content constraint by defining the content regions, key sets, or release information for the constraint attachment objects. Note that if the constraint is for a data provider, then only release calendar information is relevant, as there is no reliable way of determining which key family is being used to frame constraints in terms of cube regions or key sets.\r\n\r\n<p>Java class for ContentConstraintType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"ContentConstraintType\">\r\n   &lt;complexContent>\r\n     &lt;extension base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}ContentConstraintBaseType\">\r\n       &lt;sequence>\r\n         &lt;element name=\"ReleaseCalendar\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}ReleaseCalendarType\" minOccurs=\"0\"/>\r\n         &lt;element name=\"ReferencePeriod\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}ReferencePeriodType\" minOccurs=\"0\"/>\r\n       &lt;/sequence>\r\n       &lt;attribute name=\"type\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}ContentConstraintTypeCodeType\" default=\"Actual\" />\r\n     &lt;/extension>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ContentConstraintType.description" bundle="${i18n}"/>",
             "title": "ContentConstraintType",
             "type": "object"
         },
@@ -2527,7 +2537,7 @@
                 },
                 {}
             ],
-            "description": "DataConsumerSchemeType defines a type of organisation scheme which contains only data consumers. The data consumer scheme maintained by a particular maintenance agency is always provided a fixed identifier and version, and is never final. Therefore, consumers can be added or removed without have to version the scheme. This scheme has no hierarchy, meaning that no organisation may define a relationship with another organisation in the scheme.\r\n\r\n<p>Java class for DataConsumerSchemeType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"DataConsumerSchemeType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}OrganisationSchemeType\">\r\n       &lt;sequence>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Annotations\" minOccurs=\"0\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Name\" maxOccurs=\"unbounded\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Description\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n         &lt;sequence maxOccurs=\"unbounded\" minOccurs=\"0\">\r\n           &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}DataConsumer\"/>\r\n         &lt;/sequence>\r\n       &lt;/sequence>\r\n       &lt;attribute name=\"id\" use=\"required\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}IDType\" fixed=\"DATA_CONSUMERS\" />\r\n       &lt;attribute name=\"version\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}VersionType\" fixed=\"1.0\" />\r\n       &lt;attribute name=\"isFinal\" type=\"{http://www.w3.org/2001/XMLSchema}boolean\" fixed=\"false\" />\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_DataConsumerSchemeType.description" bundle="${i18n}"/>",
             "title": "DataConsumerSchemeType",
             "type": "object"
         },
@@ -2538,7 +2548,7 @@
                 },
                 {}
             ],
-            "description": "DataConsumerType defines the structure of a data consumer description. The contacts defined for the organisation are specific to the data consumer role the organisation is serving.\r\n\r\n<p>Java class for DataConsumerType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"DataConsumerType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}OrganisationType\">\r\n       &lt;sequence>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Annotations\" minOccurs=\"0\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Name\" maxOccurs=\"unbounded\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Description\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n         &lt;element name=\"Contact\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}ContactType\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n       &lt;/sequence>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_DataConsumerType.description" bundle="${i18n}"/>",
             "title": "DataConsumerType",
             "type": "object"
         },
@@ -2549,7 +2559,7 @@
                 },
                 {}
             ],
-            "description": "DataKeySetType defines a collection of full or partial data keys (dimension values).\r\n\r\n<p>Java class for DataKeySetType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"DataKeySetType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}KeySetType\">\r\n       &lt;sequence>\r\n         &lt;element name=\"Key\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}DataKeyType\" maxOccurs=\"unbounded\"/>\r\n       &lt;/sequence>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_DataKeySetType.description" bundle="${i18n}"/>",
             "title": "DataKeySetType",
             "type": "object"
         },
@@ -2560,7 +2570,7 @@
                 },
                 {}
             ],
-            "description": "DataProviderSchemeType defines a type of organisation scheme which contains only data providers. The data provider scheme maintained by a particular maintenance agency is always provided a fixed identifier and version, and is never final. Therefore, providers can be added or removed without have to version the scheme. This scheme has no hierarchy, meaning that no organisation may define a relationship with another organisation in the scheme\r\n\r\n<p>Java class for DataProviderSchemeType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"DataProviderSchemeType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}OrganisationSchemeType\">\r\n       &lt;sequence>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Annotations\" minOccurs=\"0\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Name\" maxOccurs=\"unbounded\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Description\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n         &lt;sequence maxOccurs=\"unbounded\" minOccurs=\"0\">\r\n           &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}DataProvider\"/>\r\n         &lt;/sequence>\r\n       &lt;/sequence>\r\n       &lt;attribute name=\"id\" use=\"required\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}IDType\" fixed=\"DATA_PROVIDERS\" />\r\n       &lt;attribute name=\"version\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}VersionType\" fixed=\"1.0\" />\r\n       &lt;attribute name=\"isFinal\" type=\"{http://www.w3.org/2001/XMLSchema}boolean\" fixed=\"false\" />\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_DataProviderSchemeType.description" bundle="${i18n}"/>",
             "title": "DataProviderSchemeType",
             "type": "object"
         },
@@ -2571,7 +2581,7 @@
                 },
                 {}
             ],
-            "description": "DataProviderType defines the structure of a data provider description. The contacts defined for the organisation are specific to the data provider role the organisation is serving.\r\n\r\n<p>Java class for DataProviderType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"DataProviderType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}OrganisationType\">\r\n       &lt;sequence>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Annotations\" minOccurs=\"0\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Name\" maxOccurs=\"unbounded\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Description\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n         &lt;element name=\"Contact\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}ContactType\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n       &lt;/sequence>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_DataProviderType.description" bundle="${i18n}"/>",
             "title": "DataProviderType",
             "type": "object"
         },
@@ -2582,7 +2592,7 @@
                 },
                 {}
             ],
-            "description": "DataSetRepresentationType defines the possible local representations of a data set reference target object. The representation is fixed to always be a data set reference.\r\n\r\n<p>Java class for DataSetRepresentationType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"DataSetRepresentationType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}RepresentationType\">\r\n       &lt;sequence>\r\n         &lt;element name=\"TextFormat\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}DataSetTextFormatType\"/>\r\n       &lt;/sequence>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_DataSetRepresentationType.description" bundle="${i18n}"/>",
             "title": "DataSetRepresentationType",
             "type": "object"
         },
@@ -2593,7 +2603,7 @@
                 },
                 {}
             ],
-            "description": "DataSetTargetType defines the structure of a data set target object. The data set target object has a fixed representation and identifier.\r\n\r\n<p>Java class for DataSetTargetType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"DataSetTargetType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}TargetObject\">\r\n       &lt;sequence>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Annotations\" minOccurs=\"0\"/>\r\n         &lt;element name=\"LocalRepresentation\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}DataSetRepresentationType\"/>\r\n       &lt;/sequence>\r\n       &lt;attribute name=\"id\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}NCNameIDType\" fixed=\"DATA_SET_TARGET\" />\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_DataSetTargetType.description" bundle="${i18n}"/>",
             "title": "DataSetTargetType",
             "type": "object"
         },
@@ -2604,7 +2614,7 @@
                 },
                 {}
             ],
-            "description": "DataSetTextFormatType is a restricted version of the NonFacetedTextFormatType that specifies a fixed DataSetReference representation.\r\n\r\n<p>Java class for DataSetTextFormatType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"DataSetTextFormatType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}TargetObjectTextFormatType\">\r\n       &lt;attribute name=\"textType\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}TargetObjectDataType\" fixed=\"DataSetReference\" />\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_DataSetTextFormatType.description" bundle="${i18n}"/>",
             "title": "DataSetTextFormatType",
             "type": "object"
         },
@@ -2615,7 +2625,7 @@
                 },
                 {}
             ],
-            "description": "DataStructureRepresentationType is an abstract base type which defines the allowable representations for any data structure definition component. The enumeration must be restricted to the proper type for item scheme for a given component.\r\n\r\n<p>Java class for DataStructureRepresentationType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"DataStructureRepresentationType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}RepresentationType\">\r\n       &lt;choice>\r\n         &lt;element name=\"TextFormat\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}SimpleComponentTextFormatType\"/>\r\n         &lt;sequence>\r\n           &lt;element name=\"Enumeration\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}ItemSchemeReferenceBaseType\"/>\r\n           &lt;element name=\"EnumerationFormat\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}CodededTextFormatType\" minOccurs=\"0\"/>\r\n         &lt;/sequence>\r\n       &lt;/choice>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_DataStructureRepresentationType.description" bundle="${i18n}"/>",
             "title": "DataStructureRepresentationType",
             "type": "object"
         },
@@ -2626,7 +2636,7 @@
                 },
                 {}
             ],
-            "description": "DataStructureType describes the structure of a data structure definition. A data structure definition is defined as a collection of metadata concepts, their structure and usage when used to collect or disseminate data.\r\n\r\n<p>Java class for DataStructureType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"DataStructureType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}StructureType\">\r\n       &lt;sequence>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Annotations\" minOccurs=\"0\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Name\" maxOccurs=\"unbounded\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Description\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n         &lt;sequence minOccurs=\"0\">\r\n           &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}DataStructureComponents\"/>\r\n         &lt;/sequence>\r\n       &lt;/sequence>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_DataStructureType.description" bundle="${i18n}"/>",
             "title": "DataStructureType",
             "type": "object"
         },
@@ -2637,7 +2647,7 @@
                 },
                 {}
             ],
-            "description": "DataflowType describes the structure of a data flow. A data flow is defined as the structure of data that will provided for different reference periods. If this type is not referenced externally, then a reference to a key family definition must be provided.\r\n\r\n<p>Java class for DataflowType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"DataflowType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}StructureUsageType\">\r\n       &lt;sequence>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Annotations\" minOccurs=\"0\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Name\" maxOccurs=\"unbounded\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Description\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n         &lt;element name=\"Structure\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}DataStructureReferenceType\" minOccurs=\"0\"/>\r\n       &lt;/sequence>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_DataflowType.description" bundle="${i18n}"/>",
             "title": "DataflowType",
             "type": "object"
         },
@@ -2648,7 +2658,7 @@
                 },
                 {}
             ],
-            "description": "DimensionListBaseType is an abstract base type used as the basis for the DimensionListType.\r\n\r\n<p>Java class for DimensionListBaseType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"DimensionListBaseType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}ComponentListType\">\r\n       &lt;sequence>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Annotations\" minOccurs=\"0\"/>\r\n       &lt;/sequence>\r\n       &lt;attribute name=\"id\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}IDType\" fixed=\"DimensionDescriptor\" />\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_DimensionListBaseType.description" bundle="${i18n}"/>",
             "title": "DimensionListBaseType",
             "type": "object"
         },
@@ -2661,21 +2671,21 @@
                     "properties": {
                         "Dimension": {
                             "$ref": "#/definitions/xml_ns5_DimensionType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_DimensionListType.properties.Dimension.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
                         },
                         "MeasureDimension": {
                             "$ref": "#/definitions/xml_ns5_MeasureDimensionType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_DimensionListType.properties.MeasureDimension.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
                         },
                         "TimeDimension": {
                             "$ref": "#/definitions/xml_ns5_TimeDimensionType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_DimensionListType.properties.TimeDimension.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
@@ -2683,7 +2693,7 @@
                     }
                 }
             ],
-            "description": "DimensionListType describes the key descriptor for a data structure definition. The order of the declaration of child dimensions is significant: it is used to describe the order in which they will appear in data formats for which key values are supplied in an ordered fashion (exclusive of the time dimension, which is not represented as a member of the ordered key). Any data structure definition which uses the time dimension should also declare a frequency dimension, conventionally the first dimension in the key (the set of ordered non-time dimensions). If is not necessary to assign a time dimension, as data can be organised in any fashion required.\r\n\r\n<p>Java class for DimensionListType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"DimensionListType\">\r\n   &lt;complexContent>\r\n     &lt;extension base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}DimensionListBaseType\">\r\n       &lt;choice maxOccurs=\"unbounded\">\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}Dimension\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}MeasureDimension\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}TimeDimension\"/>\r\n       &lt;/choice>\r\n     &lt;/extension>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_DimensionListType.description" bundle="${i18n}"/>",
             "title": "DimensionListType",
             "type": "object"
         },
@@ -2694,7 +2704,7 @@
                 },
                 {}
             ],
-            "description": "DimensionType describes the structure of an ordinary dimension, which is defined as a statistical concept used (most probably together with other statistical concepts) to identify a statistical series, such as a time series, e.g. a statistical concept indicating certain economic activity or a geographical reference area. The dimension takes its semantic, and in some cases it representation, from its concept identity. A dimension can be coded by referencing a code list from its coded local representation. It can also specify its text format, which is used as the representation of the dimension if a coded representation is not defined. Neither the coded or uncoded representation are necessary, since the dimension may take these from the referenced concept.\r\n\r\n<p>Java class for DimensionType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"DimensionType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}BaseDimensionType\">\r\n       &lt;sequence>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Annotations\" minOccurs=\"0\"/>\r\n         &lt;element name=\"ConceptIdentity\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}ConceptReferenceType\"/>\r\n         &lt;element name=\"LocalRepresentation\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}SimpleDataStructureRepresentationType\" minOccurs=\"0\"/>\r\n         &lt;element name=\"ConceptRole\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}ConceptReferenceType\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n       &lt;/sequence>\r\n       &lt;attribute name=\"type\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}DimensionTypeType\" fixed=\"Dimension\" />\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_DimensionType.description" bundle="${i18n}"/>",
             "title": "DimensionType",
             "type": "object"
         },
@@ -2705,7 +2715,7 @@
                 },
                 {}
             ],
-            "description": "GroupBaseType is an abstract base type that forms the basis for the GroupType.\r\n\r\n<p>Java class for GroupBaseType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"GroupBaseType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}ComponentListType\">\r\n       &lt;sequence>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Annotations\" minOccurs=\"0\"/>\r\n       &lt;/sequence>\r\n       &lt;attribute name=\"id\" use=\"required\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}IDType\" />\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_GroupBaseType.description" bundle="${i18n}"/>",
             "title": "GroupBaseType",
             "type": "object"
         },
@@ -2716,7 +2726,7 @@
                 },
                 {}
             ],
-            "description": "GroupDimensionBaseType is an abstract base type which refines the base ComponentType in order to form the basis for the GroupDimensionType.\r\n\r\n<p>Java class for GroupDimensionBaseType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"GroupDimensionBaseType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}ComponentType\">\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_GroupDimensionBaseType.description" bundle="${i18n}"/>",
             "title": "GroupDimensionBaseType",
             "type": "object"
         },
@@ -2729,7 +2739,7 @@
                     "properties": {
                         "DimensionReference": {
                             "$ref": "#/definitions/xml_ns4_LocalDimensionReferenceType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_GroupDimensionType.properties.DimensionReference.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
@@ -2737,7 +2747,7 @@
                     }
                 }
             ],
-            "description": "GroupDimensionType defines a dimension component with a group key descriptor component list. Although technically a component, this is essentially a reference to a dimension defined in the key descriptor. Therefore, the identification, name, and description, concept identity and representation properties that are typically available for a component are not allowed here, as they are all inherited from the referenced dimension.\r\n\r\n<p>Java class for GroupDimensionType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"GroupDimensionType\">\r\n   &lt;complexContent>\r\n     &lt;extension base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}GroupDimensionBaseType\">\r\n       &lt;sequence>\r\n         &lt;element name=\"DimensionReference\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}LocalDimensionReferenceType\"/>\r\n       &lt;/sequence>\r\n     &lt;/extension>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_GroupDimensionType.description" bundle="${i18n}"/>",
             "required": [
                 "DimensionReference"
             ],
@@ -2753,14 +2763,14 @@
                     "properties": {
                         "AttachmentConstraint": {
                             "$ref": "#/definitions/xml_ns4_AttachmentConstraintReferenceType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_GroupType.properties.AttachmentConstraint.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
                         },
                         "GroupDimension": {
                             "$ref": "#/definitions/xml_ns5_GroupDimensionType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_GroupType.properties.GroupDimension.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
@@ -2768,7 +2778,7 @@
                     }
                 }
             ],
-            "description": "GroupType describes the structure of a group descriptor in a data structure definition. A group may consist of a of partial key, or collection of distinct cube regions or key sets to which attributes may be attached. The purpose of a group is to specify attributes values which have the same value based on some common dimensionality. All groups declared in the data structure must be unique - that is, you may not have duplicate partial keys. All groups must be given unique identifiers.\r\n\r\n<p>Java class for GroupType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"GroupType\">\r\n   &lt;complexContent>\r\n     &lt;extension base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}GroupBaseType\">\r\n       &lt;choice>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}GroupDimension\" maxOccurs=\"unbounded\"/>\r\n         &lt;element name=\"AttachmentConstraint\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}AttachmentConstraintReferenceType\"/>\r\n       &lt;/choice>\r\n     &lt;/extension>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_GroupType.description" bundle="${i18n}"/>",
             "title": "GroupType",
             "type": "object"
         },
@@ -2779,7 +2789,7 @@
                 },
                 {}
             ],
-            "description": "HierarchicalCodeBaseType is an abstract base type the creates the basis for the HierarchicalCodeType. It removes the urn and uri.\r\n\r\n<p>Java class for HierarchicalCodeBaseType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"HierarchicalCodeBaseType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}IdentifiableType\">\r\n       &lt;sequence>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Annotations\" minOccurs=\"0\"/>\r\n       &lt;/sequence>\r\n       &lt;attribute name=\"id\" use=\"required\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}IDType\" />\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_HierarchicalCodeBaseType.description" bundle="${i18n}"/>",
             "title": "HierarchicalCodeBaseType",
             "type": "object"
         },
@@ -2792,20 +2802,20 @@
                     "properties": {
                         "Code": {
                             "$ref": "#/definitions/xml_ns4_CodeReferenceType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_HierarchicalCodeType.properties.Code.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
                         },
                         "CodeID": {
                             "$ref": "#/definitions/xml_ns4_LocalCodeReferenceType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_HierarchicalCodeType.properties.CodeID.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
                         },
                         "CodelistAliasRef": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_HierarchicalCodeType.properties.CodelistAliasRef.description" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
@@ -2813,20 +2823,20 @@
                         },
                         "HierarchicalCode": {
                             "$ref": "#/definitions/xml_ns5_HierarchicalCodeType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_HierarchicalCodeType.properties.HierarchicalCode.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
                         },
                         "Level": {
                             "$ref": "#/definitions/xml_ns4_LocalLevelReferenceType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_HierarchicalCodeType.properties.Level.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
                         },
                         "validFrom": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_HierarchicalCodeType.properties.validFrom.description" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "attribute": true,
@@ -2834,7 +2844,7 @@
                             }
                         },
                         "validTo": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_HierarchicalCodeType.properties.validTo.description" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "attribute": true,
@@ -2842,7 +2852,7 @@
                             }
                         },
                         "version": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_HierarchicalCodeType.properties.version.description" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "attribute": true,
@@ -2852,7 +2862,7 @@
                     }
                 }
             ],
-            "description": "HierarchicalCodeType describes the structure of a hierarchical code. A hierarchical code provides for a reference to a code that is referenced within the hierarchical code list via either a complete reference to a code through either a URN or full set of reference fields, or a local reference which utilizes the included codelist reference alias and the identification of a code from the list. Codes are arranged in a hierarchy by this reference. Note that it is possible to reference a single code such that it has multiple parents within the hierarchy. Further, the hierarchy may or may not be a leveled one.\r\n\r\n<p>Java class for HierarchicalCodeType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"HierarchicalCodeType\">\r\n   &lt;complexContent>\r\n     &lt;extension base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}HierarchicalCodeBaseType\">\r\n       &lt;sequence>\r\n         &lt;choice>\r\n           &lt;element name=\"Code\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}CodeReferenceType\"/>\r\n           &lt;sequence>\r\n             &lt;element name=\"CodelistAliasRef\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}IDType\"/>\r\n             &lt;element name=\"CodeID\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}LocalCodeReferenceType\"/>\r\n           &lt;/sequence>\r\n         &lt;/choice>\r\n         &lt;element name=\"HierarchicalCode\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}HierarchicalCodeType\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n         &lt;element name=\"Level\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}LocalLevelReferenceType\" minOccurs=\"0\"/>\r\n       &lt;/sequence>\r\n       &lt;attribute name=\"version\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}VersionType\" />\r\n       &lt;attribute name=\"validFrom\" type=\"{http://www.w3.org/2001/XMLSchema}dateTime\" />\r\n       &lt;attribute name=\"validTo\" type=\"{http://www.w3.org/2001/XMLSchema}dateTime\" />\r\n     &lt;/extension>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_HierarchicalCodeType.description" bundle="${i18n}"/>",
             "title": "HierarchicalCodeType",
             "type": "object"
         },
@@ -2863,7 +2873,7 @@
                 },
                 {}
             ],
-            "description": "HierarchicalCodelistBaseType is an abstract base class that is the basis for the HierarchicalCodelistType. It requires that a name be supplied.\r\n\r\n<p>Java class for HierarchicalCodelistBaseType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"HierarchicalCodelistBaseType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}MaintainableType\">\r\n       &lt;sequence>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Annotations\" minOccurs=\"0\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Name\" maxOccurs=\"unbounded\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Description\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n       &lt;/sequence>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_HierarchicalCodelistBaseType.description" bundle="${i18n}"/>",
             "title": "HierarchicalCodelistBaseType",
             "type": "object"
         },
@@ -2876,14 +2886,14 @@
                     "properties": {
                         "Hierarchy": {
                             "$ref": "#/definitions/xml_ns5_HierarchyType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_HierarchicalCodelistType.properties.Hierarchy.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
                         },
                         "IncludedCodelist": {
                             "$ref": "#/definitions/xml_ns5_IncludedCodelistReferenceType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_HierarchicalCodelistType.properties.IncludedCodelist.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
@@ -2891,7 +2901,7 @@
                     }
                 }
             ],
-            "description": "HierarchicalCodelistType describes the structure of a hierarchical codelist. A hierarchical code list is defined as an organised collection of codes that may participate in many parent/child relationships with other codes in the list, as defined by one or more hierarchy of the list.\r\n\r\n<p>Java class for HierarchicalCodelistType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"HierarchicalCodelistType\">\r\n   &lt;complexContent>\r\n     &lt;extension base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}HierarchicalCodelistBaseType\">\r\n       &lt;sequence>\r\n         &lt;element name=\"IncludedCodelist\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}IncludedCodelistReferenceType\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n         &lt;element name=\"Hierarchy\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}HierarchyType\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n       &lt;/sequence>\r\n     &lt;/extension>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_HierarchicalCodelistType.description" bundle="${i18n}"/>",
             "title": "HierarchicalCodelistType",
             "type": "object"
         },
@@ -2902,7 +2912,7 @@
                 },
                 {}
             ],
-            "description": "HierarchyBaseType is an abstract base type that serves as the basis for the HierarchyType. It requires a name and id be provided.\r\n\r\n<p>Java class for HierarchyBaseType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"HierarchyBaseType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}NameableType\">\r\n       &lt;sequence>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Annotations\" minOccurs=\"0\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Name\" maxOccurs=\"unbounded\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Description\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n       &lt;/sequence>\r\n       &lt;attribute name=\"id\" use=\"required\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}IDType\" />\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_HierarchyBaseType.description" bundle="${i18n}"/>",
             "title": "HierarchyBaseType",
             "type": "object"
         },
@@ -2915,20 +2925,20 @@
                     "properties": {
                         "HierarchicalCode": {
                             "$ref": "#/definitions/xml_ns5_HierarchicalCodeType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_HierarchyType.properties.HierarchicalCode.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
                         },
                         "Level": {
                             "$ref": "#/definitions/xml_ns5_LevelType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_HierarchyType.properties.Level.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
                         },
                         "leveled": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_HierarchyType.properties.Level.description" bundle="${i18n}"/>",
                             "type": "boolean",
                             "xml": {
                                 "attribute": true,
@@ -2938,7 +2948,7 @@
                     }
                 }
             ],
-            "description": "The Hierarchy is an abstract type that provides for a classification structure of referenced codes arranged in levels of detail from the broadest to the most detailed level. The levels in which the code exist can be formal or informal.\r\n\r\n<p>Java class for HierarchyType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"HierarchyType\">\r\n   &lt;complexContent>\r\n     &lt;extension base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}HierarchyBaseType\">\r\n       &lt;sequence>\r\n         &lt;element name=\"HierarchicalCode\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}HierarchicalCodeType\" maxOccurs=\"unbounded\"/>\r\n         &lt;element name=\"Level\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}LevelType\" minOccurs=\"0\"/>\r\n       &lt;/sequence>\r\n       &lt;attribute name=\"leveled\" type=\"{http://www.w3.org/2001/XMLSchema}boolean\" default=\"false\" />\r\n     &lt;/extension>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_HierarchyType.description" bundle="${i18n}"/>",
             "required": [
                 "HierarchicalCode"
             ],
@@ -2954,14 +2964,14 @@
                     "properties": {
                         "Source": {
                             "$ref": "#/definitions/xml_ns4_AnyLocalCodeReferenceType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_HybridCodeMapType.properties.Source.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
                         },
                         "Target": {
                             "$ref": "#/definitions/xml_ns4_AnyLocalCodeReferenceType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_HybridCodeMapType.properties.Target.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
@@ -2969,7 +2979,7 @@
                     }
                 }
             ],
-            "description": "CodeMapType defines the structure for associating a code from a source codelist to a code in a target codelist. Note that either of these may come from a hierarchical codelist.\r\n\r\n<p>Java class for HybridCodeMapType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"HybridCodeMapType\">\r\n   &lt;complexContent>\r\n     &lt;extension base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}AnnotableType\">\r\n       &lt;sequence>\r\n         &lt;element name=\"Source\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}AnyLocalCodeReferenceType\"/>\r\n         &lt;element name=\"Target\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}AnyLocalCodeReferenceType\"/>\r\n       &lt;/sequence>\r\n     &lt;/extension>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_HybridCodeMapType.description" bundle="${i18n}"/>",
             "required": [
                 "Source",
                 "Target"
@@ -2984,7 +2994,7 @@
                 },
                 {}
             ],
-            "description": "HybridCodelistMapBaseType is an abstract base type which forms the basis for the HybridCodelistMapType.\r\n\r\n<p>Java class for HybridCodelistMapBaseType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"HybridCodelistMapBaseType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}NameableType\">\r\n       &lt;sequence>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Annotations\" minOccurs=\"0\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Name\" maxOccurs=\"unbounded\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Description\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n       &lt;/sequence>\r\n       &lt;attribute name=\"id\" use=\"required\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}IDType\" />\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_HybridCodelistMapBaseType.description" bundle="${i18n}"/>",
             "title": "HybridCodelistMapBaseType",
             "type": "object"
         },
@@ -2997,21 +3007,21 @@
                     "properties": {
                         "HybridCodeMap": {
                             "$ref": "#/definitions/xml_ns5_HybridCodeMapType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_HybridCodelistMapType.properties.HybridCodeMap.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
                         },
                         "Source": {
                             "$ref": "#/definitions/xml_ns4_AnyCodelistReferenceType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_HybridCodelistMapType.properties.Source.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
                         },
                         "Target": {
                             "$ref": "#/definitions/xml_ns4_AnyCodelistReferenceType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_HybridCodelistMapType.properties.Target.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
@@ -3019,7 +3029,7 @@
                     }
                 }
             ],
-            "description": "HybridCodelistMapType defines the structure of a map which relates codes (possibly hierarchical) from different code lists.\r\n\r\n<p>Java class for HybridCodelistMapType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"HybridCodelistMapType\">\r\n   &lt;complexContent>\r\n     &lt;extension base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}HybridCodelistMapBaseType\">\r\n       &lt;sequence>\r\n         &lt;element name=\"Source\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}AnyCodelistReferenceType\"/>\r\n         &lt;element name=\"Target\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}AnyCodelistReferenceType\"/>\r\n         &lt;element name=\"HybridCodeMap\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}HybridCodeMapType\" maxOccurs=\"unbounded\"/>\r\n       &lt;/sequence>\r\n     &lt;/extension>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_HybridCodelistMapType.description" bundle="${i18n}"/>",
             "required": [
                 "Source",
                 "Target",
@@ -3033,21 +3043,21 @@
                 {
                     "properties": {
                         "ConceptAgency": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ISOConceptReferenceType.properties.ConceptAgency.description" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
                         },
                         "ConceptID": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ISOConceptReferenceType.properties.ConceptID.description" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
                         },
                         "ConceptSchemeID": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ISOConceptReferenceType.properties.ConceptSchemeID.description" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
@@ -3056,7 +3066,7 @@
                     }
                 }
             ],
-            "description": "ISOConceptReferenceType provides a reference to and ISO 11179 concept.\r\n\r\n<p>Java class for ISOConceptReferenceType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"ISOConceptReferenceType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.w3.org/2001/XMLSchema}anyType\">\r\n       &lt;sequence>\r\n         &lt;element name=\"ConceptAgency\" type=\"{http://www.w3.org/2001/XMLSchema}string\"/>\r\n         &lt;element name=\"ConceptSchemeID\" type=\"{http://www.w3.org/2001/XMLSchema}string\"/>\r\n         &lt;element name=\"ConceptID\" type=\"{http://www.w3.org/2001/XMLSchema}string\"/>\r\n       &lt;/sequence>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ISOConceptReferenceType.description" bundle="${i18n}"/>",
             "required": [
                 "ConceptAgency",
                 "ConceptSchemeID",
@@ -3072,7 +3082,7 @@
                 },
                 {}
             ],
-            "description": "IdentifiableObjectRepresentationType defines the possible local representations of an identifiable object target object.\r\n\r\n<p>Java class for IdentifiableObjectRepresentationType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"IdentifiableObjectRepresentationType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}RepresentationType\">\r\n       &lt;choice>\r\n         &lt;element name=\"TextFormat\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}IdentifiableObjectTextFormatType\"/>\r\n         &lt;sequence>\r\n           &lt;element name=\"Enumeration\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}ItemSchemeReferenceType\"/>\r\n         &lt;/sequence>\r\n       &lt;/choice>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_IdentifiableObjectRepresentationType.description" bundle="${i18n}"/>",
             "title": "IdentifiableObjectRepresentationType",
             "type": "object"
         },
@@ -3083,7 +3093,7 @@
                 },
                 {}
             ],
-            "description": "IdentifiableObjectTargetBaseType is an abstract base type which forms the basis for the IdentifiableObjectTargetType.\r\n\r\n<p>Java class for IdentifiableObjectTargetBaseType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"IdentifiableObjectTargetBaseType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}TargetObject\">\r\n       &lt;sequence>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Annotations\" minOccurs=\"0\"/>\r\n         &lt;element name=\"LocalRepresentation\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}IdentifiableObjectRepresentationType\"/>\r\n       &lt;/sequence>\r\n       &lt;attribute name=\"id\" use=\"required\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}NCNameIDType\" />\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_IdentifiableObjectTargetBaseType.description" bundle="${i18n}"/>",
             "title": "IdentifiableObjectTargetBaseType",
             "type": "object"
         },
@@ -3096,7 +3106,7 @@
                     "properties": {
                         "objectType": {
                             "$ref": "#/definitions/xml_ns4_ObjectTypeCodelistType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_IdentifiableObjectTargetType.properties.objectType.description" bundle="${i18n}"/>",
                             "xml": {
                                 "attribute": true,
                                 "namespace": ""
@@ -3105,7 +3115,7 @@
                     }
                 }
             ],
-            "description": "IdentifiableObjectTargetType defines the structure of an identifiable target object. The identifiable target object has a fixed representation of a reference and can specify a local representation of any item scheme for the purpose of restricting which items may be referenced. The identifiable object target must specify the object type which the target object is meant to reference.\r\n\r\n<p>Java class for IdentifiableObjectTargetType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"IdentifiableObjectTargetType\">\r\n   &lt;complexContent>\r\n     &lt;extension base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}IdentifiableObjectTargetBaseType\">\r\n       &lt;attribute name=\"objectType\" use=\"required\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}ObjectTypeCodelistType\" />\r\n     &lt;/extension>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_IdentifiableObjectTargetType.description" bundle="${i18n}"/>",
             "required": [
                 "objectType"
             ],
@@ -3119,7 +3129,7 @@
                 },
                 {}
             ],
-            "description": "IdentifiableObjectTextFormatType is a restricted version of the NonFacetedTextFormatType that specifies a fixed IdentifiableReference representation.\r\n\r\n<p>Java class for IdentifiableObjectTextFormatType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"IdentifiableObjectTextFormatType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}TargetObjectTextFormatType\">\r\n       &lt;attribute name=\"textType\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}TargetObjectDataType\" fixed=\"IdentifiableReference\" />\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_IdentifiableObjectTextFormatType.description" bundle="${i18n}"/>",
             "title": "IdentifiableObjectTextFormatType",
             "type": "object"
         },
@@ -3131,7 +3141,7 @@
                 {
                     "properties": {
                         "id": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_IdentifiableType.properties.id.description" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "attribute": true,
@@ -3139,7 +3149,7 @@
                             }
                         },
                         "uri": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_IdentifiableType.properties.uri.description" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "attribute": true,
@@ -3147,7 +3157,7 @@
                             }
                         },
                         "urn": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_IdentifiableType.properties.urn.description" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "attribute": true,
@@ -3157,7 +3167,7 @@
                     }
                 }
             ],
-            "description": "IdentifiableType is an abstract base type for all identifiable objects.\r\n\r\n<p>Java class for IdentifiableType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"IdentifiableType\">\r\n   &lt;complexContent>\r\n     &lt;extension base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}AnnotableType\">\r\n       &lt;attribute name=\"id\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}IDType\" />\r\n       &lt;attribute name=\"urn\" type=\"{http://www.w3.org/2001/XMLSchema}anyURI\" />\r\n       &lt;attribute name=\"uri\" type=\"{http://www.w3.org/2001/XMLSchema}anyURI\" />\r\n     &lt;/extension>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_IdentifiableType.description" bundle="${i18n}"/>",
             "title": "IdentifiableType",
             "type": "object"
         },
@@ -3169,7 +3179,7 @@
                 {
                     "properties": {
                         "alias": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_IncludedCodelistReferenceType.properties.alias.description" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "attribute": true,
@@ -3179,7 +3189,7 @@
                     }
                 }
             ],
-            "description": "IncludedCodelistReferenceType provides the structure for a referencing a codelist and optionally providing a local alias identification for this reference.\r\n\r\n<p>Java class for IncludedCodelistReferenceType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"IncludedCodelistReferenceType\">\r\n   &lt;complexContent>\r\n     &lt;extension base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}CodelistReferenceType\">\r\n       &lt;attribute name=\"alias\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}IDType\" />\r\n     &lt;/extension>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_IncludedCodelistReferenceType.description" bundle="${i18n}"/>",
             "title": "IncludedCodelistReferenceType",
             "type": "object"
         },
@@ -3192,13 +3202,13 @@
                     "properties": {
                         "ObjectReference": {
                             "$ref": "#/definitions/xml_ns4_ObjectReferenceType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_InputOutputType.properties.ObjectReference.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
                         },
                         "localID": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_InputOutputType.properties.localID.description" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "attribute": true,
@@ -3208,7 +3218,7 @@
                     }
                 }
             ],
-            "description": "InputOutputType describes the structure of an input or output to a process step. It provides a reference to the object that is the input or output.\r\n\r\n<p>Java class for InputOutputType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"InputOutputType\">\r\n   &lt;complexContent>\r\n     &lt;extension base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}AnnotableType\">\r\n       &lt;sequence>\r\n         &lt;element name=\"ObjectReference\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}ObjectReferenceType\"/>\r\n       &lt;/sequence>\r\n       &lt;attribute name=\"localID\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}IDType\" />\r\n     &lt;/extension>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_InputOutputType.description" bundle="${i18n}"/>",
             "required": [
                 "ObjectReference"
             ],
@@ -3224,14 +3234,14 @@
                     "properties": {
                         "Source": {
                             "$ref": "#/definitions/xml_ns4_LocalItemReferenceType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ItemAssociationType.properties.Source.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
                         },
                         "Target": {
                             "$ref": "#/definitions/xml_ns4_LocalItemReferenceType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ItemAssociationType.properties.Target.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
@@ -3239,7 +3249,7 @@
                     }
                 }
             ],
-            "description": "ItemAssociationType is an abstract type which defines the relationship between two items from the source and target item schemes of an item scheme map.\r\n\r\n<p>Java class for ItemAssociationType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"ItemAssociationType\">\r\n   &lt;complexContent>\r\n     &lt;extension base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}AnnotableType\">\r\n       &lt;sequence>\r\n         &lt;element name=\"Source\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}LocalItemReferenceType\"/>\r\n         &lt;element name=\"Target\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}LocalItemReferenceType\"/>\r\n       &lt;/sequence>\r\n     &lt;/extension>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ItemAssociationType.description" bundle="${i18n}"/>",
             "required": [
                 "Source",
                 "Target"
@@ -3254,7 +3264,7 @@
                 },
                 {}
             ],
-            "description": "ItemBaseType is an abstract base type that forms the basis for the ItemType. It requires that at least an id be supplied for an item.\r\n\r\n<p>Java class for ItemBaseType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"ItemBaseType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}NameableType\">\r\n       &lt;sequence>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Annotations\" minOccurs=\"0\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Name\" maxOccurs=\"unbounded\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Description\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n       &lt;/sequence>\r\n       &lt;attribute name=\"id\" use=\"required\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}IDType\" />\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ItemBaseType.description" bundle="${i18n}"/>",
             "title": "ItemBaseType",
             "type": "object"
         },
@@ -3265,7 +3275,7 @@
                 },
                 {}
             ],
-            "description": "ItemSchemeMapBaseType is an abstract base type which forms the basis for the ItemSchemeMapType.\r\n\r\n<p>Java class for ItemSchemeMapBaseType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"ItemSchemeMapBaseType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}NameableType\">\r\n       &lt;sequence>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Annotations\" minOccurs=\"0\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Name\" maxOccurs=\"unbounded\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Description\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n       &lt;/sequence>\r\n       &lt;attribute name=\"id\" use=\"required\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}IDType\" />\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ItemSchemeMapBaseType.description" bundle="${i18n}"/>",
             "title": "ItemSchemeMapBaseType",
             "type": "object"
         },
@@ -3277,7 +3287,7 @@
                 {
                     "properties": {
                         "ItemAssociation": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ItemSchemeMapType.properties.ItemAssociation.description" bundle="${i18n}"/>",
                             "type": "object",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
@@ -3285,14 +3295,14 @@
                         },
                         "Source": {
                             "$ref": "#/definitions/xml_ns4_ItemSchemeReferenceBaseType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ItemSchemeMapType.properties.Source.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
                         },
                         "Target": {
                             "$ref": "#/definitions/xml_ns4_ItemSchemeReferenceBaseType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ItemSchemeMapType.properties.Target.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
@@ -3300,7 +3310,7 @@
                     }
                 }
             ],
-            "description": "ItemSchemeMapType is an abstract base type which forms the basis for mapping items between item schemes of the same type.\r\n\r\n<p>Java class for ItemSchemeMapType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"ItemSchemeMapType\">\r\n   &lt;complexContent>\r\n     &lt;extension base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}ItemSchemeMapBaseType\">\r\n       &lt;sequence>\r\n         &lt;element name=\"Source\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}ItemSchemeReferenceBaseType\"/>\r\n         &lt;element name=\"Target\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}ItemSchemeReferenceBaseType\"/>\r\n         &lt;sequence maxOccurs=\"unbounded\">\r\n           &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}ItemAssociation\"/>\r\n         &lt;/sequence>\r\n       &lt;/sequence>\r\n     &lt;/extension>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ItemSchemeMapType.description" bundle="${i18n}"/>",
             "required": [
                 "Source",
                 "Target"
@@ -3316,14 +3326,14 @@
                 {
                     "properties": {
                         "Item": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ItemSchemeType.properties.Item.description" bundle="${i18n}"/>",
                             "type": "object",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
                         },
                         "isPartial": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ItemSchemeType.properties.isPartial.description" bundle="${i18n}"/>",
                             "type": "boolean",
                             "xml": {
                                 "attribute": true,
@@ -3333,7 +3343,7 @@
                     }
                 }
             ],
-            "description": "ItemSchemeType is an abstract base type for all item scheme objects. It contains a collection of items. Concrete instances of this type should restrict the actual types of items allowed within the scheme.\r\n\r\n<p>Java class for ItemSchemeType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"ItemSchemeType\">\r\n   &lt;complexContent>\r\n     &lt;extension base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}MaintainableType\">\r\n       &lt;sequence>\r\n         &lt;sequence maxOccurs=\"unbounded\" minOccurs=\"0\">\r\n           &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}Item\"/>\r\n         &lt;/sequence>\r\n       &lt;/sequence>\r\n       &lt;attribute name=\"isPartial\" type=\"{http://www.w3.org/2001/XMLSchema}boolean\" default=\"false\" />\r\n     &lt;/extension>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ItemSchemeType.description" bundle="${i18n}"/>",
             "title": "ItemSchemeType",
             "type": "object"
         },
@@ -3345,7 +3355,7 @@
                 {
                     "properties": {
                         "Item": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ItemType.properties.Item.description" bundle="${i18n}"/>",
                             "type": "object",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
@@ -3353,7 +3363,7 @@
                         },
                         "Parent": {
                             "$ref": "#/definitions/xml_ns4_LocalItemReferenceType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ItemType.properties.Parent.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
@@ -3361,7 +3371,7 @@
                     }
                 }
             ],
-            "description": "ItemType is an abstract base type for all items with in an item scheme. Concrete instances of this type may or may not utilize the nested item, but if so should restrict the actual types of item allowed.\r\n\r\n<p>Java class for ItemType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"ItemType\">\r\n   &lt;complexContent>\r\n     &lt;extension base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}ItemBaseType\">\r\n       &lt;choice minOccurs=\"0\">\r\n         &lt;element name=\"Parent\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}LocalItemReferenceType\"/>\r\n         &lt;sequence maxOccurs=\"unbounded\">\r\n           &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}Item\"/>\r\n         &lt;/sequence>\r\n       &lt;/choice>\r\n     &lt;/extension>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ItemType.description" bundle="${i18n}"/>",
             "title": "ItemType",
             "type": "object"
         },
@@ -3372,7 +3382,7 @@
                 },
                 {}
             ],
-            "description": "KeyDescriptorValuesRepresentationType defines the possible local representations of a key descriptor values target object. The representation is fixed to always be a data key (KeyValues).\r\n\r\n<p>Java class for KeyDescriptorValuesRepresentationType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"KeyDescriptorValuesRepresentationType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}RepresentationType\">\r\n       &lt;sequence>\r\n         &lt;element name=\"TextFormat\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}KeyDescriptorValuesTextFormatType\"/>\r\n       &lt;/sequence>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_KeyDescriptorValuesRepresentationType.description" bundle="${i18n}"/>",
             "title": "KeyDescriptorValuesRepresentationType",
             "type": "object"
         },
@@ -3383,7 +3393,7 @@
                 },
                 {}
             ],
-            "description": "KeyDescriptorValuesTargetType defines the structure of a key descriptor values target object. The key descriptor values target object has a fixed representation and identifier.\r\n\r\n<p>Java class for KeyDescriptorValuesTargetType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"KeyDescriptorValuesTargetType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}TargetObject\">\r\n       &lt;sequence>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Annotations\" minOccurs=\"0\"/>\r\n         &lt;element name=\"LocalRepresentation\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}KeyDescriptorValuesRepresentationType\"/>\r\n       &lt;/sequence>\r\n       &lt;attribute name=\"id\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}NCNameIDType\" fixed=\"DIMENSION_DESCRIPTOR_VALUES_TARGET\" />\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_KeyDescriptorValuesTargetType.description" bundle="${i18n}"/>",
             "title": "KeyDescriptorValuesTargetType",
             "type": "object"
         },
@@ -3394,7 +3404,7 @@
                 },
                 {}
             ],
-            "description": "KeyDescriptorValuesTextFormatType is a restricted version of the NonFacetedTextFormatType that specifies a fixed KeyValues representation.\r\n\r\n<p>Java class for KeyDescriptorValuesTextFormatType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"KeyDescriptorValuesTextFormatType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}TargetObjectTextFormatType\">\r\n       &lt;attribute name=\"textType\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}TargetObjectDataType\" fixed=\"KeyValues\" />\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_KeyDescriptorValuesTextFormatType.description" bundle="${i18n}"/>",
             "title": "KeyDescriptorValuesTextFormatType",
             "type": "object"
         },
@@ -3404,13 +3414,13 @@
                     "properties": {
                         "Key": {
                             "$ref": "#/definitions/xml_ns4_DistinctKeyType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_KeySetType.properties.Key.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
                         },
                         "isIncluded": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_KeySetType.properties.isIncluded.description" bundle="${i18n}"/>",
                             "type": "boolean",
                             "xml": {
                                 "attribute": true,
@@ -3420,7 +3430,7 @@
                     }
                 }
             ],
-            "description": "KeySetType is an abstract base type for defining a collection of keys.\r\n\r\n<p>Java class for KeySetType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"KeySetType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.w3.org/2001/XMLSchema}anyType\">\r\n       &lt;sequence>\r\n         &lt;element name=\"Key\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}DistinctKeyType\" maxOccurs=\"unbounded\"/>\r\n       &lt;/sequence>\r\n       &lt;attribute name=\"isIncluded\" use=\"required\" type=\"{http://www.w3.org/2001/XMLSchema}boolean\" />\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_KeySetType.description" bundle="${i18n}"/>",
             "required": [
                 "isIncluded",
                 "Key"
@@ -3435,7 +3445,7 @@
                 },
                 {}
             ],
-            "description": "LevelBaseType is an abstract base type that makes up the basis for the LevelType. It requires a name and id.\r\n\r\n<p>Java class for LevelBaseType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"LevelBaseType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}NameableType\">\r\n       &lt;sequence>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Annotations\" minOccurs=\"0\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Name\" maxOccurs=\"unbounded\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Description\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n       &lt;/sequence>\r\n       &lt;attribute name=\"id\" use=\"required\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}IDType\" />\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_LevelBaseType.description" bundle="${i18n}"/>",
             "title": "LevelBaseType",
             "type": "object"
         },
@@ -3448,14 +3458,14 @@
                     "properties": {
                         "CodingFormat": {
                             "$ref": "#/definitions/xml_ns5_CodingTextFormatType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_LevelType.properties.CodingFormat.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
                         },
                         "Level": {
                             "$ref": "#/definitions/xml_ns5_LevelType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_LevelType.properties.Level.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
@@ -3463,7 +3473,7 @@
                     }
                 }
             ],
-            "description": "LevelType describes a level in a hierarchical codelist. Where level is defined as a group where codes can be characterised by homogeneous coding, and where the parent of each code in the group is at the same higher level of the hierarchy.\r\n\r\n<p>Java class for LevelType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"LevelType\">\r\n   &lt;complexContent>\r\n     &lt;extension base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}LevelBaseType\">\r\n       &lt;sequence>\r\n         &lt;element name=\"CodingFormat\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}CodingTextFormatType\" minOccurs=\"0\"/>\r\n         &lt;element name=\"Level\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}LevelType\" minOccurs=\"0\"/>\r\n       &lt;/sequence>\r\n     &lt;/extension>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_LevelType.description" bundle="${i18n}"/>",
             "title": "LevelType",
             "type": "object"
         },
@@ -3474,7 +3484,7 @@
                 },
                 {}
             ],
-            "description": "MaintainableBaseType is an abstract type that only serves the purpose of forming the base for the actual MaintainableType. The purpose of this type is to restrict the VersionableType to require the id attribute.\r\n\r\n<p>Java class for MaintainableBaseType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"MaintainableBaseType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}VersionableType\">\r\n       &lt;sequence>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Annotations\" minOccurs=\"0\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Name\" maxOccurs=\"unbounded\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Description\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n       &lt;/sequence>\r\n       &lt;attribute name=\"id\" use=\"required\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}IDType\" />\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_MaintainableBaseType.description" bundle="${i18n}"/>",
             "title": "MaintainableBaseType",
             "type": "object"
         },
@@ -3486,7 +3496,7 @@
                 {
                     "properties": {
                         "agencyID": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_MaintainableType.properties.agencyID.description" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "attribute": true,
@@ -3494,7 +3504,7 @@
                             }
                         },
                         "isExternalReference": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_MaintainableType.properties.isExternalReference.description" bundle="${i18n}"/>",
                             "type": "boolean",
                             "xml": {
                                 "attribute": true,
@@ -3502,7 +3512,7 @@
                             }
                         },
                         "isFinal": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_MaintainableType.properties.isFinal.description" bundle="${i18n}"/>",
                             "type": "boolean",
                             "xml": {
                                 "attribute": true,
@@ -3510,7 +3520,7 @@
                             }
                         },
                         "serviceURL": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_MaintainableType.properties.serviceURL.description" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "attribute": true,
@@ -3518,7 +3528,7 @@
                             }
                         },
                         "structureURL": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_MaintainableType.properties.structureURL.description" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "attribute": true,
@@ -3528,7 +3538,7 @@
                     }
                 }
             ],
-            "description": "MaintainableType is an abstract base type for all maintainable objects.\r\n\r\n<p>Java class for MaintainableType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"MaintainableType\">\r\n   &lt;complexContent>\r\n     &lt;extension base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}MaintainableBaseType\">\r\n       &lt;attGroup ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}ExternalReferenceAttributeGroup\"/>\r\n       &lt;attribute name=\"agencyID\" use=\"required\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}NestedNCNameIDType\" />\r\n       &lt;attribute name=\"isFinal\" type=\"{http://www.w3.org/2001/XMLSchema}boolean\" default=\"false\" />\r\n       &lt;attribute name=\"isExternalReference\" type=\"{http://www.w3.org/2001/XMLSchema}boolean\" default=\"false\" />\r\n     &lt;/extension>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_MaintainableType.description" bundle="${i18n}"/>",
             "required": [
                 "agencyID"
             ],
@@ -3542,7 +3552,7 @@
                 },
                 {}
             ],
-            "description": "BaseDimensionRepresentationType is an abstract base which defines the representation for a measure dimension.\r\n\r\n<p>Java class for MeasureDimensionRepresentationType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"MeasureDimensionRepresentationType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}DataStructureRepresentationType\">\r\n       &lt;sequence>\r\n         &lt;element name=\"Enumeration\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}ConceptSchemeReferenceType\"/>\r\n       &lt;/sequence>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_MeasureDimensionRepresentationType.description" bundle="${i18n}"/>",
             "title": "MeasureDimensionRepresentationType",
             "type": "object"
         },
@@ -3553,7 +3563,7 @@
                 },
                 {}
             ],
-            "description": "MeasureDimensionType defines the structure of the measure dimension. It is derived from the base dimension structure, but requires that a coded representation taken from a concept scheme is given.\r\n\r\n<p>Java class for MeasureDimensionType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"MeasureDimensionType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}BaseDimensionType\">\r\n       &lt;sequence>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Annotations\" minOccurs=\"0\"/>\r\n         &lt;element name=\"ConceptIdentity\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}ConceptReferenceType\"/>\r\n         &lt;element name=\"LocalRepresentation\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}MeasureDimensionRepresentationType\"/>\r\n         &lt;element name=\"ConceptRole\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}ConceptReferenceType\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n       &lt;/sequence>\r\n       &lt;attribute name=\"type\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}DimensionTypeType\" fixed=\"MeasureDimension\" />\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_MeasureDimensionType.description" bundle="${i18n}"/>",
             "title": "MeasureDimensionType",
             "type": "object"
         },
@@ -3564,7 +3574,7 @@
                 },
                 {}
             ],
-            "description": "MeasureListType describes the structure of the measure descriptor for a data structure definition. Only a primary may be defined.\r\n\r\n<p>Java class for MeasureListType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"MeasureListType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}ComponentListType\">\r\n       &lt;sequence>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Annotations\" minOccurs=\"0\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}PrimaryMeasure\"/>\r\n       &lt;/sequence>\r\n       &lt;attribute name=\"id\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}IDType\" fixed=\"MeasureDescriptor\" />\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_MeasureListType.description" bundle="${i18n}"/>",
             "title": "MeasureListType",
             "type": "object"
         },
@@ -3575,7 +3585,7 @@
                 },
                 {}
             ],
-            "description": "MetadataAttributeBaseType is an abstract base type the serves as the basis for the MetadataAttributeType.\r\n\r\n<p>Java class for MetadataAttributeBaseType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"MetadataAttributeBaseType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}ComponentType\">\r\n       &lt;sequence>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Annotations\" minOccurs=\"0\"/>\r\n         &lt;element name=\"ConceptIdentity\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}ConceptReferenceType\"/>\r\n         &lt;element name=\"LocalRepresentation\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}MetadataAttributeRepresentationType\" minOccurs=\"0\"/>\r\n       &lt;/sequence>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_MetadataAttributeBaseType.description" bundle="${i18n}"/>",
             "title": "MetadataAttributeBaseType",
             "type": "object"
         },
@@ -3586,7 +3596,7 @@
                 },
                 {}
             ],
-            "description": "MetadataAttributeRepresentationType defines the possible local representations of a metadata attribute.\r\n\r\n<p>Java class for MetadataAttributeRepresentationType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"MetadataAttributeRepresentationType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}RepresentationType\">\r\n       &lt;choice>\r\n         &lt;element name=\"TextFormat\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}BasicComponentTextFormatType\"/>\r\n         &lt;sequence>\r\n           &lt;element name=\"Enumeration\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}CodelistReferenceType\"/>\r\n           &lt;element name=\"EnumerationFormat\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}CodededTextFormatType\" minOccurs=\"0\"/>\r\n         &lt;/sequence>\r\n       &lt;/choice>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_MetadataAttributeRepresentationType.description" bundle="${i18n}"/>",
             "title": "MetadataAttributeRepresentationType",
             "type": "object"
         },
@@ -3599,13 +3609,13 @@
                     "properties": {
                         "MetadataAttribute": {
                             "$ref": "#/definitions/xml_ns5_MetadataAttributeType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_MetadataAttributeType.properties.MetadataAttribute.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
                         },
                         "isPresentational": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_MetadataAttributeType.properties.isPresentational.description" bundle="${i18n}"/>",
                             "type": "boolean",
                             "xml": {
                                 "attribute": true,
@@ -3613,7 +3623,7 @@
                             }
                         },
                         "maxOccurs": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_MetadataAttributeType.properties.maxOccurs.description" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "attribute": true,
@@ -3621,7 +3631,7 @@
                             }
                         },
                         "minOccurs": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_MetadataAttributeType.properties.minOccurs.description" bundle="${i18n}"/>",
                             "type": "number",
                             "xml": {
                                 "attribute": true,
@@ -3631,7 +3641,7 @@
                     }
                 }
             ],
-            "description": "MetadataAttributeType describes the structure of a metadata attribute. The metadata attribute takes its semantic, and in some cases it representation, from its concept identity. A metadata attribute may be coded (via the local representation), uncoded (via the text format), or take no value. In addition to this value, the metadata attribute may also specify subordinate metadata attributes. If a metadata attribute only serves the purpose of containing subordinate metadata attributes, then the isPresentational attribute should be used. Otherwise, it is assumed to also take a value. If the metadata attribute does take a value, and a representation is not defined, it will be inherited from the concept it takes its semantic from. The optional id on the metadata attribute uniquely identifies it within the metadata structured definition. If this id is not supplied, its value is assumed to be that of the concept referenced from the concept identity. Note that a metadata attribute (as identified by the id attribute) definition  must be unique across the entire metadata structure definition (including target identifier, identifier component, and report structure ids). A metadata attribute may be used in multiple report structures and at different levels, but the content (value and/or child metadata attributes and their cardinality) of the metadata attribute cannot change.\r\n\r\n<p>Java class for MetadataAttributeType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"MetadataAttributeType\">\r\n   &lt;complexContent>\r\n     &lt;extension base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}MetadataAttributeBaseType\">\r\n       &lt;sequence>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}MetadataAttribute\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n       &lt;/sequence>\r\n       &lt;attribute name=\"minOccurs\" type=\"{http://www.w3.org/2001/XMLSchema}nonNegativeInteger\" default=\"1\" />\r\n       &lt;attribute name=\"maxOccurs\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}OccurenceType\" default=\"1\" />\r\n       &lt;attribute name=\"isPresentational\" type=\"{http://www.w3.org/2001/XMLSchema}boolean\" default=\"false\" />\r\n     &lt;/extension>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_MetadataAttributeType.description" bundle="${i18n}"/>",
             "title": "MetadataAttributeType",
             "type": "object"
         },
@@ -3642,7 +3652,7 @@
                 },
                 {}
             ],
-            "description": "MetadataKeySetType defines a collection of metadata keys (identifier component values).\r\n\r\n<p>Java class for MetadataKeySetType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"MetadataKeySetType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}KeySetType\">\r\n       &lt;sequence>\r\n         &lt;element name=\"Key\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}MetadataKeyType\" maxOccurs=\"unbounded\"/>\r\n       &lt;/sequence>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_MetadataKeySetType.description" bundle="${i18n}"/>",
             "title": "MetadataKeySetType",
             "type": "object"
         },
@@ -3653,7 +3663,7 @@
                 },
                 {}
             ],
-            "description": "MetadataStructureType is used to describe a metadata structure definition, which is defined as a collection of metadata concepts, their structure and usage when used to collect or disseminate reference metadata.\r\n\r\n<p>Java class for MetadataStructureType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"MetadataStructureType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}StructureType\">\r\n       &lt;sequence>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Annotations\" minOccurs=\"0\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Name\" maxOccurs=\"unbounded\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Description\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n         &lt;sequence minOccurs=\"0\">\r\n           &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}MetadataStructureComponents\"/>\r\n         &lt;/sequence>\r\n       &lt;/sequence>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_MetadataStructureType.description" bundle="${i18n}"/>",
             "title": "MetadataStructureType",
             "type": "object"
         },
@@ -3664,7 +3674,7 @@
                 },
                 {}
             ],
-            "description": "MetadataTargetBaseType is an abstract base type which forms the basis for the MetadataTargetType.\r\n\r\n<p>Java class for MetadataTargetBaseType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"MetadataTargetBaseType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}ComponentListType\">\r\n       &lt;sequence>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Annotations\" minOccurs=\"0\"/>\r\n       &lt;/sequence>\r\n       &lt;attribute name=\"id\" use=\"required\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}IDType\" />\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_MetadataTargetBaseType.description" bundle="${i18n}"/>",
             "title": "MetadataTargetBaseType",
             "type": "object"
         },
@@ -3677,35 +3687,35 @@
                     "properties": {
                         "ConstraintContentTarget": {
                             "$ref": "#/definitions/xml_ns5_ConstraintContentTargetType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_MetadataTargetType.properties.ConstraintContentTarget.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
                         },
                         "DataSetTarget": {
                             "$ref": "#/definitions/xml_ns5_DataSetTargetType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_MetadataTargetType.properties.DataSetTarget.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
                         },
                         "IdentifiableObjectTarget": {
                             "$ref": "#/definitions/xml_ns5_IdentifiableObjectTargetType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_MetadataTargetType.properties.IdentifiableObjectTarget.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
                         },
                         "KeyDescriptorValuesTarget": {
                             "$ref": "#/definitions/xml_ns5_KeyDescriptorValuesTargetType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_MetadataTargetType.properties.KeyDescriptorValuesTarget.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
                         },
                         "ReportPeriodTarget": {
                             "$ref": "#/definitions/xml_ns5_ReportPeriodTargetType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_MetadataTargetType.properties.ReportPeriodTarget.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
@@ -3713,7 +3723,7 @@
                     }
                 }
             ],
-            "description": "<p>Java class for MetadataTargetType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"MetadataTargetType\">\r\n   &lt;complexContent>\r\n     &lt;extension base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}MetadataTargetBaseType\">\r\n       &lt;choice maxOccurs=\"unbounded\">\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}KeyDescriptorValuesTarget\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}DataSetTarget\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}ConstraintContentTarget\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}ReportPeriodTarget\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}IdentifiableObjectTarget\"/>\r\n       &lt;/choice>\r\n     &lt;/extension>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_MetadataTargetType.description" bundle="${i18n}"/>",
             "title": "MetadataTargetType",
             "type": "object"
         },
@@ -3724,7 +3734,7 @@
                 },
                 {}
             ],
-            "description": "MetadataflowType describes the structure of a metadata flow. A dataflow is defined as the structure of reference metadata that will be provided for different reference periods. If this type is not referenced externally, then a reference to a metadata structure definition must be provided\r\n\r\n<p>Java class for MetadataflowType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"MetadataflowType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}StructureUsageType\">\r\n       &lt;sequence>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Annotations\" minOccurs=\"0\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Name\" maxOccurs=\"unbounded\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Description\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n         &lt;element name=\"Structure\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}MetadataStructureReferenceType\" minOccurs=\"0\"/>\r\n       &lt;/sequence>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_MetadataflowType.description" bundle="${i18n}"/>",
             "title": "MetadataflowType",
             "type": "object"
         },
@@ -3737,14 +3747,14 @@
                     "properties": {
                         "Description": {
                             "$ref": "#/definitions/xml_ns4_TextType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_NameableType.properties.Description.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common"
                             }
                         },
                         "Name": {
                             "$ref": "#/definitions/xml_ns4_TextType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_NameableType.properties.Name.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common"
                             }
@@ -3752,7 +3762,7 @@
                     }
                 }
             ],
-            "description": "NameableType is an abstract base type for  all nameable objects.\r\n\r\n<p>Java class for NameableType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"NameableType\">\r\n   &lt;complexContent>\r\n     &lt;extension base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}IdentifiableType\">\r\n       &lt;sequence>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Name\" maxOccurs=\"unbounded\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Description\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n       &lt;/sequence>\r\n     &lt;/extension>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_NameableType.description" bundle="${i18n}"/>",
             "required": [
                 "Name"
             ],
@@ -3766,7 +3776,7 @@
                 },
                 {}
             ],
-            "description": "NonFacetedTextFormatType is a restricted version of the SimpleComponentTextFormatType that does not allow for any facets.\r\n\r\n<p>Java class for NonFacetedTextFormatType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"NonFacetedTextFormatType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}SimpleComponentTextFormatType\">\r\n       &lt;attribute name=\"textType\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}SimpleDataType\" />\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_NonFacetedTextFormatType.description" bundle="${i18n}"/>",
             "title": "NonFacetedTextFormatType",
             "type": "object"
         },
@@ -3777,7 +3787,7 @@
                 },
                 {}
             ],
-            "description": "OrganisationMapType defines the structure for mapping two organisations. A local reference is provided both the source and target organisation.\r\n\r\n<p>Java class for OrganisationMapType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"OrganisationMapType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}ItemAssociationType\">\r\n       &lt;sequence>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Annotations\" minOccurs=\"0\"/>\r\n         &lt;element name=\"Source\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}LocalOrganisationReferenceType\"/>\r\n         &lt;element name=\"Target\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}LocalOrganisationReferenceType\"/>\r\n       &lt;/sequence>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_OrganisationMapType.description" bundle="${i18n}"/>",
             "title": "OrganisationMapType",
             "type": "object"
         },
@@ -3788,7 +3798,7 @@
                 },
                 {}
             ],
-            "description": "OrganisationSchemeBaseType is an abstract base type for any organisation scheme.\r\n\r\n<p>Java class for OrganisationSchemeBaseType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"OrganisationSchemeBaseType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}ItemSchemeType\">\r\n       &lt;sequence>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Annotations\" minOccurs=\"0\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Name\" maxOccurs=\"unbounded\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Description\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n       &lt;/sequence>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_OrganisationSchemeBaseType.description" bundle="${i18n}"/>",
             "title": "OrganisationSchemeBaseType",
             "type": "object"
         },
@@ -3799,7 +3809,7 @@
                 },
                 {}
             ],
-            "description": "OrganisationSchemeMapType defines the structure of a map which identifies relationships between organisations in different organisation schemes.\r\n\r\n<p>Java class for OrganisationSchemeMapType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"OrganisationSchemeMapType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}ItemSchemeMapType\">\r\n       &lt;sequence>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Annotations\" minOccurs=\"0\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Name\" maxOccurs=\"unbounded\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Description\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n         &lt;element name=\"Source\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}OrganisationSchemeReferenceType\"/>\r\n         &lt;element name=\"Target\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}OrganisationSchemeReferenceType\"/>\r\n         &lt;sequence maxOccurs=\"unbounded\">\r\n           &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}OrganisationMap\"/>\r\n         &lt;/sequence>\r\n       &lt;/sequence>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_OrganisationSchemeMapType.description" bundle="${i18n}"/>",
             "title": "OrganisationSchemeMapType",
             "type": "object"
         },
@@ -3811,7 +3821,7 @@
                 {
                     "properties": {
                         "Organisation": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_OrganisationSchemeType.properties.Organisation.description" bundle="${i18n}"/>",
                             "type": "object",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
@@ -3820,7 +3830,7 @@
                     }
                 }
             ],
-            "description": "OrganisationSchemeType describes the structure of an organisation scheme.\r\n\r\n<p>Java class for OrganisationSchemeType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"OrganisationSchemeType\">\r\n   &lt;complexContent>\r\n     &lt;extension base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}OrganisationSchemeBaseType\">\r\n       &lt;sequence maxOccurs=\"unbounded\" minOccurs=\"0\">\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}Organisation\"/>\r\n       &lt;/sequence>\r\n     &lt;/extension>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_OrganisationSchemeType.description" bundle="${i18n}"/>",
             "title": "OrganisationSchemeType",
             "type": "object"
         },
@@ -3833,7 +3843,7 @@
                     "properties": {
                         "Contact": {
                             "$ref": "#/definitions/xml_ns5_ContactType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_OrganisationType.properties.Contact.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
@@ -3841,7 +3851,7 @@
                     }
                 }
             ],
-            "description": "OrganisationType in an abstract type which describes the structure of the details of an organisation. In addition to the basic organisation identification, contact details can be provided.\r\n\r\n<p>Java class for OrganisationType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"OrganisationType\">\r\n   &lt;complexContent>\r\n     &lt;extension base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}BaseOrganisationType\">\r\n       &lt;sequence>\r\n         &lt;element name=\"Contact\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}ContactType\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n       &lt;/sequence>\r\n     &lt;/extension>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_OrganisationType.description" bundle="${i18n}"/>",
             "title": "OrganisationType",
             "type": "object"
         },
@@ -3852,7 +3862,7 @@
                 },
                 {}
             ],
-            "description": "OrganisationUnitSchemeType defines a type of organisation scheme which simply defines organisations and there parent child relationships. Organisations in this scheme are assigned no particular role, and may in fact exist within the other type of organisation schemes as well.\r\n\r\n<p>Java class for OrganisationUnitSchemeType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"OrganisationUnitSchemeType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}OrganisationSchemeType\">\r\n       &lt;sequence>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Annotations\" minOccurs=\"0\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Name\" maxOccurs=\"unbounded\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Description\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n         &lt;sequence maxOccurs=\"unbounded\" minOccurs=\"0\">\r\n           &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}OrganisationUnit\"/>\r\n         &lt;/sequence>\r\n       &lt;/sequence>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_OrganisationUnitSchemeType.description" bundle="${i18n}"/>",
             "title": "OrganisationUnitSchemeType",
             "type": "object"
         },
@@ -3863,7 +3873,7 @@
                 },
                 {}
             ],
-            "description": "OrganisationUnitType defines the structure of an organisation unit description. In addition to general identification and contact information, an organisation unit can specify a relationship with another organisation unit from the same scheme which is its parent organisation.\r\n\r\n<p>Java class for OrganisationUnitType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"OrganisationUnitType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}OrganisationType\">\r\n       &lt;sequence>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Annotations\" minOccurs=\"0\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Name\" maxOccurs=\"unbounded\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Description\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n         &lt;choice minOccurs=\"0\">\r\n           &lt;element name=\"Parent\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}LocalOrganisationUnitReferenceType\"/>\r\n         &lt;/choice>\r\n         &lt;element name=\"Contact\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}ContactType\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n       &lt;/sequence>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_OrganisationUnitType.description" bundle="${i18n}"/>",
             "title": "OrganisationUnitType",
             "type": "object"
         },
@@ -3874,7 +3884,7 @@
                 },
                 {}
             ],
-            "description": "PrimaryMeasureType describes the structure of the primary measure. It describes the observation values for all presentations of the data. The primary measure takes its semantic, and in some cases it representation, from its concept identity (conventionally the OBS_VALUE concept). The primary measure can be coded by referencing a code list from its coded local representation. It can also specify its text format, which is used as the representation of the primary measure if a coded representation is not defined. Neither the coded or uncoded representation are necessary, since the primary measure may take these from the referenced concept. Note that if the data structure declares a measure dimension, the representation of this must be a superset of all possible measure concept representations.\r\n\r\n<p>Java class for PrimaryMeasureType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"PrimaryMeasureType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}ComponentType\">\r\n       &lt;sequence>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Annotations\" minOccurs=\"0\"/>\r\n         &lt;element name=\"ConceptIdentity\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}ConceptReferenceType\"/>\r\n         &lt;element name=\"LocalRepresentation\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}SimpleDataStructureRepresentationType\" minOccurs=\"0\"/>\r\n       &lt;/sequence>\r\n       &lt;attribute name=\"id\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}NCNameIDType\" fixed=\"OBS_VALUE\" />\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_PrimaryMeasureType.description" bundle="${i18n}"/>",
             "title": "PrimaryMeasureType",
             "type": "object"
         },
@@ -3885,7 +3895,7 @@
                 },
                 {}
             ],
-            "description": "ProcessStepBaseType is an abstract base type used as the basis for the ProcessStepType.\r\n\r\n<p>Java class for ProcessStepBaseType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"ProcessStepBaseType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}NameableType\">\r\n       &lt;sequence>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Annotations\" minOccurs=\"0\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Name\" maxOccurs=\"unbounded\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Description\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n       &lt;/sequence>\r\n       &lt;attribute name=\"id\" use=\"required\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}IDType\" />\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ProcessStepBaseType.description" bundle="${i18n}"/>",
             "title": "ProcessStepBaseType",
             "type": "object"
         },
@@ -3898,35 +3908,35 @@
                     "properties": {
                         "Computation": {
                             "$ref": "#/definitions/xml_ns5_ComputationType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ProcessStepType.properties.Computation.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
                         },
                         "Input": {
                             "$ref": "#/definitions/xml_ns5_InputOutputType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ProcessStepType.properties.Input.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
                         },
                         "Output": {
                             "$ref": "#/definitions/xml_ns5_InputOutputType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ProcessStepType.properties.Output.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
                         },
                         "ProcessStep": {
                             "$ref": "#/definitions/xml_ns5_ProcessStepType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ProcessStepType.properties.ProcessStep.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
                         },
                         "Transition": {
                             "$ref": "#/definitions/xml_ns5_TransitionType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ProcessStepType.properties.Transition.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
@@ -3934,7 +3944,7 @@
                     }
                 }
             ],
-            "description": "ProcessStepType describes the structure of a process step. A nested process step is automatically sub-ordinate, and followed as the next step. If the following step is conditional, it should be referenced in a transition.\r\n\r\n<p>Java class for ProcessStepType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"ProcessStepType\">\r\n   &lt;complexContent>\r\n     &lt;extension base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}ProcessStepBaseType\">\r\n       &lt;sequence>\r\n         &lt;element name=\"Input\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}InputOutputType\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n         &lt;element name=\"Output\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}InputOutputType\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n         &lt;element name=\"Computation\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}ComputationType\" minOccurs=\"0\"/>\r\n         &lt;element name=\"Transition\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}TransitionType\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n         &lt;element name=\"ProcessStep\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}ProcessStepType\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n       &lt;/sequence>\r\n     &lt;/extension>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ProcessStepType.description" bundle="${i18n}"/>",
             "title": "ProcessStepType",
             "type": "object"
         },
@@ -3947,7 +3957,7 @@
                     "properties": {
                         "ProcessStep": {
                             "$ref": "#/definitions/xml_ns5_ProcessStepType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ProcessType.properties.ProcessStep.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
@@ -3955,7 +3965,7 @@
                     }
                 }
             ],
-            "description": "ProcessType describes the structure of a process, which is a scheme which defines or documents the operations performed on data in order to validate data or to derive new information according to a given set of rules. Processes occur in order, and will continue in order unless a transition dictates another step should occur.\r\n\r\n<p>Java class for ProcessType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"ProcessType\">\r\n   &lt;complexContent>\r\n     &lt;extension base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}MaintainableType\">\r\n       &lt;sequence>\r\n         &lt;element name=\"ProcessStep\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}ProcessStepType\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n       &lt;/sequence>\r\n     &lt;/extension>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ProcessType.description" bundle="${i18n}"/>",
             "title": "ProcessType",
             "type": "object"
         },
@@ -3968,14 +3978,14 @@
                     "properties": {
                         "DataProvider": {
                             "$ref": "#/definitions/xml_ns4_DataProviderReferenceType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ProvisionAgreementType.properties.DataProvider.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
                         },
                         "StructureUsage": {
                             "$ref": "#/definitions/xml_ns4_StructureUsageReferenceType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ProvisionAgreementType.properties.StructureUsage.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
@@ -3983,7 +3993,7 @@
                     }
                 }
             ],
-            "description": "ProvisionAgreementType describes the structure of a provision agreement. A provision agreement defines an agreement for a data provider to report data or reference metadata against a flow. Attributes which describe how the registry must behave when data or metadata is registered against this provision agreement are supplied.\r\n\r\n<p>Java class for ProvisionAgreementType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"ProvisionAgreementType\">\r\n   &lt;complexContent>\r\n     &lt;extension base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}MaintainableType\">\r\n       &lt;sequence>\r\n         &lt;element name=\"StructureUsage\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}StructureUsageReferenceType\"/>\r\n         &lt;element name=\"DataProvider\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}DataProviderReferenceType\"/>\r\n       &lt;/sequence>\r\n     &lt;/extension>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ProvisionAgreementType.description" bundle="${i18n}"/>",
             "required": [
                 "StructureUsage",
                 "DataProvider"
@@ -3996,21 +4006,21 @@
                 {
                     "properties": {
                         "Offset": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ReleaseCalendarType.properties.Offset.description" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
                         },
                         "Periodicity": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ReleaseCalendarType.properties.Periodicity.description" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
                         },
                         "Tolerance": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ReleaseCalendarType.properties.Tolerance.description" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
@@ -4019,7 +4029,7 @@
                     }
                 }
             ],
-            "description": "ReleaseCalendarType describes information about the timing of releases of the constrained data. All of these values use the standard \"P7D\" - style format.\r\n\r\n<p>Java class for ReleaseCalendarType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"ReleaseCalendarType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.w3.org/2001/XMLSchema}anyType\">\r\n       &lt;sequence>\r\n         &lt;element name=\"Periodicity\" type=\"{http://www.w3.org/2001/XMLSchema}string\"/>\r\n         &lt;element name=\"Offset\" type=\"{http://www.w3.org/2001/XMLSchema}string\"/>\r\n         &lt;element name=\"Tolerance\" type=\"{http://www.w3.org/2001/XMLSchema}string\"/>\r\n       &lt;/sequence>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ReleaseCalendarType.description" bundle="${i18n}"/>",
             "required": [
                 "Periodicity",
                 "Offset",
@@ -4035,7 +4045,7 @@
                 },
                 {}
             ],
-            "description": "ReportPeriodRepresentationType defines the possible local representations of a report period target object. The reprentation must be a time period or a subset of this representation.\r\n\r\n<p>Java class for ReportPeriodRepresentationType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"ReportPeriodRepresentationType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}RepresentationType\">\r\n       &lt;sequence>\r\n         &lt;element name=\"TextFormat\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}TimeTextFormatType\"/>\r\n       &lt;/sequence>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ReportPeriodRepresentationType.description" bundle="${i18n}"/>",
             "title": "ReportPeriodRepresentationType",
             "type": "object"
         },
@@ -4046,7 +4056,7 @@
                 },
                 {}
             ],
-            "description": "ReportPeriodTargetType defines the structure of a report period target object. The report period target object has a fixed representation and identifier.\r\n\r\n<p>Java class for ReportPeriodTargetType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"ReportPeriodTargetType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}TargetObject\">\r\n       &lt;sequence>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Annotations\" minOccurs=\"0\"/>\r\n         &lt;element name=\"LocalRepresentation\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}ReportPeriodRepresentationType\"/>\r\n       &lt;/sequence>\r\n       &lt;attribute name=\"id\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}NCNameIDType\" fixed=\"REPORT_PERIOD_TARGET\" />\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ReportPeriodTargetType.description" bundle="${i18n}"/>",
             "title": "ReportPeriodTargetType",
             "type": "object"
         },
@@ -4057,7 +4067,7 @@
                 },
                 {}
             ],
-            "description": "ReportStructureBaseType is an abstract base type that serves as the basis for the ReportStructureType.\r\n\r\n<p>Java class for ReportStructureBaseType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"ReportStructureBaseType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}ComponentListType\">\r\n       &lt;sequence>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Annotations\" minOccurs=\"0\"/>\r\n         &lt;sequence maxOccurs=\"unbounded\">\r\n           &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}MetadataAttribute\"/>\r\n         &lt;/sequence>\r\n       &lt;/sequence>\r\n       &lt;attribute name=\"id\" use=\"required\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}IDType\" />\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ReportStructureBaseType.description" bundle="${i18n}"/>",
             "title": "ReportStructureBaseType",
             "type": "object"
         },
@@ -4070,7 +4080,7 @@
                     "properties": {
                         "MetadataTarget": {
                             "$ref": "#/definitions/xml_ns4_LocalMetadataTargetReferenceType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ReportStructureType.properties.MetadataTarget.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
@@ -4078,7 +4088,7 @@
                     }
                 }
             ],
-            "description": "ReportStructureType describes the structure of a report structure. It comprises a set of metadata attributes that can be defined as a hierarchy, and identifies the potential attachment of these attributes to an object by referencing a target identifier.\r\n\r\n<p>Java class for ReportStructureType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"ReportStructureType\">\r\n   &lt;complexContent>\r\n     &lt;extension base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}ReportStructureBaseType\">\r\n       &lt;sequence>\r\n         &lt;element name=\"MetadataTarget\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}LocalMetadataTargetReferenceType\" maxOccurs=\"unbounded\"/>\r\n       &lt;/sequence>\r\n     &lt;/extension>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ReportStructureType.description" bundle="${i18n}"/>",
             "required": [
                 "MetadataTarget"
             ],
@@ -4092,7 +4102,7 @@
                 },
                 {}
             ],
-            "description": "ReportingCategoryBaseType is an abstract base type that serves as the basis for the ReportingCategoryType.\r\n\r\n<p>Java class for ReportingCategoryBaseType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"ReportingCategoryBaseType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}ItemType\">\r\n       &lt;sequence>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Annotations\" minOccurs=\"0\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Name\" maxOccurs=\"unbounded\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Description\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n         &lt;choice minOccurs=\"0\">\r\n           &lt;sequence maxOccurs=\"unbounded\">\r\n             &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}ReportingCategory\"/>\r\n           &lt;/sequence>\r\n         &lt;/choice>\r\n       &lt;/sequence>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ReportingCategoryBaseType.description" bundle="${i18n}"/>",
             "title": "ReportingCategoryBaseType",
             "type": "object"
         },
@@ -4103,7 +4113,7 @@
                 },
                 {}
             ],
-            "description": "ReportingCategoryMapType defines the structure for mapping two reporting categories. A local reference is provided both the source and target category.\r\n\r\n<p>Java class for ReportingCategoryMapType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"ReportingCategoryMapType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}ItemAssociationType\">\r\n       &lt;sequence>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Annotations\" minOccurs=\"0\"/>\r\n         &lt;element name=\"Source\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}LocalReportingCategoryReferenceType\"/>\r\n         &lt;element name=\"Target\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}LocalReportingCategoryReferenceType\"/>\r\n       &lt;/sequence>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ReportingCategoryMapType.description" bundle="${i18n}"/>",
             "title": "ReportingCategoryMapType",
             "type": "object"
         },
@@ -4116,14 +4126,14 @@
                     "properties": {
                         "ProvisioningMetadata": {
                             "$ref": "#/definitions/xml_ns4_StructureUsageReferenceType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ReportingCategoryType.properties.ProvisioningMetadata.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
                         },
                         "StructuralMetadata": {
                             "$ref": "#/definitions/xml_ns4_StructureReferenceType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ReportingCategoryType.properties.StructuralMetadata.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
@@ -4131,7 +4141,7 @@
                     }
                 }
             ],
-            "description": "ReportingCategoryType describes the structure of a reporting category, which groups structure usages into useful sub-packages. Sub ordinate reporting categories can be nested within the category definition.\r\n\r\n<p>Java class for ReportingCategoryType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"ReportingCategoryType\">\r\n   &lt;complexContent>\r\n     &lt;extension base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}ReportingCategoryBaseType\">\r\n       &lt;choice>\r\n         &lt;element name=\"StructuralMetadata\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}StructureReferenceType\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n         &lt;element name=\"ProvisioningMetadata\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}StructureUsageReferenceType\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n       &lt;/choice>\r\n     &lt;/extension>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ReportingCategoryType.description" bundle="${i18n}"/>",
             "title": "ReportingCategoryType",
             "type": "object"
         },
@@ -4142,7 +4152,7 @@
                 },
                 {}
             ],
-            "description": "ReportingTaxonomyMapType defines the structure of a map which identifies relationships between reporting categories in different reporting taxonomies.\r\n\r\n<p>Java class for ReportingTaxonomyMapType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"ReportingTaxonomyMapType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}ItemSchemeMapType\">\r\n       &lt;sequence>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Annotations\" minOccurs=\"0\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Name\" maxOccurs=\"unbounded\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Description\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n         &lt;element name=\"Source\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}ReportingTaxonomyReferenceType\"/>\r\n         &lt;element name=\"Target\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}ReportingTaxonomyReferenceType\"/>\r\n         &lt;sequence maxOccurs=\"unbounded\">\r\n           &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}ReportingCategoryMap\"/>\r\n         &lt;/sequence>\r\n       &lt;/sequence>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ReportingTaxonomyMapType.description" bundle="${i18n}"/>",
             "title": "ReportingTaxonomyMapType",
             "type": "object"
         },
@@ -4153,7 +4163,7 @@
                 },
                 {}
             ],
-            "description": "ReportingTaxonomyType describes the structure of a reporting taxonomy, which is a scheme which defines the composition structure of a data report where each component can be described by an independent structure or structure usage description.\r\n\r\n<p>Java class for ReportingTaxonomyType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"ReportingTaxonomyType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}ItemSchemeType\">\r\n       &lt;sequence>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Annotations\" minOccurs=\"0\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Name\" maxOccurs=\"unbounded\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Description\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n         &lt;sequence maxOccurs=\"unbounded\" minOccurs=\"0\">\r\n           &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}ReportingCategory\"/>\r\n         &lt;/sequence>\r\n       &lt;/sequence>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ReportingTaxonomyType.description" bundle="${i18n}"/>",
             "title": "ReportingTaxonomyType",
             "type": "object"
         },
@@ -4164,7 +4174,7 @@
                 },
                 {}
             ],
-            "description": "ReportingYearStartDayRepresentationType defines the representation for the reporting year start day attribute. Enumerated values are not allowed and the text format is fixed to be a day and month in the ISO 8601 format of '--MM-DD'.\r\n\r\n<p>Java class for ReportingYearStartDayRepresentationType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"ReportingYearStartDayRepresentationType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}SimpleDataStructureRepresentationType\">\r\n       &lt;sequence>\r\n         &lt;element name=\"TextFormat\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}ReportingYearStartDayTextFormatType\"/>\r\n       &lt;/sequence>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ReportingYearStartDayRepresentationType.description" bundle="${i18n}"/>",
             "title": "ReportingYearStartDayRepresentationType",
             "type": "object"
         },
@@ -4175,7 +4185,7 @@
                 },
                 {}
             ],
-            "description": "ReportingYearStartDayTextFormatType is a restricted version of the NonFacetedTextFormatType that fixes the value of the text type to be DayMonth. This type exists solely for the purpose of fixing the representation of the reporting year start day attribute.\r\n\r\n<p>Java class for ReportingYearStartDayTextFormatType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"ReportingYearStartDayTextFormatType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}NonFacetedTextFormatType\">\r\n       &lt;attribute name=\"textType\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}SimpleDataType\" fixed=\"MonthDay\" />\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ReportingYearStartDayTextFormatType.description" bundle="${i18n}"/>",
             "title": "ReportingYearStartDayTextFormatType",
             "type": "object"
         },
@@ -4186,7 +4196,7 @@
                 },
                 {}
             ],
-            "description": "ReportingYearStartDayType defines the structure of the reporting year start day attribute. The reporting year start day attribute takes its semantic from its concept identity (usually the REPORTING_YEAR_START_DAY concept), yet is always has a fixed identifier (REPORTING_YEAR_START_DAY). The reporting year start day attribute always has a fixed text format, which specifies that the format of its value is always a day and month in the ISO 8601 format of '--MM-DD'. As with any other attribute, an attribute relationship must be specified. this relationship should be carefully selected as it will determin what type of data the data structure definition will allow. For example, if an attribute relationship of none is specified, this will mean the data sets conforming to this data structure definition can only contain data with standard reporting periods where the all reporting periods have the same start day. In this case, data reported as standard reporting periods from two entities with different fiscal year start days could not be contained in the same data set.\r\n\r\n<p>Java class for ReportingYearStartDayType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"ReportingYearStartDayType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}AttributeType\">\r\n       &lt;sequence>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Annotations\" minOccurs=\"0\"/>\r\n         &lt;element name=\"ConceptIdentity\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}ConceptReferenceType\"/>\r\n         &lt;element name=\"LocalRepresentation\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}ReportingYearStartDayRepresentationType\"/>\r\n         &lt;element name=\"AttributeRelationship\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}AttributeRelationshipType\"/>\r\n       &lt;/sequence>\r\n       &lt;attribute name=\"id\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}NCNameIDType\" fixed=\"REPORTING_YEAR_START_DAY\" />\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ReportingYearStartDayType.description" bundle="${i18n}"/>",
             "title": "ReportingYearStartDayType",
             "type": "object"
         },
@@ -4196,28 +4206,28 @@
                     "properties": {
                         "CodelistMap": {
                             "$ref": "#/definitions/xml_ns4_LocalCodelistMapReferenceType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_RepresentationMapType.properties.CodelistMap.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
                         },
                         "ToTextFormat": {
                             "$ref": "#/definitions/xml_ns5_TextFormatType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_RepresentationMapType.properties.ToTextFormat.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
                         },
                         "ToValueType": {
                             "$ref": "#/definitions/xml_ns5_ToValueTypeType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_RepresentationMapType.properties.ToValueType.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
                         },
                         "ValueMap": {
                             "$ref": "#/definitions/xml_ns5_ValueMapType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_RepresentationMapType.properties.ValueMap.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
@@ -4225,7 +4235,7 @@
                     }
                 }
             ],
-            "description": "RepresentationMapType describes the structure of the mapping of the value of a source to component to a target component. Either a reference to another map defined within the containing structure set or a description of the source and target text formats must be provided. Note that for key family components, only a reference to a codelist map is relevant, since that is the only type of coded representation allowed in a key family.\r\n\r\n<p>Java class for RepresentationMapType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"RepresentationMapType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.w3.org/2001/XMLSchema}anyType\">\r\n       &lt;choice>\r\n         &lt;element name=\"CodelistMap\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}LocalCodelistMapReferenceType\"/>\r\n         &lt;sequence>\r\n           &lt;element name=\"ToTextFormat\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}TextFormatType\"/>\r\n           &lt;element name=\"ToValueType\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}ToValueTypeType\"/>\r\n         &lt;/sequence>\r\n         &lt;element name=\"ValueMap\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}ValueMapType\"/>\r\n       &lt;/choice>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_RepresentationMapType.description" bundle="${i18n}"/>",
             "title": "RepresentationMapType",
             "type": "object"
         },
@@ -4235,21 +4245,21 @@
                     "properties": {
                         "Enumeration": {
                             "$ref": "#/definitions/xml_ns4_ItemSchemeReferenceBaseType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_RepresentationType.properties.Enumeration.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
                         },
                         "EnumerationFormat": {
                             "$ref": "#/definitions/xml_ns5_CodededTextFormatType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_RepresentationType.properties.EnumerationFormat.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
                         },
                         "TextFormat": {
                             "$ref": "#/definitions/xml_ns5_TextFormatType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_RepresentationType.properties.TextFormat.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
@@ -4257,7 +4267,7 @@
                     }
                 }
             ],
-            "description": "RepresentationType is an abstract type that defines a representation. Because the type of item schemes that are allowed as the an enumeration vary based on the object in which this is defined, this type is abstract to force that the enumeration reference be restricted to the proper type of item scheme reference.\r\n\r\n<p>Java class for RepresentationType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"RepresentationType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.w3.org/2001/XMLSchema}anyType\">\r\n       &lt;choice>\r\n         &lt;element name=\"TextFormat\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}TextFormatType\"/>\r\n         &lt;sequence>\r\n           &lt;element name=\"Enumeration\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}ItemSchemeReferenceBaseType\"/>\r\n           &lt;element name=\"EnumerationFormat\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}CodededTextFormatType\" minOccurs=\"0\"/>\r\n         &lt;/sequence>\r\n       &lt;/choice>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_RepresentationType.description" bundle="${i18n}"/>",
             "title": "RepresentationType",
             "type": "object"
         },
@@ -4268,7 +4278,7 @@
                 },
                 {}
             ],
-            "description": "SimpleComponentTextFormatType is a restricted version of the BasicComponentTextFormatType that does not allow for multi-lingual values.\r\n\r\n<p>Java class for SimpleComponentTextFormatType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"SimpleComponentTextFormatType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}BasicComponentTextFormatType\">\r\n       &lt;attribute name=\"textType\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}SimpleDataType\" default=\"String\" />\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_SimpleComponentTextFormatType.description" bundle="${i18n}"/>",
             "title": "SimpleComponentTextFormatType",
             "type": "object"
         },
@@ -4279,7 +4289,7 @@
                 },
                 {}
             ],
-            "description": "SimpleDataStructureRepresentationType defines the representation for any non-measure and non-time dimension data structure definition component.\r\n\r\n<p>Java class for SimpleDataStructureRepresentationType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"SimpleDataStructureRepresentationType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}DataStructureRepresentationType\">\r\n       &lt;choice>\r\n         &lt;element name=\"TextFormat\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}SimpleComponentTextFormatType\"/>\r\n         &lt;sequence>\r\n           &lt;element name=\"Enumeration\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}CodelistReferenceType\"/>\r\n           &lt;element name=\"EnumerationFormat\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}CodededTextFormatType\" minOccurs=\"0\"/>\r\n         &lt;/sequence>\r\n       &lt;/choice>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_SimpleDataStructureRepresentationType.description" bundle="${i18n}"/>",
             "title": "SimpleDataStructureRepresentationType",
             "type": "object"
         },
@@ -4290,7 +4300,7 @@
                 },
                 {}
             ],
-            "description": "StructureMapBaseType is an abstract base type which forms the basis for the StructureMapType.\r\n\r\n<p>Java class for StructureMapBaseType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"StructureMapBaseType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}NameableType\">\r\n       &lt;sequence>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Annotations\" minOccurs=\"0\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Name\" maxOccurs=\"unbounded\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Description\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n       &lt;/sequence>\r\n       &lt;attribute name=\"id\" use=\"required\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}IDType\" />\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_StructureMapBaseType.description" bundle="${i18n}"/>",
             "title": "StructureMapBaseType",
             "type": "object"
         },
@@ -4303,27 +4313,27 @@
                     "properties": {
                         "ComponentMap": {
                             "$ref": "#/definitions/xml_ns5_ComponentMapType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_StructureMapType.properties.ComponentMap.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
                         },
                         "Source": {
                             "$ref": "#/definitions/xml_ns4_StructureOrUsageReferenceType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_StructureMapType.properties.Source.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
                         },
                         "Target": {
                             "$ref": "#/definitions/xml_ns4_StructureOrUsageReferenceType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_StructureMapType.properties.Target.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
                         },
                         "isExtension": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_StructureMapType.properties.isExtension.description" bundle="${i18n}"/>",
                             "type": "boolean",
                             "xml": {
                                 "attribute": true,
@@ -4333,7 +4343,7 @@
                     }
                 }
             ],
-            "description": "StructureMapType defines the structure for mapping components of one structure to components of another structure. A structure may be referenced directly meaning the map applies wherever the structure is used, or it may be a reference via a structure usage meaning the map only applies within the context of that usage. Using the related structures, one can make extrapolations between maps. For example, if key families, A, B, and C, are all grouped in a related structures container, then a map from key family A to C and a map from key family B to C could be used to infer a relation between key family A to C.\r\n\r\n<p>Java class for StructureMapType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"StructureMapType\">\r\n   &lt;complexContent>\r\n     &lt;extension base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}StructureMapBaseType\">\r\n       &lt;sequence>\r\n         &lt;element name=\"Source\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}StructureOrUsageReferenceType\"/>\r\n         &lt;element name=\"Target\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}StructureOrUsageReferenceType\"/>\r\n         &lt;element name=\"ComponentMap\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}ComponentMapType\" maxOccurs=\"unbounded\"/>\r\n       &lt;/sequence>\r\n       &lt;attribute name=\"isExtension\" type=\"{http://www.w3.org/2001/XMLSchema}boolean\" default=\"false\" />\r\n     &lt;/extension>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_StructureMapType.description" bundle="${i18n}"/>",
             "required": [
                 "Source",
                 "Target",
@@ -4349,7 +4359,7 @@
                 },
                 {}
             ],
-            "description": "StructureSetBaseType is an abstract base type that forms the basis for the StructureSetType.\r\n\r\n<p>Java class for StructureSetBaseType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"StructureSetBaseType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}MaintainableType\">\r\n       &lt;sequence>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Annotations\" minOccurs=\"0\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Name\" maxOccurs=\"unbounded\"/>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Description\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n       &lt;/sequence>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_StructureSetBaseType.description" bundle="${i18n}"/>",
             "title": "StructureSetBaseType",
             "type": "object"
         },
@@ -4362,56 +4372,56 @@
                     "properties": {
                         "CategorySchemeMap": {
                             "$ref": "#/definitions/xml_ns5_CategorySchemeMapType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_StructureSetType.properties.CategorySchemeMap.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
                         },
                         "CodelistMap": {
                             "$ref": "#/definitions/xml_ns5_CodelistMapType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_StructureSetType.properties.CodelistMap.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
                         },
                         "ConceptSchemeMap": {
                             "$ref": "#/definitions/xml_ns5_ConceptSchemeMapType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_StructureSetType.properties.ConceptSchemeMap.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
                         },
                         "HybridCodelistMap": {
                             "$ref": "#/definitions/xml_ns5_HybridCodelistMapType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_StructureSetType.properties.HybridCodelistMap.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
                         },
                         "OrganisationSchemeMap": {
                             "$ref": "#/definitions/xml_ns5_OrganisationSchemeMapType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_StructureSetType.properties.OrganisationSchemeMap.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
                         },
                         "RelatedStructure": {
                             "$ref": "#/definitions/xml_ns4_StructureOrUsageReferenceType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_StructureSetType.properties.RelatedStructure.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
                         },
                         "ReportingTaxonomyMap": {
                             "$ref": "#/definitions/xml_ns5_ReportingTaxonomyMapType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_StructureSetType.properties.ReportingTaxonomyMap.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
                         },
                         "StructureMap": {
                             "$ref": "#/definitions/xml_ns5_StructureMapType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_StructureSetType.properties.StructureMap.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
@@ -4419,7 +4429,7 @@
                     }
                 }
             ],
-            "description": "StructureSetType describes the structure of a structure set. It allows components in one structure, structure usage, or item scheme to be mapped to components in another structural component of the same type.\r\n\r\n<p>Java class for StructureSetType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"StructureSetType\">\r\n   &lt;complexContent>\r\n     &lt;extension base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}StructureSetBaseType\">\r\n       &lt;sequence>\r\n         &lt;element name=\"RelatedStructure\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}StructureOrUsageReferenceType\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n         &lt;choice maxOccurs=\"unbounded\" minOccurs=\"0\">\r\n           &lt;element name=\"OrganisationSchemeMap\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}OrganisationSchemeMapType\"/>\r\n           &lt;element name=\"CategorySchemeMap\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}CategorySchemeMapType\"/>\r\n           &lt;element name=\"CodelistMap\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}CodelistMapType\"/>\r\n           &lt;element name=\"ConceptSchemeMap\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}ConceptSchemeMapType\"/>\r\n           &lt;element name=\"ReportingTaxonomyMap\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}ReportingTaxonomyMapType\"/>\r\n           &lt;element name=\"HybridCodelistMap\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}HybridCodelistMapType\"/>\r\n           &lt;element name=\"StructureMap\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}StructureMapType\"/>\r\n         &lt;/choice>\r\n       &lt;/sequence>\r\n     &lt;/extension>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_StructureSetType.description" bundle="${i18n}"/>",
             "title": "StructureSetType",
             "type": "object"
         },
@@ -4431,7 +4441,7 @@
                 {
                     "properties": {
                         "Grouping": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_StructureType.properties.Grouping.description" bundle="${i18n}"/>",
                             "type": "object",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
@@ -4440,7 +4450,7 @@
                     }
                 }
             ],
-            "description": "StructureType is an abstract base type for all structure objects. Concrete instances of this should restrict to a concrete grouping.\r\n\r\n<p>Java class for StructureType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"StructureType\">\r\n   &lt;complexContent>\r\n     &lt;extension base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}MaintainableType\">\r\n       &lt;sequence>\r\n         &lt;sequence minOccurs=\"0\">\r\n           &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}Grouping\"/>\r\n         &lt;/sequence>\r\n       &lt;/sequence>\r\n     &lt;/extension>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_StructureType.description" bundle="${i18n}"/>",
             "title": "StructureType",
             "type": "object"
         },
@@ -4453,7 +4463,7 @@
                     "properties": {
                         "Structure": {
                             "$ref": "#/definitions/xml_ns4_StructureReferenceBaseType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_StructureUsageType.properties.Structure.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
@@ -4461,7 +4471,7 @@
                     }
                 }
             ],
-            "description": "StructureUsageType is an abstract base type for all structure usages. It contains a reference to a structure. Concrete instances of this type should restrict the type of structure referenced.\r\n\r\n<p>Java class for StructureUsageType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"StructureUsageType\">\r\n   &lt;complexContent>\r\n     &lt;extension base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}MaintainableType\">\r\n       &lt;sequence>\r\n         &lt;element name=\"Structure\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}StructureReferenceBaseType\" minOccurs=\"0\"/>\r\n       &lt;/sequence>\r\n     &lt;/extension>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_StructureUsageType.description" bundle="${i18n}"/>",
             "title": "StructureUsageType",
             "type": "object"
         },
@@ -4472,7 +4482,7 @@
                 },
                 {}
             ],
-            "description": "TargetObject is an abstract base type from which all target objects of a metadata target are derived. It is based on a component. Implementations of this will refined the local representation so that the allowed values accurately reflect the representation of the target object reference.\r\n\r\n<p>Java class for TargetObject complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"TargetObject\">\r\n   &lt;complexContent>\r\n     &lt;extension base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}ComponentType\">\r\n     &lt;/extension>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_TargetObject.description" bundle="${i18n}"/>",
             "title": "TargetObject",
             "type": "object"
         },
@@ -4483,7 +4493,7 @@
                 },
                 {}
             ],
-            "description": "TargetObjectTextFormatType is a restricted version of the TextFormatType that does not allow for any facets and only allows the text types for target objects.\r\n\r\n<p>Java class for TargetObjectTextFormatType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"TargetObjectTextFormatType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}TextFormatType\">\r\n       &lt;attribute name=\"textType\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}TargetObjectDataType\" />\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_TargetObjectTextFormatType.description" bundle="${i18n}"/>",
             "title": "TargetObjectTextFormatType",
             "type": "object"
         },
@@ -4492,7 +4502,7 @@
                 {
                     "properties": {
                         "decimals": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_TextFormatType.properties.decimals.description" bundle="${i18n}"/>",
                             "type": "number",
                             "xml": {
                                 "attribute": true,
@@ -4500,7 +4510,7 @@
                             }
                         },
                         "endTime": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_TextFormatType.properties.endTime.description" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "attribute": true,
@@ -4508,7 +4518,7 @@
                             }
                         },
                         "endValue": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_TextFormatType.properties.endValue.description" bundle="${i18n}"/>",
                             "type": "number",
                             "xml": {
                                 "attribute": true,
@@ -4516,7 +4526,7 @@
                             }
                         },
                         "interval": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_TextFormatType.properties.interval.description" bundle="${i18n}"/>",
                             "type": "number",
                             "xml": {
                                 "attribute": true,
@@ -4524,7 +4534,7 @@
                             }
                         },
                         "isMultiLingual": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_TextFormatType.properties.isMultiLingual.description" bundle="${i18n}"/>",
                             "type": "boolean",
                             "xml": {
                                 "attribute": true,
@@ -4532,7 +4542,7 @@
                             }
                         },
                         "isSequence": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_TextFormatType.properties.isSequence.description" bundle="${i18n}"/>",
                             "type": "boolean",
                             "xml": {
                                 "attribute": true,
@@ -4540,7 +4550,7 @@
                             }
                         },
                         "maxLength": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_TextFormatType.properties.maxLength.description" bundle="${i18n}"/>",
                             "type": "number",
                             "xml": {
                                 "attribute": true,
@@ -4548,7 +4558,7 @@
                             }
                         },
                         "maxValue": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_TextFormatType.properties.maxValue.description" bundle="${i18n}"/>",
                             "type": "number",
                             "xml": {
                                 "attribute": true,
@@ -4556,7 +4566,7 @@
                             }
                         },
                         "minLength": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_TextFormatType.properties.minLength.description" bundle="${i18n}"/>",
                             "type": "number",
                             "xml": {
                                 "attribute": true,
@@ -4564,7 +4574,7 @@
                             }
                         },
                         "minValue": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_TextFormatType.properties.minValue.description" bundle="${i18n}"/>",
                             "type": "number",
                             "xml": {
                                 "attribute": true,
@@ -4572,7 +4582,7 @@
                             }
                         },
                         "pattern": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_TextFormatType.properties.pattern.description" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "attribute": true,
@@ -4580,7 +4590,7 @@
                             }
                         },
                         "startTime": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_TextFormatType.properties.startTime.description" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "attribute": true,
@@ -4588,7 +4598,7 @@
                             }
                         },
                         "startValue": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_TextFormatType.properties.startValue.description" bundle="${i18n}"/>",
                             "type": "number",
                             "xml": {
                                 "attribute": true,
@@ -4597,14 +4607,14 @@
                         },
                         "textType": {
                             "$ref": "#/definitions/xml_ns4_DataType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_TextFormatType.properties.textType.description" bundle="${i18n}"/>",
                             "xml": {
                                 "attribute": true,
                                 "namespace": ""
                             }
                         },
                         "timeInterval": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_TextFormatType.properties.timeInterval.description" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "attribute": true,
@@ -4614,7 +4624,7 @@
                     }
                 }
             ],
-            "description": "TextFormatType defines the information for describing a full range of text formats and may place restrictions on the values of the other attributes, referred to as \"facets\".\r\n\r\n<p>Java class for TextFormatType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"TextFormatType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.w3.org/2001/XMLSchema}anyType\">\r\n       &lt;attribute name=\"textType\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}DataType\" default=\"String\" />\r\n       &lt;attribute name=\"isSequence\" type=\"{http://www.w3.org/2001/XMLSchema}boolean\" />\r\n       &lt;attribute name=\"interval\" type=\"{http://www.w3.org/2001/XMLSchema}decimal\" />\r\n       &lt;attribute name=\"startValue\" type=\"{http://www.w3.org/2001/XMLSchema}decimal\" />\r\n       &lt;attribute name=\"endValue\" type=\"{http://www.w3.org/2001/XMLSchema}decimal\" />\r\n       &lt;attribute name=\"timeInterval\" type=\"{http://www.w3.org/2001/XMLSchema}duration\" />\r\n       &lt;attribute name=\"startTime\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}StandardTimePeriodType\" />\r\n       &lt;attribute name=\"endTime\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}StandardTimePeriodType\" />\r\n       &lt;attribute name=\"minLength\" type=\"{http://www.w3.org/2001/XMLSchema}positiveInteger\" />\r\n       &lt;attribute name=\"maxLength\" type=\"{http://www.w3.org/2001/XMLSchema}positiveInteger\" />\r\n       &lt;attribute name=\"minValue\" type=\"{http://www.w3.org/2001/XMLSchema}decimal\" />\r\n       &lt;attribute name=\"maxValue\" type=\"{http://www.w3.org/2001/XMLSchema}decimal\" />\r\n       &lt;attribute name=\"decimals\" type=\"{http://www.w3.org/2001/XMLSchema}positiveInteger\" />\r\n       &lt;attribute name=\"pattern\" type=\"{http://www.w3.org/2001/XMLSchema}string\" />\r\n       &lt;attribute name=\"isMultiLingual\" type=\"{http://www.w3.org/2001/XMLSchema}boolean\" default=\"true\" />\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_TextFormatType.description" bundle="${i18n}"/>",
             "title": "TextFormatType",
             "type": "object"
         },
@@ -4625,7 +4635,7 @@
                 },
                 {}
             ],
-            "description": "TimeDimensionRepresentationType defines the representation for the time dimension. Enumerated values are not allowed.\r\n\r\n<p>Java class for TimeDimensionRepresentationType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"TimeDimensionRepresentationType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}SimpleDataStructureRepresentationType\">\r\n       &lt;sequence>\r\n         &lt;element name=\"TextFormat\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}TimeTextFormatType\"/>\r\n       &lt;/sequence>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_TimeDimensionRepresentationType.description" bundle="${i18n}"/>",
             "title": "TimeDimensionRepresentationType",
             "type": "object"
         },
@@ -4636,7 +4646,7 @@
                 },
                 {}
             ],
-            "description": "TimeDimensionType describes the structure of a time dimension. The time dimension takes its semantic from its concept identity (usually the TIME_PERIOD concept), yet is always has a fixed identifier (TIME_PERIOD). The time dimension always has a fixed text format, which specifies that its format is always the in the value set of the observational time period (see common:ObservationalTimePeriodType). It is possible that the format may be a sub-set of the observational time period value set. For example, it is possible to state that the representation might always be a calendar year. See the enumerations of the textType attribute in the LocalRepresentation/TextFormat for more details of the possible sub-sets. It is also possible to facet this representation with start and end dates. The purpose of such facts is to restrict the value of the time dimension to occur within the specified range. If the time dimension is expected to allow for the standard reporting periods (see common:ReportingTimePeriodType) to be used, then it is strongly recommended that the reporting year start day attribute also be included in the data structure definition. When the reporting year start day attribute is used, any standard reporting period values will be assumed to be based on the start day contained in this attribute. If the reporting year start day attribute is not included and standard reporting periods are used, these values will be assumed to be based on a reporting year which begins January 1.\r\n\r\n<p>Java class for TimeDimensionType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"TimeDimensionType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}BaseDimensionType\">\r\n       &lt;sequence>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Annotations\" minOccurs=\"0\"/>\r\n         &lt;element name=\"ConceptIdentity\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}ConceptReferenceType\"/>\r\n         &lt;element name=\"LocalRepresentation\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}TimeDimensionRepresentationType\"/>\r\n       &lt;/sequence>\r\n       &lt;attribute name=\"id\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}NCNameIDType\" fixed=\"TIME_PERIOD\" />\r\n       &lt;attribute name=\"type\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}DimensionTypeType\" fixed=\"TimeDimension\" />\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_TimeDimensionType.description" bundle="${i18n}"/>",
             "title": "TimeDimensionType",
             "type": "object"
         },
@@ -4647,12 +4657,12 @@
                 },
                 {}
             ],
-            "description": "TimeTextFormat is a restricted version of the SimpleComponentTextFormatType that only allows time based format and specifies a default ObservationalTimePeriod representation and facets of a start and end time.\r\n\r\n<p>Java class for TimeTextFormatType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"TimeTextFormatType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}SimpleComponentTextFormatType\">\r\n       &lt;attribute name=\"textType\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}TimeDataType\" default=\"ObservationalTimePeriod\" />\r\n       &lt;attribute name=\"startTime\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}StandardTimePeriodType\" />\r\n       &lt;attribute name=\"endTime\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}StandardTimePeriodType\" />\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_TimeTextFormatType.description" bundle="${i18n}"/>",
             "title": "TimeTextFormatType",
             "type": "object"
         },
         "xml_ns5_ToValueTypeType": {
-            "description": "<p>Java class for ToValueTypeType.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n<p>\r\n<pre>\r\n &lt;simpleType name=\"ToValueTypeType\">\r\n   &lt;restriction base=\"{http://www.w3.org/2001/XMLSchema}NMTOKEN\">\r\n     &lt;enumeration value=\"Value\"/>\r\n     &lt;enumeration value=\"Name\"/>\r\n     &lt;enumeration value=\"Description\"/>\r\n   &lt;/restriction>\r\n &lt;/simpleType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ToValueTypeType.description" bundle="${i18n}"/>",
             "enum": [
                 "Value",
                 "Name",
@@ -4670,20 +4680,20 @@
                     "properties": {
                         "Condition": {
                             "$ref": "#/definitions/xml_ns4_TextType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_TransitionType.properties.Condition.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
                         },
                         "TargetStep": {
                             "$ref": "#/definitions/xml_ns4_LocalProcessStepReferenceType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_TransitionType.properties.TargetStep.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
                         },
                         "localID": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_TransitionType.properties.localID.description" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "attribute": true,
@@ -4693,7 +4703,7 @@
                     }
                 }
             ],
-            "description": "TransitionType describes the details of a transition, which is an expression in a textual or formalised way of the transformation of data between two specific operations performed on the data.\r\n\r\n<p>Java class for TransitionType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"TransitionType\">\r\n   &lt;complexContent>\r\n     &lt;extension base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}IdentifiableType\">\r\n       &lt;sequence>\r\n         &lt;element name=\"TargetStep\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}LocalProcessStepReferenceType\"/>\r\n         &lt;element name=\"Condition\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}TextType\" maxOccurs=\"unbounded\"/>\r\n       &lt;/sequence>\r\n       &lt;attribute name=\"localID\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}IDType\" />\r\n     &lt;/extension>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_TransitionType.description" bundle="${i18n}"/>",
             "required": [
                 "TargetStep",
                 "Condition"
@@ -4702,7 +4712,7 @@
             "type": "object"
         },
         "xml_ns5_UsageStatusType": {
-            "description": "<p>Java class for UsageStatusType.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n<p>\r\n<pre>\r\n &lt;simpleType name=\"UsageStatusType\">\r\n   &lt;restriction base=\"{http://www.w3.org/2001/XMLSchema}NMTOKEN\">\r\n     &lt;enumeration value=\"Mandatory\"/>\r\n     &lt;enumeration value=\"Conditional\"/>\r\n   &lt;/restriction>\r\n &lt;/simpleType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_UsageStatusType.description" bundle="${i18n}"/>",
             "enum": [
                 "Mandatory",
                 "Conditional"
@@ -4716,7 +4726,7 @@
                     "properties": {
                         "ValueMapping": {
                             "$ref": "#/definitions/xml_ns5_ValueMappingType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ValueMapType.properties.ValueMapping.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
                             }
@@ -4724,7 +4734,7 @@
                     }
                 }
             ],
-            "description": "ValueMapType contains a collection of value mappings, which give a source and target value.\r\n\r\n<p>Java class for ValueMapType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"ValueMapType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.w3.org/2001/XMLSchema}anyType\">\r\n       &lt;sequence>\r\n         &lt;element name=\"ValueMapping\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}ValueMappingType\" maxOccurs=\"unbounded\"/>\r\n       &lt;/sequence>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ValueMapType.description" bundle="${i18n}"/>",
             "required": [
                 "ValueMapping"
             ],
@@ -4736,7 +4746,7 @@
                 {
                     "properties": {
                         "source": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ValueMappingType.properties.source.description" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "attribute": true,
@@ -4744,7 +4754,7 @@
                             }
                         },
                         "target": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ValueMappingType.properties.target.description" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "attribute": true,
@@ -4754,7 +4764,7 @@
                     }
                 }
             ],
-            "description": "ValueMappingType specifies the relationship between two values as a source and target.\r\n\r\n<p>Java class for ValueMappingType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"ValueMappingType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.w3.org/2001/XMLSchema}anyType\">\r\n       &lt;attribute name=\"source\" use=\"required\" type=\"{http://www.w3.org/2001/XMLSchema}string\" />\r\n       &lt;attribute name=\"target\" use=\"required\" type=\"{http://www.w3.org/2001/XMLSchema}string\" />\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_ValueMappingType.description" bundle="${i18n}"/>",
             "required": [
                 "source",
                 "target"
@@ -4770,7 +4780,7 @@
                 {
                     "properties": {
                         "validFrom": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_VersionableType.properties.validFrom.description" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "attribute": true,
@@ -4778,7 +4788,7 @@
                             }
                         },
                         "validTo": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_VersionableType.properties.validTo.description" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "attribute": true,
@@ -4786,7 +4796,7 @@
                             }
                         },
                         "version": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_VersionableType.properties.version.description" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "attribute": true,
@@ -4796,7 +4806,7 @@
                     }
                 }
             ],
-            "description": "VersionableType is an abstract base type for all versionable objects.\r\n\r\n<p>Java class for VersionableType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"VersionableType\">\r\n   &lt;complexContent>\r\n     &lt;extension base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure}NameableType\">\r\n       &lt;attribute name=\"version\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}VersionType\" default=\"1.0\" />\r\n       &lt;attribute name=\"validFrom\" type=\"{http://www.w3.org/2001/XMLSchema}dateTime\" />\r\n       &lt;attribute name=\"validTo\" type=\"{http://www.w3.org/2001/XMLSchema}dateTime\" />\r\n     &lt;/extension>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns5_VersionableType.description" bundle="${i18n}"/>",
             "title": "VersionableType",
             "type": "object"
         },
@@ -4807,7 +4817,7 @@
                 },
                 {}
             ],
-            "description": "MappedObjectRefType defines a set of reference fields for any type of mappable object.\r\n\r\n<p>Java class for MappedObjectRefType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"MappedObjectRefType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}MaintainableRefType\">\r\n       &lt;attribute name=\"class\" use=\"required\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/query}MappedObjectTypeCodelistType\" />\r\n       &lt;attribute name=\"package\" use=\"required\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}PackageTypeCodelistType\" />\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns6_MappedObjectRefType.description" bundle="${i18n}"/>",
             "title": "MappedObjectRefType",
             "type": "object"
         },
@@ -4818,7 +4828,7 @@
                 },
                 {}
             ],
-            "description": "MappedObjectReferenceType is a type for referencing any mappable object. It consists of a URN and/or a complete set of reference fields; agency, id, and version.\r\n\r\n<p>Java class for MappedObjectReferenceType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"MappedObjectReferenceType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}MaintainableReferenceType\">\r\n       &lt;choice>\r\n         &lt;sequence>\r\n           &lt;element name=\"Ref\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/query}MappedObjectRefType\" form=\"unqualified\"/>\r\n           &lt;element name=\"URN\" type=\"{http://www.w3.org/2001/XMLSchema}anyURI\" minOccurs=\"0\" form=\"unqualified\"/>\r\n         &lt;/sequence>\r\n         &lt;element name=\"URN\" type=\"{http://www.w3.org/2001/XMLSchema}anyURI\" form=\"unqualified\"/>\r\n       &lt;/choice>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns6_MappedObjectReferenceType.description" bundle="${i18n}"/>",
             "title": "MappedObjectReferenceType",
             "type": "object"
         },
@@ -4831,7 +4841,7 @@
                     "properties": {
                         "type": {
                             "$ref": "#/definitions/xml_ns6_SourceTargetType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns6_MappedObjectType.properties.type.description" bundle="${i18n}"/>",
                             "xml": {
                                 "attribute": true,
                                 "namespace": ""
@@ -4840,7 +4850,7 @@
                     }
                 }
             ],
-            "description": "MappedObjectType defines a structure for referencing an object and indicating whether it is the source, target, or either for the purposes of query for structure set containing the referenced object in one of the maps it defines.\r\n\r\n<p>Java class for MappedObjectType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"MappedObjectType\">\r\n   &lt;complexContent>\r\n     &lt;extension base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/query}MappedObjectReferenceType\">\r\n       &lt;attribute name=\"type\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/query}SourceTargetType\" default=\"Any\" />\r\n     &lt;/extension>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns6_MappedObjectType.description" bundle="${i18n}"/>",
             "title": "MappedObjectType",
             "type": "object"
         },
@@ -4852,7 +4862,7 @@
                 {
                     "properties": {
                         "operator": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns6_QueryTextType.properties.operator.description" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "attribute": true,
@@ -4862,12 +4872,12 @@
                     }
                 }
             ],
-            "description": "QueryTextType describes the structure of a textual query value. A language must be specified if parallel multi-lingual values are available, otherwise it is ignored.\r\n\r\n<p>Java class for QueryTextType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"QueryTextType\">\r\n   &lt;simpleContent>\r\n     &lt;extension base=\"&lt;http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common>TextType\">\r\n       &lt;attribute name=\"operator\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}TextOperatorType\" default=\"equal\" />\r\n     &lt;/extension>\r\n   &lt;/simpleContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns6_QueryTextType.description" bundle="${i18n}"/>",
             "title": "QueryTextType",
             "type": "object"
         },
         "xml_ns6_SourceTargetType": {
-            "description": "<p>Java class for SourceTargetType.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n<p>\r\n<pre>\r\n &lt;simpleType name=\"SourceTargetType\">\r\n   &lt;restriction base=\"{http://www.w3.org/2001/XMLSchema}string\">\r\n     &lt;enumeration value=\"Any\"/>\r\n     &lt;enumeration value=\"Source\"/>\r\n     &lt;enumeration value=\"Target\"/>\r\n   &lt;/restriction>\r\n &lt;/simpleType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns6_SourceTargetType.description" bundle="${i18n}"/>",
             "enum": [
                 "Any",
                 "Source",
@@ -4885,7 +4895,7 @@
                     "properties": {
                         "severity": {
                             "$ref": "#/definitions/xml_ns7_SeverityCodeType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns7_FooterMessageType.properties.severity.description" bundle="${i18n}"/>",
                             "xml": {
                                 "attribute": true,
                                 "namespace": ""
@@ -4894,7 +4904,7 @@
                     }
                 }
             ],
-            "description": "FooterMessageType defines the structure of a message that is contained in the footer of a message. It is a status message that have a severity code of Error, Information, or Warning added to it.\r\n\r\n<p>Java class for FooterMessageType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"FooterMessageType\">\r\n   &lt;complexContent>\r\n     &lt;extension base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}CodedStatusMessageType\">\r\n       &lt;attribute name=\"severity\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message/footer}SeverityCodeType\" />\r\n     &lt;/extension>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns7_FooterMessageType.description" bundle="${i18n}"/>",
             "title": "FooterMessageType",
             "type": "object"
         },
@@ -4904,7 +4914,7 @@
                     "properties": {
                         "Message": {
                             "$ref": "#/definitions/xml_ns7_FooterMessageType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns7_FooterType.properties.Message.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message/footer"
                             }
@@ -4912,7 +4922,7 @@
                     }
                 }
             ],
-            "description": "FooterType describes the structure of a message footer. The footer is used to convey any error, information, or warning messages. This is to be used when the message has payload, but also needs to communicate additional information. If an error occurs and no payload is generated, an Error message should be returned.\r\n\r\n<p>Java class for FooterType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"FooterType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.w3.org/2001/XMLSchema}anyType\">\r\n       &lt;sequence>\r\n         &lt;element name=\"Message\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message/footer}FooterMessageType\" maxOccurs=\"unbounded\"/>\r\n       &lt;/sequence>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns7_FooterType.description" bundle="${i18n}"/>",
             "required": [
                 "Message"
             ],
@@ -4920,7 +4930,7 @@
             "type": "object"
         },
         "xml_ns7_SeverityCodeType": {
-            "description": "<p>Java class for SeverityCodeType.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n<p>\r\n<pre>\r\n &lt;simpleType name=\"SeverityCodeType\">\r\n   &lt;restriction base=\"{http://www.w3.org/2001/XMLSchema}string\">\r\n     &lt;enumeration value=\"Error\"/>\r\n     &lt;enumeration value=\"Warning\"/>\r\n     &lt;enumeration value=\"Information\"/>\r\n   &lt;/restriction>\r\n &lt;/simpleType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns7_SeverityCodeType.description" bundle="${i18n}"/>",
             "enum": [
                 "Error",
                 "Warning",
@@ -4937,7 +4947,7 @@
                 {
                     "properties": {
                         "TYPE": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns7_QueryableDataSourceType.properties.TYPE.description" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "attribute": true,
@@ -4947,12 +4957,12 @@
                     }
                 }
             ],
-            "description": "QueryableDataSourceType describes a queryable data source, and add a fixed attribute for ensuring only one queryable source can be provided.\r\n\r\n<p>Java class for QueryableDataSourceType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"QueryableDataSourceType\">\r\n   &lt;complexContent>\r\n     &lt;extension base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}QueryableDataSourceType\">\r\n       &lt;attribute name=\"TYPE\" type=\"{http://www.w3.org/2001/XMLSchema}string\" fixed=\"QUERY\" />\r\n     &lt;/extension>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns7_QueryableDataSourceType.description" bundle="${i18n}"/>",
             "title": "QueryableDataSourceType",
             "type": "object"
         },
         "xml_ns8_DataScopeType": {
-            "description": "<p>Java class for DataScopeType.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n<p>\r\n<pre>\r\n &lt;simpleType name=\"DataScopeType\">\r\n   &lt;restriction base=\"{http://www.w3.org/2001/XMLSchema}string\">\r\n     &lt;enumeration value=\"DataStructure\"/>\r\n     &lt;enumeration value=\"ConstrainedDataStructure\"/>\r\n     &lt;enumeration value=\"Dataflow\"/>\r\n     &lt;enumeration value=\"ProvisionAgreement\"/>\r\n   &lt;/restriction>\r\n &lt;/simpleType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns8_DataScopeType.description" bundle="${i18n}"/>",
             "enum": [
                 "DataStructure",
                 "ConstrainedDataStructure",
@@ -4971,27 +4981,27 @@
                     "properties": {
                         "DataProvider": {
                             "$ref": "#/definitions/xml_ns4_DataProviderReferenceType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns8_DataSetType.properties.DataProvider.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": ""
                             }
                         },
                         "Group": {
                             "$ref": "#/definitions/xml_ns8_GroupType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns8_DataSetType.properties.Group.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": ""
                             }
                         },
                         "Obs": {
                             "$ref": "#/definitions/xml_ns8_ObsType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns8_DataSetType.properties.Obs.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": ""
                             }
                         },
                         "REPORTING_YEAR_START_DAY": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns8_DataSetType.properties.REPORTING_YEAR_START_DAY.description" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "attribute": true,
@@ -5000,14 +5010,14 @@
                         },
                         "Series": {
                             "$ref": "#/definitions/xml_ns8_SeriesType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns8_DataSetType.properties.Series.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": ""
                             }
                         },
                         "action": {
                             "$ref": "#/definitions/xml_ns4_ActionType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns8_DataSetType.properties.action.description" bundle="${i18n}"/>",
                             "xml": {
                                 "attribute": true,
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/data/structurespecific"
@@ -5015,14 +5025,14 @@
                         },
                         "dataScope": {
                             "$ref": "#/definitions/xml_ns8_DataScopeType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns8_DataSetType.properties.dataScope.description" bundle="${i18n}"/>",
                             "xml": {
                                 "attribute": true,
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/data/structurespecific"
                             }
                         },
                         "publicationPeriod": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns8_DataSetType.properties.publicationPeriod.description" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "attribute": true,
@@ -5030,7 +5040,7 @@
                             }
                         },
                         "publicationYear": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns8_DataSetType.properties.publicationYear.description" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "attribute": true,
@@ -5038,7 +5048,7 @@
                             }
                         },
                         "reportingBeginDate": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns8_DataSetType.properties.reportingBeginDate.description" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "attribute": true,
@@ -5046,7 +5056,7 @@
                             }
                         },
                         "reportingEndDate": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns8_DataSetType.properties.reportingEndDate.description" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "attribute": true,
@@ -5054,7 +5064,7 @@
                             }
                         },
                         "setID": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns8_DataSetType.properties.setID.description" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "attribute": true,
@@ -5062,7 +5072,7 @@
                             }
                         },
                         "structureRef": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns8_DataSetType.properties.structureRef.description" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "attribute": true,
@@ -5070,7 +5080,7 @@
                             }
                         },
                         "validFromDate": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns8_DataSetType.properties.validFromDate.description" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "attribute": true,
@@ -5078,7 +5088,7 @@
                             }
                         },
                         "validToDate": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns8_DataSetType.properties.validToDate.description" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "attribute": true,
@@ -5088,7 +5098,7 @@
                     }
                 }
             ],
-            "description": "<pre>\r\n &lt;?xml version=\"1.0\" encoding=\"UTF-8\"?&gt;&lt;p xmlns=\"http://www.sdmx.org/resources/sdmxml/schemas/v2_1/data/structurespecific\" xmlns:common=\"http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\"&gt;DataSetType is the abstract type which defines the base structure for any data structure definition specific data set. A derived data set type will be created that is specific to a data structure definition and the details of the organisation of the data (i.e. which dimension is the observation dimension and whether explicit measures should be used). Data is organised into either a collection of series (grouped observations) or a collection of un-grouped observations. The derived data set type will restrict this choice to be either grouped or un-grouped observations. If this dimension is \"AllDimensions\" then the derived data set type must consist of a collection of un-grouped observations; otherwise the data set will contain a collection of series with the observations in the series disambiguated by the specified dimension at the observation level. This data set is capable of containing data (observed values) and/or documentation (attribute values) and can be used for incremental updates and deletions (i.e. only the relevant updates or deletes are exchanged). It is assumed that each series or un-grouped observation will be distinct in its purpose. For example, if series contains both data and documentation, it assumed that each series will have a unique key. If the series contains only data or only documentation, then it is possible that another series with the same key might exist, but with not with the same purpose (i.e. to provide data or documentation) as the first series.&lt;/p&gt;\r\n </pre>\r\n\r\n<pre>\r\n &lt;?xml version=\"1.0\" encoding=\"UTF-8\"?&gt;&lt;p xmlns=\"http://www.sdmx.org/resources/sdmxml/schemas/v2_1/data/structurespecific\" xmlns:common=\"http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\"&gt;This base type is designed such that derived types can be processed in a generic manner; it assures that data structure definition specific data will have a consistent structure. The group, series, and observation elements are unqualified, meaning that they are not qualified with a namespace in an instance. This means that in the derived data set types, the elements will always be the same, regardless of the target namespace of the schemas which defines these derived types. This allows for consistent processing of the structure without regard to what the namespace might be for the data structure definition specific schema.&lt;/p&gt;\r\n </pre>\r\n\r\n<pre>\r\n &lt;?xml version=\"1.0\" encoding=\"UTF-8\"?&gt;&lt;p xmlns=\"http://www.sdmx.org/resources/sdmxml/schemas/v2_1/data/structurespecific\" xmlns:common=\"http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\"&gt;The data set can contain values for attributes which do not have an attribute relationship with any data structure definition components. These attribute values will exist in XML attributes in this element based on this type (DataSet). This is specified in the content model with the declaration of anyAttributes in the \"local\" namespace. The derived data set type will refine this structure so that the attributes are explicit. The XML attributes will be given a name based on the attribute's identifier. These XML attributes will be unqualified (meaning they do not have a namespace associated with them). To allow for generic processing, it is required that the only unqualified XML attributes in the derived data set type (outside of the standard data set attributes) be for attributes declared in the data structure definition. If additional attributes are required, these should be qualified with a namespace so that a generic application can easily distinguish them as not being meant to represent a data structure definition attribute.&lt;/p&gt;\r\n </pre>\r\n\r\n\r\n<p>Java class for DataSetType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"DataSetType\">\r\n   &lt;complexContent>\r\n     &lt;extension base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}AnnotableType\">\r\n       &lt;sequence>\r\n         &lt;element name=\"DataProvider\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}DataProviderReferenceType\" minOccurs=\"0\" form=\"unqualified\"/>\r\n         &lt;element name=\"Group\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/data/structurespecific}GroupType\" maxOccurs=\"unbounded\" minOccurs=\"0\" form=\"unqualified\"/>\r\n         &lt;choice minOccurs=\"0\">\r\n           &lt;element name=\"Series\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/data/structurespecific}SeriesType\" maxOccurs=\"unbounded\" form=\"unqualified\"/>\r\n           &lt;element name=\"Obs\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/data/structurespecific}ObsType\" maxOccurs=\"unbounded\" form=\"unqualified\"/>\r\n         &lt;/choice>\r\n       &lt;/sequence>\r\n       &lt;attGroup ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/data/structurespecific}SetAttributeGroup\"/>\r\n       &lt;attribute name=\"REPORTING_YEAR_START_DAY\" type=\"{http://www.w3.org/2001/XMLSchema}gMonthDay\" />\r\n       &lt;anyAttribute namespace=''/>\r\n     &lt;/extension>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns8_DataSetType.description" bundle="${i18n}"/>",
             "required": [
                 "structureRef",
                 "dataScope"
@@ -5104,7 +5114,7 @@
                 {
                     "properties": {
                         "REPORTING_YEAR_START_DAY": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns8_GroupType.properties.REPORTING_YEAR_START_DAY.description" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "attribute": true,
@@ -5112,7 +5122,7 @@
                             }
                         },
                         "type": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns8_GroupType.properties.type.description" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "attribute": true,
@@ -5122,7 +5132,7 @@
                     }
                 }
             ],
-            "description": "<pre>\r\n &lt;?xml version=\"1.0\" encoding=\"UTF-8\"?&gt;&lt;p xmlns=\"http://www.sdmx.org/resources/sdmxml/schemas/v2_1/data/structurespecific\" xmlns:common=\"http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\"&gt;GroupType is the abstract type which defines a structure which is used to communicate attribute values for a group defined in a data structure definition. The group can consist of either a subset of the dimensions defined by the data structure definition, or an association to an attachment constraint, which in turn defines key sets to which attributes can be attached. In the case that the group is based on an attachment constraint, only the identification of group is provided. It is expected that a system which is processing this will relate that identifier to the key sets defined in the constraint and apply the values provided for the attributes appropriately.&lt;/p&gt;\r\n </pre>\r\n\r\n<pre>\r\n &lt;?xml version=\"1.0\" encoding=\"UTF-8\"?&gt;&lt;p xmlns=\"http://www.sdmx.org/resources/sdmxml/schemas/v2_1/data/structurespecific\" xmlns:common=\"http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\"&gt;Data structure definition schemas will drive types based on this for each group defined in the data structure definition. Both the dimension values which make up the key (if applicable) and the attribute values associated with the group will be represented with XML attributes. This is specified in the content model with the declaration of anyAttributes in the \"local\" namespace. The derived group type will refine this structure so that the attributes are explicit. The XML attributes will be given a name based on the attribute's identifier. These XML attributes will be unqualified (meaning they do not have a namespace associated with them). The dimension XML attributes will be required while the attribute XML attributes will be optional. To allow for generic processing, it is required that the only unqualified XML attributes in the derived group type be for the group dimensions and attributes declared in the data structure definition. If additional attributes are required, these should be qualified with a namespace so that a generic application can easily distinguish them as not being meant to represent a data structure definition dimension or attribute.&lt;/p&gt;\r\n </pre>\r\n\r\n\r\n<p>Java class for GroupType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"GroupType\">\r\n   &lt;complexContent>\r\n     &lt;extension base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}AnnotableType\">\r\n       &lt;attribute name=\"type\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}IDType\" />\r\n       &lt;attribute name=\"REPORTING_YEAR_START_DAY\" type=\"{http://www.w3.org/2001/XMLSchema}gMonthDay\" />\r\n       &lt;anyAttribute namespace=''/>\r\n     &lt;/extension>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns8_GroupType.description" bundle="${i18n}"/>",
             "title": "GroupType",
             "type": "object"
         },
@@ -5134,7 +5144,7 @@
                 {
                     "properties": {
                         "OBS_VALUE": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns8_ObsType.properties.OBS_VALUE.description" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "attribute": true,
@@ -5142,7 +5152,7 @@
                             }
                         },
                         "REPORTING_YEAR_START_DAY": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns8_ObsType.properties.REPORTING_YEAR_START_DAY.description" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "attribute": true,
@@ -5150,7 +5160,7 @@
                             }
                         },
                         "TIME_PERIOD": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns8_ObsType.properties.TIME_PERIOD.description" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "attribute": true,
@@ -5158,7 +5168,7 @@
                             }
                         },
                         "type": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns8_ObsType.properties.type.description" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "attribute": true,
@@ -5168,7 +5178,7 @@
                     }
                 }
             ],
-            "description": "<pre>\r\n &lt;?xml version=\"1.0\" encoding=\"UTF-8\"?&gt;&lt;p xmlns=\"http://www.sdmx.org/resources/sdmxml/schemas/v2_1/data/structurespecific\" xmlns:common=\"http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\"&gt;ObsType is the abstract type which defines the structure of a grouped or un-grouped observation. The observation must be provided a key, which is either a value for the dimension which is declared to be at the observation level if the observation is grouped, or a full set of values for all dimensions in the data structure definition if the observation is un-grouped. This key should disambiguate the observation within the context in which it is defined (e.g. there should not be another observation with the same dimension value in a series). The observation can contain an observed value and/or attribute values.&lt;/p&gt;\r\n </pre>\r\n\r\n<pre>\r\n &lt;?xml version=\"1.0\" encoding=\"UTF-8\"?&gt;&lt;p xmlns=\"http://www.sdmx.org/resources/sdmxml/schemas/v2_1/data/structurespecific\" xmlns:common=\"http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\"&gt;Data structure definition schemas will drive a type or types based on this that is specific to the data structure definition and the variation of the format being expressed in the schema. The dimension value(s) which make up the key and the attribute values associated with the key dimension(s) or the primary measure will be represented with XML attributes. This is specified in the content model with the declaration of anyAttributes in the \"local\" namespace. The derived observation type will refine this structure so that the attributes are explicit. The XML attributes will be given a name based on the attribute's identifier. These XML attributes will be unqualified (meaning they do not have a namespace associated with them). The dimension XML attribute(s) will be required while the attribute XML attributes will be optional. To allow for generic processing, it is required that the only unqualified XML attributes in the derived observation type be for the observation dimension(s) and attributes declared in the data structure definition. If additional attributes are required, these should be qualified with a namespace so that a generic application can easily distinguish them as not being meant to represent a data structure definition dimension or attribute.&lt;/p&gt;\r\n </pre>\r\n\r\n<pre>\r\n &lt;?xml version=\"1.0\" encoding=\"UTF-8\"?&gt;&lt;p xmlns=\"http://www.sdmx.org/resources/sdmxml/schemas/v2_1/data/structurespecific\" xmlns:common=\"http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\"&gt;If the data structure definition specific schema requires that explicit measures be used (only possible when the measure dimension is specified at the observation), then there will be types derived for each measure defined by the measure dimension. In this case, the types will be specific to each measure, which is to say that the representation of the primary measure (i.e. the observed value) will be restricted to that which is specified by the specific measure.&lt;/p&gt;\r\n </pre>\r\n\r\n\r\n<p>Java class for ObsType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"ObsType\">\r\n   &lt;complexContent>\r\n     &lt;extension base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}AnnotableType\">\r\n       &lt;attribute name=\"type\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}IDType\" />\r\n       &lt;attribute name=\"TIME_PERIOD\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}ObservationalTimePeriodType\" />\r\n       &lt;attribute name=\"REPORTING_YEAR_START_DAY\" type=\"{http://www.w3.org/2001/XMLSchema}gMonthDay\" />\r\n       &lt;attribute name=\"OBS_VALUE\" type=\"{http://www.w3.org/2001/XMLSchema}anySimpleType\" />\r\n       &lt;anyAttribute namespace=''/>\r\n     &lt;/extension>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns8_ObsType.description" bundle="${i18n}"/>",
             "title": "ObsType",
             "type": "object"
         },
@@ -5181,13 +5191,13 @@
                     "properties": {
                         "Obs": {
                             "$ref": "#/definitions/xml_ns8_ObsType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns8_SeriesType.properties.Obs.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": ""
                             }
                         },
                         "REPORTING_YEAR_START_DAY": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns8_SeriesType.properties.REPORTING_YEAR_START_DAY.description" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "attribute": true,
@@ -5195,7 +5205,7 @@
                             }
                         },
                         "TIME_PERIOD": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns8_SeriesType.properties.TIME_PERIOD.description" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "attribute": true,
@@ -5205,7 +5215,7 @@
                     }
                 }
             ],
-            "description": "<pre>\r\n &lt;?xml version=\"1.0\" encoding=\"UTF-8\"?&gt;&lt;p xmlns=\"http://www.sdmx.org/resources/sdmxml/schemas/v2_1/data/structurespecific\" xmlns:common=\"http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\"&gt;SeriesType is the abstract type which defines a structure which is used to group a collection of observations which have a key in common. The key for a series is every dimension defined in the data structure definition, save the dimension declared to be at the observation level for this data set. In addition to observations, values can be provided for attributes which are associated with the dimensions which make up this series key (so long as the attributes do not specify a group attachment or also have an relationship with the observation dimension). It is possible for the series to contain only observations or only attribute values, or both.&lt;/p&gt;\r\n </pre>\r\n\r\n<pre>\r\n &lt;?xml version=\"1.0\" encoding=\"UTF-8\"?&gt;&lt;p xmlns=\"http://www.sdmx.org/resources/sdmxml/schemas/v2_1/data/structurespecific\" xmlns:common=\"http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\"&gt;Data structure definition schemas will drive a type based on this that is specific to the data structure definition and the variation of the format being expressed in the schema. Both the dimension values which make up the key and the attribute values associated with the key dimensions will be represented with XML attributes. This is specified in the content model with the declaration of anyAttributes in the \"local\" namespace. The derived series type will refine this structure so that the attributes are explicit. The XML attributes will be given a name based on the attribute's identifier. These XML attributes will be unqualified (meaning they do not have a namespace associated with them). The dimension XML attributes will be required while the attribute XML attributes will be optional. To allow for generic processing, it is required that the only unqualified XML attributes in the derived group type be for the series dimensions and attributes declared in the data structure definition. If additional attributes are required, these should be qualified with a namespace so that a generic application can easily distinguish them as not being meant to represent a data structure definition dimension or attribute.&lt;/p&gt;\r\n </pre>\r\n\r\n\r\n<p>Java class for SeriesType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"SeriesType\">\r\n   &lt;complexContent>\r\n     &lt;extension base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}AnnotableType\">\r\n       &lt;sequence>\r\n         &lt;element name=\"Obs\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/data/structurespecific}ObsType\" maxOccurs=\"unbounded\" minOccurs=\"0\" form=\"unqualified\"/>\r\n       &lt;/sequence>\r\n       &lt;attribute name=\"TIME_PERIOD\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}ObservationalTimePeriodType\" />\r\n       &lt;attribute name=\"REPORTING_YEAR_START_DAY\" type=\"{http://www.w3.org/2001/XMLSchema}gMonthDay\" />\r\n       &lt;anyAttribute namespace=''/>\r\n     &lt;/extension>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns8_SeriesType.description" bundle="${i18n}"/>",
             "title": "SeriesType",
             "type": "object"
         },
@@ -5216,7 +5226,7 @@
                 },
                 {}
             ],
-            "description": "TimeSeriesDataSetType is the abstract type which defines the base structure for any data structure definition specific time series based data set. A derived data set type will be created that is specific to a data structure definition. Unlike the base format, only one variation of this is allowed for a data structure definition. This variation is the time dimension as the observation dimension. Data is organised into a collection of time series. Because this derivation is achieved using restriction, data sets conforming to this type will inherently conform to the base data set structure as well. In fact, data structure specific here will be identical to data in the base data set when the time dimension is the observation dimension, even for the derived data set types. This means that the data contained in this structure can be processed in exactly the same manner as the base structure. The same rules for derivation as the base data set type apply to this specialized data set.\r\n\r\n<p>Java class for TimeSeriesDataSetType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"TimeSeriesDataSetType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/data/structurespecific}DataSetType\">\r\n       &lt;sequence>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Annotations\" minOccurs=\"0\"/>\r\n         &lt;element name=\"DataProvider\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}DataProviderReferenceType\" minOccurs=\"0\" form=\"unqualified\"/>\r\n         &lt;element name=\"Group\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/data/structurespecific}GroupType\" maxOccurs=\"unbounded\" minOccurs=\"0\" form=\"unqualified\"/>\r\n         &lt;choice minOccurs=\"0\">\r\n           &lt;element name=\"Series\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/data/structurespecific}TimeSeriesType\" maxOccurs=\"unbounded\" form=\"unqualified\"/>\r\n         &lt;/choice>\r\n       &lt;/sequence>\r\n       &lt;attGroup ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/data/structurespecific}SetAttributeGroup\"/>\r\n       &lt;anyAttribute namespace=''/>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns8_TimeSeriesDataSetType.description" bundle="${i18n}"/>",
             "title": "TimeSeriesDataSetType",
             "type": "object"
         },
@@ -5227,7 +5237,7 @@
                 },
                 {}
             ],
-            "description": "TimeSeriesObsType defines the abstract structure of a time series observation. The observation must be provided a value for the time dimension. This time value should disambiguate the observation within the series in which it is defined (i.e. there should not be another observation with the same time value). The observation can contain an observed value and/or attribute values. The same rules for derivation as the base observation type apply to this specialized observation.\r\n\r\n<p>Java class for TimeSeriesObsType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"TimeSeriesObsType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/data/structurespecific}ObsType\">\r\n       &lt;sequence>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Annotations\" minOccurs=\"0\"/>\r\n       &lt;/sequence>\r\n       &lt;attribute name=\"TIME_PERIOD\" use=\"required\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}ObservationalTimePeriodType\" />\r\n       &lt;attribute name=\"OBS_VALUE\" type=\"{http://www.w3.org/2001/XMLSchema}anySimpleType\" />\r\n       &lt;anyAttribute namespace=''/>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns8_TimeSeriesObsType.description" bundle="${i18n}"/>",
             "title": "TimeSeriesObsType",
             "type": "object"
         },
@@ -5238,7 +5248,7 @@
                 },
                 {}
             ],
-            "description": "TimeSeriesType defines an abstract structure which is used to group a collection of observations which have a key in common, organised by time. The key for a series is every dimension defined in the data structure definition, save the time dimension. In addition to observations, values can be provided for attributes which are associated with the dimensions which make up this series key (so long as the attributes do not specify a group attachment or also have an relationship with the time dimension). It is possible for the series to contain only observations or only attribute values, or both. The same rules for derivation as the base series type apply to this specialized series.\r\n\r\n<p>Java class for TimeSeriesType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"TimeSeriesType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/data/structurespecific}SeriesType\">\r\n       &lt;sequence>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Annotations\" minOccurs=\"0\"/>\r\n         &lt;element name=\"Obs\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/data/structurespecific}TimeSeriesObsType\" maxOccurs=\"unbounded\" minOccurs=\"0\" form=\"unqualified\"/>\r\n       &lt;/sequence>\r\n       &lt;anyAttribute namespace=''/>\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns8_TimeSeriesType.description" bundle="${i18n}"/>",
             "title": "TimeSeriesType",
             "type": "object"
         },
@@ -5251,35 +5261,35 @@
                     "properties": {
                         "DataProvider": {
                             "$ref": "#/definitions/xml_ns4_DataProviderReferenceType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns9_MetadataSetType.properties.DataProvider.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": ""
                             }
                         },
                         "Name": {
                             "$ref": "#/definitions/xml_ns4_TextType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns9_MetadataSetType.properties.Name.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common"
                             }
                         },
                         "Report": {
                             "$ref": "#/definitions/xml_ns9_ReportType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns9_MetadataSetType.properties.Report.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": ""
                             }
                         },
                         "action": {
                             "$ref": "#/definitions/xml_ns4_ActionType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns9_MetadataSetType.properties.action.description" bundle="${i18n}"/>",
                             "xml": {
                                 "attribute": true,
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/metadata/structurespecific"
                             }
                         },
                         "publicationPeriod": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns9_MetadataSetType.properties.publicationPeriod.description" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "attribute": true,
@@ -5287,7 +5297,7 @@
                             }
                         },
                         "publicationYear": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns9_MetadataSetType.properties.publicationYear.description" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "attribute": true,
@@ -5295,7 +5305,7 @@
                             }
                         },
                         "reportingBeginDate": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns9_MetadataSetType.properties.reportingBeginDate.description" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "attribute": true,
@@ -5303,7 +5313,7 @@
                             }
                         },
                         "reportingEndDate": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns9_MetadataSetType.properties.reportingEndDate.description" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "attribute": true,
@@ -5311,7 +5321,7 @@
                             }
                         },
                         "setID": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns9_MetadataSetType.properties.setID.description" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "attribute": true,
@@ -5319,7 +5329,7 @@
                             }
                         },
                         "structureRef": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns9_MetadataSetType.properties.structureRef.description" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "attribute": true,
@@ -5327,7 +5337,7 @@
                             }
                         },
                         "validFromDate": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns9_MetadataSetType.properties.validFromDate.description" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "attribute": true,
@@ -5335,7 +5345,7 @@
                             }
                         },
                         "validToDate": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns9_MetadataSetType.properties.validToDate.description" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "attribute": true,
@@ -5345,7 +5355,7 @@
                     }
                 }
             ],
-            "description": "MetadataSetType is an abstract base type the forms the basis for a metadata structure specific metadata set. It is restricted by the metadata structure definition specific schema to meet its needs.\r\n\r\n<p>Java class for MetadataSetType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"MetadataSetType\">\r\n   &lt;complexContent>\r\n     &lt;extension base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}AnnotableType\">\r\n       &lt;sequence>\r\n         &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Name\" maxOccurs=\"unbounded\" minOccurs=\"0\"/>\r\n         &lt;element name=\"DataProvider\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}DataProviderReferenceType\" minOccurs=\"0\" form=\"unqualified\"/>\r\n         &lt;element name=\"Report\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/metadata/structurespecific}ReportType\" maxOccurs=\"unbounded\" form=\"unqualified\"/>\r\n       &lt;/sequence>\r\n       &lt;attGroup ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/metadata/structurespecific}SetAttributeGroup\"/>\r\n     &lt;/extension>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns9_MetadataSetType.description" bundle="${i18n}"/>",
             "required": [
                 "structureRef",
                 "Report"
@@ -5359,34 +5369,34 @@
                     "properties": {
                         "ConstraintContentReference": {
                             "$ref": "#/definitions/xml_ns4_AttachmentConstraintReferenceType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns9_ReferenceValueType.properties.ConstraintContentReference.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": ""
                             }
                         },
                         "DataKey": {
                             "$ref": "#/definitions/xml_ns4_DataKeyType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns9_ReferenceValueType.properties.DataKey.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": ""
                             }
                         },
                         "DataSetReference": {
                             "$ref": "#/definitions/xml_ns4_SetReferenceType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns9_ReferenceValueType.properties.DataSetReference.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": ""
                             }
                         },
                         "ObjectReference": {
                             "$ref": "#/definitions/xml_ns4_ReferenceType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns9_ReferenceValueType.properties.ObjectReference.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": ""
                             }
                         },
                         "ReportPeriod": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns9_ReferenceValueType.properties.ReportPeriod.description" bundle="${i18n}"/>",
                             "items": {
                                 "type": "string"
                             },
@@ -5396,7 +5406,7 @@
                             }
                         },
                         "id": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns9_ReferenceValueType.properties.id.description" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "attribute": true,
@@ -5406,7 +5416,7 @@
                     }
                 }
             ],
-            "description": "ReferenceValueType is an abstract base type that forms the basis of a target reference value. A target reference value will either be a reference to an identifiable object, a data key, a reference to a data set, or a report period. The choice of these options will be refined to only one according to the definition of the target in the metadata structure definition.\r\n\r\n<p>Java class for ReferenceValueType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"ReferenceValueType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.w3.org/2001/XMLSchema}anyType\">\r\n       &lt;choice>\r\n         &lt;element name=\"ObjectReference\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}ReferenceType\" form=\"unqualified\"/>\r\n         &lt;element name=\"DataKey\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}DataKeyType\" form=\"unqualified\"/>\r\n         &lt;element name=\"DataSetReference\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}SetReferenceType\" form=\"unqualified\"/>\r\n         &lt;element name=\"ConstraintContentReference\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}AttachmentConstraintReferenceType\" form=\"unqualified\"/>\r\n         &lt;element name=\"ReportPeriod\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}ObservationalTimePeriodType\" form=\"unqualified\"/>\r\n       &lt;/choice>\r\n       &lt;attribute name=\"id\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}IDType\" />\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns9_ReferenceValueType.description" bundle="${i18n}"/>",
             "title": "ReferenceValueType",
             "type": "object"
         },
@@ -5418,7 +5428,7 @@
                 {
                     "properties": {
                         "AttributeSet": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns9_ReportType.properties.AttributeSet.description" bundle="${i18n}"/>",
                             "type": "object",
                             "xml": {
                                 "namespace": ""
@@ -5426,13 +5436,13 @@
                         },
                         "Target": {
                             "$ref": "#/definitions/xml_ns9_TargetType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns9_ReportType.properties.Target.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": ""
                             }
                         },
                         "id": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns9_ReportType.properties.id.description" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "attribute": true,
@@ -5442,7 +5452,7 @@
                     }
                 }
             ],
-            "description": "ReportType is an abstract base type the forms the basis for a metadata structure definition specific report, based on the defined report structures. This type is restricted in the metadata structure definition specific schema so that the Target and AttributeSet conform to the prescribed report structure.\r\n\r\n<p>Java class for ReportType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"ReportType\">\r\n   &lt;complexContent>\r\n     &lt;extension base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}AnnotableType\">\r\n       &lt;sequence>\r\n         &lt;element name=\"Target\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/metadata/structurespecific}TargetType\" form=\"unqualified\"/>\r\n         &lt;element name=\"AttributeSet\" type=\"{http://www.w3.org/2001/XMLSchema}anyType\" form=\"unqualified\"/>\r\n       &lt;/sequence>\r\n       &lt;attribute name=\"id\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}IDType\" />\r\n     &lt;/extension>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns9_ReportType.description" bundle="${i18n}"/>",
             "required": [
                 "Target",
                 "AttributeSet"
@@ -5458,7 +5468,7 @@
                 {
                     "properties": {
                         "AttributeSet": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns9_ReportedAttributeType.properties.AttributeSet.description" bundle="${i18n}"/>",
                             "type": "object",
                             "xml": {
                                 "namespace": ""
@@ -5466,20 +5476,20 @@
                         },
                         "StructuredText": {
                             "$ref": "#/definitions/xml_ns4_XHTMLType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns9_ReportedAttributeType.properties.StructuredText.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common"
                             }
                         },
                         "Text": {
                             "$ref": "#/definitions/xml_ns4_TextType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns9_ReportedAttributeType.properties.Text.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common"
                             }
                         },
                         "id": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns9_ReportedAttributeType.properties.id.description" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "attribute": true,
@@ -5487,7 +5497,7 @@
                             }
                         },
                         "isMetadataAttribute": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns9_ReportedAttributeType.properties.isMetadataAttribute.description" bundle="${i18n}"/>",
                             "type": "boolean",
                             "xml": {
                                 "attribute": true,
@@ -5495,7 +5505,7 @@
                             }
                         },
                         "value": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns9_ReportedAttributeType.properties.value.description" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "attribute": true,
@@ -5505,7 +5515,7 @@
                     }
                 }
             ],
-            "description": "ReportedAttributeType is an abstract base type that forms the basis for a metadata structure specific metadata attribute. A value for the attribute can be supplied as either a single value, or multi-lingual text values (either structured or unstructured). An optional set of child metadata attributes is also available if the metadata attribute definition defines nested metadata attributes. The metadata structure definition specific schema will refine this type for each metadata attribute such that the content can be validation against what is defined in the metadata structure definition.\r\n\r\n<p>Java class for ReportedAttributeType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"ReportedAttributeType\">\r\n   &lt;complexContent>\r\n     &lt;extension base=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}AnnotableType\">\r\n       &lt;sequence>\r\n         &lt;choice minOccurs=\"0\">\r\n           &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}Text\" maxOccurs=\"unbounded\"/>\r\n           &lt;element ref=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}StructuredText\" maxOccurs=\"unbounded\"/>\r\n         &lt;/choice>\r\n         &lt;element name=\"AttributeSet\" type=\"{http://www.w3.org/2001/XMLSchema}anyType\" minOccurs=\"0\" form=\"unqualified\"/>\r\n       &lt;/sequence>\r\n       &lt;attribute name=\"id\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}IDType\" />\r\n       &lt;attribute name=\"value\" type=\"{http://www.w3.org/2001/XMLSchema}anySimpleType\" />\r\n       &lt;attribute name=\"isMetadataAttribute\" type=\"{http://www.w3.org/2001/XMLSchema}boolean\" fixed=\"true\" />\r\n     &lt;/extension>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns9_ReportedAttributeType.description" bundle="${i18n}"/>",
             "title": "ReportedAttributeType",
             "type": "object"
         },
@@ -5515,13 +5525,13 @@
                     "properties": {
                         "ReferenceValue": {
                             "$ref": "#/definitions/xml_ns9_ReferenceValueType",
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns9_TargetType.properties.ReferenceValue.description" bundle="${i18n}"/>",
                             "xml": {
                                 "namespace": ""
                             }
                         },
                         "id": {
-                            "description": "",
+                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns9_TargetType.properties.id.description" bundle="${i18n}"/>",
                             "type": "string",
                             "xml": {
                                 "attribute": true,
@@ -5531,7 +5541,7 @@
                     }
                 }
             ],
-            "description": "TargetType is an abstract base type that forms the basis of a the metadata report's metadata target value. This type is restricted in the metadata structure definition specific schema so that the ReferenceValue elements conform to the targets specified in the metadata target defined in the metadata structure definition.\r\n\r\n<p>Java class for TargetType complex type.\r\n\r\n<p>The following schema fragment specifies the expected content contained within this class.\r\n\r\n<pre>\r\n &lt;complexType name=\"TargetType\">\r\n   &lt;complexContent>\r\n     &lt;restriction base=\"{http://www.w3.org/2001/XMLSchema}anyType\">\r\n       &lt;sequence>\r\n         &lt;element name=\"ReferenceValue\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/metadata/structurespecific}ReferenceValueType\" maxOccurs=\"unbounded\" form=\"unqualified\"/>\r\n       &lt;/sequence>\r\n       &lt;attribute name=\"id\" type=\"{http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common}IDType\" />\r\n     &lt;/restriction>\r\n   &lt;/complexContent>\r\n &lt;/complexType>\r\n </pre>",
+            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns9_TargetType.description" bundle="${i18n}"/>",
             "required": [
                 "ReferenceValue"
             ],
