@@ -1,7 +1,6 @@
 <!doctype html>
 <%@ page import="org.siemac.metamac.core.common.util.WebUtils"%>
 <%@ page contentType="text/html" pageEncoding="UTF-8"%>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page import="org.siemac.metamac.core.common.util.InternationalizationUtils" %>
 <%@ page import="org.apache.commons.lang.LocaleUtils" %>
@@ -10,15 +9,13 @@
 <%
     String internationalizationCookie = InternationalizationUtils.getInstance().getInternationalizationCookieId();
     String locale = InternationalizationUtils.getInstance().getCurrentLocale(request);
-    String appName = ResourceBundle.getBundle("i18n.messages", LocaleUtils.toLocale(locale), getNoFallbackControl(ResourceBundle.Control.FORMAT_DEFAULT)).getString("apps.api_catalog.name");
+    ResourceBundle rs = ResourceBundle.getBundle("i18n.messages" , LocaleUtils.toLocale(locale), getNoFallbackControl(ResourceBundle.Control.FORMAT_DEFAULT));
+    String appName = rs.getString("apps.api_catalog.name");
 %>
-<fmt:setLocale value="<%= locale %>"/>
-<fmt:setBundle basename="i18n.messages" var="i18n"/>
-<fmt:bundle basename="application"/>
 <html>
 <head>
   <meta charset="UTF-8">
-  <title><fmt:message key="app.name" bundle="${i18n}"/></title>
+  <title><%=rs.getString("app.name") %></title>
  
   <link href="<%=WebUtils.getFavicon()%>" rel="shortcut icon"/>
   
@@ -43,20 +40,20 @@
     </c:if>
     
     <div class="version-list">
-       <h1><fmt:message key="api.doc.title" bundle="${i18n}"/></h1>
-       <h2><fmt:message key="api.doc.versiones" bundle="${i18n}"/></h2>
+       <h1><%=rs.getString("api.doc.title") %></h1>
+       <h2><%=rs.getString("api.doc.versions") %></h2>
        <ul>
            <li>
                <h3 class="version-title"><a href="${apiBaseURL}/latest">/latest</a></h3>
                <div class="version-description">
-                   <p><strong>latest</strong> <fmt:message key="api.doc.latest" bundle="${i18n}"/></p>                      
+                   <p><strong>latest</strong> <%=rs.getString("api.doc.latest") %></p>
                </div>
            </li>
            
            <li>
                <h3 class="version-title"><a href="${apiBaseURL}/v2.1">/v2.1</a></h3>
                <div class="version-description">
-                    <p><fmt:message key="api.doc.version.2_1" bundle="${i18n}"/></p>    
+                    <p><%=rs.getString("api.doc.version.2_1") %></p>    
                </div>
            </li>
        </ul>
