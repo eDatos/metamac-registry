@@ -45,7 +45,6 @@
             "responses":{
                "200":{
                   "schema":{
-                     "description":"${msg['api.doc.swagger.paths.v2_1.datastructure.get.responses.200.schema.description']}",
                      "$ref":"#/definitions/xml_ns3_StructureType"
                   },
                   "headers":{
@@ -72,7 +71,7 @@
          "get":{
             "tags" : [ "${msg['api.doc.swagger.tag.structure']}" ],
             "description":"${msg['api.doc.swagger.paths.v2_1.datastructure.agencyID.get.description']}",
-            "operationId":"resource_SDMXRegistryV2_1_findDataStructure_GET",
+            "operationId":"resource_SDMXRegistryV2_1_agencyID_findDataStructure_GET",
             "produces":[
                "application/xml"
             ],
@@ -81,13 +80,13 @@
                   "name":"agencyID",
                   "in":"path",
                   "type":"string",
-                  "description":"${msg['api.doc.swagger.paths.parameters.agencyID.description']}"
+                  "description":"${msg['api.doc.swagger.paths.parameters.agencyID.description']}",
+                  "required":true
                }
             ],
             "responses":{
                "200":{
                   "schema":{
-                     "description":"${msg['api.doc.swagger.paths.v2_1.datastructure.agencyID.get.responses.200.schema.description']}",
                      "$ref":"#/definitions/xml_ns3_StructureType"
                   },
                   "headers":{
@@ -114,7 +113,7 @@
          "get":{
             "tags" : [ "${msg['api.doc.swagger.tag.structure']}" ],
             "description":"${msg['api.doc.swagger.paths.v2_1.datastructure.agencyID.resourceID.get.description']}",
-            "operationId":"resource_SDMXRegistryV2_1_findDataStructure_GET",
+            "operationId":"resource_SDMXRegistryV2_1_agencyID_resourceID_findDataStructure_GET",
             "produces":[
                "application/xml"
             ],
@@ -123,19 +122,20 @@
                   "name":"agencyID",
                   "in":"path",
                   "type":"string",
-                  "description":"${msg['api.doc.swagger.paths.parameters.agencyID.description']}"
+                  "description":"${msg['api.doc.swagger.paths.parameters.agencyID.description']}",
+                  "required":true
                },
                {
                   "name":"resourceID",
                   "in":"path",
                   "type":"string",
-                  "description":"${msg['api.doc.swagger.paths.parameters.resourceID.description']}"
+                  "description":"${msg['api.doc.swagger.paths.parameters.resourceID.description']}",
+                  "required":true
                }
             ],
             "responses":{
                "200":{
                   "schema":{
-                     "description":"${msg['api.doc.swagger.paths.v2_1.datastructure.agencyID.resourceID.get.responses.200.schema.description']}",
                      "$ref":"#/definitions/xml_ns3_StructureType"
                   },
                   "headers":{
@@ -162,7 +162,7 @@
          "get":{
             "tags" : [ "${msg['api.doc.swagger.tag.structure']}" ],
             "description":"${msg['api.doc.swagger.paths.v2_1.datastructure.agencyID.resourceID.version.get.description']}",
-            "operationId":"resource_SDMXRegistryV2_1_findDataStructure_GET",
+            "operationId":"resource_SDMXRegistryV2_1_agencyID_resourceID_version_findDataStructure_GET",
             "produces":[
                "application/xml"
             ],
@@ -171,25 +171,27 @@
                   "name":"agencyID",
                   "in":"path",
                   "type":"string",
-                  "description":"${msg['api.doc.swagger.paths.parameters.agencyID.description']}"
+                  "description":"${msg['api.doc.swagger.paths.parameters.agencyID.description']}",
+                  "required":true
                },
                {
                   "name":"resourceID",
                   "in":"path",
                   "type":"string",
-                  "description":"${msg['api.doc.swagger.paths.parameters.resourceID.description']}"
+                  "description":"${msg['api.doc.swagger.paths.parameters.resourceID.description']}",
+                  "required":true
                },
                {
                   "name":"version",
                   "in":"path",
                   "type":"string",
-                  "description":"${msg['api.doc.swagger.paths.parameters.version.description']}"
+                  "description":"${msg['api.doc.swagger.paths.parameters.version.description']}",
+                  "required":true
                }
             ],
             "responses":{
                "200":{
                   "schema":{
-                     "description":"${msg['api.doc.swagger.paths.v2_1.datastructure.agencyID.resourceID.version.get.responses.200.schema.description']}",
                      "$ref":"#/definitions/xml_ns3_StructureType"
                   },
                   "headers":{
@@ -223,7 +225,6 @@
             "responses":{
                "200":{
                   "schema":{
-                     "description":"${msg['api.doc.swagger.paths.v2_1.categoryscheme.get.responses.200.schema.description']}",
                      "$ref":"#/definitions/xml_ns3_StructureType"
                   },
                   "headers":{
@@ -250,7 +251,7 @@
          "get":{
             "tags" : [ "${msg['api.doc.swagger.tag.structure']}" ],
             "description":"${msg['api.doc.swagger.paths.v2_1.categoryscheme.agencyID.get.description']}",
-            "operationId":"resource_SDMXRegistryV2_1_findCategoryScheme_GET",
+            "operationId":"resource_SDMXRegistryV2_1_agencyID_findCategoryScheme_GET",
             "produces":[
                "application/xml"
             ],
@@ -259,13 +260,13 @@
                   "name":"agencyID",
                   "in":"path",
                   "type":"string",
-                  "description":"${msg['api.doc.swagger.paths.parameters.agencyID.description']}"
+                  "description":"${msg['api.doc.swagger.paths.parameters.agencyID.description']}",
+                  "required":true
                }
             ],
             "responses":{
                "200":{
                   "schema":{
-                     "description":"${msg['api.doc.swagger.paths.v2_1.categoryscheme.agencyID.get.responses.200.schema.description']}",
                      "$ref":"#/definitions/xml_ns3_StructureType"
                   },
                   "headers":{
@@ -292,7 +293,7 @@
          "get":{
             "tags" : [ "${msg['api.doc.swagger.tag.structure']}" ],
             "description":"${msg['api.doc.swagger.paths.v2_1.categoryscheme.agencyID.resourceID.get.description']}",
-            "operationId":"resource_SDMXRegistryV2_1_findCategoryScheme_GET",
+            "operationId":"resource_SDMXRegistryV2_1_agencyID_resourceID_findCategoryScheme_GET",
             "produces":[
                "application/xml"
             ],
@@ -301,19 +302,20 @@
                   "name":"agencyID",
                   "in":"path",
                   "type":"string",
-                  "description":"${msg['api.doc.swagger.paths.parameters.agencyID.description']}"
+                  "description":"${msg['api.doc.swagger.paths.parameters.agencyID.description']}",
+                  "required":true
                },
                {
                   "name":"resourceID",
                   "in":"path",
                   "type":"string",
-                  "description":"${msg['api.doc.swagger.paths.parameters.resourceID.description']}"
+                  "description":"${msg['api.doc.swagger.paths.parameters.resourceID.description']}",
+                  "required":true
                }
             ],
             "responses":{
                "200":{
                   "schema":{
-                     "description":"${msg['api.doc.swagger.paths.v2_1.categoryscheme.agencyID.resourceID.get.responses.200.schema.description']}",
                      "$ref":"#/definitions/xml_ns3_StructureType"
                   },
                   "headers":{
@@ -340,7 +342,7 @@
          "get":{
             "tags" : [ "${msg['api.doc.swagger.tag.structure']}" ],
             "description":"${msg['api.doc.swagger.paths.v2_1.categoryscheme.agencyID.resourceID.version.get.description']}",
-            "operationId":"resource_SDMXRegistryV2_1_findCategoryScheme_GET",
+            "operationId":"resource_SDMXRegistryV2_1_agencyID_resourceID_version_findCategoryScheme_GET",
             "produces":[
                "application/xml"
             ],
@@ -349,25 +351,27 @@
                   "name":"agencyID",
                   "in":"path",
                   "type":"string",
-                  "description":"${msg['api.doc.swagger.paths.parameters.agencyID.description']}"
+                  "description":"${msg['api.doc.swagger.paths.parameters.agencyID.description']}",
+                  "required":true
                },
                {
                   "name":"resourceID",
                   "in":"path",
                   "type":"string",
-                  "description":"${msg['api.doc.swagger.paths.parameters.resourceID.description']}"
+                  "description":"${msg['api.doc.swagger.paths.parameters.resourceID.description']}",
+                  "required":true
                },
                {
                   "name":"version",
                   "in":"path",
                   "type":"string",
-                  "description":"${msg['api.doc.swagger.paths.parameters.version.description']}"
+                  "description":"${msg['api.doc.swagger.paths.parameters.version.description']}",
+                  "required":true
                }
             ],
             "responses":{
                "200":{
                   "schema":{
-                     "description":"${msg['api.doc.swagger.paths.v2_1.categoryscheme.agencyID.resourceID.version.get.responses.200.schema.description']}",
                      "$ref":"#/definitions/xml_ns3_StructureType"
                   },
                   "headers":{
@@ -401,7 +405,6 @@
             "responses":{
                "200":{
                   "schema":{
-                     "description":"${msg['api.doc.swagger.paths.v2_1.conceptscheme.get.responses.200.schema.description']}",
                      "$ref":"#/definitions/xml_ns3_StructureType"
                   },
                   "headers":{
@@ -428,7 +431,7 @@
          "get":{
             "tags" : [ "${msg['api.doc.swagger.tag.structure']}" ],
             "description":"${msg['api.doc.swagger.paths.v2_1.conceptscheme.agencyID.get.description']}",
-            "operationId":"resource_SDMXRegistryV2_1_findConceptScheme_GET",
+            "operationId":"resource_SDMXRegistryV2_1_agencyID_findConceptScheme_GET",
             "produces":[
                "application/xml"
             ],
@@ -437,13 +440,13 @@
                   "name":"agencyID",
                   "in":"path",
                   "type":"string",
-                  "description":"${msg['api.doc.swagger.paths.parameters.agencyID.description']}"
+                  "description":"${msg['api.doc.swagger.paths.parameters.agencyID.description']}",
+                  "required":true
                }
             ],
             "responses":{
                "200":{
                   "schema":{
-                     "description":"${msg['api.doc.swagger.paths.v2_1.conceptscheme.agencyID.get.responses.200.schema.description']}",
                      "$ref":"#/definitions/xml_ns3_StructureType"
                   },
                   "headers":{
@@ -470,7 +473,7 @@
          "get":{
             "tags" : [ "${msg['api.doc.swagger.tag.structure']}" ],
             "description":"${msg['api.doc.swagger.paths.v2_1.conceptscheme.agencyID.resourceID.get.description']}",
-            "operationId":"resource_SDMXRegistryV2_1_findConceptScheme_GET",
+            "operationId":"resource_SDMXRegistryV2_1_agencyID_resourceID_findConceptScheme_GET",
             "produces":[
                "application/xml"
             ],
@@ -479,19 +482,20 @@
                   "name":"agencyID",
                   "in":"path",
                   "type":"string",
-                  "description":"${msg['api.doc.swagger.paths.parameters.agencyID.description']}"
+                  "description":"${msg['api.doc.swagger.paths.parameters.agencyID.description']}",
+                  "required":true
                },
                {
                   "name":"resourceID",
                   "in":"path",
                   "type":"string",
-                  "description":"${msg['api.doc.swagger.paths.parameters.resourceID.description']}"
+                  "description":"${msg['api.doc.swagger.paths.parameters.resourceID.description']}",
+                  "required":true
                }
             ],
             "responses":{
                "200":{
                   "schema":{
-                     "description":"${msg['api.doc.swagger.paths.v2_1.conceptscheme.agencyID.resourceID.get.responses.200.schema.description']}",
                      "$ref":"#/definitions/xml_ns3_StructureType"
                   },
                   "headers":{
@@ -518,7 +522,7 @@
          "get":{
             "tags" : [ "${msg['api.doc.swagger.tag.structure']}" ],
             "description":"${msg['api.doc.swagger.paths.v2_1.conceptscheme.agencyID.resourceID.version.get.description']}",
-            "operationId":"resource_SDMXRegistryV2_1_findConceptScheme_GET",
+            "operationId":"resource_SDMXRegistryV2_1_agencyID_resourceID_version_findConceptScheme_GET",
             "produces":[
                "application/xml"
             ],
@@ -527,25 +531,27 @@
                   "name":"agencyID",
                   "in":"path",
                   "type":"string",
-                  "description":"${msg['api.doc.swagger.paths.parameters.agencyID.description']}"
+                  "description":"${msg['api.doc.swagger.paths.parameters.agencyID.description']}",
+                  "required":true
                },
                {
                   "name":"resourceID",
                   "in":"path",
                   "type":"string",
-                  "description":"${msg['api.doc.swagger.paths.parameters.resourceID.description']}"
+                  "description":"${msg['api.doc.swagger.paths.parameters.resourceID.description']}",
+                  "required":true
                },
                {
                   "name":"version",
                   "in":"path",
                   "type":"string",
-                  "description":"${msg['api.doc.swagger.paths.parameters.version.description']}"
+                  "description":"${msg['api.doc.swagger.paths.parameters.version.description']}",
+                  "required":true
                }
             ],
             "responses":{
                "200":{
                   "schema":{
-                     "description":"${msg['api.doc.swagger.paths.v2_1.conceptscheme.agencyID.resourceID.version.get.responses.200.schema.description']}",
                      "$ref":"#/definitions/xml_ns3_StructureType"
                   },
                   "headers":{
@@ -579,7 +585,6 @@
             "responses":{
                "200":{
                   "schema":{
-                     "description":"${msg['api.doc.swagger.paths.v2_1.codelist.get.responses.200.schema.description']}",
                      "$ref":"#/definitions/xml_ns3_StructureType"
                   },
                   "headers":{
@@ -606,7 +611,7 @@
          "get":{
             "tags" : [ "${msg['api.doc.swagger.tag.structure']}" ],
             "description":"${msg['api.doc.swagger.paths.v2_1.codelist.agencyID.get.description']}",
-            "operationId":"resource_SDMXRegistryV2_1_findCodelist_GET",
+            "operationId":"resource_SDMXRegistryV2_1_agencyID_findCodelist_GET",
             "produces":[
                "application/xml"
             ],
@@ -615,13 +620,13 @@
                   "name":"agencyID",
                   "in":"path",
                   "type":"string",
-                  "description":"${msg['api.doc.swagger.paths.parameters.agencyID.description']}"
+                  "description":"${msg['api.doc.swagger.paths.parameters.agencyID.description']}",
+                  "required":true
                }
             ],
             "responses":{
                "200":{
                   "schema":{
-                     "description":"${msg['api.doc.swagger.paths.v2_1.codelist.agencyID.get.responses.200.schema.description']}",
                      "$ref":"#/definitions/xml_ns3_StructureType"
                   },
                   "headers":{
@@ -648,7 +653,7 @@
          "get":{
             "tags" : [ "${msg['api.doc.swagger.tag.structure']}" ],
             "description":"${msg['api.doc.swagger.paths.v2_1.codelist.agencyID.resourceID.get.description']}",
-            "operationId":"resource_SDMXRegistryV2_1_findCodelist_GET",
+            "operationId":"resource_SDMXRegistryV2_1_agencyID_resourceID_findCodelist_GET",
             "produces":[
                "application/xml"
             ],
@@ -657,19 +662,20 @@
                   "name":"agencyID",
                   "in":"path",
                   "type":"string",
-                  "description":"${msg['api.doc.swagger.paths.parameters.agencyID.description']}"
+                  "description":"${msg['api.doc.swagger.paths.parameters.agencyID.description']}",
+                  "required":true
                },
                {
                   "name":"resourceID",
                   "in":"path",
                   "type":"string",
-                  "description":"${msg['api.doc.swagger.paths.parameters.resourceID.description']}"
+                  "description":"${msg['api.doc.swagger.paths.parameters.resourceID.description']}",
+                  "required":true
                }
             ],
             "responses":{
                "200":{
                   "schema":{
-                     "description":"${msg['api.doc.swagger.paths.v2_1.codelist.agencyID.resourceID.get.responses.200.schema.description']}",
                      "$ref":"#/definitions/xml_ns3_StructureType"
                   },
                   "headers":{
@@ -696,7 +702,7 @@
          "get":{
             "tags" : [ "${msg['api.doc.swagger.tag.structure']}" ],
             "description":"${msg['api.doc.swagger.paths.v2_1.codelist.agencyID.resourceID.version.get.description']}",
-            "operationId":"resource_SDMXRegistryV2_1_findCodelist_GET",
+            "operationId":"resource_SDMXRegistryV2_1_agencyID_resourceID_version_findCodelist_GET",
             "produces":[
                "application/xml"
             ],
@@ -705,25 +711,27 @@
                   "name":"agencyID",
                   "in":"path",
                   "type":"string",
-                  "description":"${msg['api.doc.swagger.paths.parameters.agencyID.description']}"
+                  "description":"${msg['api.doc.swagger.paths.parameters.agencyID.description']}",
+                  "required":true
                },
                {
                   "name":"resourceID",
                   "in":"path",
                   "type":"string",
-                  "description":"${msg['api.doc.swagger.paths.parameters.resourceID.description']}"
+                  "description":"${msg['api.doc.swagger.paths.parameters.resourceID.description']}",
+                  "required":true
                },
                {
                   "name":"version",
                   "in":"path",
                   "type":"string",
-                  "description":"${msg['api.doc.swagger.paths.parameters.version.description']}"
+                  "description":"${msg['api.doc.swagger.paths.parameters.version.description']}",
+                  "required":true
                }
             ],
             "responses":{
                "200":{
                   "schema":{
-                     "description":"${msg['api.doc.swagger.paths.v2_1.codelist.agencyID.resourceID.version.get.responses.200.schema.description']}",
                      "$ref":"#/definitions/xml_ns3_StructureType"
                   },
                   "headers":{
@@ -757,7 +765,6 @@
             "responses":{
                "200":{
                   "schema":{
-                     "description":"${msg['api.doc.swagger.paths.v2_1.organisationscheme.get.responses.200.schema.description']}",
                      "$ref":"#/definitions/xml_ns3_StructureType"
                   },
                   "headers":{
@@ -784,7 +791,7 @@
          "get":{
             "tags" : [ "${msg['api.doc.swagger.tag.structure']}" ],
             "description":"${msg['api.doc.swagger.paths.v2_1.organisationscheme.agencyID.get.description']}",
-            "operationId":"resource_SDMXRegistryV2_1_findOrganisationScheme_GET",
+            "operationId":"resource_SDMXRegistryV2_1_agencyID_findOrganisationScheme_GET",
             "produces":[
                "application/xml"
             ],
@@ -793,13 +800,13 @@
                   "name":"agencyID",
                   "in":"path",
                   "type":"string",
-                  "description":"${msg['api.doc.swagger.paths.parameters.agencyID.description']}"
+                  "description":"${msg['api.doc.swagger.paths.parameters.agencyID.description']}",
+                  "required":true
                }
             ],
             "responses":{
                "200":{
                   "schema":{
-                     "description":"${msg['api.doc.swagger.paths.v2_1.organisationscheme.agencyID.get.responses.200.schema.description']}",
                      "$ref":"#/definitions/xml_ns3_StructureType"
                   },
                   "headers":{
@@ -826,7 +833,7 @@
          "get":{
             "tags" : [ "${msg['api.doc.swagger.tag.structure']}" ],
             "description":"${msg['api.doc.swagger.paths.v2_1.organisationscheme.agencyID.resourceID.get.description']}",
-            "operationId":"resource_SDMXRegistryV2_1_findOrganisationScheme_GET",
+            "operationId":"resource_SDMXRegistryV2_1_agencyID_resourceID_findOrganisationScheme_GET",
             "produces":[
                "application/xml"
             ],
@@ -835,19 +842,20 @@
                   "name":"agencyID",
                   "in":"path",
                   "type":"string",
-                  "description":"${msg['api.doc.swagger.paths.parameters.agencyID.description']}"
+                  "description":"${msg['api.doc.swagger.paths.parameters.agencyID.description']}",
+                  "required":true
                },
                {
                   "name":"resourceID",
                   "in":"path",
                   "type":"string",
-                  "description":"${msg['api.doc.swagger.paths.parameters.resourceID.description']}"
+                  "description":"${msg['api.doc.swagger.paths.parameters.resourceID.description']}",
+                  "required":true
                }
             ],
             "responses":{
                "200":{
                   "schema":{
-                     "description":"${msg['api.doc.swagger.paths.v2_1.organisationscheme.agencyID.resourceID.get.responses.200.schema.description']}",
                      "$ref":"#/definitions/xml_ns3_StructureType"
                   },
                   "headers":{
@@ -874,7 +882,7 @@
          "get":{
             "tags" : [ "${msg['api.doc.swagger.tag.structure']}" ],
             "description":"${msg['api.doc.swagger.paths.v2_1.organisationscheme.agencyID.resourceID.version.get.description']}",
-            "operationId":"resource_SDMXRegistryV2_1_findOrganisationScheme_GET",
+            "operationId":"resource_SDMXRegistryV2_1_agencyID_resourceID_version_findOrganisationScheme_GET",
             "produces":[
                "application/xml"
             ],
@@ -883,25 +891,27 @@
                   "name":"agencyID",
                   "in":"path",
                   "type":"string",
-                  "description":"${msg['api.doc.swagger.paths.parameters.agencyID.description']}"
+                  "description":"${msg['api.doc.swagger.paths.parameters.agencyID.description']}",
+                  "required":true
                },
                {
                   "name":"resourceID",
                   "in":"path",
                   "type":"string",
-                  "description":"${msg['api.doc.swagger.paths.parameters.resourceID.description']}"
+                  "description":"${msg['api.doc.swagger.paths.parameters.resourceID.description']}",
+                  "required":true
                },
                {
                   "name":"version",
                   "in":"path",
                   "type":"string",
-                  "description":"${msg['api.doc.swagger.paths.parameters.version.description']}"
+                  "description":"${msg['api.doc.swagger.paths.parameters.version.description']}",
+                  "required":true
                }
             ],
             "responses":{
                "200":{
                   "schema":{
-                     "description":"${msg['api.doc.swagger.paths.v2_1.organisationscheme.agencyID.resourceID.version.get.responses.200.schema.description']}",
                      "$ref":"#/definitions/xml_ns3_StructureType"
                   },
                   "headers":{
@@ -935,7 +945,6 @@
             "responses":{
                "200":{
                   "schema":{
-                     "description":"${msg['api.doc.swagger.paths.v2_1.agencyscheme.get.responses.200.schema.description']}",
                      "$ref":"#/definitions/xml_ns3_StructureType"
                   },
                   "headers":{
@@ -962,7 +971,7 @@
          "get":{
             "tags" : [ "${msg['api.doc.swagger.tag.structure']}" ],
             "description":"${msg['api.doc.swagger.paths.v2_1.agencyscheme.agencyID.get.description']}",
-            "operationId":"resource_SDMXRegistryV2_1_findAgencyScheme_GET",
+            "operationId":"resource_SDMXRegistryV2_1_agencyID_findAgencyScheme_GET",
             "produces":[
                "application/xml"
             ],
@@ -971,13 +980,13 @@
                   "name":"agencyID",
                   "in":"path",
                   "type":"string",
-                  "description":"${msg['api.doc.swagger.paths.parameters.agencyID.description']}"
+                  "description":"${msg['api.doc.swagger.paths.parameters.agencyID.description']}",
+                  "required":true
                }
             ],
             "responses":{
                "200":{
                   "schema":{
-                     "description":"${msg['api.doc.swagger.paths.v2_1.agencyscheme.agencyID.get.responses.200.schema.description']}",
                      "$ref":"#/definitions/xml_ns3_StructureType"
                   },
                   "headers":{
@@ -1004,7 +1013,7 @@
          "get":{
             "tags" : [ "${msg['api.doc.swagger.tag.structure']}" ],
             "description":"${msg['api.doc.swagger.paths.v2_1.agencyscheme.agencyID.resourceID.get.description']}",
-            "operationId":"resource_SDMXRegistryV2_1_findAgencyScheme_GET",
+            "operationId":"resource_SDMXRegistryV2_1_agencyID_resourceID_findAgencyScheme_GET",
             "produces":[
                "application/xml"
             ],
@@ -1013,19 +1022,20 @@
                   "name":"agencyID",
                   "in":"path",
                   "type":"string",
-                  "description":"${msg['api.doc.swagger.paths.parameters.agencyID.description']}"
+                  "description":"${msg['api.doc.swagger.paths.parameters.agencyID.description']}",
+                  "required":true
                },
                {
                   "name":"resourceID",
                   "in":"path",
                   "type":"string",
-                  "description":"${msg['api.doc.swagger.paths.parameters.resourceID.description']}"
+                  "description":"${msg['api.doc.swagger.paths.parameters.resourceID.description']}",
+                  "required":true
                }
             ],
             "responses":{
                "200":{
                   "schema":{
-                     "description":"${msg['api.doc.swagger.paths.v2_1.agencyscheme.agencyID.resourceID.get.responses.200.schema.description']}",
                      "$ref":"#/definitions/xml_ns3_StructureType"
                   },
                   "headers":{
@@ -1052,7 +1062,7 @@
          "get":{
             "tags" : [ "${msg['api.doc.swagger.tag.structure']}" ],
             "description":"${msg['api.doc.swagger.paths.v2_1.agencyscheme.agencyID.resourceID.version.get.description']}",
-            "operationId":"resource_SDMXRegistryV2_1_findAgencyScheme_GET",
+            "operationId":"resource_SDMXRegistryV2_1_agencyID_resourceID_version_findAgencyScheme_GET",
             "produces":[
                "application/xml"
             ],
@@ -1061,25 +1071,27 @@
                   "name":"agencyID",
                   "in":"path",
                   "type":"string",
-                  "description":"${msg['api.doc.swagger.paths.parameters.agencyID.description']}"
+                  "description":"${msg['api.doc.swagger.paths.parameters.agencyID.description']}",
+                  "required":true
                },
                {
                   "name":"resourceID",
                   "in":"path",
                   "type":"string",
-                  "description":"${msg['api.doc.swagger.paths.parameters.resourceID.description']}"
+                  "description":"${msg['api.doc.swagger.paths.parameters.resourceID.description']}",
+                  "required":true
                },
                {
                   "name":"version",
                   "in":"path",
                   "type":"string",
-                  "description":"${msg['api.doc.swagger.paths.parameters.version.description']}"
+                  "description":"${msg['api.doc.swagger.paths.parameters.version.description']}",
+                  "required":true
                }
             ],
             "responses":{
                "200":{
                   "schema":{
-                     "description":"${msg['api.doc.swagger.paths.v2_1.agencyscheme.agencyID.resourceID.version.get.responses.200.schema.description']}",
                      "$ref":"#/definitions/xml_ns3_StructureType"
                   },
                   "headers":{
@@ -1113,7 +1125,6 @@
             "responses":{
                "200":{
                   "schema":{
-                     "description":"${msg['api.doc.swagger.paths.v2_1.dataproviderscheme.get.responses.200.schema.description']}",
                      "$ref":"#/definitions/xml_ns3_StructureType"
                   },
                   "headers":{
@@ -1140,7 +1151,7 @@
          "get":{
             "tags" : [ "${msg['api.doc.swagger.tag.structure']}" ],
             "description":"${msg['api.doc.swagger.paths.v2_1.dataproviderscheme.agencyID.get.description']}",
-            "operationId":"resource_SDMXRegistryV2_1_findDataProviderScheme_GET",
+            "operationId":"resource_SDMXRegistryV2_1_agencyID_findDataProviderScheme_GET",
             "produces":[
                "application/xml"
             ],
@@ -1149,13 +1160,13 @@
                   "name":"agencyID",
                   "in":"path",
                   "type":"string",
-                  "description":"${msg['api.doc.swagger.paths.parameters.agencyID.description']}"
+                  "description":"${msg['api.doc.swagger.paths.parameters.agencyID.description']}",
+                  "required":true
                }
             ],
             "responses":{
                "200":{
                   "schema":{
-                     "description":"${msg['api.doc.swagger.paths.v2_1.dataproviderscheme.agencyID.get.responses.200.schema.description']}",
                      "$ref":"#/definitions/xml_ns3_StructureType"
                   },
                   "headers":{
@@ -1182,7 +1193,7 @@
          "get":{
             "tags" : [ "${msg['api.doc.swagger.tag.structure']}" ],
             "description":"${msg['api.doc.swagger.paths.v2_1.dataproviderscheme.agencyID.resourceID.get.description']}",
-            "operationId":"resource_SDMXRegistryV2_1_findDataProviderScheme_GET",
+            "operationId":"resource_SDMXRegistryV2_1_agencyID_resourceID_findDataProviderScheme_GET",
             "produces":[
                "application/xml"
             ],
@@ -1191,19 +1202,20 @@
                   "name":"agencyID",
                   "in":"path",
                   "type":"string",
-                  "description":"${msg['api.doc.swagger.paths.parameters.agencyID.description']}"
+                  "description":"${msg['api.doc.swagger.paths.parameters.agencyID.description']}",
+                  "required":true
                },
                {
                   "name":"resourceID",
                   "in":"path",
                   "type":"string",
-                  "description":"${msg['api.doc.swagger.paths.parameters.resourceID.description']}"
+                  "description":"${msg['api.doc.swagger.paths.parameters.resourceID.description']}",
+                  "required":true
                }
             ],
             "responses":{
                "200":{
                   "schema":{
-                     "description":"${msg['api.doc.swagger.paths.v2_1.dataproviderscheme.agencyID.resourceID.get.responses.200.schema.description']}",
                      "$ref":"#/definitions/xml_ns3_StructureType"
                   },
                   "headers":{
@@ -1230,7 +1242,7 @@
          "get":{
             "tags" : [ "${msg['api.doc.swagger.tag.structure']}" ],
             "description":"${msg['api.doc.swagger.paths.v2_1.dataproviderscheme.agencyID.resourceID.version.get.description']}",
-            "operationId":"resource_SDMXRegistryV2_1_findDataProviderScheme_GET",
+            "operationId":"resource_SDMXRegistryV2_1_agencyID_resourceID_version_findDataProviderScheme_GET",
             "produces":[
                "application/xml"
             ],
@@ -1239,25 +1251,27 @@
                   "name":"agencyID",
                   "in":"path",
                   "type":"string",
-                  "description":"${msg['api.doc.swagger.paths.parameters.agencyID.description']}"
+                  "description":"${msg['api.doc.swagger.paths.parameters.agencyID.description']}",
+                  "required":true
                },
                {
                   "name":"resourceID",
                   "in":"path",
                   "type":"string",
-                  "description":"${msg['api.doc.swagger.paths.parameters.resourceID.description']}"
+                  "description":"${msg['api.doc.swagger.paths.parameters.resourceID.description']}",
+                  "required":true
                },
                {
                   "name":"version",
                   "in":"path",
                   "type":"string",
-                  "description":"${msg['api.doc.swagger.paths.parameters.version.description']}"
+                  "description":"${msg['api.doc.swagger.paths.parameters.version.description']}",
+                  "required":true
                }
             ],
             "responses":{
                "200":{
                   "schema":{
-                     "description":"${msg['api.doc.swagger.paths.v2_1.dataproviderscheme.agencyID.resourceID.version.get.responses.200.schema.description']}",
                      "$ref":"#/definitions/xml_ns3_StructureType"
                   },
                   "headers":{
@@ -1291,7 +1305,6 @@
             "responses":{
                "200":{
                   "schema":{
-                     "description":"${msg['api.doc.swagger.paths.v2_1.dataconsumerscheme.get.responses.200.schema.description']}",
                      "$ref":"#/definitions/xml_ns3_StructureType"
                   },
                   "headers":{
@@ -1318,7 +1331,7 @@
          "get":{
             "tags" : [ "${msg['api.doc.swagger.tag.structure']}" ],
             "description":"${msg['api.doc.swagger.paths.v2_1.dataconsumerscheme.agencyID.get.description']}",
-            "operationId":"resource_SDMXRegistryV2_1_findDataConsumerScheme_GET",
+            "operationId":"resource_SDMXRegistryV2_1_agencyID_findDataConsumerScheme_GET",
             "produces":[
                "application/xml"
             ],
@@ -1327,13 +1340,13 @@
                   "name":"agencyID",
                   "in":"path",
                   "type":"string",
-                  "description":"${msg['api.doc.swagger.paths.parameters.agencyID.description']}"
+                  "description":"${msg['api.doc.swagger.paths.parameters.agencyID.description']}",
+                  "required":true
                }
             ],
             "responses":{
                "200":{
                   "schema":{
-                     "description":"${msg['api.doc.swagger.paths.v2_1.dataconsumerscheme.agencyID.get.responses.200.schema.description']}",
                      "$ref":"#/definitions/xml_ns3_StructureType"
                   },
                   "headers":{
@@ -1360,7 +1373,7 @@
          "get":{
             "tags" : [ "${msg['api.doc.swagger.tag.structure']}" ],
             "description":"${msg['api.doc.swagger.paths.v2_1.dataconsumerscheme.agencyID.resourceID.get.description']}",
-            "operationId":"resource_SDMXRegistryV2_1_findDataConsumerScheme_GET",
+            "operationId":"resource_SDMXRegistryV2_1_agencyID_resourceID_findDataConsumerScheme_GET",
             "produces":[
                "application/xml"
             ],
@@ -1369,13 +1382,20 @@
                   "name":"agencyID",
                   "in":"path",
                   "type":"string",
-                  "description":"${msg['api.doc.swagger.paths.parameters.agencyID.description']}"
+                  "description":"${msg['api.doc.swagger.paths.parameters.agencyID.description']}",
+                  "required":true
+               },
+               {
+                  "name":"resourceID",
+                  "in":"path",
+                  "type":"string",
+                  "description":"${msg['api.doc.swagger.paths.parameters.resourceID.description']}",
+                  "required":true
                }
             ],
             "responses":{
                "200":{
                   "schema":{
-                     "description":"${msg['api.doc.swagger.paths.v2_1.dataconsumerscheme.agencyID.resourceID.get.responses.200.schema.description']}",
                      "$ref":"#/definitions/xml_ns3_StructureType"
                   },
                   "headers":{
@@ -1402,7 +1422,7 @@
          "get":{
             "tags" : [ "${msg['api.doc.swagger.tag.structure']}" ],
             "description":"${msg['api.doc.swagger.paths.v2_1.dataconsumerscheme.agencyID.resourceID.version.get.description']}",
-            "operationId":"resource_SDMXRegistryV2_1_findDataConsumerScheme_GET",
+            "operationId":"resource_SDMXRegistryV2_1_agencyID_resourceID_version_findDataConsumerScheme_GET",
             "produces":[
                "application/xml"
             ],
@@ -1411,25 +1431,27 @@
                   "name":"agencyID",
                   "in":"path",
                   "type":"string",
-                  "description":"${msg['api.doc.swagger.paths.parameters.agencyID.description']}"
+                  "description":"${msg['api.doc.swagger.paths.parameters.agencyID.description']}",
+                  "required":true
                },
                {
                   "name":"resourceID",
                   "in":"path",
                   "type":"string",
-                  "description":"${msg['api.doc.swagger.paths.parameters.resourceID.description']}"
+                  "description":"${msg['api.doc.swagger.paths.parameters.resourceID.description']}",
+                  "required":true
                },
                {
                   "name":"version",
                   "in":"path",
                   "type":"string",
-                  "description":"${msg['api.doc.swagger.paths.parameters.version.description']}"
+                  "description":"${msg['api.doc.swagger.paths.parameters.version.description']}",
+                  "required":true
                }
             ],
             "responses":{
                "200":{
                   "schema":{
-                     "description":"${msg['api.doc.swagger.paths.v2_1.dataconsumerscheme.agencyID.resourceID.version.get.responses.200.schema.description']}",
                      "$ref":"#/definitions/xml_ns3_StructureType"
                   },
                   "headers":{
@@ -1463,7 +1485,6 @@
             "responses":{
                "200":{
                   "schema":{
-                     "description":"${msg['api.doc.swagger.paths.v2_1.organisationunitscheme.get.responses.200.schema.description']}",
                      "$ref":"#/definitions/xml_ns3_StructureType"
                   },
                   "headers":{
@@ -1490,7 +1511,7 @@
          "get":{
             "tags" : [ "${msg['api.doc.swagger.tag.structure']}" ],
             "description":"${msg['api.doc.swagger.paths.v2_1.organisationunitscheme.agencyID.get.description']}",
-            "operationId":"resource_SDMXRegistryV2_1_findOrganisationUnitScheme_GET",
+            "operationId":"resource_SDMXRegistryV2_1_agencyID_findOrganisationUnitScheme_GET",
             "produces":[
                "application/xml"
             ],
@@ -1499,13 +1520,13 @@
                   "name":"agencyID",
                   "in":"path",
                   "type":"string",
-                  "description":"${msg['api.doc.swagger.paths.parameters.agencyID.description']}"
+                  "description":"${msg['api.doc.swagger.paths.parameters.agencyID.description']}",
+                  "required":true
                }
             ],
             "responses":{
                "200":{
                   "schema":{
-                     "description":"${msg['api.doc.swagger.paths.v2_1.organisationunitscheme.agencyID.get.responses.200.schema.description']}",
                      "$ref":"#/definitions/xml_ns3_StructureType"
                   },
                   "headers":{
@@ -1532,7 +1553,7 @@
          "get":{
             "tags" : [ "${msg['api.doc.swagger.tag.structure']}" ],
             "description":"${msg['api.doc.swagger.paths.v2_1.organisationunitscheme.agencyID.resourceID.get.description']}",
-            "operationId":"resource_SDMXRegistryV2_1_findOrganisationUnitScheme_GET",
+            "operationId":"resource_SDMXRegistryV2_1_agencyID_resourceID_findOrganisationUnitScheme_GET",
             "produces":[
                "application/xml"
             ],
@@ -1541,19 +1562,20 @@
                   "name":"agencyID",
                   "in":"path",
                   "type":"string",
-                  "description":"${msg['api.doc.swagger.paths.parameters.agencyID.description']}"
+                  "description":"${msg['api.doc.swagger.paths.parameters.agencyID.description']}",
+                  "required":true
                },
                {
                   "name":"resourceID",
                   "in":"path",
                   "type":"string",
-                  "description":"${msg['api.doc.swagger.paths.parameters.resourceID.description']}"
+                  "description":"${msg['api.doc.swagger.paths.parameters.resourceID.description']}",
+                  "required":true
                }
             ],
             "responses":{
                "200":{
                   "schema":{
-                     "description":"${msg['api.doc.swagger.paths.v2_1.organisationunitscheme.agencyID.resourceID.get.responses.200.schema.description']}",
                      "$ref":"#/definitions/xml_ns3_StructureType"
                   },
                   "headers":{
@@ -1580,7 +1602,7 @@
          "get":{
             "tags" : [ "${msg['api.doc.swagger.tag.structure']}" ],
             "description":"${msg['api.doc.swagger.paths.v2_1.organisationunitscheme.agencyID.resourceID.version.get.description']}",
-            "operationId":"resource_SDMXRegistryV2_1_findOrganisationUnitScheme_GET",
+            "operationId":"resource_SDMXRegistryV2_1_agencyID_resourceID_version_findOrganisationUnitScheme_GET",
             "produces":[
                "application/xml"
             ],
@@ -1589,25 +1611,27 @@
                   "name":"agencyID",
                   "in":"path",
                   "type":"string",
-                  "description":"${msg['api.doc.swagger.paths.parameters.agencyID.description']}"
+                  "description":"${msg['api.doc.swagger.paths.parameters.agencyID.description']}",
+                  "required":true
                },
                {
                   "name":"resourceID",
                   "in":"path",
                   "type":"string",
-                  "description":"${msg['api.doc.swagger.paths.parameters.resourceID.description']}"
+                  "description":"${msg['api.doc.swagger.paths.parameters.resourceID.description']}",
+                  "required":true
                },
                {
                   "name":"version",
                   "in":"path",
                   "type":"string",
-                  "description":"${msg['api.doc.swagger.paths.parameters.version.description']}"
+                  "description":"${msg['api.doc.swagger.paths.parameters.version.description']}",
+                  "required":true
                }
             ],
             "responses":{
                "200":{
                   "schema":{
-                     "description":"${msg['api.doc.swagger.paths.v2_1.organisationunitscheme.agencyID.resourceID.version.get.responses.200.schema.description']}",
                      "$ref":"#/definitions/xml_ns3_StructureType"
                   },
                   "headers":{
@@ -1641,7 +1665,6 @@
             "responses":{
                "200":{
                   "schema":{
-                     "description":"${msg['api.doc.swagger.paths.v2_1.dataflow.get.responses.200.schema.description']}",
                      "$ref":"#/definitions/xml_ns3_StructureType"
                   },
                   "headers":{
@@ -1668,7 +1691,7 @@
          "get":{
             "tags" : [ "${msg['api.doc.swagger.tag.structure']}", "${msg['api.doc.swagger.tag.data']}" ],
             "description":"${msg['api.doc.swagger.paths.v2_1.dataflow.agencyID.get.description']}",
-            "operationId":"resource_SDMXRegistryV2_1_findDataFlow_GET",
+            "operationId":"resource_SDMXRegistryV2_1_agencyID_findDataFlow_GET",
             "produces":[
                "application/xml"
             ],
@@ -1677,13 +1700,13 @@
                   "name":"agencyID",
                   "in":"path",
                   "type":"string",
-                  "description":"${msg['api.doc.swagger.paths.parameters.agencyID.description']}"
+                  "description":"${msg['api.doc.swagger.paths.parameters.agencyID.description']}",
+                  "required":true
                }
             ],
             "responses":{
                "200":{
                   "schema":{
-                     "description":"${msg['api.doc.swagger.paths.v2_1.dataflow.agencyID.get.responses.200.schema.description']}",
                      "$ref":"#/definitions/xml_ns3_StructureType"
                   },
                   "headers":{
@@ -1710,7 +1733,7 @@
          "get":{
             "tags" : [ "${msg['api.doc.swagger.tag.structure']}", "${msg['api.doc.swagger.tag.data']}" ],
             "description":"${msg['api.doc.swagger.paths.v2_1.dataflow.agencyID.resourceID.get.description']}",
-            "operationId":"resource_SDMXRegistryV2_1_findDataFlow_GET",
+            "operationId":"resource_SDMXRegistryV2_1_agencyID_resourceID_findDataFlow_GET",
             "produces":[
                "application/xml"
             ],
@@ -1719,19 +1742,20 @@
                   "name":"agencyID",
                   "in":"path",
                   "type":"string",
-                  "description":"${msg['api.doc.swagger.paths.parameters.agencyID.description']}"
+                  "description":"${msg['api.doc.swagger.paths.parameters.agencyID.description']}",
+                  "required":true
                },
                {
                   "name":"resourceID",
                   "in":"path",
                   "type":"string",
-                  "description":"${msg['api.doc.swagger.paths.parameters.resourceID.description']}"
+                  "description":"${msg['api.doc.swagger.paths.parameters.resourceID.description']}",
+                  "required":true
                }
             ],
             "responses":{
                "200":{
                   "schema":{
-                     "description":"${msg['api.doc.swagger.paths.v2_1.dataflow.agencyID.resourceID.get.responses.200.schema.description']}",
                      "$ref":"#/definitions/xml_ns3_StructureType"
                   },
                   "headers":{
@@ -1758,7 +1782,7 @@
          "get":{
             "tags" : [ "${msg['api.doc.swagger.tag.structure']}", "${msg['api.doc.swagger.tag.data']}" ],
             "description":"${msg['api.doc.swagger.paths.v2_1.dataflow.agencyID.resourceID.version.get.description']}",
-            "operationId":"resource_SDMXRegistryV2_1_findDataFlow_GET",
+            "operationId":"resource_SDMXRegistryV2_1_agencyID_resourceID_version_findDataFlow_GET",
             "produces":[
                "application/xml"
             ],
@@ -1767,25 +1791,27 @@
                   "name":"agencyID",
                   "in":"path",
                   "type":"string",
-                  "description":"${msg['api.doc.swagger.paths.parameters.agencyID.description']}"
+                  "description":"${msg['api.doc.swagger.paths.parameters.agencyID.description']}",
+                  "required":true
                },
                {
                   "name":"resourceID",
                   "in":"path",
                   "type":"string",
-                  "description":"${msg['api.doc.swagger.paths.parameters.resourceID.description']}"
+                  "description":"${msg['api.doc.swagger.paths.parameters.resourceID.description']}",
+                  "required":true
                },
                {
                   "name":"version",
                   "in":"path",
                   "type":"string",
-                  "description":"${msg['api.doc.swagger.paths.parameters.version.description']}"
+                  "description":"${msg['api.doc.swagger.paths.parameters.version.description']}",
+                  "required":true
                }
             ],
             "responses":{
                "200":{
                   "schema":{
-                     "description":"${msg['api.doc.swagger.paths.v2_1.dataflow.agencyID.resourceID.version.get.responses.200.schema.description']}",
                      "$ref":"#/definitions/xml_ns3_StructureType"
                   },
                   "headers":{
@@ -1819,7 +1845,6 @@
             "responses":{
                "200":{
                   "schema":{
-                     "description":"${msg['api.doc.swagger.paths.v2_1.categorisation.get.responses.200.schema.description']}",
                      "$ref":"#/definitions/xml_ns3_StructureType"
                   },
                   "headers":{
@@ -1846,7 +1871,7 @@
          "get":{
             "tags" : [ "${msg['api.doc.swagger.tag.structure']}", "${msg['api.doc.swagger.tag.data']}" ],
             "description":"${msg['api.doc.swagger.paths.v2_1.categorisation.agencyID.get.description']}",
-            "operationId":"resource_SDMXRegistryV2_1_findCategorisation_GET",
+            "operationId":"resource_SDMXRegistryV2_1_agencyID_findCategorisation_GET",
             "produces":[
                "application/xml"
             ],
@@ -1855,13 +1880,13 @@
                   "name":"agencyID",
                   "in":"path",
                   "type":"string",
-                  "description":"${msg['api.doc.swagger.paths.parameters.agencyID.description']}"
+                  "description":"${msg['api.doc.swagger.paths.parameters.agencyID.description']}",
+                  "required":true
                }
             ],
             "responses":{
                "200":{
                   "schema":{
-                     "description":"${msg['api.doc.swagger.paths.v2_1.categorisation.agencyID.get.responses.200.schema.description']}",
                      "$ref":"#/definitions/xml_ns3_StructureType"
                   },
                   "headers":{
@@ -1888,7 +1913,7 @@
          "get":{
             "tags" : [ "${msg['api.doc.swagger.tag.structure']}", "${msg['api.doc.swagger.tag.data']}" ],
             "description":"${msg['api.doc.swagger.paths.v2_1.categorisation.agencyID.resourceID.get.description']}",
-            "operationId":"resource_SDMXRegistryV2_1_findCategorisation_GET",
+            "operationId":"resource_SDMXRegistryV2_1_agencyID_resourceID_findCategorisation_GET",
             "produces":[
                "application/xml"
             ],
@@ -1897,19 +1922,20 @@
                   "name":"agencyID",
                   "in":"path",
                   "type":"string",
-                  "description":"${msg['api.doc.swagger.paths.parameters.agencyID.description']}"
+                  "description":"${msg['api.doc.swagger.paths.parameters.agencyID.description']}",
+                  "required":true
                },
                {
                   "name":"resourceID",
                   "in":"path",
                   "type":"string",
-                  "description":"${msg['api.doc.swagger.paths.parameters.resourceID.description']}"
+                  "description":"${msg['api.doc.swagger.paths.parameters.resourceID.description']}",
+                  "required":true
                }
             ],
             "responses":{
                "200":{
                   "schema":{
-                     "description":"${msg['api.doc.swagger.paths.v2_1.categorisation.agencyID.resourceID.get.responses.200.schema.description']}",
                      "$ref":"#/definitions/xml_ns3_StructureType"
                   },
                   "headers":{
@@ -1936,7 +1962,7 @@
          "get":{
             "tags" : [ "${msg['api.doc.swagger.tag.structure']}", "${msg['api.doc.swagger.tag.data']}" ],
             "description":"${msg['api.doc.swagger.paths.v2_1.categorisation.agencyID.resourceID.version.get.description']}",
-            "operationId":"resource_SDMXRegistryV2_1_findCategorisation_GET",
+            "operationId":"resource_SDMXRegistryV2_1_agencyID_resourceID_version_findCategorisation_GET",
             "produces":[
                "application/xml"
             ],
@@ -1945,25 +1971,27 @@
                   "name":"agencyID",
                   "in":"path",
                   "type":"string",
-                  "description":"${msg['api.doc.swagger.paths.parameters.agencyID.description']}"
+                  "description":"${msg['api.doc.swagger.paths.parameters.agencyID.description']}",
+                  "required":true
                },
                {
                   "name":"resourceID",
                   "in":"path",
                   "type":"string",
-                  "description":"${msg['api.doc.swagger.paths.parameters.resourceID.description']}"
+                  "description":"${msg['api.doc.swagger.paths.parameters.resourceID.description']}",
+                  "required":true
                },
                {
                   "name":"version",
                   "in":"path",
                   "type":"string",
-                  "description":"${msg['api.doc.swagger.paths.parameters.version.description']}"
+                  "description":"${msg['api.doc.swagger.paths.parameters.version.description']}",
+                  "required":true
                }
             ],
             "responses":{
                "200":{
                   "schema":{
-                     "description":"${msg['api.doc.swagger.paths.v2_1.categorisation.agencyID.resourceID.version.get.responses.200.schema.description']}",
                      "$ref":"#/definitions/xml_ns3_StructureType"
                   },
                   "headers":{
@@ -1997,7 +2025,6 @@
             "responses":{
                "200":{
                   "schema":{
-                     "description":"${msg['api.doc.swagger.paths.v2_1.contentconstraint.get.responses.200.schema.description']}",
                      "$ref":"#/definitions/xml_ns3_StructureType"
                   },
                   "headers":{
@@ -2024,7 +2051,7 @@
          "get":{
             "tags" : [ "${msg['api.doc.swagger.tag.structure']}" ],
             "description":"${msg['api.doc.swagger.paths.v2_1.contentconstraint.agencyID.get.description']}",
-            "operationId":"resource_SDMXRegistryV2_1_findContentConstraint_GET",
+            "operationId":"resource_SDMXRegistryV2_1_agencyID_findContentConstraint_GET",
             "produces":[
                "application/xml"
             ],
@@ -2033,13 +2060,13 @@
                   "name":"agencyID",
                   "in":"path",
                   "type":"string",
-                  "description":"${msg['api.doc.swagger.paths.parameters.agencyID.description']}"
+                  "description":"${msg['api.doc.swagger.paths.parameters.agencyID.description']}",
+                  "required":true
                }
             ],
             "responses":{
                "200":{
                   "schema":{
-                     "description":"${msg['api.doc.swagger.paths.v2_1.contentconstraint.agencyID.get.responses.200.schema.description']}",
                      "$ref":"#/definitions/xml_ns3_StructureType"
                   },
                   "headers":{
@@ -2066,7 +2093,7 @@
          "get":{
             "tags" : [ "${msg['api.doc.swagger.tag.structure']}" ],
             "description":"${msg['api.doc.swagger.paths.v2_1.contentconstraint.agencyID.resourceID.get.description']}",
-            "operationId":"resource_SDMXRegistryV2_1_findContentConstraint_GET",
+            "operationId":"resource_SDMXRegistryV2_1_agencyID_resourceID_findContentConstraint_GET",
             "produces":[
                "application/xml"
             ],
@@ -2075,19 +2102,20 @@
                   "name":"agencyID",
                   "in":"path",
                   "type":"string",
-                  "description":"${msg['api.doc.swagger.paths.parameters.agencyID.description']}"
+                  "description":"${msg['api.doc.swagger.paths.parameters.agencyID.description']}",
+                  "required":true
                },
                {
                   "name":"resourceID",
                   "in":"path",
                   "type":"string",
-                  "description":"${msg['api.doc.swagger.paths.parameters.resourceID.description']}"
+                  "description":"${msg['api.doc.swagger.paths.parameters.resourceID.description']}",
+                  "required":true
                }
             ],
             "responses":{
                "200":{
                   "schema":{
-                     "description":"${msg['api.doc.swagger.paths.v2_1.contentconstraint.agencyID.resourceID.get.responses.200.schema.description']}",
                      "$ref":"#/definitions/xml_ns3_StructureType"
                   },
                   "headers":{
@@ -2114,7 +2142,7 @@
          "get":{
             "tags" : [ "${msg['api.doc.swagger.tag.structure']}" ],
             "description":"${msg['api.doc.swagger.paths.v2_1.contentconstraint.agencyID.resourceID.version.get.description']}",
-            "operationId":"resource_SDMXRegistryV2_1_findContentConstraint_GET",
+            "operationId":"resource_SDMXRegistryV2_1_agencyID_resourceID_version_findContentConstraint_GET",
             "produces":[
                "application/xml"
             ],
@@ -2123,25 +2151,27 @@
                   "name":"agencyID",
                   "in":"path",
                   "type":"string",
-                  "description":"${msg['api.doc.swagger.paths.parameters.agencyID.description']}"
+                  "description":"${msg['api.doc.swagger.paths.parameters.agencyID.description']}",
+                  "required":true
                },
                {
                   "name":"resourceID",
                   "in":"path",
                   "type":"string",
-                  "description":"${msg['api.doc.swagger.paths.parameters.resourceID.description']}"
+                  "description":"${msg['api.doc.swagger.paths.parameters.resourceID.description']}",
+                  "required":true
                },
                {
                   "name":"version",
                   "in":"path",
                   "type":"string",
-                  "description":"${msg['api.doc.swagger.paths.parameters.version.description']}"
+                  "description":"${msg['api.doc.swagger.paths.parameters.version.description']}",
+                  "required":true
                }
             ],
             "responses":{
                "200":{
                   "schema":{
-                     "description":"${msg['api.doc.swagger.paths.v2_1.contentconstraint.agencyID.resourceID.version.get.responses.200.schema.description']}",
                      "$ref":"#/definitions/xml_ns3_StructureType"
                   },
                   "headers":{
@@ -2177,13 +2207,13 @@
                   "name":"flowRef",
                   "in":"path",
                   "type":"string",
-                  "description":"${msg['api.doc.swagger.paths.parameters.flowRef.description']}"
+                  "description":"${msg['api.doc.swagger.paths.parameters.flowRef.description']}",
+                  "required":true
                }
             ],
             "responses":{
                "200":{
                   "schema":{
-                     "description":"${msg['api.doc.swagger.paths.v2_1.data.flowRef.get.responses.200.schema.description']}",
                      "$ref":"#/definitions/xml_ns3_StructureType"
                   },
                   "headers":{
@@ -2210,7 +2240,7 @@
          "get":{
             "tags" : [ "${msg['api.doc.swagger.tag.data']}" ],
             "description":"${msg['api.doc.swagger.paths.v2_1.data.flowRef.key.get.description']}",
-            "operationId":"resource_SDMXRegistryV2_1_findData_GET",
+            "operationId":"resource_SDMXRegistryV2_1_key_findData_GET",
             "produces":[
                "application/xml"
             ],
@@ -2219,19 +2249,20 @@
                   "name":"flowRef",
                   "in":"path",
                   "type":"string",
-                  "description":"${msg['api.doc.swagger.paths.parameters.flowRef.description']}"
+                  "description":"${msg['api.doc.swagger.paths.parameters.flowRef.description']}",
+                  "required":true
                },
                {
                   "name":"key",
                   "in":"path",
                   "type":"string",
-                  "description":"${msg['api.doc.swagger.paths.parameters.key.description']}"
+                  "description":"${msg['api.doc.swagger.paths.parameters.key.description']}",
+                  "required":true
                }
             ],
             "responses":{
                "200":{
                   "schema":{
-                     "description":"${msg['api.doc.swagger.paths.v2_1.data.flowRef.key.get.responses.200.schema.description']}",
                      "$ref":"#/definitions/xml_ns3_StructureType"
                   },
                   "headers":{
@@ -2258,7 +2289,7 @@
          "get":{
             "tags" : [ "${msg['api.doc.swagger.tag.data']}" ],
             "description":"${msg['api.doc.swagger.paths.v2_1.data.flowRef.key.providerRef.get.description']}",
-            "operationId":"resource_SDMXRegistryV2_1_findData_GET",
+            "operationId":"resource_SDMXRegistryV2_1_key_providerRef_findData_GET",
             "produces":[
                "application/xml"
             ],
@@ -2267,25 +2298,27 @@
                   "name":"flowRef",
                   "in":"path",
                   "type":"string",
-                  "description":"${msg['api.doc.swagger.paths.parameters.flowRef.description']}"
+                  "description":"${msg['api.doc.swagger.paths.parameters.flowRef.description']}",
+                  "required":true
                },
                {
                   "name":"key",
                   "in":"path",
                   "type":"string",
-                  "description":"${msg['api.doc.swagger.paths.parameters.key.description']}"
+                  "description":"${msg['api.doc.swagger.paths.parameters.key.description']}",
+                  "required":true
                },
                {
                   "name":"providerRef",
                   "in":"path",
                   "type":"string",
-                  "description":"${msg['api.doc.swagger.paths.parameters.providerRef.description']}"
+                  "description":"${msg['api.doc.swagger.paths.parameters.providerRef.description']}",
+                  "required":true
                }
             ],
             "responses":{
                "200":{
                   "schema":{
-                     "description":"${msg['api.doc.swagger.paths.v2_1.data.flowRef.key.providerRef.get.responses.200.schema.description']}",
                      "$ref":"#/definitions/xml_ns3_StructureType"
                   },
                   "headers":{

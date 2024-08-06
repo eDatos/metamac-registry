@@ -11,9 +11,6 @@
       "xml_ns1_FooterMessageType": {
             "allOf": [
                 {
-                    "$ref": "#/definitions/xml_ns2_CodedStatusMessageType"
-                },
-                {
                     "properties": {
                         "severity": {
                             "$ref": "#/definitions/xml_ns1_SeverityCodeType",
@@ -4887,9 +4884,6 @@
         },
         "xml_ns7_FooterMessageType": {
             "allOf": [
-                {
-                    "$ref": "#/definitions/xml_ns4_CodedStatusMessageType"
-                },
                 {
                     "properties": {
                         "severity": {
