@@ -5,10 +5,13 @@
 <%@ page import="org.apache.commons.lang.LocaleUtils" %>
 <%@ page import="static java.util.ResourceBundle.Control.getNoFallbackControl" %>
 <%@ page import="java.util.ResourceBundle" %>
+<%@ page import="org.siemac.metamac.core.common.util.MessagesResourceBundle"%>
 <%
     String internationalizationCookie = InternationalizationUtils.getInstance().getInternationalizationCookieId();
     String locale = InternationalizationUtils.getInstance().getCurrentLocale(request);
     String appName = ResourceBundle.getBundle("i18n.messages", LocaleUtils.toLocale(locale), getNoFallbackControl(ResourceBundle.Control.FORMAT_DEFAULT)).getString("apps.api_catalog.name");
+    MessagesResourceBundle messagesResource = new MessagesResourceBundle(locale, "i18n.messages");
+    pageContext.setAttribute("msg", messagesResource);
 %>
 <html>
 <head>

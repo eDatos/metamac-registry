@@ -6,16 +6,18 @@
 <%@ page import="org.apache.commons.lang.LocaleUtils" %>
 <%@ page import="static java.util.ResourceBundle.Control.getNoFallbackControl" %>
 <%@ page import="java.util.ResourceBundle" %>
+<%@ page import="org.siemac.metamac.core.common.util.MessagesResourceBundle"%>
 <%
     String internationalizationCookie = InternationalizationUtils.getInstance().getInternationalizationCookieId();
     String locale = InternationalizationUtils.getInstance().getCurrentLocale(request);
-    ResourceBundle rs = ResourceBundle.getBundle("i18n.messages" , LocaleUtils.toLocale(locale), getNoFallbackControl(ResourceBundle.Control.FORMAT_DEFAULT));
-    String appName = rs.getString("apps.api_catalog.name");
+    String appName = ResourceBundle.getBundle("i18n.messages" , LocaleUtils.toLocale(locale), getNoFallbackControl(ResourceBundle.Control.FORMAT_DEFAULT)).getString("apps.api_catalog.name");
+    MessagesResourceBundle messagesResource = new MessagesResourceBundle(locale, "i18n.messages");
+    pageContext.setAttribute("msg", messagesResource);
 %>
 <html>
 <head>
   <meta charset="UTF-8">
-  <title><%=rs.getString("app.name") %></title>
+  <title>${msg['api.doc.title']}</title>
  
   <link href="<%=WebUtils.getFavicon()%>" rel="shortcut icon"/>
   
@@ -34,20 +36,20 @@
     </c:if>
     
     <div class="version-list">
-       <h1><%=rs.getString("api.doc.title") %></h1>
-       <h2><%=rs.getString("api.doc.versions") %></h2>
+       <h1>${msg['api.doc.title']}</h1>
+       <h2>${msg['api.doc.versions']}</h2>
        <ul>
            <li>
                <h3 class="version-title"><a href="${apiBaseURL}/latest">/latest</a></h3>
                <div class="version-description">
-                   <p><strong>latest</strong> <%=rs.getString("api.doc.latest") %></p>
+                   <p><strong>latest</strong> ${msg['api.doc.latest']}</p>
                </div>
            </li>
            
            <li>
                <h3 class="version-title"><a href="${apiBaseURL}/v2.1">/v2.1</a></h3>
                <div class="version-description">
-                    <p><%=rs.getString("api.doc.version.2_1") %></p>    
+                    <p>${msg['api.doc.version.2_1']}</p>
                </div>
            </li>
        </ul>
