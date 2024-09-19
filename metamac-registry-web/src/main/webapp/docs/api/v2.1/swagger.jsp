@@ -1,6 +1,5 @@
 <%@page import="org.siemac.metamac.core.common.util.swagger.SwaggerUtils"%>
 <%@page pageEncoding="UTF-8"%>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ page import="org.siemac.metamac.core.common.util.InternationalizationUtils" %>
 <%@ page import="org.siemac.metamac.core.common.util.MessagesResourceBundle"%>
 <%
@@ -8,9 +7,6 @@
    MessagesResourceBundle messagesResource = new MessagesResourceBundle(locale, "i18n.messages");
    pageContext.setAttribute("msg", messagesResource);
 %>
-<fmt:setLocale value="<%= locale %>"/>
-<fmt:setBundle basename="i18n.messages" var="i18n"/>
-<fmt:bundle basename="application"/>
 {
    "swagger":"2.0",
    "info":{
