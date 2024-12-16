@@ -1,15 +1,15 @@
 <%@page pageEncoding="UTF-8"%>
 <%@page import="org.siemac.metamac.core.common.util.swagger.SwaggerUtils"%>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ page import="org.siemac.metamac.core.common.util.InternationalizationUtils" %>
+<%@ page import="org.siemac.metamac.core.common.util.MessagesResourceBundle"%>
 <%
    String locale = InternationalizationUtils.getInstance().getCurrentLocale(request);
+   MessagesResourceBundle messagesResource = new MessagesResourceBundle(locale, "i18n.messages");
+   pageContext.setAttribute("msg", messagesResource);
 %>
-<fmt:setLocale value="<%= locale %>"/>
-<fmt:setBundle basename="i18n.messages" var="i18n"/>
-<fmt:bundle basename="application"/>
+
 	"xml_ns4_ActionType": {
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_ActionType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_ActionType.description']}",
             "enum": [
                 "Append",
                 "Replace",
@@ -26,7 +26,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_AgencyRefType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_AgencyRefType.description']}",
             "title": "AgencyRefType",
             "type": "object"
         },
@@ -37,7 +37,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_AgencyReferenceType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_AgencyReferenceType.description']}",
             "title": "AgencyReferenceType",
             "type": "object"
         },
@@ -48,7 +48,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_AgencySchemeRefType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_AgencySchemeRefType.description']}",
             "title": "AgencySchemeRefType",
             "type": "object"
         },
@@ -59,7 +59,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_AgencySchemeReferenceType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_AgencySchemeReferenceType.description']}",
             "title": "AgencySchemeReferenceType",
             "type": "object"
         },
@@ -69,7 +69,7 @@
                     "properties": {
                         "Annotations": {
                             "$ref": "#/definitions/xml_ns4_AnnotationsType",
-                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_AnnotableType.properties.Annotations.description" bundle="${i18n}"/>",
+                            "description": "${msg['api.doc.swagger.definitions.xml_ns4_AnnotableType.properties.Annotations.description']}",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common"
                             }
@@ -77,7 +77,7 @@
                     }
                 }
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_AnnotableType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_AnnotableType.description']}",
             "title": "AnnotableType",
             "type": "object"
         },
@@ -87,34 +87,34 @@
                     "properties": {
                         "AnnotationText": {
                             "$ref": "#/definitions/xml_ns4_TextType",
-                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_AnnotationType.properties.AnnotationText.description" bundle="${i18n}"/>",
+                            "description": "${msg['api.doc.swagger.definitions.xml_ns4_AnnotationType.properties.AnnotationText.description']}",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common"
                             }
                         },
                         "AnnotationTitle": {
-                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_AnnotationType.properties.AnnotationTitle.description" bundle="${i18n}"/>",
+                            "description": "${msg['api.doc.swagger.definitions.xml_ns4_AnnotationType.properties.AnnotationTitle.description']}",
                             "type": "string",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common"
                             }
                         },
                         "AnnotationType": {
-                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_AnnotationType.properties.AnnotationType.description" bundle="${i18n}"/>",
+                            "description": "${msg['api.doc.swagger.definitions.xml_ns4_AnnotationType.properties.AnnotationType.description']}",
                             "type": "string",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common"
                             }
                         },
                         "AnnotationURL": {
-                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_AnnotationType.properties.AnnotationURL.description" bundle="${i18n}"/>",
+                            "description": "${msg['api.doc.swagger.definitions.xml_ns4_AnnotationType.properties.AnnotationURL.description']}",
                             "type": "string",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common"
                             }
                         },
                         "id": {
-                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_AnnotationType.properties.id.description" bundle="${i18n}"/>",
+                            "description": "${msg['api.doc.swagger.definitions.xml_ns4_AnnotationType.properties.id.description']}",
                             "type": "string",
                             "xml": {
                                 "attribute": true,
@@ -124,7 +124,7 @@
                     }
                 }
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_AnnotationType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_AnnotationType.description']}",
             "title": "AnnotationType",
             "type": "object"
         },
@@ -134,7 +134,7 @@
                     "properties": {
                         "Annotation": {
                             "$ref": "#/definitions/xml_ns4_AnnotationType",
-                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_AnnotationsType.properties.Annotation.description" bundle="${i18n}"/>",
+                            "description": "${msg['api.doc.swagger.definitions.xml_ns4_AnnotationsType.properties.Annotation.description']}",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common"
                             }
@@ -142,7 +142,7 @@
                     }
                 }
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_AnnotationsType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_AnnotationsType.description']}",
             "required": [
                 "Annotation"
             ],
@@ -156,7 +156,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_AnyCodelistRefType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_AnyCodelistRefType.description']}",
             "title": "AnyCodelistRefType",
             "type": "object"
         },
@@ -167,7 +167,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_AnyCodelistReferenceType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_AnyCodelistReferenceType.description']}",
             "title": "AnyCodelistReferenceType",
             "type": "object"
         },
@@ -178,7 +178,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_AnyLocalCodeRefType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_AnyLocalCodeRefType.description']}",
             "title": "AnyLocalCodeRefType",
             "type": "object"
         },
@@ -189,7 +189,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_AnyLocalCodeReferenceType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_AnyLocalCodeReferenceType.description']}",
             "title": "AnyLocalCodeReferenceType",
             "type": "object"
         },
@@ -200,7 +200,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_AttachmentConstraintRefType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_AttachmentConstraintRefType.description']}",
             "title": "AttachmentConstraintRefType",
             "type": "object"
         },
@@ -211,7 +211,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_AttachmentConstraintReferenceType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_AttachmentConstraintReferenceType.description']}",
             "title": "AttachmentConstraintReferenceType",
             "type": "object"
         },
@@ -222,7 +222,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_AttributeDescriptorRefType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_AttributeDescriptorRefType.description']}",
             "title": "AttributeDescriptorRefType",
             "type": "object"
         },
@@ -233,7 +233,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_AttributeDescriptorReferenceType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_AttributeDescriptorReferenceType.description']}",
             "title": "AttributeDescriptorReferenceType",
             "type": "object"
         },
@@ -244,7 +244,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_AttributeRefType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_AttributeRefType.description']}",
             "title": "AttributeRefType",
             "type": "object"
         },
@@ -255,7 +255,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_AttributeReferenceType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_AttributeReferenceType.description']}",
             "title": "AttributeReferenceType",
             "type": "object"
         },
@@ -266,7 +266,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_AttributeValueSetType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_AttributeValueSetType.description']}",
             "title": "AttributeValueSetType",
             "type": "object"
         },
@@ -277,7 +277,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_CategorisationRefType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_CategorisationRefType.description']}",
             "title": "CategorisationRefType",
             "type": "object"
         },
@@ -288,7 +288,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_CategorisationReferenceType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_CategorisationReferenceType.description']}",
             "title": "CategorisationReferenceType",
             "type": "object"
         },
@@ -299,7 +299,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_CategoryRefType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_CategoryRefType.description']}",
             "title": "CategoryRefType",
             "type": "object"
         },
@@ -310,7 +310,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_CategoryReferenceType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_CategoryReferenceType.description']}",
             "title": "CategoryReferenceType",
             "type": "object"
         },
@@ -321,7 +321,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_CategorySchemeMapRefType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_CategorySchemeMapRefType.description']}",
             "title": "CategorySchemeMapRefType",
             "type": "object"
         },
@@ -332,7 +332,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_CategorySchemeMapReferenceType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_CategorySchemeMapReferenceType.description']}",
             "title": "CategorySchemeMapReferenceType",
             "type": "object"
         },
@@ -343,7 +343,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_CategorySchemeRefType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_CategorySchemeRefType.description']}",
             "title": "CategorySchemeRefType",
             "type": "object"
         },
@@ -354,7 +354,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_CategorySchemeReferenceType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_CategorySchemeReferenceType.description']}",
             "title": "CategorySchemeReferenceType",
             "type": "object"
         },
@@ -365,7 +365,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_ChildObjectRefBaseType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_ChildObjectRefBaseType.description']}",
             "title": "ChildObjectRefBaseType",
             "type": "object"
         },
@@ -376,7 +376,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_ChildObjectReferenceType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_ChildObjectReferenceType.description']}",
             "title": "ChildObjectReferenceType",
             "type": "object"
         },
@@ -387,7 +387,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_CodeRefType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_CodeRefType.description']}",
             "title": "CodeRefType",
             "type": "object"
         },
@@ -398,7 +398,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_CodeReferenceType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_CodeReferenceType.description']}",
             "title": "CodeReferenceType",
             "type": "object"
         },
@@ -409,7 +409,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_CodelistMapRefType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_CodelistMapRefType.description']}",
             "title": "CodelistMapRefType",
             "type": "object"
         },
@@ -420,7 +420,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_CodelistMapReferenceType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_CodelistMapReferenceType.description']}",
             "title": "CodelistMapReferenceType",
             "type": "object"
         },
@@ -431,7 +431,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_CodelistRefType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_CodelistRefType.description']}",
             "title": "CodelistRefType",
             "type": "object"
         },
@@ -442,7 +442,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_CodelistReferenceType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_CodelistReferenceType.description']}",
             "title": "CodelistReferenceType",
             "type": "object"
         },
@@ -453,7 +453,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_ComponentListRefBaseType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_ComponentListRefBaseType.description']}",
             "title": "ComponentListRefBaseType",
             "type": "object"
         },
@@ -464,7 +464,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_ComponentListReferenceType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_ComponentListReferenceType.description']}",
             "title": "ComponentListReferenceType",
             "type": "object"
         },
@@ -475,7 +475,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_ComponentRefBaseType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_ComponentRefBaseType.description']}",
             "title": "ComponentRefBaseType",
             "type": "object"
         },
@@ -486,7 +486,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_ComponentReferenceType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_ComponentReferenceType.description']}",
             "title": "ComponentReferenceType",
             "type": "object"
         },
@@ -496,41 +496,41 @@
                     "properties": {
                         "DataKey": {
                             "$ref": "#/definitions/xml_ns4_DataKeyType",
-                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_ComponentValueSetType.properties.DataKey.description" bundle="${i18n}"/>",
+                            "description": "${msg['api.doc.swagger.definitions.xml_ns4_ComponentValueSetType.properties.DataKey.description']}",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common"
                             }
                         },
                         "DataSet": {
                             "$ref": "#/definitions/xml_ns4_SetReferenceType",
-                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_ComponentValueSetType.properties.DataSet.description" bundle="${i18n}"/>",
+                            "description": "${msg['api.doc.swagger.definitions.xml_ns4_ComponentValueSetType.properties.DataSet.description']}",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common"
                             }
                         },
                         "Object": {
                             "$ref": "#/definitions/xml_ns4_ObjectReferenceType",
-                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_ComponentValueSetType.properties.Object.description" bundle="${i18n}"/>",
+                            "description": "${msg['api.doc.swagger.definitions.xml_ns4_ComponentValueSetType.properties.Object.description']}",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common"
                             }
                         },
                         "TimeRange": {
                             "$ref": "#/definitions/xml_ns4_TimeRangeValueType",
-                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_ComponentValueSetType.properties.TimeRange.description" bundle="${i18n}"/>",
+                            "description": "${msg['api.doc.swagger.definitions.xml_ns4_ComponentValueSetType.properties.TimeRange.description']}",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common"
                             }
                         },
                         "Value": {
                             "$ref": "#/definitions/xml_ns4_SimpleValueType",
-                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_ComponentValueSetType.properties.Value.description" bundle="${i18n}"/>",
+                            "description": "${msg['api.doc.swagger.definitions.xml_ns4_ComponentValueSetType.properties.Value.description']}",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common"
                             }
                         },
                         "id": {
-                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_ComponentValueSetType.properties.id.description" bundle="${i18n}"/>",
+                            "description": "${msg['api.doc.swagger.definitions.xml_ns4_ComponentValueSetType.properties.id.description']}",
                             "type": "string",
                             "xml": {
                                 "attribute": true,
@@ -538,7 +538,7 @@
                             }
                         },
                         "include": {
-                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_ComponentValueSetType.properties.include.description" bundle="${i18n}"/>",
+                            "description": "${msg['api.doc.swagger.definitions.xml_ns4_ComponentValueSetType.properties.include.description']}",
                             "type": "boolean",
                             "xml": {
                                 "attribute": true,
@@ -548,7 +548,7 @@
                     }
                 }
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_ComponentValueSetType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_ComponentValueSetType.description']}",
             "required": [
                 "id"
             ],
@@ -562,7 +562,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_ConceptRefType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_ConceptRefType.description']}",
             "title": "ConceptRefType",
             "type": "object"
         },
@@ -573,7 +573,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_ConceptReferenceType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_ConceptReferenceType.description']}",
             "title": "ConceptReferenceType",
             "type": "object"
         },
@@ -584,7 +584,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_ConceptSchemeMapRefType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_ConceptSchemeMapRefType.description']}",
             "title": "ConceptSchemeMapRefType",
             "type": "object"
         },
@@ -595,7 +595,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_ConceptSchemeMapReferenceType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_ConceptSchemeMapReferenceType.description']}",
             "title": "ConceptSchemeMapReferenceType",
             "type": "object"
         },
@@ -606,7 +606,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_ConceptSchemeRefType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_ConceptSchemeRefType.description']}",
             "title": "ConceptSchemeRefType",
             "type": "object"
         },
@@ -617,7 +617,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_ConceptSchemeReferenceType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_ConceptSchemeReferenceType.description']}",
             "title": "ConceptSchemeReferenceType",
             "type": "object"
         },
@@ -628,7 +628,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_ConstraintRefType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_ConstraintRefType.description']}",
             "title": "ConstraintRefType",
             "type": "object"
         },
@@ -639,7 +639,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_ConstraintReferenceType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_ConstraintReferenceType.description']}",
             "title": "ConstraintReferenceType",
             "type": "object"
         },
@@ -650,7 +650,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_ConstraintTargetRefType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_ConstraintTargetRefType.description']}",
             "title": "ConstraintTargetRefType",
             "type": "object"
         },
@@ -661,7 +661,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_ConstraintTargetReferenceType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_ConstraintTargetReferenceType.description']}",
             "title": "ConstraintTargetReferenceType",
             "type": "object"
         },
@@ -672,7 +672,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_ContainerChildObjectRefBaseType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_ContainerChildObjectRefBaseType.description']}",
             "title": "ContainerChildObjectRefBaseType",
             "type": "object"
         },
@@ -683,7 +683,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_ContainerChildObjectReferenceType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_ContainerChildObjectReferenceType.description']}",
             "title": "ContainerChildObjectReferenceType",
             "type": "object"
         },
@@ -694,7 +694,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_ContentConstraintRefType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_ContentConstraintRefType.description']}",
             "title": "ContentConstraintRefType",
             "type": "object"
         },
@@ -705,12 +705,12 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_ContentConstraintReferenceType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_ContentConstraintReferenceType.description']}",
             "title": "ContentConstraintReferenceType",
             "type": "object"
         },
         "xml_ns4_ContentConstraintTypeCodeType": {
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_ContentConstraintTypeCodeType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_ContentConstraintTypeCodeType.description']}",
             "enum": [
                 "Allowed",
                 "Actual"
@@ -725,7 +725,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_CubeRegionKeyType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_CubeRegionKeyType.description']}",
             "title": "CubeRegionKeyType",
             "type": "object"
         },
@@ -736,7 +736,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_CubeRegionType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_CubeRegionType.description']}",
             "title": "CubeRegionType",
             "type": "object"
         },
@@ -747,7 +747,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_DataConsumerRefType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_DataConsumerRefType.description']}",
             "title": "DataConsumerRefType",
             "type": "object"
         },
@@ -758,7 +758,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_DataConsumerReferenceType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_DataConsumerReferenceType.description']}",
             "title": "DataConsumerReferenceType",
             "type": "object"
         },
@@ -769,7 +769,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_DataConsumerSchemeRefType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_DataConsumerSchemeRefType.description']}",
             "title": "DataConsumerSchemeRefType",
             "type": "object"
         },
@@ -780,7 +780,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_DataConsumerSchemeReferenceType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_DataConsumerSchemeReferenceType.description']}",
             "title": "DataConsumerSchemeReferenceType",
             "type": "object"
         },
@@ -791,7 +791,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_DataKeyType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_DataKeyType.description']}",
             "title": "DataKeyType",
             "type": "object"
         },
@@ -802,7 +802,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_DataKeyValueType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_DataKeyValueType.description']}",
             "title": "DataKeyValueType",
             "type": "object"
         },
@@ -813,7 +813,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_DataProviderRefType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_DataProviderRefType.description']}",
             "title": "DataProviderRefType",
             "type": "object"
         },
@@ -824,7 +824,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_DataProviderReferenceType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_DataProviderReferenceType.description']}",
             "title": "DataProviderReferenceType",
             "type": "object"
         },
@@ -835,7 +835,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_DataProviderSchemeRefType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_DataProviderSchemeRefType.description']}",
             "title": "DataProviderSchemeRefType",
             "type": "object"
         },
@@ -846,7 +846,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_DataProviderSchemeReferenceType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_DataProviderSchemeReferenceType.description']}",
             "title": "DataProviderSchemeReferenceType",
             "type": "object"
         },
@@ -857,7 +857,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_DataSetTargetRefType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_DataSetTargetRefType.description']}",
             "title": "DataSetTargetRefType",
             "type": "object"
         },
@@ -868,7 +868,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_DataSetTargetReferenceType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_DataSetTargetReferenceType.description']}",
             "title": "DataSetTargetReferenceType",
             "type": "object"
         },
@@ -879,7 +879,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_DataStructureEnumerationSchemeRefType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_DataStructureEnumerationSchemeRefType.description']}",
             "title": "DataStructureEnumerationSchemeRefType",
             "type": "object"
         },
@@ -890,7 +890,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_DataStructureEnumerationSchemeReferenceType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_DataStructureEnumerationSchemeReferenceType.description']}",
             "title": "DataStructureEnumerationSchemeReferenceType",
             "type": "object"
         },
@@ -901,7 +901,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_DataStructureRefType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_DataStructureRefType.description']}",
             "title": "DataStructureRefType",
             "type": "object"
         },
@@ -912,12 +912,12 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_DataStructureReferenceType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_DataStructureReferenceType.description']}",
             "title": "DataStructureReferenceType",
             "type": "object"
         },
         "xml_ns4_DataType": {
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_DataType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_DataType.description']}",
             "enum": [
                 "String",
                 "Alpha",
@@ -974,7 +974,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_DataflowRefType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_DataflowRefType.description']}",
             "title": "DataflowRefType",
             "type": "object"
         },
@@ -985,7 +985,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_DataflowReferenceType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_DataflowReferenceType.description']}",
             "title": "DataflowReferenceType",
             "type": "object"
         },
@@ -996,7 +996,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_DimensionRefType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_DimensionRefType.description']}",
             "title": "DimensionRefType",
             "type": "object"
         },
@@ -1007,12 +1007,12 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_DimensionReferenceType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_DimensionReferenceType.description']}",
             "title": "DimensionReferenceType",
             "type": "object"
         },
         "xml_ns4_DimensionTypeType": {
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_DimensionTypeType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_DimensionTypeType.description']}",
             "enum": [
                 "Dimension",
                 "MeasureDimension",
@@ -1028,7 +1028,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_DinstinctKeyValueType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_DinstinctKeyValueType.description']}",
             "title": "DinstinctKeyValueType",
             "type": "object"
         },
@@ -1039,7 +1039,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_DistinctKeyType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_DistinctKeyType.description']}",
             "title": "DistinctKeyType",
             "type": "object"
         },
@@ -1047,7 +1047,7 @@
             "allOf": [
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_EmptyType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_EmptyType.description']}",
             "title": "EmptyType",
             "type": "object"
         },
@@ -1058,7 +1058,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_GroupKeyDescriptorRefType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_GroupKeyDescriptorRefType.description']}",
             "title": "GroupKeyDescriptorRefType",
             "type": "object"
         },
@@ -1069,7 +1069,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_GroupKeyDescriptorReferenceType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_GroupKeyDescriptorReferenceType.description']}",
             "title": "GroupKeyDescriptorReferenceType",
             "type": "object"
         },
@@ -1080,7 +1080,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_HierarchicalCodeRefType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_HierarchicalCodeRefType.description']}",
             "title": "HierarchicalCodeRefType",
             "type": "object"
         },
@@ -1091,7 +1091,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_HierarchicalCodeReferenceType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_HierarchicalCodeReferenceType.description']}",
             "title": "HierarchicalCodeReferenceType",
             "type": "object"
         },
@@ -1102,7 +1102,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_HierarchicalCodelistRefType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_HierarchicalCodelistRefType.description']}",
             "title": "HierarchicalCodelistRefType",
             "type": "object"
         },
@@ -1113,7 +1113,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_HierarchicalCodelistReferenceType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_HierarchicalCodelistReferenceType.description']}",
             "title": "HierarchicalCodelistReferenceType",
             "type": "object"
         },
@@ -1124,7 +1124,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_HierarchyRefType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_HierarchyRefType.description']}",
             "title": "HierarchyRefType",
             "type": "object"
         },
@@ -1135,7 +1135,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_HierarchyReferenceType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_HierarchyReferenceType.description']}",
             "title": "HierarchyReferenceType",
             "type": "object"
         },
@@ -1146,7 +1146,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_IdentifiableObjectTargetRefType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_IdentifiableObjectTargetRefType.description']}",
             "title": "IdentifiableObjectTargetRefType",
             "type": "object"
         },
@@ -1157,7 +1157,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_IdentifiableObjectTargetReferenceType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_IdentifiableObjectTargetReferenceType.description']}",
             "title": "IdentifiableObjectTargetReferenceType",
             "type": "object"
         },
@@ -1168,7 +1168,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_ItemRefBaseType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_ItemRefBaseType.description']}",
             "title": "ItemRefBaseType",
             "type": "object"
         },
@@ -1179,7 +1179,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_ItemReferenceType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_ItemReferenceType.description']}",
             "title": "ItemReferenceType",
             "type": "object"
         },
@@ -1190,7 +1190,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_ItemSchemeRefBaseType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_ItemSchemeRefBaseType.description']}",
             "title": "ItemSchemeRefBaseType",
             "type": "object"
         },
@@ -1201,7 +1201,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_ItemSchemeRefType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_ItemSchemeRefType.description']}",
             "title": "ItemSchemeRefType",
             "type": "object"
         },
@@ -1212,7 +1212,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_ItemSchemeReferenceBaseType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_ItemSchemeReferenceBaseType.description']}",
             "title": "ItemSchemeReferenceBaseType",
             "type": "object"
         },
@@ -1223,7 +1223,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_ItemSchemeReferenceType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_ItemSchemeReferenceType.description']}",
             "title": "ItemSchemeReferenceType",
             "type": "object"
         },
@@ -1234,7 +1234,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_KeyDescriptorRefType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_KeyDescriptorRefType.description']}",
             "title": "KeyDescriptorRefType",
             "type": "object"
         },
@@ -1245,7 +1245,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_KeyDescriptorReferenceType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_KeyDescriptorReferenceType.description']}",
             "title": "KeyDescriptorReferenceType",
             "type": "object"
         },
@@ -1256,7 +1256,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_KeyDescriptorValuesTargetRefType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_KeyDescriptorValuesTargetRefType.description']}",
             "title": "KeyDescriptorValuesTargetRefType",
             "type": "object"
         },
@@ -1267,7 +1267,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_KeyDescriptorValuesTargetReferenceType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_KeyDescriptorValuesTargetReferenceType.description']}",
             "title": "KeyDescriptorValuesTargetReferenceType",
             "type": "object"
         },
@@ -1278,7 +1278,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_LevelRefType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_LevelRefType.description']}",
             "title": "LevelRefType",
             "type": "object"
         },
@@ -1289,7 +1289,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_LevelReferenceType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_LevelReferenceType.description']}",
             "title": "LevelReferenceType",
             "type": "object"
         },
@@ -1300,7 +1300,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_LocalAgencyRefType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_LocalAgencyRefType.description']}",
             "title": "LocalAgencyRefType",
             "type": "object"
         },
@@ -1311,7 +1311,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_LocalAgencyReferenceType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_LocalAgencyReferenceType.description']}",
             "title": "LocalAgencyReferenceType",
             "type": "object"
         },
@@ -1322,7 +1322,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_LocalCategoryRefType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_LocalCategoryRefType.description']}",
             "title": "LocalCategoryRefType",
             "type": "object"
         },
@@ -1333,7 +1333,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_LocalCategoryReferenceType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_LocalCategoryReferenceType.description']}",
             "title": "LocalCategoryReferenceType",
             "type": "object"
         },
@@ -1344,7 +1344,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_LocalCodeRefType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_LocalCodeRefType.description']}",
             "title": "LocalCodeRefType",
             "type": "object"
         },
@@ -1355,7 +1355,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_LocalCodeReferenceType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_LocalCodeReferenceType.description']}",
             "title": "LocalCodeReferenceType",
             "type": "object"
         },
@@ -1366,7 +1366,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_LocalCodelistMapRefType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_LocalCodelistMapRefType.description']}",
             "title": "LocalCodelistMapRefType",
             "type": "object"
         },
@@ -1377,7 +1377,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_LocalCodelistMapReferenceType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_LocalCodelistMapReferenceType.description']}",
             "title": "LocalCodelistMapReferenceType",
             "type": "object"
         },
@@ -1388,7 +1388,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_LocalComponentListComponentRefBaseType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_LocalComponentListComponentRefBaseType.description']}",
             "title": "LocalComponentListComponentRefBaseType",
             "type": "object"
         },
@@ -1399,7 +1399,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_LocalComponentListComponentRefType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_LocalComponentListComponentRefType.description']}",
             "title": "LocalComponentListComponentRefType",
             "type": "object"
         },
@@ -1410,7 +1410,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_LocalComponentListComponentReferenceBaseType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_LocalComponentListComponentReferenceBaseType.description']}",
             "title": "LocalComponentListComponentReferenceBaseType",
             "type": "object"
         },
@@ -1421,7 +1421,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_LocalComponentListComponentReferenceType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_LocalComponentListComponentReferenceType.description']}",
             "title": "LocalComponentListComponentReferenceType",
             "type": "object"
         },
@@ -1432,7 +1432,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_LocalComponentListRefBaseType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_LocalComponentListRefBaseType.description']}",
             "title": "LocalComponentListRefBaseType",
             "type": "object"
         },
@@ -1443,7 +1443,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_LocalComponentListReferenceType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_LocalComponentListReferenceType.description']}",
             "title": "LocalComponentListReferenceType",
             "type": "object"
         },
@@ -1454,7 +1454,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_LocalComponentRefBaseType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_LocalComponentRefBaseType.description']}",
             "title": "LocalComponentRefBaseType",
             "type": "object"
         },
@@ -1465,7 +1465,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_LocalComponentRefType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_LocalComponentRefType.description']}",
             "title": "LocalComponentRefType",
             "type": "object"
         },
@@ -1476,7 +1476,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_LocalComponentReferenceBaseType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_LocalComponentReferenceBaseType.description']}",
             "title": "LocalComponentReferenceBaseType",
             "type": "object"
         },
@@ -1487,7 +1487,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_LocalComponentReferenceType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_LocalComponentReferenceType.description']}",
             "title": "LocalComponentReferenceType",
             "type": "object"
         },
@@ -1498,7 +1498,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_LocalConceptRefType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_LocalConceptRefType.description']}",
             "title": "LocalConceptRefType",
             "type": "object"
         },
@@ -1509,7 +1509,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_LocalConceptReferenceType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_LocalConceptReferenceType.description']}",
             "title": "LocalConceptReferenceType",
             "type": "object"
         },
@@ -1520,7 +1520,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_LocalDataConsumerRefType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_LocalDataConsumerRefType.description']}",
             "title": "LocalDataConsumerRefType",
             "type": "object"
         },
@@ -1531,7 +1531,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_LocalDataConsumerReferenceType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_LocalDataConsumerReferenceType.description']}",
             "title": "LocalDataConsumerReferenceType",
             "type": "object"
         },
@@ -1542,7 +1542,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_LocalDataProviderRefType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_LocalDataProviderRefType.description']}",
             "title": "LocalDataProviderRefType",
             "type": "object"
         },
@@ -1553,7 +1553,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_LocalDataProviderReferenceType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_LocalDataProviderReferenceType.description']}",
             "title": "LocalDataProviderReferenceType",
             "type": "object"
         },
@@ -1564,7 +1564,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_LocalDataStructureComponentRefType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_LocalDataStructureComponentRefType.description']}",
             "title": "LocalDataStructureComponentRefType",
             "type": "object"
         },
@@ -1575,7 +1575,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_LocalDataStructureComponentReferenceType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_LocalDataStructureComponentReferenceType.description']}",
             "title": "LocalDataStructureComponentReferenceType",
             "type": "object"
         },
@@ -1586,7 +1586,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_LocalDimensionRefType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_LocalDimensionRefType.description']}",
             "title": "LocalDimensionRefType",
             "type": "object"
         },
@@ -1597,7 +1597,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_LocalDimensionReferenceType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_LocalDimensionReferenceType.description']}",
             "title": "LocalDimensionReferenceType",
             "type": "object"
         },
@@ -1608,7 +1608,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_LocalGroupKeyDescriptorRefType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_LocalGroupKeyDescriptorRefType.description']}",
             "title": "LocalGroupKeyDescriptorRefType",
             "type": "object"
         },
@@ -1619,7 +1619,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_LocalGroupKeyDescriptorReferenceType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_LocalGroupKeyDescriptorReferenceType.description']}",
             "title": "LocalGroupKeyDescriptorReferenceType",
             "type": "object"
         },
@@ -1630,7 +1630,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_LocalIdentifiableRefBaseType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_LocalIdentifiableRefBaseType.description']}",
             "title": "LocalIdentifiableRefBaseType",
             "type": "object"
         },
@@ -1641,7 +1641,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_LocalIdentifiableReferenceType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_LocalIdentifiableReferenceType.description']}",
             "title": "LocalIdentifiableReferenceType",
             "type": "object"
         },
@@ -1652,7 +1652,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_LocalItemRefBaseType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_LocalItemRefBaseType.description']}",
             "title": "LocalItemRefBaseType",
             "type": "object"
         },
@@ -1663,7 +1663,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_LocalItemReferenceType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_LocalItemReferenceType.description']}",
             "title": "LocalItemReferenceType",
             "type": "object"
         },
@@ -1674,7 +1674,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_LocalLevelRefType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_LocalLevelRefType.description']}",
             "title": "LocalLevelRefType",
             "type": "object"
         },
@@ -1685,7 +1685,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_LocalLevelReferenceType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_LocalLevelReferenceType.description']}",
             "title": "LocalLevelReferenceType",
             "type": "object"
         },
@@ -1696,7 +1696,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_LocalMetadataStructureComponentRefType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_LocalMetadataStructureComponentRefType.description']}",
             "title": "LocalMetadataStructureComponentRefType",
             "type": "object"
         },
@@ -1707,7 +1707,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_LocalMetadataStructureComponentReferenceType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_LocalMetadataStructureComponentReferenceType.description']}",
             "title": "LocalMetadataStructureComponentReferenceType",
             "type": "object"
         },
@@ -1718,7 +1718,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_LocalMetadataTargetRefType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_LocalMetadataTargetRefType.description']}",
             "title": "LocalMetadataTargetRefType",
             "type": "object"
         },
@@ -1729,7 +1729,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_LocalMetadataTargetReferenceType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_LocalMetadataTargetReferenceType.description']}",
             "title": "LocalMetadataTargetReferenceType",
             "type": "object"
         },
@@ -1740,7 +1740,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_LocalOrganisationRefBaseType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_LocalOrganisationRefBaseType.description']}",
             "title": "LocalOrganisationRefBaseType",
             "type": "object"
         },
@@ -1751,7 +1751,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_LocalOrganisationRefType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_LocalOrganisationRefType.description']}",
             "title": "LocalOrganisationRefType",
             "type": "object"
         },
@@ -1762,7 +1762,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_LocalOrganisationReferenceBaseType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_LocalOrganisationReferenceBaseType.description']}",
             "title": "LocalOrganisationReferenceBaseType",
             "type": "object"
         },
@@ -1773,7 +1773,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_LocalOrganisationReferenceType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_LocalOrganisationReferenceType.description']}",
             "title": "LocalOrganisationReferenceType",
             "type": "object"
         },
@@ -1784,7 +1784,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_LocalOrganisationUnitRefType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_LocalOrganisationUnitRefType.description']}",
             "title": "LocalOrganisationUnitRefType",
             "type": "object"
         },
@@ -1795,7 +1795,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_LocalOrganisationUnitReferenceType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_LocalOrganisationUnitReferenceType.description']}",
             "title": "LocalOrganisationUnitReferenceType",
             "type": "object"
         },
@@ -1806,7 +1806,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_LocalPrimaryMeasureRefType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_LocalPrimaryMeasureRefType.description']}",
             "title": "LocalPrimaryMeasureRefType",
             "type": "object"
         },
@@ -1817,7 +1817,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_LocalPrimaryMeasureReferenceType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_LocalPrimaryMeasureReferenceType.description']}",
             "title": "LocalPrimaryMeasureReferenceType",
             "type": "object"
         },
@@ -1828,7 +1828,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_LocalProcessStepRefType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_LocalProcessStepRefType.description']}",
             "title": "LocalProcessStepRefType",
             "type": "object"
         },
@@ -1839,7 +1839,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_LocalProcessStepReferenceType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_LocalProcessStepReferenceType.description']}",
             "title": "LocalProcessStepReferenceType",
             "type": "object"
         },
@@ -1850,7 +1850,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_LocalReportStructureRefType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_LocalReportStructureRefType.description']}",
             "title": "LocalReportStructureRefType",
             "type": "object"
         },
@@ -1861,7 +1861,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_LocalReportStructureReferenceType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_LocalReportStructureReferenceType.description']}",
             "title": "LocalReportStructureReferenceType",
             "type": "object"
         },
@@ -1872,7 +1872,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_LocalReportingCategoryRefType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_LocalReportingCategoryRefType.description']}",
             "title": "LocalReportingCategoryRefType",
             "type": "object"
         },
@@ -1883,7 +1883,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_LocalReportingCategoryReferenceType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_LocalReportingCategoryReferenceType.description']}",
             "title": "LocalReportingCategoryReferenceType",
             "type": "object"
         },
@@ -1894,7 +1894,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_LocalTargetObjectRefType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_LocalTargetObjectRefType.description']}",
             "title": "LocalTargetObjectRefType",
             "type": "object"
         },
@@ -1905,7 +1905,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_LocalTargetObjectReferenceType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_LocalTargetObjectReferenceType.description']}",
             "title": "LocalTargetObjectReferenceType",
             "type": "object"
         },
@@ -1916,7 +1916,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_MaintainableRefBaseType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_MaintainableRefBaseType.description']}",
             "title": "MaintainableRefBaseType",
             "type": "object"
         },
@@ -1927,7 +1927,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_MaintainableRefType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_MaintainableRefType.description']}",
             "title": "MaintainableRefType",
             "type": "object"
         },
@@ -1938,7 +1938,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_MaintainableReferenceBaseType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_MaintainableReferenceBaseType.description']}",
             "title": "MaintainableReferenceBaseType",
             "type": "object"
         },
@@ -1949,7 +1949,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_MaintainableReferenceType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_MaintainableReferenceType.description']}",
             "title": "MaintainableReferenceType",
             "type": "object"
         },
@@ -1960,7 +1960,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_MeasureDescriptorRefType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_MeasureDescriptorRefType.description']}",
             "title": "MeasureDescriptorRefType",
             "type": "object"
         },
@@ -1971,7 +1971,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_MeasureDescriptorReferenceType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_MeasureDescriptorReferenceType.description']}",
             "title": "MeasureDescriptorReferenceType",
             "type": "object"
         },
@@ -1982,7 +1982,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_MeasureDimensionRefType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_MeasureDimensionRefType.description']}",
             "title": "MeasureDimensionRefType",
             "type": "object"
         },
@@ -1993,7 +1993,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_MeasureDimensionReferenceType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_MeasureDimensionReferenceType.description']}",
             "title": "MeasureDimensionReferenceType",
             "type": "object"
         },
@@ -2004,7 +2004,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_MetadataAttributeRefType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_MetadataAttributeRefType.description']}",
             "title": "MetadataAttributeRefType",
             "type": "object"
         },
@@ -2015,7 +2015,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_MetadataAttributeReferenceType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_MetadataAttributeReferenceType.description']}",
             "title": "MetadataAttributeReferenceType",
             "type": "object"
         },
@@ -2026,7 +2026,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_MetadataAttributeValueSetType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_MetadataAttributeValueSetType.description']}",
             "title": "MetadataAttributeValueSetType",
             "type": "object"
         },
@@ -2037,7 +2037,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_MetadataKeyType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_MetadataKeyType.description']}",
             "title": "MetadataKeyType",
             "type": "object"
         },
@@ -2048,7 +2048,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_MetadataKeyValueType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_MetadataKeyValueType.description']}",
             "title": "MetadataKeyValueType",
             "type": "object"
         },
@@ -2059,7 +2059,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_MetadataStructureRefType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_MetadataStructureRefType.description']}",
             "title": "MetadataStructureRefType",
             "type": "object"
         },
@@ -2070,7 +2070,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_MetadataStructureReferenceType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_MetadataStructureReferenceType.description']}",
             "title": "MetadataStructureReferenceType",
             "type": "object"
         },
@@ -2081,7 +2081,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_MetadataTargetRefType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_MetadataTargetRefType.description']}",
             "title": "MetadataTargetRefType",
             "type": "object"
         },
@@ -2092,7 +2092,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_MetadataTargetReferenceType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_MetadataTargetReferenceType.description']}",
             "title": "MetadataTargetReferenceType",
             "type": "object"
         },
@@ -2103,7 +2103,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_MetadataTargetRegionKeyType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_MetadataTargetRegionKeyType.description']}",
             "title": "MetadataTargetRegionKeyType",
             "type": "object"
         },
@@ -2114,7 +2114,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_MetadataTargetRegionType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_MetadataTargetRegionType.description']}",
             "title": "MetadataTargetRegionType",
             "type": "object"
         },
@@ -2125,7 +2125,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_MetadataflowRefType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_MetadataflowRefType.description']}",
             "title": "MetadataflowRefType",
             "type": "object"
         },
@@ -2136,7 +2136,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_MetadataflowReferenceType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_MetadataflowReferenceType.description']}",
             "title": "MetadataflowReferenceType",
             "type": "object"
         },
@@ -2147,7 +2147,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_ObjectRefType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_ObjectRefType.description']}",
             "title": "ObjectRefType",
             "type": "object"
         },
@@ -2158,12 +2158,12 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_ObjectReferenceType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_ObjectReferenceType.description']}",
             "title": "ObjectReferenceType",
             "type": "object"
         },
         "xml_ns4_ObjectTypeCodelistType": {
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_ObjectTypeCodelistType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_ObjectTypeCodelistType.description']}",
             "enum": [
                 "Any",
                 "Agency",
@@ -2244,7 +2244,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_OrganisationRefBaseType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_OrganisationRefBaseType.description']}",
             "title": "OrganisationRefBaseType",
             "type": "object"
         },
@@ -2255,7 +2255,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_OrganisationRefType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_OrganisationRefType.description']}",
             "title": "OrganisationRefType",
             "type": "object"
         },
@@ -2266,7 +2266,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_OrganisationReferenceBaseType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_OrganisationReferenceBaseType.description']}",
             "title": "OrganisationReferenceBaseType",
             "type": "object"
         },
@@ -2277,7 +2277,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_OrganisationReferenceType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_OrganisationReferenceType.description']}",
             "title": "OrganisationReferenceType",
             "type": "object"
         },
@@ -2288,7 +2288,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_OrganisationSchemeMapRefType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_OrganisationSchemeMapRefType.description']}",
             "title": "OrganisationSchemeMapRefType",
             "type": "object"
         },
@@ -2299,7 +2299,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_OrganisationSchemeMapReferenceType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_OrganisationSchemeMapReferenceType.description']}",
             "title": "OrganisationSchemeMapReferenceType",
             "type": "object"
         },
@@ -2310,7 +2310,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_OrganisationSchemeRefBaseType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_OrganisationSchemeRefBaseType.description']}",
             "title": "OrganisationSchemeRefBaseType",
             "type": "object"
         },
@@ -2321,7 +2321,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_OrganisationSchemeRefType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_OrganisationSchemeRefType.description']}",
             "title": "OrganisationSchemeRefType",
             "type": "object"
         },
@@ -2332,7 +2332,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_OrganisationSchemeReferenceBaseType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_OrganisationSchemeReferenceBaseType.description']}",
             "title": "OrganisationSchemeReferenceBaseType",
             "type": "object"
         },
@@ -2343,7 +2343,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_OrganisationSchemeReferenceType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_OrganisationSchemeReferenceType.description']}",
             "title": "OrganisationSchemeReferenceType",
             "type": "object"
         },
@@ -2354,7 +2354,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_OrganisationUnitRefType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_OrganisationUnitRefType.description']}",
             "title": "OrganisationUnitRefType",
             "type": "object"
         },
@@ -2365,7 +2365,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_OrganisationUnitReferenceType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_OrganisationUnitReferenceType.description']}",
             "title": "OrganisationUnitReferenceType",
             "type": "object"
         },
@@ -2376,7 +2376,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_OrganisationUnitSchemeRefType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_OrganisationUnitSchemeRefType.description']}",
             "title": "OrganisationUnitSchemeRefType",
             "type": "object"
         },
@@ -2387,12 +2387,12 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_OrganisationUnitSchemeReferenceType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_OrganisationUnitSchemeReferenceType.description']}",
             "title": "OrganisationUnitSchemeReferenceType",
             "type": "object"
         },
         "xml_ns4_PackageTypeCodelistType": {
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_PackageTypeCodelistType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_PackageTypeCodelistType.description']}",
             "enum": [
                 "base",
                 "datastructure",
@@ -2413,27 +2413,27 @@
                     "properties": {
                         "ProvisionAgrement": {
                             "$ref": "#/definitions/xml_ns4_ProvisionAgreementReferenceType",
-                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_PayloadStructureType.properties.ProvisionAgrement.description" bundle="${i18n}"/>",
+                            "description": "${msg['api.doc.swagger.definitions.xml_ns4_PayloadStructureType.properties.ProvisionAgrement.description']}",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common"
                             }
                         },
                         "Structure": {
                             "$ref": "#/definitions/xml_ns4_StructureReferenceBaseType",
-                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_PayloadStructureType.properties.Structure.description" bundle="${i18n}"/>",
+                            "description": "${msg['api.doc.swagger.definitions.xml_ns4_PayloadStructureType.properties.Structure.description']}",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common"
                             }
                         },
                         "StructureUsage": {
                             "$ref": "#/definitions/xml_ns4_StructureUsageReferenceBaseType",
-                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_PayloadStructureType.properties.StructureUsage.description" bundle="${i18n}"/>",
+                            "description": "${msg['api.doc.swagger.definitions.xml_ns4_PayloadStructureType.properties.StructureUsage.description']}",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common"
                             }
                         },
                         "dimensionAtObservation": {
-                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_PayloadStructureType.properties.dimensionAtObservation.description" bundle="${i18n}"/>",
+                            "description": "${msg['api.doc.swagger.definitions.xml_ns4_PayloadStructureType.properties.dimensionAtObservation.description']}",
                             "type": "string",
                             "xml": {
                                 "attribute": true,
@@ -2441,7 +2441,7 @@
                             }
                         },
                         "explicitMeasures": {
-                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_PayloadStructureType.properties.explicitMeasures.description" bundle="${i18n}"/>",
+                            "description": "${msg['api.doc.swagger.definitions.xml_ns4_PayloadStructureType.properties.explicitMeasures.description']}",
                             "type": "boolean",
                             "xml": {
                                 "attribute": true,
@@ -2449,7 +2449,7 @@
                             }
                         },
                         "namespace": {
-                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_PayloadStructureType.properties.namespace.description" bundle="${i18n}"/>",
+                            "description": "${msg['api.doc.swagger.definitions.xml_ns4_PayloadStructureType.properties.namespace.description']}",
                             "type": "string",
                             "xml": {
                                 "attribute": true,
@@ -2457,7 +2457,7 @@
                             }
                         },
                         "schemaURL": {
-                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_PayloadStructureType.properties.schemaURL.description" bundle="${i18n}"/>",
+                            "description": "${msg['api.doc.swagger.definitions.xml_ns4_PayloadStructureType.properties.schemaURL.description']}",
                             "type": "string",
                             "xml": {
                                 "attribute": true,
@@ -2465,7 +2465,7 @@
                             }
                         },
                         "serviceURL": {
-                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_PayloadStructureType.properties.serviceURL.description" bundle="${i18n}"/>",
+                            "description": "${msg['api.doc.swagger.definitions.xml_ns4_PayloadStructureType.properties.serviceURL.description']}",
                             "type": "string",
                             "xml": {
                                 "attribute": true,
@@ -2473,7 +2473,7 @@
                             }
                         },
                         "structureID": {
-                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_PayloadStructureType.properties.structureID.description" bundle="${i18n}"/>",
+                            "description": "${msg['api.doc.swagger.definitions.xml_ns4_PayloadStructureType.properties.structureID.description']}",
                             "type": "string",
                             "xml": {
                                 "attribute": true,
@@ -2481,7 +2481,7 @@
                             }
                         },
                         "structureURL": {
-                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_PayloadStructureType.properties.structureURL.description" bundle="${i18n}"/>",
+                            "description": "${msg['api.doc.swagger.definitions.xml_ns4_PayloadStructureType.properties.structureURL.description']}",
                             "type": "string",
                             "xml": {
                                 "attribute": true,
@@ -2491,7 +2491,7 @@
                     }
                 }
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_PayloadStructureType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_PayloadStructureType.description']}",
             "required": [
                 "structureID"
             ],
@@ -2505,7 +2505,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_PrimaryMeasureRefType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_PrimaryMeasureRefType.description']}",
             "title": "PrimaryMeasureRefType",
             "type": "object"
         },
@@ -2516,7 +2516,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_PrimaryMeasureReferenceType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_PrimaryMeasureReferenceType.description']}",
             "title": "PrimaryMeasureReferenceType",
             "type": "object"
         },
@@ -2527,7 +2527,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_ProcessRefType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_ProcessRefType.description']}",
             "title": "ProcessRefType",
             "type": "object"
         },
@@ -2538,7 +2538,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_ProcessReferenceType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_ProcessReferenceType.description']}",
             "title": "ProcessReferenceType",
             "type": "object"
         },
@@ -2549,7 +2549,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_ProcessStepRefType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_ProcessStepRefType.description']}",
             "title": "ProcessStepRefType",
             "type": "object"
         },
@@ -2560,7 +2560,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_ProcessStepReferenceType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_ProcessStepReferenceType.description']}",
             "title": "ProcessStepReferenceType",
             "type": "object"
         },
@@ -2571,7 +2571,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_ProvisionAgreementRefType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_ProvisionAgreementRefType.description']}",
             "title": "ProvisionAgreementRefType",
             "type": "object"
         },
@@ -2582,7 +2582,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_ProvisionAgreementReferenceType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_ProvisionAgreementReferenceType.description']}",
             "title": "ProvisionAgreementReferenceType",
             "type": "object"
         },
@@ -2591,28 +2591,28 @@
                 {
                     "properties": {
                         "DataURL": {
-                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_QueryableDataSourceType.properties.DataURL.description" bundle="${i18n}"/>",
+                            "description": "${msg['api.doc.swagger.definitions.xml_ns4_QueryableDataSourceType.properties.DataURL.description']}",
                             "type": "string",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common"
                             }
                         },
                         "WADLURL": {
-                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_QueryableDataSourceType.properties.WADLURL.description" bundle="${i18n}"/>",
+                            "description": "${msg['api.doc.swagger.definitions.xml_ns4_QueryableDataSourceType.properties.WADLURL.description']}",
                             "type": "string",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common"
                             }
                         },
                         "WSDLURL": {
-                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_QueryableDataSourceType.properties.WSDLURL.description" bundle="${i18n}"/>",
+                            "description": "${msg['api.doc.swagger.definitions.xml_ns4_QueryableDataSourceType.properties.WSDLURL.description']}",
                             "type": "string",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common"
                             }
                         },
                         "isRESTDatasource": {
-                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_QueryableDataSourceType.properties.isRESTDatasource.description" bundle="${i18n}"/>",
+                            "description": "${msg['api.doc.swagger.definitions.xml_ns4_QueryableDataSourceType.properties.isRESTDatasource.description']}",
                             "type": "boolean",
                             "xml": {
                                 "attribute": true,
@@ -2620,7 +2620,7 @@
                             }
                         },
                         "isWebServiceDatasource": {
-                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_QueryableDataSourceType.properties.isWebServiceDatasource.description" bundle="${i18n}"/>",
+                            "description": "${msg['api.doc.swagger.definitions.xml_ns4_QueryableDataSourceType.properties.isWebServiceDatasource.description']}",
                             "type": "boolean",
                             "xml": {
                                 "attribute": true,
@@ -2630,7 +2630,7 @@
                     }
                 }
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_QueryableDataSourceType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_QueryableDataSourceType.description']}",
             "required": [
                 "isRESTDatasource",
                 "isWebServiceDatasource",
@@ -2644,7 +2644,7 @@
                 {
                     "properties": {
                         "agencyID": {
-                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_RefBaseType.properties.agencyID.description" bundle="${i18n}"/>",
+                            "description": "${msg['api.doc.swagger.definitions.xml_ns4_RefBaseType.properties.agencyID.description']}",
                             "type": "string",
                             "xml": {
                                 "attribute": true,
@@ -2653,14 +2653,14 @@
                         },
                         "class": {
                             "$ref": "#/definitions/xml_ns4_ObjectTypeCodelistType",
-                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_RefBaseType.properties.class.description" bundle="${i18n}"/>",
+                            "description": "${msg['api.doc.swagger.definitions.xml_ns4_RefBaseType.properties.class.description']}",
                             "xml": {
                                 "attribute": true,
                                 "namespace": ""
                             }
                         },
                         "containerID": {
-                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_RefBaseType.properties.containerID.description" bundle="${i18n}"/>",
+                            "description": "${msg['api.doc.swagger.definitions.xml_ns4_RefBaseType.properties.containerID.description']}",
                             "type": "string",
                             "xml": {
                                 "attribute": true,
@@ -2668,7 +2668,7 @@
                             }
                         },
                         "id": {
-                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_RefBaseType.properties.id.description" bundle="${i18n}"/>",
+                            "description": "${msg['api.doc.swagger.definitions.xml_ns4_RefBaseType.properties.id.description']}",
                             "type": "string",
                             "xml": {
                                 "attribute": true,
@@ -2676,7 +2676,7 @@
                             }
                         },
                         "local": {
-                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_RefBaseType.properties.local.description" bundle="${i18n}"/>",
+                            "description": "${msg['api.doc.swagger.definitions.xml_ns4_RefBaseType.properties.local.description']}",
                             "type": "boolean",
                             "xml": {
                                 "attribute": true,
@@ -2684,7 +2684,7 @@
                             }
                         },
                         "maintainableParentID": {
-                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_RefBaseType.properties.maintainableParentID.description" bundle="${i18n}"/>",
+                            "description": "${msg['api.doc.swagger.definitions.xml_ns4_RefBaseType.properties.maintainableParentID.description']}",
                             "type": "string",
                             "xml": {
                                 "attribute": true,
@@ -2692,7 +2692,7 @@
                             }
                         },
                         "maintainableParentVersion": {
-                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_RefBaseType.properties.maintainableParentVersion.description" bundle="${i18n}"/>",
+                            "description": "${msg['api.doc.swagger.definitions.xml_ns4_RefBaseType.properties.maintainableParentVersion.description']}",
                             "type": "string",
                             "xml": {
                                 "attribute": true,
@@ -2701,14 +2701,14 @@
                         },
                         "package": {
                             "$ref": "#/definitions/xml_ns4_PackageTypeCodelistType",
-                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_RefBaseType.properties.package.description" bundle="${i18n}"/>",
+                            "description": "${msg['api.doc.swagger.definitions.xml_ns4_RefBaseType.properties.package.description']}",
                             "xml": {
                                 "attribute": true,
                                 "namespace": ""
                             }
                         },
                         "version": {
-                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_RefBaseType.properties.version.description" bundle="${i18n}"/>",
+                            "description": "${msg['api.doc.swagger.definitions.xml_ns4_RefBaseType.properties.version.description']}",
                             "type": "string",
                             "xml": {
                                 "attribute": true,
@@ -2718,7 +2718,7 @@
                     }
                 }
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_RefBaseType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_RefBaseType.description']}",
             "required": [
                 "id"
             ],
@@ -2730,7 +2730,7 @@
                 {
                     "properties": {
                         "endTime": {
-                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_ReferencePeriodType.properties.endTime.description" bundle="${i18n}"/>",
+                            "description": "${msg['api.doc.swagger.definitions.xml_ns4_ReferencePeriodType.properties.endTime.description']}",
                             "type": "string",
                             "xml": {
                                 "attribute": true,
@@ -2738,7 +2738,7 @@
                             }
                         },
                         "startTime": {
-                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_ReferencePeriodType.properties.startTime.description" bundle="${i18n}"/>",
+                            "description": "${msg['api.doc.swagger.definitions.xml_ns4_ReferencePeriodType.properties.startTime.description']}",
                             "type": "string",
                             "xml": {
                                 "attribute": true,
@@ -2748,7 +2748,7 @@
                     }
                 }
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_ReferencePeriodType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_ReferencePeriodType.description']}",
             "required": [
                 "endTime",
                 "startTime"
@@ -2762,13 +2762,13 @@
                     "properties": {
                         "Ref": {
                             "$ref": "#/definitions/xml_ns4_RefBaseType",
-                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_ReferenceType.properties.Ref.description" bundle="${i18n}"/>",
+                            "description": "${msg['api.doc.swagger.definitions.xml_ns4_ReferenceType.properties.Ref.description']}",
                             "xml": {
                                 "namespace": ""
                             }
                         },
                         "URN": {
-                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_ReferenceType.properties.URN.description" bundle="${i18n}"/>",
+                            "description": "${msg['api.doc.swagger.definitions.xml_ns4_ReferenceType.properties.URN.description']}",
                             "type": "string",
                             "xml": {
                                 "namespace": ""
@@ -2777,7 +2777,7 @@
                     }
                 }
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_ReferenceType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_ReferenceType.description']}",
             "title": "ReferenceType",
             "type": "object"
         },
@@ -2787,20 +2787,20 @@
                     "properties": {
                         "Attribute": {
                             "$ref": "#/definitions/xml_ns4_ComponentValueSetType",
-                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_RegionType.properties.Attribute.description" bundle="${i18n}"/>",
+                            "description": "${msg['api.doc.swagger.definitions.xml_ns4_RegionType.properties.Attribute.description']}",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common"
                             }
                         },
                         "KeyValue": {
                             "$ref": "#/definitions/xml_ns4_ComponentValueSetType",
-                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_RegionType.properties.KeyValue.description" bundle="${i18n}"/>",
+                            "description": "${msg['api.doc.swagger.definitions.xml_ns4_RegionType.properties.KeyValue.description']}",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common"
                             }
                         },
                         "include": {
-                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_RegionType.properties.include.description" bundle="${i18n}"/>",
+                            "description": "${msg['api.doc.swagger.definitions.xml_ns4_RegionType.properties.include.description']}",
                             "type": "boolean",
                             "xml": {
                                 "attribute": true,
@@ -2810,7 +2810,7 @@
                     }
                 }
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_RegionType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_RegionType.description']}",
             "title": "RegionType",
             "type": "object"
         },
@@ -2821,7 +2821,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_ReportCategoryRefType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_ReportCategoryRefType.description']}",
             "title": "ReportCategoryRefType",
             "type": "object"
         },
@@ -2832,7 +2832,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_ReportPeriodTargetRefType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_ReportPeriodTargetRefType.description']}",
             "title": "ReportPeriodTargetRefType",
             "type": "object"
         },
@@ -2843,7 +2843,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_ReportPeriodTargetReferenceType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_ReportPeriodTargetReferenceType.description']}",
             "title": "ReportPeriodTargetReferenceType",
             "type": "object"
         },
@@ -2854,7 +2854,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_ReportStructureRefType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_ReportStructureRefType.description']}",
             "title": "ReportStructureRefType",
             "type": "object"
         },
@@ -2865,7 +2865,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_ReportStructureReferenceType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_ReportStructureReferenceType.description']}",
             "title": "ReportStructureReferenceType",
             "type": "object"
         },
@@ -2876,7 +2876,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_ReportingCategoryReferenceType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_ReportingCategoryReferenceType.description']}",
             "title": "ReportingCategoryReferenceType",
             "type": "object"
         },
@@ -2887,7 +2887,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_ReportingTaxonomyRefType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_ReportingTaxonomyRefType.description']}",
             "title": "ReportingTaxonomyRefType",
             "type": "object"
         },
@@ -2898,7 +2898,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_ReportingTaxonomyReferenceType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_ReportingTaxonomyReferenceType.description']}",
             "title": "ReportingTaxonomyReferenceType",
             "type": "object"
         },
@@ -2908,13 +2908,13 @@
                     "properties": {
                         "DataProvider": {
                             "$ref": "#/definitions/xml_ns4_DataProviderReferenceType",
-                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_SetReferenceType.properties.DataProvider.description" bundle="${i18n}"/>",
+                            "description": "${msg['api.doc.swagger.definitions.xml_ns4_SetReferenceType.properties.DataProvider.description']}",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common"
                             }
                         },
                         "ID": {
-                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_SetReferenceType.properties.ID.description" bundle="${i18n}"/>",
+                            "description": "${msg['api.doc.swagger.definitions.xml_ns4_SetReferenceType.properties.ID.description']}",
                             "type": "string",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common"
@@ -2923,7 +2923,7 @@
                     }
                 }
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_SetReferenceType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_SetReferenceType.description']}",
             "required": [
                 "DataProvider",
                 "ID"
@@ -2938,7 +2938,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_SimpleKeyValueType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_SimpleKeyValueType.description']}",
             "title": "SimpleKeyValueType",
             "type": "object"
         },
@@ -2947,14 +2947,14 @@
                 {
                     "properties": {
                         "(value)": {
-                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_SimpleValueType.properties.value.description" bundle="${i18n}"/>",
+                            "description": "${msg['api.doc.swagger.definitions.xml_ns4_SimpleValueType.properties.value.description']}",
                             "type": "string",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common"
                             }
                         },
                         "cascadeValues": {
-                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_SimpleValueType.properties.cascadeValues.description" bundle="${i18n}"/>",
+                            "description": "${msg['api.doc.swagger.definitions.xml_ns4_SimpleValueType.properties.cascadeValues.description']}",
                             "type": "boolean",
                             "xml": {
                                 "attribute": true,
@@ -2964,7 +2964,7 @@
                     }
                 }
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_SimpleValueType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_SimpleValueType.description']}",
             "required": [
                 "(value)"
             ],
@@ -2978,7 +2978,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_StructureMapRefType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_StructureMapRefType.description']}",
             "title": "StructureMapRefType",
             "type": "object"
         },
@@ -2989,7 +2989,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_StructureMapReferenceType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_StructureMapReferenceType.description']}",
             "title": "StructureMapReferenceType",
             "type": "object"
         },
@@ -3000,7 +3000,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_StructureOrUsageRefBaseType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_StructureOrUsageRefBaseType.description']}",
             "title": "StructureOrUsageRefBaseType",
             "type": "object"
         },
@@ -3011,7 +3011,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_StructureOrUsageRefType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_StructureOrUsageRefType.description']}",
             "title": "StructureOrUsageRefType",
             "type": "object"
         },
@@ -3022,7 +3022,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_StructureOrUsageReferenceType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_StructureOrUsageReferenceType.description']}",
             "title": "StructureOrUsageReferenceType",
             "type": "object"
         },
@@ -3033,7 +3033,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_StructureRefBaseType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_StructureRefBaseType.description']}",
             "title": "StructureRefBaseType",
             "type": "object"
         },
@@ -3044,7 +3044,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_StructureRefType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_StructureRefType.description']}",
             "title": "StructureRefType",
             "type": "object"
         },
@@ -3055,7 +3055,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_StructureReferenceBaseType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_StructureReferenceBaseType.description']}",
             "title": "StructureReferenceBaseType",
             "type": "object"
         },
@@ -3066,7 +3066,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_StructureReferenceType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_StructureReferenceType.description']}",
             "title": "StructureReferenceType",
             "type": "object"
         },
@@ -3077,7 +3077,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_StructureSetRefType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_StructureSetRefType.description']}",
             "title": "StructureSetRefType",
             "type": "object"
         },
@@ -3088,7 +3088,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_StructureSetReferenceType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_StructureSetReferenceType.description']}",
             "title": "StructureSetReferenceType",
             "type": "object"
         },
@@ -3099,7 +3099,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_StructureUsageRefBaseType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_StructureUsageRefBaseType.description']}",
             "title": "StructureUsageRefBaseType",
             "type": "object"
         },
@@ -3110,7 +3110,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_StructureUsageRefType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_StructureUsageRefType.description']}",
             "title": "StructureUsageRefType",
             "type": "object"
         },
@@ -3121,7 +3121,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_StructureUsageReferenceBaseType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_StructureUsageReferenceBaseType.description']}",
             "title": "StructureUsageReferenceBaseType",
             "type": "object"
         },
@@ -3132,7 +3132,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_StructureUsageReferenceType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_StructureUsageReferenceType.description']}",
             "title": "StructureUsageReferenceType",
             "type": "object"
         },
@@ -3141,14 +3141,14 @@
                 {
                     "properties": {
                         "(value)": {
-                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_TextType.properties.value.description" bundle="${i18n}"/>",
+                            "description": "${msg['api.doc.swagger.definitions.xml_ns4_TextType.properties.value.description']}",
                             "type": "string",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common"
                             }
                         },
                         "lang": {
-                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_TextType.properties.lang.description" bundle="${i18n}"/>",
+                            "description": "${msg['api.doc.swagger.definitions.xml_ns4_TextType.properties.lang.description']}",
                             "type": "string",
                             "xml": {
                                 "attribute": true,
@@ -3158,7 +3158,7 @@
                     }
                 }
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_TextType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_TextType.description']}",
             "required": [
                 "(value)"
             ],
@@ -3172,7 +3172,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_TimeDimensionRefType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_TimeDimensionRefType.description']}",
             "title": "TimeDimensionRefType",
             "type": "object"
         },
@@ -3183,7 +3183,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_TimeDimensionReferenceType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_TimeDimensionReferenceType.description']}",
             "title": "TimeDimensionReferenceType",
             "type": "object"
         },
@@ -3192,14 +3192,14 @@
                 {
                     "properties": {
                         "(value)": {
-                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_TimePeriodRangeType.properties.value.description" bundle="${i18n}"/>",
+                            "description": "${msg['api.doc.swagger.definitions.xml_ns4_TimePeriodRangeType.properties.value.description']}",
                             "type": "string",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common"
                             }
                         },
                         "isInclusive": {
-                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_TimePeriodRangeType.properties.isInclusive.description" bundle="${i18n}"/>",
+                            "description": "${msg['api.doc.swagger.definitions.xml_ns4_TimePeriodRangeType.properties.isInclusive.description']}",
                             "type": "boolean",
                             "xml": {
                                 "attribute": true,
@@ -3209,7 +3209,7 @@
                     }
                 }
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_TimePeriodRangeType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_TimePeriodRangeType.description']}",
             "required": [
                 "(value)"
             ],
@@ -3222,28 +3222,28 @@
                     "properties": {
                         "AfterPeriod": {
                             "$ref": "#/definitions/xml_ns4_TimePeriodRangeType",
-                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_TimeRangeValueType.properties.AfterPeriod.description" bundle="${i18n}"/>",
+                            "description": "${msg['api.doc.swagger.definitions.xml_ns4_TimeRangeValueType.properties.AfterPeriod.description']}",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common"
                             }
                         },
                         "BeforePeriod": {
                             "$ref": "#/definitions/xml_ns4_TimePeriodRangeType",
-                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_TimeRangeValueType.properties.BeforePeriod.description" bundle="${i18n}"/>",
+                            "description": "${msg['api.doc.swagger.definitions.xml_ns4_TimeRangeValueType.properties.BeforePeriod.description']}",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common"
                             }
                         },
                         "EndPeriod": {
                             "$ref": "#/definitions/xml_ns4_TimePeriodRangeType",
-                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_TimeRangeValueType.properties.EndPeriod.description" bundle="${i18n}"/>",
+                            "description": "${msg['api.doc.swagger.definitions.xml_ns4_TimeRangeValueType.properties.EndPeriod.description']}",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common"
                             }
                         },
                         "StartPeriod": {
                             "$ref": "#/definitions/xml_ns4_TimePeriodRangeType",
-                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_TimeRangeValueType.properties.StartPeriod.description" bundle="${i18n}"/>",
+                            "description": "${msg['api.doc.swagger.definitions.xml_ns4_TimeRangeValueType.properties.StartPeriod.description']}",
                             "xml": {
                                 "namespace": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common"
                             }
@@ -3251,7 +3251,7 @@
                     }
                 }
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_TimeRangeValueType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_TimeRangeValueType.description']}",
             "title": "TimeRangeValueType",
             "type": "object"
         },
@@ -3262,7 +3262,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_TransitionRefType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_TransitionRefType.description']}",
             "title": "TransitionRefType",
             "type": "object"
         },
@@ -3273,7 +3273,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_TransitionReferenceType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_TransitionReferenceType.description']}",
             "title": "TransitionReferenceType",
             "type": "object"
         },
@@ -3284,7 +3284,7 @@
                 },
                 {}
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_URNReferenceType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_URNReferenceType.description']}",
             "title": "URNReferenceType",
             "type": "object"
         },
@@ -3293,7 +3293,7 @@
                 {
                     "properties": {
                         "lang": {
-                            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_XHTMLType.properties.lang.description" bundle="${i18n}"/>",
+                            "description": "${msg['api.doc.swagger.definitions.xml_ns4_XHTMLType.properties.lang.description']}",
                             "type": "string",
                             "xml": {
                                 "attribute": true,
@@ -3303,7 +3303,7 @@
                     }
                 }
             ],
-            "description": "<fmt:message key="api.doc.swagger.definitions.xml_ns4_XHTMLType.description" bundle="${i18n}"/>",
+            "description": "${msg['api.doc.swagger.definitions.xml_ns4_XHTMLType.description']}",
             "title": "XHTMLType",
             "type": "object"
         }
