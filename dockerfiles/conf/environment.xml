@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+  <comment>Metamac environment definition</comment>
+
+  <!-- Propiedades de configuración en base de datos (POSTGRESQL) -->
+  <entry key="environment.metamac.configuration.db.username">FILL_ME_WITH_USERNAME</entry>
+  <entry key="environment.metamac.configuration.db.password">FILL_ME_WITH_PASSWORD</entry>
+  <entry key="environment.metamac.configuration.db.url">jdbc:postgresql://FILL_ME_WITH_HOST:FILL_ME_WITH_PORT/FILL_ME_WITH_POSTGRESQL_SID</entry>
+  <entry key="environment.metamac.configuration.db.driver_name">org.postgresql.Driver</entry>
+  
+</properties>

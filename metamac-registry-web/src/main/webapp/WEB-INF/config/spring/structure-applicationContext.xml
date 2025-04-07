@@ -15,7 +15,7 @@
     <!-- METAMAC environment configuration -->
     <bean id="configurationService" class="org.siemac.metamac.core.common.conf.ConfigurationServiceImpl">
         <property name="systemConfigurationFile">
-            <value>classpath:metamac/environment.xml</value>
+            <value>${SDMX_REGISTRYCONF_PATH:classpath:metamac/environment.xml}</value>
         </property>
     </bean>
 
@@ -25,8 +25,6 @@
         </property>
     </bean>
 
-    <!-- Core -->
-    <import resource="classpath:/spring/sdmx-srm/applicationContext.xml" />
-    <!-- Rest. SDMX API is not yet published in this war -->
-    <import resource="classpath:/spring/sdmx-srm-rest-external/applicationContext.xml" />
+    <bean id="contextApplicationContextProvider"
+          class="org.siemac.metamac.core.common.util.ApplicationContextProvider"/>
 </beans>
