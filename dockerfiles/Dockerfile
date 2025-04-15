@@ -30,6 +30,7 @@ COPY metamac-registry-web/target/*.war /usr/local/tomcat/webapps/sdmx-registry.w
 
 ENV LANG='es_ES.UTF-8'
 ENV SDMX_REGISTRYCONF_PATH='file:/data/edatos/sdmx-registry/conf/environment.xml'
+ENV STATISTICAL_RESOURCES_CONF_PATH='file:/data/edatos/sdmx-registry/conf/environment.xml'
 
 RUN env
 

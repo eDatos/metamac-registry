@@ -25,6 +25,8 @@
         </property>
     </bean>
 
-    <bean id="contextApplicationContextProvider"
-          class="org.siemac.metamac.core.common.util.ApplicationContextProvider"/>
+    <!-- Core -->
+    <import resource="classpath:/spring/statistical-resources/applicationContext.xml" />
+    <!-- Rest. SDMX API is not yet published in this war -->
+    <import resource="classpath:/spring/sdmx-data-rest-external/applicationContext.xml" />
 </beans>
