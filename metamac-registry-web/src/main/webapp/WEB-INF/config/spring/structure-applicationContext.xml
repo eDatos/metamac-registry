@@ -11,11 +11,10 @@
 
     <!-- Activates annotation-based bean configuration -->
     <context:annotation-config />
-
     <!-- METAMAC environment configuration -->
     <bean id="configurationService" class="org.siemac.metamac.core.common.conf.ConfigurationServiceImpl">
         <property name="systemConfigurationFile">
-            <value>classpath:metamac/environment.xml</value>
+            <value>${SDMX_REGISTRYCONF_PATH:classpath:metamac/environment.xml}</value>
         </property>
     </bean>
 
