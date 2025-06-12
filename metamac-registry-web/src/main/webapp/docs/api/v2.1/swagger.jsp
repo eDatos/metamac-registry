@@ -21,11 +21,11 @@
    "tags" : [
     {
       "name" : "${msg['api.doc.swagger.tag.structure']}",
-      "description" : "${msg['api.doc.swagger.tags.0.description']}"
+      "description" : "${msg['api.doc.swagger.tags.1.description']}"
     },
     {
       "name" : "${msg['api.doc.swagger.tag.data']}",
-      "description" : "${msg['api.doc.swagger.tags.1.description']}"
+      "description" : "${msg['api.doc.swagger.tags.0.description']}"
     }
   ],
    "definitions": <jsp:include page="definitions.jsp" /> ,
