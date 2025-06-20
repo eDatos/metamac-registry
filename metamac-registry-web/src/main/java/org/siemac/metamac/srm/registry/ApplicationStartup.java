@@ -29,8 +29,8 @@ public class ApplicationStartup extends ApplicationStartupListener {
             WebUtils.setAppsBaseUrl(configurationService.retrieveAppsExternalWebApplicationUrlBase());
             WebUtils.setApiBaseURL(configurationService.retrieveSdmxRegistryExternalApiUrlBase());
 
-            WebUtils.setApiStyleHeaderUrl(configurationService.retrieveApiStyleHeaderUrl());
-            WebUtils.setApiStyleFooterUrl(configurationService.retrieveApiStyleFooterUrl());
+            WebUtils.setAppStyleHeaderUrl(configurationService.retrieveAppStyleHeaderUrl());
+            WebUtils.setAppStyleFooterUrl(configurationService.retrieveAppStyleFooterUrl());
 
         } catch (MetamacException e) {
             log.error("Error retrieving the organisation from the configuration", e);
