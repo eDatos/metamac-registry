@@ -74,7 +74,7 @@ public class RegistryRewriteMatch extends RewriteMatch {
                 String location = buildTargetLocation(requestApiVersion, requestPathAfterVersion, queryString);
                 response.sendRedirect(location);
                 return true;
-            } else if (requestURI.endsWith(SDMX_API_VERSION + "/") && isBlank(queryString)) {
+            } else if (requestURI.endsWith(SDMX_API_VERSION + "/")) {
                 return false;
             } else if (StringUtils.isNotBlank(requestPathAfterVersion) && requestPathAfterVersion.equals("/swagger.jsp")) {
                 return false;
