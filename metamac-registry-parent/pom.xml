@@ -15,8 +15,8 @@
     <description>SIEMAC :: METAMAC :: REGISTRY :: PARENT</description>
 
     <properties>
-        <statistic-sdmx-srm-rest-external.version>4.8.1-SNAPSHOT</statistic-sdmx-srm-rest-external.version>
-        <metamac-sdmx-data-rest-external.version>10.21.1-SNAPSHOT</metamac-sdmx-data-rest-external.version>
+        <statistic-sdmx-srm-rest-external.version>4.8.1</statistic-sdmx-srm-rest-external.version>
+        <metamac-sdmx-data-rest-external.version>10.22.0</metamac-sdmx-data-rest-external.version>
 
         <jstl.version>1.2</jstl.version>
     </properties>
