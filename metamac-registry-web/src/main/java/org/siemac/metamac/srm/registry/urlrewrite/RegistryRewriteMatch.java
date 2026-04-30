@@ -76,7 +76,7 @@ public class RegistryRewriteMatch extends RewriteMatch {
                 return true;
             } else if (requestURI.endsWith(SDMX_API_VERSION + "/")) {
                 return false;
-            } else if (StringUtils.isNotBlank(requestPathAfterVersion) && requestPathAfterVersion.equals("/swagger.jsp")) {
+            } else if (StringUtils.isNotBlank(requestPathAfterVersion) && (requestPathAfterVersion.equals("/swagger.jsp") || (requestPathAfterVersion.equals("/api-docs")))) {
                 return false;
             } else {
                 RequestDispatcher requestDispatcher = request.getRequestDispatcher("/structure/registry/" + requestApiVersion + requestPathAfterVersion);
